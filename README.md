@@ -1,18 +1,27 @@
 # Portfolio
+Demo web site here: https://nhvu95.com/
+
+Responsive UI is available
+If you use my template, please give me a star, I very much appreciate.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
 
-## Development server
+## Build
+1. Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+2. Run `npm run scully`to prerender .md file to blog page.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Development server
+Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run scully:serve` to serve static server. Make sure that you run build (1-2) first.
+
+## Page preview
+1. Home
+2. Portfolio 
+3. Blog
+4. Blog Page
 
 ## Code scaffolding
-
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
 ## Running unit tests
 
