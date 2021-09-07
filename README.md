@@ -16,9 +16,9 @@ Run `npm run scully:serve` to serve static server. Make sure that you run build 
 
 ## Page preview
 1. Home
-2. Portfolio 
-3. Blog
-4. Blog Page
+![portfolio1](https://user-images.githubusercontent.com/26276890/132381111-231045e3-cc7d-44d9-b886-ee28a8a18da8.png)
+2. Blog summary
+![portfolio2](https://user-images.githubusercontent.com/26276890/132381150-fd8ea34a-0fc2-4be4-921d-8b06d20a0487.png)
 
 ## Code scaffolding
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
