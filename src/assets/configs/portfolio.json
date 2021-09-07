@@ -1,7 +1,7 @@
 [
     {
-        "title": "Angular<br>send file peer to peer",
-        "description": "It is possible to set the rowspan and colspan of each mat-grid-tile individually, using the rowspan and colspan properties. If not set, they both default to 1. The colspan must not exceed the number of cols in the mat-grid-list. There is no such restriction on the rowspan however, more rows will simply be added for it the tile to fill.",
+        "title": "Angular send file peer to peer",
+        "description": "Using webrtc as main technical. This web site allow user send file directly peer to peer between two browser without save file in external server like google drive, one drive, etc. And it can work as torrent browser, which allow a browser share a big file for every one.",
         "guide": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
         "link": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
@@ -11,7 +11,7 @@
         "exist": true
     },
     {
-        "title": "Ebay<br>Automation Tool",
+        "title": "Ebay Automation Tool",
         "description": "This is an automation tool, use to feed clone accounts of eBay. Clone Accounts will be used for many different purposes.",
         "guide": "https://github.com/HieuNguyenVu/ebay-automation-tool",
         "image": "https://user-images.githubusercontent.com/26276890/132363601-da582063-6621-4c61-b96b-b08e434af32e.png",
