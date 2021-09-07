@@ -1,7 +1,8 @@
 # Portfolio
 Demo web site here: https://nhvu95.com/
 
-Responsive UI is available
+Responsive UI is available.
+
 If you use my template, please give me a star, I very much appreciate.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.4.
