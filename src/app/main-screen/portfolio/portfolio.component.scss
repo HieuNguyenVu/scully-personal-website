@@ -1,0 +1,48 @@
+@import "styles/global-var.scss";
+.topic-wrapper {
+    display: flex;
+    flex-direction: column;
+
+    .topic-container-row {
+        display: flex;
+        flex: 1 1 100%;
+        width: 100%;
+        app-portfolio-item {
+            margin-left: 5px;
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+    }
+}
+@media screen and (max-width: 1279px) {
+    .bounds {
+        .header {
+            flex-direction: column;
+            align-items: center;
+            mat-tab-group {
+                margin-left: 0px !important;
+            }
+        }
+    }
+
+    .topic-wrapper {
+        .topic-container-row {
+            flex-direction: column;
+        }
+    }
+}
+
+@media screen and (max-width: 539px) {
+    .bounds {
+        .content {
+            .header .header-sub-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            ::ng-deep .mat-tab-label {
+                padding: 0 16px;
+            }
+        }
+    }
+}

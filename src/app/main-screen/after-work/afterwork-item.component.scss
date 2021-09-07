@@ -1,0 +1,66 @@
+@import "styles/global-var.scss";
+
+.topic-container {
+    background-color: rgba($color: $main-color, $alpha: 0.05);
+    min-height: 280px;
+    margin-bottom: 18px;
+    border: 1px solid $main-color2;
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.topic-image {
+    width: 100%;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+}
+
+.topic {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+    width: calc(100% - 20px);
+    padding: 10px 10px;
+
+    .title {
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 1;
+    }
+    .description {
+        margin-top: 10px;
+        margin-bottom: 0px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    .topic-footer {
+        margin-top: auto;
+        text-align: right;
+        .topic-link {
+            a {
+                color: $main-color !important;
+                margin-right: 10px;
+            }
+        }
+    }
+}
+
+.topic-container-xs {
+    margin-right: 0px;
+    margin-left: 0px;
+
+    .topic {
+        padding-right: 10px;
+    }
+    .topic .title {
+        font-size: 24px;
+    }
+}

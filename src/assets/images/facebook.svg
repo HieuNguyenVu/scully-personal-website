@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="83" height="83" fill="none" viewBox="0 0 83 83">
+  <g class="facebookIcon">
+    <g class="facebookIcon 1" clip-path="url(#clip0)">
+      <g class="Group">
+        <path stroke="#00717B" stroke-width="3.5" d="M41.5 81.5c22.091 0 40-17.909 40-40s-17.909-40-40-40-40 17.909-40 40 17.909 40 40 40z" class="Vector"/>
+        <g class="Group_2">
+          <path fill="#00717B" d="M52.417 24.292a1.042 1.042 0 00-1.042-1.042h-5.208a9.937 9.937 0 00-10.417 9.375v5.625h-5.208a1.042 1.042 0 00-1.042 1.042v5.416a1.043 1.043 0 001.042 1.042h5.208v13.958a1.043 1.043 0 001.042 1.042h6.25a1.042 1.042 0 001.041-1.042V45.75h5.459a1.042 1.042 0 001.02-.77l1.5-5.417a1.042 1.042 0 00-1-1.313h-6.979v-5.625a2.084 2.084 0 012.084-1.875h5.208a1.042 1.042 0 001.042-1.042v-5.416z" class="Vector_2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+  <defs>
+    <clipPath id="clip0" class="clip0">
+      <path fill="#fff" d="M0 0h83v83H0z"/>
+    </clipPath>
+  </defs>
+</svg>

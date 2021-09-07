@@ -1,0 +1,77 @@
+@import "styles/global-var.scss";
+
+.bounds {
+  .inner-bounds{
+    width: 100%;
+  }
+  .header {
+    margin-bottom: 2rem !important;
+    font-weight: 500 !important;
+
+    max-width: 1000px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main-content {
+    max-width: 1000px;
+    width: 1000px;
+    margin-top: 0px;
+    max-height: fit-content;
+
+    > div {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+
+  h3.author {
+    font-size: 25px;
+    font-weight: 600;
+    .sur-name {
+      font-weight: lighter;
+    }
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  .bounds {
+    flex-direction: column;
+  }
+  .header {
+    max-width: 80% !important;
+  }
+  .main-content {
+    max-width: 80% !important;
+    .author {
+      text-align: center;
+    }
+    .yellow-line {
+      width: 100% !important;
+    }
+  }
+}
+@media screen and (max-width: 539px) {
+  .header {
+    max-width: 95% !important;
+  }
+  .header-sub-wrapper {
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+  }
+  .main-content {
+    max-width: 95% !important;
+    .post-date,
+    .post-thank {
+      text-align: center !important;
+    }
+  }
+
+  #mainTab {
+    ::ng-deep .mat-tab-label {
+        padding: 0 16px;
+    }
+}
+}
