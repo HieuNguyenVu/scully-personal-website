@@ -11,7 +11,7 @@ declare var ng: any;
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss'],
+  styleUrls: ['./blog.component.scss', './github-markdown.scss'],
   preserveWhitespaces: true,
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush
