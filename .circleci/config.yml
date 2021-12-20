@@ -1,28 +1,62 @@
-# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
-version: 2.1
-
-# Orbs are reusable packages of CircleCI configuration that you may share across projects, enabling you to create encapsulated, parameterized commands, jobs, and executors that can be used across multiple projects.
-# See: https://circleci.com/docs/2.0/orb-intro/
-orbs:
-  node: circleci/node@4.7
-executors:
-  my-custom-executor:
-    docker:
-      - image: cimg/base:stable
-        auth:
-          # ensure you have first added these secrets
-          # visit app.circleci.com/settings/project/github/nhvu95/scully-personal-website/environment-variables
-          username: $DOCKER_HUB_USER
-          password: $DOCKER_HUB_PASSWORD
+version: 2
 jobs:
-  build-angular:
-    executor: my-custom-executor
+  build:
+    working_directory: ~/myapp
+    docker:
+      - image: circleci/node:12-browsers
     steps:
-      - run: ng build
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+      - checkout
+      - restore_cache:
+          key: myapp-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm ci
+      - save_cache:
+          key: myapp-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run: |
+          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+            npm run build-ghpages
+          else
+            npm run build
+          fi
+      - persist_to_workspace:
+          root: ~/myapp
+          paths:
+            - dist/*
+  deploy:
+    working_directory: ~/myapp
+    docker:
+      - image: node:8.10.0
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 'aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa'
+      - checkout
+      - attach_workspace:
+          at: ~/myapp
+      - run:
+          name: Install gh-pages
+          command: |
+            npm install -g --silent gh-pages
+      - run:
+          name: Configure git
+          command: |
+            git config user.email "circleci@example.com"
+            git config user.name "CircleCi"
+      - run:
+          name: Deploy to gh-pages branch
+          command: gh-pages --message "[ci skip]" -d dist
+
 workflows:
-  build-deploy: # This is the name of the workflow, feel free to change it to better match your workflow.
-    # Inside the workflow, you define the jobs you want to run.
+  version: 2
+  build_deploy:
     jobs:
-      - build-angular
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
