@@ -20,6 +20,8 @@ jobs:
           else
             npm run build
           fi
+      - run: |
+          npx scully
       - persist_to_workspace:
           root: ~/myapp
           paths:
@@ -42,8 +44,8 @@ jobs:
       - run:
           name: Configure git
           command: |
-            git config user.email "circleci@example.com"
-            git config user.name "CircleCi"
+            git config user.email "nhvu.95@gmail.com"
+            git config user.name "Vue Nguyen"
       - run:
           name: Deploy to gh-pages branch
           command: gh-pages --message "[ci skip]" -d dist
