@@ -46,7 +46,7 @@ jobs:
           name: Deploy to gh-pages branch
           command: |
             git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/portfolio.git
-            echo 'nhvu95.com' > ./dist/static/CNAME && gh-pages -d ./dist/static"
+            echo 'nhvu95.com' > ./dist/static/CNAME && gh-pages -d ./dist/static
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
