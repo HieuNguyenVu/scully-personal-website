@@ -15,11 +15,7 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            npm run build-ghpages
-          else
-            npm run build
-          fi
+          ng build
       - run: |
           npx scully
       - persist_to_workspace:
@@ -48,7 +44,8 @@ jobs:
             git config user.name "Vue Nguyen"
       - run:
           name: Deploy to gh-pages branch
-          command: gh-pages --message "[ci skip]" -d dist/static
+          command: |
+            echo 'nhvu95.com' > ./dist/static/CNAME && gh-pages -d ./dist/static"
 
 workflows:
   version: 2
