@@ -5,11 +5,12 @@
     padding: 0px;
   }
   .header-image{
-    height: 30rem;
+    height: auto;
     width: 100%;
     display: block;
     margin-bottom: 3rem;
     overflow: hidden;
+    border: 1px solid $main-color2;
     img {
       object-fit: cover;
       width: 100%;

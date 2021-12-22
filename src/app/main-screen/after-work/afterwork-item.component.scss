@@ -1,15 +1,14 @@
 @import "styles/global-var.scss";
 
 .topic-container {
-    background-color: rgba($color: $main-color, $alpha: 0.05);
+    background-image: $bg_topic_img;
+    background-size: cover;
+    background-position: center;
     min-height: 280px;
     margin-bottom: 18px;
     border: 1px solid $main-color2;
     border-radius: 10px;
     overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
 }
 
 .topic-image {
@@ -22,11 +21,10 @@
 }
 
 .topic {
-    display: flex;
-    flex-direction: column;
     height: 90%;
     width: calc(100% - 20px);
     padding: 10px 10px;
+    background-color: rgba(255, 255, 255, 0.6);
 
     .title {
         font-size: 30px;

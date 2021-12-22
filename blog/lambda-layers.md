@@ -5,7 +5,7 @@ date_start: '2021/10/12'
 date_end: '2021/10/12'
 published: true
 image: 'https://dsm01pap001files.storage.live.com/y4mVIZZZNXKO8iisroikPu77M9_W5eeBDjPF0jymHDDqpN1HV3e4bsVlhdNwxl0-Fv7_VI1t_B3jKYSmeJvP0uLkaa0CDQBic6kggw0_bzW2mMzkhUYQGIEnJA0T2Xe7RAohzOX6_Jb1-R6hoqE1cq2Bvb6iWBUKDpaxQmOLQGJG0w9gG0d4ljRSoTZkifdMjtm?width=660&height=660&cropmode=none'
-header_image: 'https://dsm01pap001files.storage.live.com/y4mr-AYGxdUdfpMPNHog93bD99-bPjw8Tl0fQJzqvqjjfQwqKZMgGVhqZfGR-5WGlnzRrcREj9cFJIpwYxftPh7Mrq5LFuEnmAqUYkqxfbzAUn7GTTqbKNQFng5ZvTOM8KoFzMhMGTwk_O-WswprJgH2Il4ubnJ28NlPsxsVQnU-gLhuXxiEQGnfe_VTilqfBey?width=1830&height=1118&cropmode=none'
+header_image: 'https://dsm01pap001files.storage.live.com/y4maWklphzTgnr68M7bsB7ZQRePxXWm1J0HCAEqgz1AFVcKJX19wpwg-Ou5qyJ0XqaMMpjd3WnDyVOHFm_dLtc4K3kkJJYWBWwHmXPyamRLUBgduJtTsvWEc43NSgEkPacQYVE2lnNpUCPrUnK0ZFXUFNpg1gpjIM1Hpbx8UPSfeMw9p3w53Y-Mag17JNUToRgN?width=1024&height=416&cropmode=none'
 link: '/blog/lambda-layers'
 slug: lambda-layers
 ---
