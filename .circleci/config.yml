@@ -15,7 +15,7 @@ jobs:
             - ~/.npm
             - ~/.cache
       - run: |
-          ng build
+          npm run build
       - run: |
           npx scully
       - persist_to_workspace:
