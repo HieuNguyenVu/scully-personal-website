@@ -36,7 +36,7 @@
           border: 1px solid $main-color2;
           border-radius: 10px;
           overflow: hidden;
-
+          display: flex;
           background-image: $bg_topic_img;
           background-size: cover;
           background-position: center;
@@ -44,6 +44,7 @@
             display: flex;
             align-items: center;
             background-color: rgba(255, 255, 255, 0.75);
+            height: 100%;
           }
           .note {
             width: 70px;

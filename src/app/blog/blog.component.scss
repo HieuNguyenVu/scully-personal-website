@@ -10,7 +10,6 @@
     display: block;
     margin-bottom: 3rem;
     overflow: hidden;
-    border: 1px solid $main-color2;
     img {
       object-fit: cover;
       width: 100%;
@@ -22,6 +21,9 @@
 .bounds {
   .inner-bounds{
     width: 100%;
+    .content{
+      margin-bottom: 40px;
+    }
   }
   .header {
     // margin-bottom: 2rem !important;
