@@ -29,7 +29,7 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - 'aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa'
+            - '6b:59:eb:43:72:2d:49:8c:2b:e1:82:9a:f4:d3:03:8a'
       - checkout
       - attach_workspace:
           at: ~/scully-personal-website
