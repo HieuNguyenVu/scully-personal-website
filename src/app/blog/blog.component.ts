@@ -20,11 +20,12 @@ export class BlogComponent implements OnInit, AfterViewInit {
   // links$: Observable<ScullyRoute[]> = this.scully.available$;
   scroll$: Observable<boolean> = of(true);
   current: Observable<ScullyRoute> = of(null);
-  title: Observable<String> = of("WHY YOU SHOUDN'T RUSH BRANDING");
-  title1: Observable<String> = of("WHY YOU SHOUDN'T");
-  title2: Observable<String> = of("RUSH BRANDING");
-  startDate$: Observable<String> = of("________");
-  endDate$: Observable<String> = of("________");
+  title: Observable<String> = of("");
+  title1: Observable<String> = of("");
+  title2: Observable<String> = of("");
+  startDate$: Observable<String> = of("");
+  endDate$: Observable<String> = of("");
+  headerImage$: Observable<String> = of("");
 
   displayControl = false;
   activeTabIndex = 0;
@@ -57,6 +58,10 @@ export class BlogComponent implements OnInit, AfterViewInit {
     }));
     let sharedTitle$ = this.current.pipe(map(res => {
       if (res) return res.title;
+      return "";
+    }));
+    this.headerImage$ = this.current.pipe(map(res => {
+      if (res) return res.header_image;
       return "";
     }));
     this.title = sharedTitle$.pipe(map(title => title.replace("<br>", " ")));

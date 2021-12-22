@@ -4,7 +4,8 @@ description: 'It is possible to set the rowspan and colspan of each mat-grid-til
 date_start: '2021/09/02'
 date_end: '2021/09/02'
 published: true
-image: 'https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg'
+image: 'https://dsm01pap001files.storage.live.com/y4mr-AYGxdUdfpMPNHog93bD99-bPjw8Tl0fQJzqvqjjfQwqKZMgGVhqZfGR-5WGlnzRrcREj9cFJIpwYxftPh7Mrq5LFuEnmAqUYkqxfbzAUn7GTTqbKNQFng5ZvTOM8KoFzMhMGTwk_O-WswprJgH2Il4ubnJ28NlPsxsVQnU-gLhuXxiEQGnfe_VTilqfBey?width=256&height=156&cropmode=none'
+header_image: 'https://dsm01pap001files.storage.live.com/y4mr-AYGxdUdfpMPNHog93bD99-bPjw8Tl0fQJzqvqjjfQwqKZMgGVhqZfGR-5WGlnzRrcREj9cFJIpwYxftPh7Mrq5LFuEnmAqUYkqxfbzAUn7GTTqbKNQFng5ZvTOM8KoFzMhMGTwk_O-WswprJgH2Il4ubnJ28NlPsxsVQnU-gLhuXxiEQGnfe_VTilqfBey?width=256&height=156&cropmode=none'
 link: '/blog/this-is-my-post3'
 slug: this-is-my-post3
 ---
@@ -69,4 +70,4 @@ If you want to make sure the same IP address is used when www.nhvu95.com is look
 ## Learn about records for email
 | Host name  | Type  | TTL  |           Data             |
 |------------|-------|------|----------------------------|
-|   @        | MX    | 1H   |  mail.nhvu95.com.               |
+|   @        | MX    | 1H   |  mail.nhvu95.com.          |

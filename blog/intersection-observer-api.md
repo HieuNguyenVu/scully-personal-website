@@ -4,7 +4,8 @@ description: "The Intersection Observer API provides a way to asynchronously obs
 date_start: "2021/09/24"
 date_end: '2021/09/24'
 published: true
-image: 'https://dsm01pap001files.storage.live.com/y4mtyvT2xnFMQGCMIlfk49RO9CZ4MV6fyYePpEaEMyrknag5PvlXnoi5JzxztYrga583CxULrCtmc4er8t_c-TW_KGIN8Viqw6sNJuNlJ0Qy_wtu26Zf-zALhqX5-uqOvyAsizfD1J7VdxxpQt2wU2QRL3dGgHHG5cTg2DCUpWH6FRqta0r7aWb4C2yO0gwX3Qb?width=660&height=495&cropmode=none'
+image: 'https://dsm01pap001files.storage.live.com/y4mubvpC1GB6OFDRoAx8a6L0TDK4y1ULM_EuGa6XoTTNdg9qX3J5UKkuwNNDBBEWKdjYyX4i9my01MpUf6cPOP-IdfkhAzllKgQP0pNXySRq8PsqgVhfbWjyyPIUNkmQAmdH4EuxpNBFZs_e0KnouxPW9QD33l9_S6ljZhBy2yoIjzaXY0S5M-nw3e6k0VWB_Xo?width=256&height=149&cropmode=none'
+header_image: 'https://dsm01pap001files.storage.live.com/y4mubvpC1GB6OFDRoAx8a6L0TDK4y1ULM_EuGa6XoTTNdg9qX3J5UKkuwNNDBBEWKdjYyX4i9my01MpUf6cPOP-IdfkhAzllKgQP0pNXySRq8PsqgVhfbWjyyPIUNkmQAmdH4EuxpNBFZs_e0KnouxPW9QD33l9_S6ljZhBy2yoIjzaXY0S5M-nw3e6k0VWB_Xo?width=1024&height=594&cropmode=none'
 link: '/blog/intersection-observer-api'
 slug: intersection-observer-api
 ---

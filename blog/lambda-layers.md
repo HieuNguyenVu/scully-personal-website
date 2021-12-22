@@ -5,6 +5,7 @@ date_start: '2021/10/12'
 date_end: '2021/10/12'
 published: true
 image: 'https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg'
+header_image: 'https://dsm01pap001files.storage.live.com/y4mwTr6K_k43gblO8cU-xYVibDwF7sQ1I2LMLqh2UugmVumUddnsuxUDi9Fp0nvO6tF_O9Gy1XRyS01eClwCA5zJIPXgarBiSxg2UKcZEJLdqDK_qTN1Bpw8BHqUOedUqCK6my9EyjNF6B2NB3axZZq_GQ4u74vsycXeoicmkKBjLdADmSxfNjE0ZWUE1OByJnj?width=769&height=401&cropmode=none'
 link: '/blog/lambda-layers'
 slug: lambda-layers
 ---
@@ -20,7 +21,9 @@ You can include up to five layers per function, which count towards the standard
 
 Layers are deployed as **immutable** versions. And the version number increments each time you publish a new layer.  
 When you include a layer in a lambda function, you specify the layer version you want to use. Layers are automatically set as private, but they can be shared with others AWS accounts, or share publicly. Permission only apply to a single version of layer.
-
+<p align="center" width="100%">
+    <img src="https://dsm01pap001files.storage.live.com/y4mVq7p6cerhMP1CfJ65aIzxQKlJzbybVVZk5vtziJfY7ckmvxAYyJYR_g7GQbJCXlJVrWo1D_S1oissQwVpYouYm1l7oKD8TWkE2pdV7D8aHLuXqBcJfTV6XcfW3M-IAl1bT_uDGlKis-KP0BAZJbpxoxYpBRqfyuM1Jxwul1Dqb17bY92JWR6LuKFdzmOySbX?width=757&height=532&cropmode=none"/>
+</p>
 ## Why should use Lambda layers
 Using layers can make it faster to deploy applications with the AWS SAM or the Serverless framework. **By moving runtime dependencies from your function code to a layer, this can help reduce the overall size of the archive uploaded during the deployment**
 

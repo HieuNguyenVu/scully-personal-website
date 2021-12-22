@@ -1,11 +1,25 @@
 @import "styles/global-var.scss";
 
+#blog-post{
+  .inner-bounds{
+    padding: 0px;
+  }
+  .header-image{
+    height: 30rem;
+    width: 100%;
+    img {
+      margin-bottom: 3rem;
+      object-fit: cover;
+    }
+  }
+}
+
 .bounds {
   .inner-bounds{
     width: 100%;
   }
   .header {
-    margin-bottom: 2rem !important;
+    // margin-bottom: 2rem !important;
     font-weight: 500 !important;
 
     max-width: 1000px;
