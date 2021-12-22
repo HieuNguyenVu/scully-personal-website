@@ -4,8 +4,8 @@ description: 'Using layers can make it faster to deploy applications with the AW
 date_start: '2021/10/12'
 date_end: '2021/10/12'
 published: true
-image: 'https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg'
-header_image: 'https://dsm01pap001files.storage.live.com/y4mwTr6K_k43gblO8cU-xYVibDwF7sQ1I2LMLqh2UugmVumUddnsuxUDi9Fp0nvO6tF_O9Gy1XRyS01eClwCA5zJIPXgarBiSxg2UKcZEJLdqDK_qTN1Bpw8BHqUOedUqCK6my9EyjNF6B2NB3axZZq_GQ4u74vsycXeoicmkKBjLdADmSxfNjE0ZWUE1OByJnj?width=769&height=401&cropmode=none'
+image: 'https://dsm01pap001files.storage.live.com/y4mVIZZZNXKO8iisroikPu77M9_W5eeBDjPF0jymHDDqpN1HV3e4bsVlhdNwxl0-Fv7_VI1t_B3jKYSmeJvP0uLkaa0CDQBic6kggw0_bzW2mMzkhUYQGIEnJA0T2Xe7RAohzOX6_Jb1-R6hoqE1cq2Bvb6iWBUKDpaxQmOLQGJG0w9gG0d4ljRSoTZkifdMjtm?width=660&height=660&cropmode=none'
+header_image: 'https://dsm01pap001files.storage.live.com/y4mr-AYGxdUdfpMPNHog93bD99-bPjw8Tl0fQJzqvqjjfQwqKZMgGVhqZfGR-5WGlnzRrcREj9cFJIpwYxftPh7Mrq5LFuEnmAqUYkqxfbzAUn7GTTqbKNQFng5ZvTOM8KoFzMhMGTwk_O-WswprJgH2Il4ubnJ28NlPsxsVQnU-gLhuXxiEQGnfe_VTilqfBey?width=1830&height=1118&cropmode=none'
 link: '/blog/lambda-layers'
 slug: lambda-layers
 ---

@@ -5,7 +5,7 @@
 </mat-tab-group>
 <div class="bounds" id="blog-post">
     <div class="inner-bounds">
-        <div class="header-image"><img [src]="headerImage$ | async"></div>
+        <div class="header-image"><img [src]="headerImage$ | async" loading="lazy"></div>
         <div class="content">
             <h1 class="header">
                 <span class="header-sub-wrapper"><span>{{title1| async}}</span><span>{{title2| async}}</span></span>
