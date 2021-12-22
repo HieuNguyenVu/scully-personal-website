@@ -7,7 +7,18 @@
         "link": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "link_source": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "date_start": "2021/09/02",
-        "date_end": "2021/09/02",
+        "date_end": "2021/09/20",
+        "exist": true
+    },
+    {
+        "title": "SoundMemos",
+        "description": "Sound Recording Web Application, all sound resolve process was handle on the browser side, and do not store any data of user. Fast and easy to use",
+        "guide": "https://github.com/nhvu95/soundmemos-vuejs",
+        "image": "https://github.com/nhvu95/soundmemos-vuejs/blob/master/public/icons/meta.png?raw=true",
+        "link": "https://soundmemos.com/",
+        "link_source": "https://github.com/nhvu95/soundmemos-vuejs",
+        "date_start": "2021/10/01",
+        "date_end": "2021/10/10",
         "exist": true
     },
     {
