@@ -1,16 +1,16 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/myapp
+    working_directory: ~/scully-personal-website
     docker:
       - image: circleci/node:12-browsers
     steps:
       - checkout
       - restore_cache:
-          key: myapp-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: scully-personal-website-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm ci
       - save_cache:
-          key: myapp-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: scully-personal-website-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - ~/.npm
             - ~/.cache
@@ -23,11 +23,11 @@ jobs:
       - run: |
           npx scully
       - persist_to_workspace:
-          root: ~/myapp
+          root: ~/scully-personal-website
           paths:
             - dist/*
   deploy:
-    working_directory: ~/myapp
+    working_directory: ~/scully-personal-website
     docker:
       - image: node:8.10.0
     steps:
@@ -36,7 +36,7 @@ jobs:
             - 'aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa'
       - checkout
       - attach_workspace:
-          at: ~/myapp
+          at: ~/scully-personal-website
       - run:
           name: Install gh-pages
           command: |
@@ -48,7 +48,7 @@ jobs:
             git config user.name "Vue Nguyen"
       - run:
           name: Deploy to gh-pages branch
-          command: gh-pages --message "[ci skip]" -d dist
+          command: gh-pages --message "[ci skip]" -d dist/static
 
 workflows:
   version: 2
