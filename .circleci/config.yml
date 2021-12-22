@@ -18,6 +18,11 @@ jobs:
           npm run build
       - run: |
           npm run scully -- --scanRoutes
+      - run:
+          name: Run on fail build scully
+          command: |
+            npm run scully -- --scanRoutes
+          when: on_fail
       - persist_to_workspace:
           root: ~/scully-personal-website
           paths:
