@@ -1,42 +1,38 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/myapp
+    working_directory: ~/scully-personal-website
     docker:
       - image: circleci/node:12-browsers
     steps:
       - checkout
       - restore_cache:
-          key: myapp-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: scully-personal-website-{{ .Branch }}-{{ checksum "package-lock.json" }}
       - run: npm ci
       - save_cache:
-          key: myapp-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: scully-personal-website-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - ~/.npm
             - ~/.cache
       - run: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            npm run build-ghpages
-          else
-            npm run build
-          fi
+          npm run build
       - run: |
-          npx scully
+          npm run scully -- --scanRoutes
       - persist_to_workspace:
-          root: ~/myapp
+          root: ~/scully-personal-website
           paths:
             - dist/*
   deploy:
-    working_directory: ~/myapp
+    working_directory: ~/scully-personal-website
     docker:
       - image: node:8.10.0
     steps:
       - add_ssh_keys:
           fingerprints:
-            - 'aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa:aa'
+            - '6b:59:eb:43:72:2d:49:8c:2b:e1:82:9a:f4:d3:03:8a'
       - checkout
       - attach_workspace:
-          at: ~/myapp
+          at: ~/scully-personal-website
       - run:
           name: Install gh-pages
           command: |
@@ -48,7 +44,11 @@ jobs:
             git config user.name "Vue Nguyen"
       - run:
           name: Deploy to gh-pages branch
-          command: gh-pages --message "[ci skip]" -d dist
+          command: |
+            echo 'nhvu95.com' > ./dist/static/CNAME
+            gh-pages -d ./dist/static
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 workflows:
   version: 2
@@ -61,4 +61,4 @@ workflows:
           filters:
             branches:
               only:
-                - master
+                - main
