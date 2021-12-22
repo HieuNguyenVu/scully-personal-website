@@ -17,7 +17,7 @@ jobs:
       - run: |
           npm run build
       - run: |
-          npx scully
+          npm run scully -- --scanRoutes
       - persist_to_workspace:
           root: ~/scully-personal-website
           paths:
