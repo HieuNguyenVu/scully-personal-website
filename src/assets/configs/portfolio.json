@@ -12,7 +12,7 @@
     },
     {
         "title": "SoundMemos",
-        "description": "Sound Recording Web Application, all sound resolve process was handle on the browser side, and do not store any data of user. Fast and easy to use",
+        "description": "Sound Recording Web Application, all sound resolve process is handled on the browser side, and do not store any data of the user. Fast and easy to use.",
         "guide": "https://github.com/nhvu95/soundmemos-vuejs",
         "image": "https://github.com/nhvu95/soundmemos-vuejs/blob/master/public/icons/meta.png?raw=true",
         "link": "https://soundmemos.com/",
@@ -25,7 +25,7 @@
         "title": "Ebay Automation Tool",
         "description": "This is an automation tool, use to feed clone accounts of eBay. Clone Accounts will be used for many different purposes.",
         "guide": "https://github.com/HieuNguyenVu/ebay-automation-tool",
-        "image": "https://user-images.githubusercontent.com/26276890/132363601-da582063-6621-4c61-b96b-b08e434af32e.png",
+        "image": "https://dsm01pap001files.storage.live.com/y4mHbQmFlAEohIQ0aAnYAe6DQqkhRyklR6Ol8atm6BrLfFe2tKAnQBpJatpCzuDGtg3gWiL-FsIKT0m2H0iUE8Yhc5nrjVgD88vGKN8_DUCw29pwHi44BO9JHqa5etLCrgUVGmKclByzbFda9zqFrdRw10l0_RmZcHg5J5mW10anvt1hyn59g3grJPtR9XL5Xqn?width=284&height=177&cropmode=none",
         "link": "https://github.com/HieuNguyenVu/ebay-automation-tool",
         "link_source": "https://github.com/HieuNguyenVu/ebay-automation-tool",
         "date_start": "2021/08/20",
