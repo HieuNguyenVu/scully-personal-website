@@ -3,7 +3,7 @@
         "title": "Angular send file peer to peer",
         "description": "Using webrtc as main technical. This web site allow user send file directly peer to peer between two browser without save file in external server like google drive, one drive, etc. And it can work as torrent browser, which allow a browser share a big file for every one.",
         "guide": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
-        "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
+        "image": "https://dsm01pap001files.storage.live.com/y4miOf80u6Rplhj7J_VD9iWL40MhKAd3Eue2AaoT7u5sAUGs3GH4UH2o4gLL3q8a-ZCOfE9Vu0tOJO5towVI-UEor1HNFzqTnXbBABKZDuSuH8wkuxG2nMUmdSks0qHvwbBC7G5upzqHERvdkkNwxzCrCJTLi5Uy5Sy29woFjn_j3gK3FubzoFDbGA1TKZ32obB?width=449&height=449&cropmode=none",
         "link": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "link_source": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "date_start": "2021/09/02",
@@ -11,7 +11,7 @@
         "exist": true
     },
     {
-        "title": "SoundMemos",
+        "title": "Sound Memos",
         "description": "Sound Recording Web Application, all sound resolve process is handled on the browser side, and do not store any data of the user. Fast and easy to use.",
         "guide": "https://github.com/nhvu95/soundmemos-vuejs",
         "image": "https://github.com/nhvu95/soundmemos-vuejs/blob/master/public/icons/meta.png?raw=true",
