@@ -3,7 +3,7 @@
 .topic-container {
   // background-color: rgba($color: $main-color, $alpha: 0.05);
   background-image: $bg_topic_img;
-  background-position: center;
+//   background-position: center;
   background-size: cover;
 
   min-height: 170px;
@@ -16,7 +16,7 @@
 }
 .overlay {
   display: flex;
-  background-color: $bg_overlay;
+  background-color: rgba($color: white, $alpha: 0.4);
 }
 .topic-image {
   width: 250px;
@@ -49,7 +49,7 @@
     -webkit-box-orient: vertical;
   }
   .topic-footer {
-    margin-top: auto;
+    // margin-top: auto;
     .topic-link {
       a {
         color: $main-color !important;
