@@ -1,0 +1,18 @@
+<div *ngIf="project && project.exist" class="topic-container">
+  <div
+    class="topic-image"
+    style="background-image: url('{{ project.image }}');"
+  ></div>
+  <div class="topic">
+    <h3 class="title">{{ project.title }}</h3>
+    <p class="description">
+      {{ project.description }}
+    </p>
+    <div class="topic-footer">
+      <div class="date">{{ project.date_start }} - {{ project.date_end }}</div>
+      <div class="topic-link">
+        <a href="{{ project.link }}" target="_blank">Read More</a>
+      </div>
+    </div>
+  </div>
+</div>

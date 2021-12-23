@@ -1,10 +1,9 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, HostListener, OnInit, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { MatTabChangeEvent } from '@angular/material/tabs';
-import { ActivatedRoute, Router, ROUTES } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ScullyRoute, ScullyRoutesService } from '@scullyio/ng-lib';
-import { fromEvent, Observable, of } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { map, share } from 'rxjs/operators';
-import { debounce } from '../shared/debounce.decorator';
 
 declare var ng: any;
 

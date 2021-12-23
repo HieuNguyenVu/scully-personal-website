@@ -42,6 +42,7 @@ body {
             rgba(0, 113, 123, 0.05) 100%
         );
         padding: 3rem 0rem;
+        width: 100%;
     }
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 
@@ -156,11 +157,19 @@ body {
     background-size: contain;
     background-position: center;
 }
+
+.facebook:hover {
+    background-image: url("/assets/images/facebook_hover.svg");
+}
+
 .linkedin {
     background-image: url("/assets/images/linkedin.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+.linkedin:hover {
+    background-image: url("/assets/images/linkedin_hover.svg");
 }
 .github {
     background-image: url("/assets/images/github.svg");
@@ -168,11 +177,17 @@ body {
     background-size: contain;
     background-position: center;
 }
+.github:hover {
+    background-image: url("/assets/images/github_hover.svg");
+}
 .cclaim {
     background-image: url("/assets/images/cclaim.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+.cclaim:hover {
+    background-image: url("/assets/images/cclaim_hover.svg");
 }
 .gmail {
     background-image: url("/assets/images/email.svg");
@@ -180,11 +195,17 @@ body {
     background-size: contain;
     background-position: center;
 }
+.gmail:hover {
+    background-image: url("/assets/images/email_hover.svg");
+}
 .download {
     background-image: url("/assets/images/download.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+.download:hover {
+    background-image: url("/assets/images/download_hover.svg");
 }
 
 .note {

@@ -1,6 +1,4 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, Input, OnInit } from '@angular/core';
-import { MainScreenService } from '../main-screen.service';
 import { Project } from './project.model';
 
 @Component({
@@ -11,11 +9,6 @@ import { Project } from './project.model';
       project.exist
         ? 'topic-container'
         : 'topic-container topic-container-invisible'
-    "
-    [ngClass.xs]="
-      project.exist
-        ? 'topic-container  topic-container-xs'
-        : 'topic-container-hiden'
     "
   >
     <ng-container

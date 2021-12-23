@@ -3,18 +3,18 @@
         <div class="content">
             <h1 class="header">
                 <span class="header-sub-wrapper"><span>#MY</span><span>PORTFOLIO</span></span>
-                <mat-tab-group *ngIf="currentNavIndex == 1" #portfolio mat-align-tabs="end" [selectedIndex]="3"
+                <mat-tab-group *ngIf="currentNavIndex == 1" #portfolio mat-align-tabs="end" [selectedIndex]="3" (selectedTabChange)="tabChanged($event)"
                     style="margin-left: auto;">
-                    <mat-tab [disabled]='true' label="Frontend"></mat-tab>
-                    <mat-tab [disabled]='true' label="Backend"></mat-tab>
-                    <mat-tab [disabled]='true' label="Tool & App"></mat-tab>
+                    <mat-tab label="Frontend"></mat-tab>
+                    <mat-tab label="Backend"></mat-tab>
+                    <mat-tab label="Tool & App"></mat-tab>
                     <mat-tab label="All"></mat-tab>
                 </mat-tab-group>
             </h1>
 
             <div class="main-content">
                 <div class="topic-wrapper">
-                    <div *ngFor="let pair of listProjects" class="topic-container-row">
+                    <div *ngFor="let pair of listProjects$ |async" class="topic-container-row">
                         <app-portfolio-item [project]="pair[0]" class="topic-container-left"></app-portfolio-item>
                         <app-portfolio-item [project]="pair[1]" class="topic-container-right"></app-portfolio-item>
                     </div>
