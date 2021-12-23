@@ -8,7 +8,8 @@
         "link_source": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "date_start": "2021/09/02",
         "date_end": "2021/09/20",
-        "exist": true
+        "exist": true,
+        "typeIndex": 0
     },
     {
         "title": "Sound Memos",
@@ -19,7 +20,8 @@
         "link_source": "https://github.com/nhvu95/soundmemos-vuejs",
         "date_start": "2021/10/01",
         "date_end": "2021/10/10",
-        "exist": true
+        "exist": true,
+        "typeIndex": 0
     },
     {
         "title": "Ebay Automation Tool",
@@ -30,10 +32,11 @@
         "link_source": "https://github.com/HieuNguyenVu/ebay-automation-tool",
         "date_start": "2021/08/20",
         "date_end": "2021/08/25",
-        "exist": true
+        "exist": true,  
+        "typeIndex": 2
     },
     {
-        "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
+        "image": "/assets/images/email.svg",
         "exist": false
     }
 ]
