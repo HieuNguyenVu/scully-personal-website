@@ -12,7 +12,7 @@ import { Project } from './project.model';
     "
   >
     <ng-container
-      *ngIf="project.exist; then existCase; else unExist"
+      *ngIf="project.exist; then existCase else unExist"
     ></ng-container>
     <ng-template #existCase>
       <div class="overlay">
