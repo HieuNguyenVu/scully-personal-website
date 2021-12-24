@@ -13,7 +13,7 @@ export class PortfolioComponent implements OnInit {
   @Input()
   currentNavIndex = 0;
   cache: Project[] = [];
-  constructor(private service: MainScreenService) {}
+  constructor(private service: MainScreenService) { }
   _listProjects$: BehaviorSubject<Project[][]> = new BehaviorSubject([]);
   listProjects$ = this._listProjects$.asObservable();
   ngOnInit(): void {
@@ -24,11 +24,12 @@ export class PortfolioComponent implements OnInit {
    * @param type
    */
   getListItem(type: number = 3) {
-    if (this.cache.length == 0)
+    if (this.cache.length === 0) {
       this.service.getProjectList<Project>().subscribe((res) => {
         this.cache = res;
         this.resultHandler(res, type);
       });
+    }
     else this.resultHandler(this.cache, type);
   }
   /**
@@ -36,13 +37,14 @@ export class PortfolioComponent implements OnInit {
    * @param res
    * @param type
    */
-  resultHandler(res, type) {
+  resultHandler(res: Project[], type: number) {
     let list = [];
     if (type != 3) {
       res = res.filter((item) => item.typeIndex == type);
     }
     while (res.length > 0) {
       let chunk = res.splice(0, 2);
+      if (chunk.length == 1) chunk.push({ image: "data:,", exist: false })
       list.push(chunk);
     }
     this._listProjects$.next(list);
