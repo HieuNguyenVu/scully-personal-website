@@ -34,9 +34,5 @@
         "date_end": "2021/08/25",
         "exist": true,  
         "typeIndex": 2
-    },
-    {
-        "image": "/assets/images/email.svg",
-        "exist": false
     }
 ]

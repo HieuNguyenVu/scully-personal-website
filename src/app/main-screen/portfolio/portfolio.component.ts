@@ -44,7 +44,7 @@ export class PortfolioComponent implements OnInit {
     }
     while (res.length > 0) {
       let chunk = res.splice(0, 2);
-      if (chunk.length == 1) chunk.push({ image: "data:,", exist: false })
+      if (chunk.length === 1) chunk.push({...chunk[0], exist: false});
       list.push(chunk);
     }
     this._listProjects$.next(list);

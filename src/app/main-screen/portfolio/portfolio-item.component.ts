@@ -9,17 +9,11 @@ import { Project } from './project.model';
       project.exist
         ? 'topic-container'
         : 'topic-container topic-container-invisible'
-    "
-  >
-    <ng-container
-      *ngIf="project.exist; then existCase else unExist"
-    ></ng-container>
-    <ng-template #existCase>
-      <div class="overlay">
+    ">
+    <div class="overlay">
         <div
           class="topic-image"
-          style="background-image: url('{{ project.image }}');"
-        ></div>
+          style="background-image: url('{{ project.image }}');"></div>
         <div class="topic">
           <h3 class="title">{{ project.title }}</h3>
           <p class="description">
@@ -37,17 +31,11 @@ import { Project } from './project.model';
           </div>
         </div>
       </div>
-    </ng-template>
-    <ng-template #unExist>
-      <div class="update-next-time">
-        <div class="note-undone"></div>
-      </div>
-    </ng-template>
   </div>`,
   styleUrls: ['./portfolio-item.component.scss'],
 })
 export class PortfolioItemComponent implements OnInit {
-  constructor() {}
+  constructor() { }
   @Input() project: Project;
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 }
