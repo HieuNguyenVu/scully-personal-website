@@ -1,13 +1,13 @@
 ---
-title: 'Resource<br>Record types'
-description: 'It is possible to set the rowspan and colspan of each mat-grid-tile individually, using the rowspan and colspan properties. If not set, they both default to 1. The colspan must not exceed the number of cols in the mat-grid-list. There is no such restriction on the rowspan however, more rows will simply be added for it the tile to fill.'
+title: '[NET] DNS Resource<br>Record types'
+description: 'Resource records provide information about the underlying components of your domain, such as your web host or email provider. When someone goes to your website, or uses your domain name to send or receive email, resource records ensure all pieces connect and the website works properly. Resource records can also improve website security and authenticate domain name ownership.'
 date_start: '2021/09/02'
 date_end: '2021/09/02'
 published: true
 image: 'https://dsm01pap001files.storage.live.com/y4mr0A2sU5Tv0Wc5xrTCr6TIBqGE-b7-i6bU03a6rKB9oBaX2TgNDX1Hy2SLZBf-YC7deMGymt64g-00Y-fnAedG7beGrLOVw4ru9ixcRWszJyHgqOSBuC6EDkUFSR7KP-6iFjbf1GZJy0PC1J0lVBkddos5aMOPoExv_UFaL4GqzzCC73fYmhCnXoUA7eItJ7u?width=660&height=403&cropmode=none'
 header_image: 'https://dsm01pap001files.storage.live.com/y4mr0A2sU5Tv0Wc5xrTCr6TIBqGE-b7-i6bU03a6rKB9oBaX2TgNDX1Hy2SLZBf-YC7deMGymt64g-00Y-fnAedG7beGrLOVw4ru9ixcRWszJyHgqOSBuC6EDkUFSR7KP-6iFjbf1GZJy0PC1J0lVBkddos5aMOPoExv_UFaL4GqzzCC73fYmhCnXoUA7eItJ7u?width=1462&height=893&cropmode=none'
-link: '/blog/this-is-my-post3'
-slug: this-is-my-post3
+link: '/blog/dns-resource-type'
+slug: dns-resource-type
 ---
 
 When you use some services like Google Domain, Godaddy, and you have to config your domain with an Ip address through a DNS config. You will see a table like this: 
@@ -17,7 +17,7 @@ When you use some services like Google Domain, Godaddy, and you have to config y
 Did you ever thinks about what is A / AAAA / CNAME ? They are resource record types.
 
 
-## Resource record types
+## DNS Resource record types
 Resource record provide information about the underlying components of your domain, such as your web host or email provider.  
 When someone goes to your website, or uses your domain name to send or receive email, resource records ensure all pieces connect and the website works properly. Resource records can also improve website security and authenticate domain name ownership.
 
@@ -68,6 +68,13 @@ If you want to make sure the same IP address is used when www.nhvu95.com is look
 * The "." at the end of "nhvu95.com." isn't a mistake. it provides a fully-qualified domain name.
 
 ## Learn about records for email
+### MX
+When you use your domain name in email addresses, such as you@example.com, an MX (Mail Exchange) record specifies the email server that handles these messages.  
+For example, if you use Google Workspace to manage email for your company, MX records are used to connect the 2 services and allow your emails to be sent and received. To determine what information to provide in the “Data” field of an MX record, contact your email service provider.  
+
 | Host name  | Type  | TTL  |           Data             |
 |------------|-------|------|----------------------------|
 |   @        | MX    | 1H   |  mail.nhvu95.com.          |
+  
+Multiple MX records can be set up for a domain. This is done to make sure that if there’s a problem with access on one mail server, the other servers can make sure you still can send and receive email.
+
