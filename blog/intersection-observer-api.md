@@ -7,6 +7,7 @@ published: true
 image: 'https://dsm01pap001files.storage.live.com/y4mVxpQapPkoUEqIMy8M3nkuZMIvlBtJjVp3FaLJt8F8yPYnv4w3yOgSLzdUEbI8EKu0c450rn8tAYtihRbtypLtmr-3kbwxinAJBXXWhp9ZtlB4fHQz-SAxXiJOAcqHOxJHKFlCiE_h_Pg5FQ1BJKTz7CL3DIGaf51dYPe0xjvSh1Iqn3qtQLvf-Qt6urYVcbK?width=660&height=383&cropmode=none'
 header_image: 'https://dsm01pap001files.storage.live.com/y4mVxpQapPkoUEqIMy8M3nkuZMIvlBtJjVp3FaLJt8F8yPYnv4w3yOgSLzdUEbI8EKu0c450rn8tAYtihRbtypLtmr-3kbwxinAJBXXWhp9ZtlB4fHQz-SAxXiJOAcqHOxJHKFlCiE_h_Pg5FQ1BJKTz7CL3DIGaf51dYPe0xjvSh1Iqn3qtQLvf-Qt6urYVcbK?width=1539&height=893&cropmode=none'
 tags: ['Frontend']
+priority: 0
 link: '/blog/intersection-observer-api'
 slug: intersection-observer-api
 ---

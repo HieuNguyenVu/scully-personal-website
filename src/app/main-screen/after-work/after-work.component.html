@@ -1,114 +1,87 @@
 <div class="bounds">
-  <div class="inner-bounds">
-    <div class="content">
-      <h1 class="header">
-        <span class="header-sub-wrapper"
-          ><span>#AFTER</span><span>WORK</span></span
-        >
-        <mat-tab-group
-          *ngIf="currentNavIndex == 2"
-          #afterwork
-          mat-align-tabs="end"
-          [selectedIndex]="2"
-          style="margin-left: auto"
-        >
-          <mat-tab [disabled]="true" label="Tech"></mat-tab>
-          <mat-tab [disabled]="true" label="Non-Tech"></mat-tab>
-          <mat-tab label="All"></mat-tab>
-        </mat-tab-group>
-      </h1>
+    <div class="inner-bounds">
+        <div class="content">
+            <h1 class="header">
+                <span class="header-sub-wrapper"><span>#AFTER</span><span>WORK</span></span>
+                <mat-tab-group *ngIf="currentNavIndex == 2" #afterwork mat-align-tabs="end" [selectedIndex]="2" style="margin-left: auto">
+                    <mat-tab [disabled]="true" label="Tech"></mat-tab>
+                    <mat-tab [disabled]="true" label="Non-Tech"></mat-tab>
+                    <mat-tab label="All"></mat-tab>
+                </mat-tab-group>
+            </h1>
 
-      <div class="main-content">
-        <!-- First part -->
-        <div *ngIf="projects$ | async as projects" class="first-part">
-          <div class="first-part-column1_1">
-            <div class="first-part-column1">
-              <div>
-                <app-afterwork-item
-                  [project]="projects[1]"
-                ></app-afterwork-item>
-                <app-afterwork-item
-                  [project]="projects[2]"
-                ></app-afterwork-item>
-              </div>
-              <div class="row-note">
-                <div class="note-container">
-                  <div class="overlay">
-                    <div class="note-headline"></div>
-                    <div class="note-wraper">
-                      <div class="note"></div>
+            <div class="main-content">
+                <!-- First part -->
+                <div *ngIf="projects$ | async as projects" class="first-part">
+                    <div class="first-part-column1_1">
+                        <div class="first-part-column1">
+                            <div>
+                                <app-afterwork-item [project]="projects[1]"></app-afterwork-item>
+                                <app-afterwork-item [project]="projects[2]"></app-afterwork-item>
+                            </div>
+                            <div class="row-note">
+                                <div class="note-container">
+                                    <div class="overlay">
+                                        <div class="note-headline"></div>
+                                        <div class="note-wraper">
+                                            <div class="note"></div>
+                                        </div>
+                                        <div class="note-content">
+                                            <p style="font-style: italic; margin: 0" class="main-color">
+                                                Hi there! So glad you are here. I write these not to show my experience, knowledge, or that. This part is like a notebook, where I note all the
+                                                things learned after a long day at work, the exciting thing I got when I did my PET project, or maybe just something I got from the internet. The
+                                                non-tech tab will be a little silly cause I write about my life, experiences, and whatever is helpful. I hope you will see me better day by day, and I
+                                                hope you enjoy them.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <app-afterwork-item [project]="projects[0]" class="newest-topic"></app-afterwork-item>
+                            </div>
+                        </div>
                     </div>
-                    <div class="note-content">
-                      <p style="font-style: italic" class="main-color">
-                        Hi there!<br />So glad you are here. I write these not
-                        to show my experience, knowledge or the same like that.
-                        I write to tell my stories. Maybe In some post, you will
-                        see a stupid man with a silly doing. But I believe
-                        that's fine cause the mistake makes experience, and the
-                        experience makes a man. You will see me better day by
-                        day, and I hope you enjoy them.
-                      </p>
+                    <div class="first-part-column2">
+                        <app-afterwork-item [project]="projects[3]"></app-afterwork-item>
+                        <app-afterwork-item [project]="projects[4]"></app-afterwork-item>
                     </div>
-                  </div>
                 </div>
-                <app-afterwork-item
-                  [project]="projects[0]"
-                  class="newest-topic"
-                ></app-afterwork-item>
-              </div>
+                <!-- Second part -->
+                <ng-container *ngIf="projectsMore$ | async as projectsMore">
+                    <ng-container *ngIf="projectsMore.length > 0">
+                        <div *ngFor="let triple of projectsMore" class="second-part">
+                            <div>
+                                <app-afterwork-item [project]="triple[0]"></app-afterwork-item>
+                            </div>
+                            <div style="margin-left: 10px; margin-right: 10px">
+                                <app-afterwork-item [project]="triple[1]"></app-afterwork-item>
+                            </div>
+                            <div>
+                                <app-afterwork-item [project]="triple[2]"></app-afterwork-item>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
             </div>
-          </div>
-          <div class="first-part-column2">
-            <app-afterwork-item [project]="projects[3]"></app-afterwork-item>
-            <app-afterwork-item [project]="projects[4]"></app-afterwork-item>
-          </div>
-        </div>
-        <!-- Second part -->
-        <ng-container *ngIf="projectsMore$ | async as projectsMore">
-          <ng-container *ngIf="projectsMore.length > 0">
-            <div *ngFor="let triple of projectsMore" class="second-part">
-              <div>
-                <app-afterwork-item [project]="triple[0]"></app-afterwork-item>
-              </div>
-              <div style="margin-left: 10px; margin-right: 10px">
-                <app-afterwork-item [project]="triple[1]"></app-afterwork-item>
-              </div>
-              <div>
-                <app-afterwork-item [project]="triple[2]"></app-afterwork-item>
-              </div>
-            </div>
-          </ng-container>
-        </ng-container>
-      </div>
-      <div class="footer">
-        <div id="footer-contact">
-          <div id="m-icon">
-            <a
-              class="m-icon gmail"
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F"
-              target="_blank"
-              style="cursor: pointer"
-            ></a>
-          </div>
-          <div id="m-contact" style="cursor: pointer">
-            <h3>
-              <span class="fname">VU HIEU</span
-              ><span class="sname"> NGUYEN</span>
-            </h3>
-            <h3 class="email">nhvu.95@gmail.com</h3>
-          </div>
-        </div>
-        <div id="footer-download-cv">
-          <div
-            class="download"
-            onclick="window.open(
+            <div class="footer">
+                <div id="footer-contact">
+                    <div id="m-icon">
+                        <a class="m-icon gmail" href="https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F" target="_blank" style="cursor: pointer"></a>
+                    </div>
+                    <div id="m-contact" style="cursor: pointer">
+                        <h3><span class="fname">VU HIEU</span><span class="sname"> NGUYEN</span></h3>
+                        <h3 class="email">nhvu.95@gmail.com</h3>
+                    </div>
+                </div>
+                <div id="footer-download-cv">
+                    <div
+                        class="download"
+                        onclick="window.open(
                         'https://drive.google.com/file/d/1sNJLiX9THvwkWe3FFBDrOJPMWuLw9ykW/view?usp=sharing',
                         '_blank'
                       );"
-            style="cursor: pointer"
-          ></div>
+                        style="cursor: pointer"></div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

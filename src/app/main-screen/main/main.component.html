@@ -1,5 +1,9 @@
 <mat-tab-group mat-align-tabs="center" dynamicHeight (selectedTabChange)="tabChanged($event)" [selectedIndex]="defaultSelect" id="mainTab">
     <mat-tab label="ABOUT ME"><app-hello></app-hello></mat-tab>
-    <mat-tab label="PORTFOLIO"><app-portfolio [currentNavIndex]="navIndex"></app-portfolio></mat-tab>
-    <mat-tab label="AFTER WORK"><app-after-work [currentNavIndex]="navIndex"></app-after-work></mat-tab>
-  </mat-tab-group>
+    <mat-tab label="PORTFOLIO">
+        <app-portfolio [currentNavIndex]="navIndex"></app-portfolio>
+    </mat-tab>
+    <mat-tab label="AFTER WORK">
+        <app-after-work [currentNavIndex]="navIndex"></app-after-work>
+    </mat-tab>
+</mat-tab-group>

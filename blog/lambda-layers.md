@@ -7,6 +7,7 @@ published: true
 image: 'https://dsm01pap001files.storage.live.com/y4mh3cHhqq9WoJYm77V4VOwCPhOWC9m7Gr6jLS42aPvw52U4XT-5FmrK8ZIT7oyQGQUp0po-m1mYfpp0qVAM9qyKKQbg95lwJww0mepDU35jxTg26dsn5EcvzRurREht1KIVTde8bpDaQ180naRAUgnKk0XEwWsEFtmO2SPTgL0NEXkjBUDyCGiIJz1sgAsTe45?width=660&height=660&cropmode=none'
 header_image: 'https://dsm01pap001files.storage.live.com/y4mCzIL23s6S1PXdKvE1x74MjS7wukQjGsg45Nu5EpGicBj2xNquWj7sEv5QcFIqodFFdLC7ykJdIE0ZpNty0NNHBkmRJmshRT2jZWL1YOUQp06g_X8ZtUF3emPssC6Bzoi74og4HfW5vUG3sJXdkjKpZbpyE8NtaDKperUbQjQouZUGaOhV44Uk9ExHFbiYRTs?width=1024&height=416&cropmode=none'
 tags: ['AWS','Backend','Lambda']
+priority: 1
 link: '/blog/lambda-layers'
 slug: lambda-layers
 ---

@@ -1,15 +1,15 @@
 ---
-title: 'DNS Resource<br>Record types'
-description: 'Resource records provide information about the underlying components of your domain, such as your web host or email provider. When someone goes to your website, or uses your domain name to send or receive email, resource records ensure all pieces connect and the website works properly. Resource records can also improve website security and authenticate domain name ownership.'
-date_start: '2021/09/02'
-date_end: '2021/09/02'
+title: 'IOC Container &<br> Application Context'
+description: 'These are the basic concepts of Spring Boot, that everyone who works with Spring Boot should know, and have to understand correctly the core of them. Almost thing run inside a Spring Application is revolve around IOC and Context, so that is why they are very important.'
+date_start: '2021/12/28'
+date_end: '2021/12/28'
 published: true
-image: 'https://dsm01pap001files.storage.live.com/y4mr0A2sU5Tv0Wc5xrTCr6TIBqGE-b7-i6bU03a6rKB9oBaX2TgNDX1Hy2SLZBf-YC7deMGymt64g-00Y-fnAedG7beGrLOVw4ru9ixcRWszJyHgqOSBuC6EDkUFSR7KP-6iFjbf1GZJy0PC1J0lVBkddos5aMOPoExv_UFaL4GqzzCC73fYmhCnXoUA7eItJ7u?width=660&height=403&cropmode=none'
-header_image: 'https://dsm01pap001files.storage.live.com/y4mr0A2sU5Tv0Wc5xrTCr6TIBqGE-b7-i6bU03a6rKB9oBaX2TgNDX1Hy2SLZBf-YC7deMGymt64g-00Y-fnAedG7beGrLOVw4ru9ixcRWszJyHgqOSBuC6EDkUFSR7KP-6iFjbf1GZJy0PC1J0lVBkddos5aMOPoExv_UFaL4GqzzCC73fYmhCnXoUA7eItJ7u?width=1462&height=893&cropmode=none'
-tags: ['DNS','Net']
+image: 'https://i.imgur.com/driRgww.png'
+header_image: 'https://i.imgur.com/LGxkTwi.png'
+tags: ['Backend','Spring Boot']
 priority: 1
-link: '/blog/dns-resource-type'
-slug: dns-resource-type
+link: '/blog/ioc-container-and-context'
+slug: ioc-container-and-context
 ---
 
 When you use some services like Google Domain, Godaddy, and you have to config your domain with an Ip address through a DNS config. You will see a table like this: 

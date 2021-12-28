@@ -4,7 +4,7 @@
     background-image: $bg_topic_img;
     background-size: cover;
     background-position: center;
-    min-height: 280px;
+    // min-height: 280px;
     margin-bottom: 18px;
     border: 1px solid $main-color2;
     border-radius: 10px;
@@ -21,8 +21,8 @@
 }
 
 .topic {
-    width: calc(100% - 20px);
-    padding: 10px 10px;
+    width: calc(100% - 40px);
+    padding: 10px 20px;
     background-color: $bg_overlay;
 
     .title {
@@ -35,7 +35,7 @@
         margin-top: 5px;
         .tag-item {
             display: inline-block;
-            background-color: white;
+            background-color: #bee9c9;
             margin-right: 5px;
             border-radius: 5px;
             padding: 5px;
@@ -59,13 +59,12 @@
         -webkit-box-orient: vertical;
     }
     .topic-footer {
-        margin-top: auto;
+        margin-top: 10px;
         text-align: right;
         display: flex;
         .date {
             margin-right: auto;
             font-size: small;
-            font-style: italic;
         }
         .topic-link {
             a {
