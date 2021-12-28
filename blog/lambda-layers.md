@@ -1,11 +1,12 @@
 ---
-title: '[AWS] Lambda<br>Layers'
+title: 'Lambda<br>Layers'
 description: 'Using layers can make it faster to deploy applications with the AWS SAM or the Serverless framework. By moving runtime dependencies from your function code to a layer, this can help reduce the overall size of the archive uploaded during the deployment'
 date_start: '2021/10/12'
 date_end: '2021/10/12'
 published: true
 image: 'https://dsm01pap001files.storage.live.com/y4mh3cHhqq9WoJYm77V4VOwCPhOWC9m7Gr6jLS42aPvw52U4XT-5FmrK8ZIT7oyQGQUp0po-m1mYfpp0qVAM9qyKKQbg95lwJww0mepDU35jxTg26dsn5EcvzRurREht1KIVTde8bpDaQ180naRAUgnKk0XEwWsEFtmO2SPTgL0NEXkjBUDyCGiIJz1sgAsTe45?width=660&height=660&cropmode=none'
 header_image: 'https://dsm01pap001files.storage.live.com/y4mCzIL23s6S1PXdKvE1x74MjS7wukQjGsg45Nu5EpGicBj2xNquWj7sEv5QcFIqodFFdLC7ykJdIE0ZpNty0NNHBkmRJmshRT2jZWL1YOUQp06g_X8ZtUF3emPssC6Bzoi74og4HfW5vUG3sJXdkjKpZbpyE8NtaDKperUbQjQouZUGaOhV44Uk9ExHFbiYRTs?width=1024&height=416&cropmode=none'
+tags: ['AWS','Backend','Lambda']
 link: '/blog/lambda-layers'
 slug: lambda-layers
 ---

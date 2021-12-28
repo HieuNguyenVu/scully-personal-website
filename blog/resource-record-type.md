@@ -1,11 +1,12 @@
 ---
-title: '[NET] DNS Resource<br>Record types'
+title: 'DNS Resource<br>Record types'
 description: 'Resource records provide information about the underlying components of your domain, such as your web host or email provider. When someone goes to your website, or uses your domain name to send or receive email, resource records ensure all pieces connect and the website works properly. Resource records can also improve website security and authenticate domain name ownership.'
 date_start: '2021/09/02'
 date_end: '2021/09/02'
 published: true
 image: 'https://dsm01pap001files.storage.live.com/y4mr0A2sU5Tv0Wc5xrTCr6TIBqGE-b7-i6bU03a6rKB9oBaX2TgNDX1Hy2SLZBf-YC7deMGymt64g-00Y-fnAedG7beGrLOVw4ru9ixcRWszJyHgqOSBuC6EDkUFSR7KP-6iFjbf1GZJy0PC1J0lVBkddos5aMOPoExv_UFaL4GqzzCC73fYmhCnXoUA7eItJ7u?width=660&height=403&cropmode=none'
 header_image: 'https://dsm01pap001files.storage.live.com/y4mr0A2sU5Tv0Wc5xrTCr6TIBqGE-b7-i6bU03a6rKB9oBaX2TgNDX1Hy2SLZBf-YC7deMGymt64g-00Y-fnAedG7beGrLOVw4ru9ixcRWszJyHgqOSBuC6EDkUFSR7KP-6iFjbf1GZJy0PC1J0lVBkddos5aMOPoExv_UFaL4GqzzCC73fYmhCnXoUA7eItJ7u?width=1462&height=893&cropmode=none'
+tags: ['Net', 'DNS']
 link: '/blog/dns-resource-type'
 slug: dns-resource-type
 ---

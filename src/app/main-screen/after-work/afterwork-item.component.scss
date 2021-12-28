@@ -30,6 +30,13 @@
         font-weight: 500;
         line-height: 1;
     }
+    .tags {
+        line-height: 1;
+        .tag-item {
+            display: inline-block;
+            background-color: white;
+        }
+    }
     .description {
         margin-top: 10px;
         margin-bottom: 0px;

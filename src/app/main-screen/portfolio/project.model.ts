@@ -5,6 +5,7 @@ export interface Project_ {
     image: string,
     link: string,
     link_source: string,
+    tags: string[],
     date_start: string,
     date_end: string,
     exist: boolean,

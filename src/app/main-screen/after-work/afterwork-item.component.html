@@ -5,6 +5,11 @@
   ></div>
   <div class="topic">
     <h3 class="title">{{ project.title }}</h3>
+    <h3 class="tags">
+      <ng-container *ngIf="let tag of project.tags ">
+        <div class="tag-item">{{ tag }}</div>
+      </ng-container>
+    </h3>
     <p class="description">
       {{ project.description }}
     </p>
