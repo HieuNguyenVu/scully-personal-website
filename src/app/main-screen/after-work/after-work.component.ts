@@ -51,6 +51,7 @@ export class AfterWorkComponent implements OnInit {
       return {
         title: scullyRoute.title.replace("<br>", " "),
         image: scullyRoute.image,
+        tags: scullyRoute.tags,
         description: scullyRoute.description,
         date_start: scullyRoute.date_start,
         date_end: scullyRoute.date_end,
