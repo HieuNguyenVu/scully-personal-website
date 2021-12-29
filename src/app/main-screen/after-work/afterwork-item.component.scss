@@ -29,6 +29,14 @@
         font-size: 30px;
         font-weight: 500;
         line-height: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+    }
+    .title2line {
+        -webkit-line-clamp: 2;
     }
     .tags {
         line-height: 1;

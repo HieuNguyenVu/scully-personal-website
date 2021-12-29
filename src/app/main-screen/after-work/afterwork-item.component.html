@@ -4,7 +4,7 @@
     style="background-image: url('{{ project.image }}');"
   ></div>
   <div class="topic">
-    <h3 class="title">{{ project.title }}</h3>
+    <h3 [ngClass]="project.priority === 1 ? 'title': 'title title2line'">{{ project.title }}</h3>
     <div class="tags">
       <ng-container *ngFor="let tag of project.tags ">
         <label class="tag-item"><a href="#">#{{ tag }}</a></label>

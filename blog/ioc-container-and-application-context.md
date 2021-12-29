@@ -7,7 +7,7 @@ published: true
 image: 'https://i.imgur.com/driRgww.png'
 header_image: 'https://i.imgur.com/LGxkTwi.png'
 tags: ['Backend','Spring Boot']
-priority: 1
+priority: 0
 link: '/blog/ioc-container-and-context'
 slug: ioc-container-and-context
 ---

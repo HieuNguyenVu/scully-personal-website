@@ -68,16 +68,19 @@
             height: 375.52px;
           }
           ::ng-deep .description{
-            height: 85px;
+            // height: 85px;
           }
           ::ng-deep .topic-container {
             min-height: calc(100% - 20px);
             .topic .description {
-              -webkit-line-clamp: unset;
+              -webkit-line-clamp: 5;
             }
             .topic .title{
-              height: 100%;
+              // height: 100%;
               max-height: calc(100% - 150px);
+            }
+            .topic .topic-footer{
+              margin-top: 8px;
             }
             .topic {
               height: 212px;
