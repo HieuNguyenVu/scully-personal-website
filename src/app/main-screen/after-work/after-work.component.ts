@@ -57,7 +57,8 @@ export class AfterWorkComponent implements OnInit {
         date_start: scullyRoute.date_start,
         date_end: scullyRoute.date_end,
         link: scullyRoute.route,
-        exist: scullyRoute.published
+        exist: scullyRoute.published,
+        priority: scullyRoute.priority
       };
     });
   }
