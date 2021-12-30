@@ -26,10 +26,13 @@ When you include a layer in a lambda function, you specify the layer version you
 <p align="center" width="100%">
     <img src="https://dsm01pap001files.storage.live.com/y4mVq7p6cerhMP1CfJ65aIzxQKlJzbybVVZk5vtziJfY7ckmvxAYyJYR_g7GQbJCXlJVrWo1D_S1oissQwVpYouYm1l7oKD8TWkE2pdV7D8aHLuXqBcJfTV6XcfW3M-IAl1bT_uDGlKis-KP0BAZJbpxoxYpBRqfyuM1Jxwul1Dqb17bY92JWR6LuKFdzmOySbX?width=757&height=532&cropmode=none"/>
 </p>
-## Why should use Lambda layers
+
+## Why we should use Lambda layers ?
+
 Using layers can make it faster to deploy applications with the AWS SAM or the Serverless framework. **By moving runtime dependencies from your function code to a layer, this can help reduce the overall size of the archive uploaded during the deployment**
 
 ## Creating a layer containing the AWS SDK
+
 The AWS SDK allow you to interact programmatically with AWS services using one of the supported runtimes. The Lambda service includes the AWS SDK, so you can use it without explicitly importing in your deployment package.
 
 However there is nor guarantee of the version provided in the execution environment. The SDK is upgraded frequently to support new AWS services and features. As a result, the version may change at any time. You can see the current version used by Lambda by declaring an instance of the SDK and logging out the version method:
