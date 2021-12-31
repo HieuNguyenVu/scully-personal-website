@@ -10,6 +10,7 @@ tags: ['Frontend']
 priority: 1
 link: '/blog/intersection-observer-api'
 slug: intersection-observer-api
+location: 'Hanoi, Vietnam'
 ---
 
 **intersection(n)**: Sự giao nhau, sự giao thoa.  

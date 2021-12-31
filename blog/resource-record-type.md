@@ -10,6 +10,7 @@ tags: ['DNS','Net']
 priority: 1
 link: '/blog/dns-resource-type'
 slug: dns-resource-type
+location: 'Hanoi, Vietnam'
 ---
 
 When you use some services like Google Domain, Godaddy, and you have to config your domain with an Ip address through a DNS config. You will see a table like this: 

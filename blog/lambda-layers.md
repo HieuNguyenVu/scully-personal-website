@@ -10,6 +10,7 @@ tags: ['AWS','Backend','Lambda']
 priority: 1
 link: '/blog/lambda-layers'
 slug: lambda-layers
+location: 'Hanoi, Vietnam'
 ---
 
 Source: https://aws.amazon.com/vi/blogs/compute/using-lambda-layers-to-simplify-your-development-process/

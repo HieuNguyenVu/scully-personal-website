@@ -25,10 +25,11 @@ export class BlogComponent implements OnInit, AfterViewInit, AfterViewChecked {
     title2: Observable<String> = of("");
     startDate$: Observable<String> = of("");
     endDate$: Observable<String> = of("");
+    location$: Observable<String> = of("");
     headerImage$: Observable<String> = of("");
 
     displayControl = false;
-    activeTabIndex = 0;
+    activeTabIndex = 2;
 
     constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService) {}
     ngAfterViewInit(): void {}
@@ -49,28 +50,29 @@ export class BlogComponent implements OnInit, AfterViewInit, AfterViewChecked {
     ngOnInit() {
         // debug current pages
         this.current = this.scully.getCurrent().pipe(share());
-        this.startDate$ = this.current.pipe(
-            map((res) => {
-                if (res) return res.date_start;
-                return "";
-            })
-        );
         this.endDate$ = this.current.pipe(
             map((res) => {
                 if (res) return res.date_end;
-                return "";
+                let date = new Date()
+                return date.toISOString().split('T')[0];
             })
         );
         let sharedTitle$ = this.current.pipe(
             map((res) => {
                 if (res) return res.title;
-                return "";
+                return "This is a secret";
             })
         );
         this.headerImage$ = this.current.pipe(
             map((res) => {
                 if (res) return res.header_image;
-                return "";
+                return "https://i.imgur.com/9SYJ5pX.png";
+            })
+        );
+        this.location$ = this.current.pipe(
+            map((res) => {
+                if (res) return res.location;
+                return "Hanoi, Vietnam";
             })
         );
         this.title = sharedTitle$.pipe(map((title) => title.replace("<br>", " ")));

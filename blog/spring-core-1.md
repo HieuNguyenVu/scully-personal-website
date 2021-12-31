@@ -10,6 +10,7 @@ tags: ['Backend','Spring Boot']
 priority: 0
 link: '/blog/spring-core-1'
 slug: spring-core-1
+location: 'Hanoi, Vietnam'
 ---
 
 _**My study way is reading the Spring document, then I quote the main concept, and explain them in my way. Same as the Rubber Duck Debugging method. I just want to explain them twice, first read to understand, and second explain to understand.**_
