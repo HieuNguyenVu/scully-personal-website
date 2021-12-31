@@ -861,5 +861,142 @@ body {
     margin-top: 2rem;
   }
 }
+/**
+ * Coy without shadows
+ * Based on Tim Shedor's Coy theme for prism.js
+ * Author: RunDevelopment
+ */
+pre *, code * {
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
+}
+#blog-post {
+  /* Code blocks */
+  /* Inline code */
+}
+#blog-post code[class*=language-],
+#blog-post pre[class*=language-] {
+  color: black !important;
+  background: none !important;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace !important;
+  font-size: 1em !important;
+  text-align: left !important;
+  white-space: pre !important;
+  word-spacing: normal !important;
+  word-break: normal !important;
+  word-wrap: normal !important;
+  line-height: 1.5 !important;
+  -moz-tab-size: 4 !important;
+  tab-size: 4 !important;
+  -webkit-hyphens: none !important;
+  hyphens: none !important;
+}
+#blog-post .code-toolbar {
+  position: relative;
+}
+#blog-post .code-toolbar .toolbar {
+  position: absolute;
+  top: -2px;
+  right: 0;
+}
+#blog-post .code-toolbar .toolbar button {
+  border-radius: 0px;
+  border-width: 0px;
+  height: 21px;
+}
+#blog-post pre[class*=language-] {
+  position: relative !important;
+  border-left: 10px solid #e7f1f9 !important;
+  box-shadow: -1px 0 0 0 #f29e03, 0 0 0 1px #f29e03 !important;
+  background-color: #fdfdfd !important;
+  background-image: linear-gradient(transparent 50%, rgba(69, 142, 209, 0.04) 50%) !important;
+  background-size: 3em 3em !important;
+  background-origin: content-box !important;
+  background-attachment: local !important;
+  margin: 0.5em 0 !important;
+  padding: 0 1em !important;
+}
+#blog-post pre[class*=language-] > code {
+  display: block !important;
+}
+#blog-post :not(pre) > code[class*=language-] {
+  position: relative !important;
+  padding: 0.2em !important;
+  border-radius: 0.3em !important;
+  color: #c92c2c !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  display: inline !important;
+  white-space: normal !important;
+  background-color: #fdfdfd !important;
+  box-sizing: border-box !important;
+}
+#blog-post .token.comment,
+#blog-post .token.block-comment,
+#blog-post .token.prolog,
+#blog-post .token.doctype,
+#blog-post .token.cdata {
+  color: #7d8b99 !important;
+}
+#blog-post .token.punctuation {
+  color: #5f6364 !important;
+}
+#blog-post .token.property,
+#blog-post .token.tag,
+#blog-post .token.boolean,
+#blog-post .token.number,
+#blog-post .token.function-name,
+#blog-post .token.constant,
+#blog-post .token.symbol,
+#blog-post .token.deleted {
+  color: #c92c2c !important;
+}
+#blog-post .token.selector,
+#blog-post .token.attr-name,
+#blog-post .token.string,
+#blog-post .token.char,
+#blog-post .token.function,
+#blog-post .token.builtin,
+#blog-post .token.inserted {
+  color: #2f9c0a !important;
+}
+#blog-post .token.operator,
+#blog-post .token.entity,
+#blog-post .token.url,
+#blog-post .token.variable {
+  color: #a67f59 !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+#blog-post .token.keyword {
+  color: #c92c2c !important;
+  font-weight: 600;
+}
+#blog-post .token.atrule,
+#blog-post .token.attr-value,
+#blog-post .token.class-name {
+  color: #1990b8 !important;
+}
+#blog-post .token.regex,
+#blog-post .token.important {
+  color: #e90 !important;
+}
+#blog-post .language-css .token.string,
+#blog-post .style .token.string {
+  color: #a67f59 !important;
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+#blog-post .token.important {
+  font-weight: normal !important;
+}
+#blog-post .token.bold {
+  font-weight: bold !important;
+}
+#blog-post .token.italic {
+  font-style: italic !important;
+}
+#blog-post .token.entity {
+  cursor: help !important;
+}
+#blog-post .token.namespace {
+  opacity: 0.7 !important;
+}
 
 /*# sourceMappingURL=styles.css.map*/
