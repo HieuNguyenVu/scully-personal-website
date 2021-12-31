@@ -18,6 +18,7 @@ jobs:
           npm run build
       - run: |
           npm run scully -- --scanRoutes
+          no_output_timeout: 1m
       - run:
           name: Run on fail build scully
           command: |

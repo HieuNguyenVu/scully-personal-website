@@ -1,4 +1,8 @@
-import { ScullyConfig, setPluginConfig, } from '@scullyio/scully';
+import { Injectable, Inject } from '@angular/core';
+
+import { PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+
 import 'clipboard';
 import 'prismjs';
 import 'prismjs/plugins/toolbar/prism-toolbar';
@@ -11,19 +15,17 @@ import 'prismjs/components/prism-xml-doc';
 import 'prismjs/components/prism-json';
 import 'prismjs/components/prism-markup';
 import 'prismjs/components/prism-typescript';
+// ... probably more, check out node_modules/prismjs/components
 
-setPluginConfig('md', { enableSyntaxHighlighting : true});  
+declare var Prism: any;
 
-export const config: ScullyConfig = {
-  projectRoot: "./src",
-  projectName: "portfolio",
-  outDir: './dist/static',
-  routes: {
-    '/blog/:slug': {
-      type: 'contentFolder',
-      slug: {
-        folder: "./blog"
-      }
-    },
+@Injectable({ providedIn: 'root' })
+export class HighlightService {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+
+  highlightAll() {
+    if (isPlatformBrowser(this.platformId)) {
+      Prism.highlightAll();
+    }
   }
-};
+}
