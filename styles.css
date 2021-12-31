@@ -630,12 +630,6 @@ body {
 }
 .bounds .inner-bounds {
   background: white;
-  /* FF 3.6+ */
-  /* IE10 */
-  background: -webkit-gradient(130deg, white 0%, rgba(0, 113, 123, 0.05) 50%, rgba(0, 113, 123, 0.05) 100%);
-  /* Safari 4+, Chrome 2+ */
-  /* Safari 5.1+, Chrome 10+ */
-  /* Opera 11.10 */
   background: linear-gradient(130deg, white 0%, rgba(0, 113, 123, 0.05) 50%, rgba(0, 113, 123, 0.05) 100%);
   padding: 3rem 0rem;
   width: 100%;
@@ -865,6 +859,9 @@ body {
     margin-right: 0px;
     margin-bottom: 1rem;
     margin-top: 2rem;
+  }
+  .bounds .inner-bounds {
+    background: #f3f8f9;
   }
 }
 /**
