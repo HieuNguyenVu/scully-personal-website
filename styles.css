@@ -895,7 +895,7 @@ pre *, code * {
 }
 #blog-post .code-toolbar .toolbar {
   position: absolute;
-  top: -2px;
+  top: 0px;
   right: 0;
 }
 #blog-post .code-toolbar .toolbar button {
