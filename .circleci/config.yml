@@ -60,7 +60,10 @@ workflows:
   version: 2
   build_deploy:
     jobs:
-      - build
+      - build:
+          branches:
+            only:
+                - main
       - deploy:
           requires:
             - build
