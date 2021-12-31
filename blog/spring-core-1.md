@@ -1,6 +1,6 @@
 ---
-title: 'Did-I-Miss:<br> Spring Core Technologies(1)'
-description: 'I was a front-end engineer, and after my effort, I have the opportunity to work as a full-stack engineer. Cause I did not focus on the back-end at the start, I believe that I was missed some core concepts of Spring and Spring Boot. This series is the way I recheck my knowledge and complement the missing part.'
+title: 'Did-I-Miss:<br>Spring Core Technologies(1)'
+description: 'Cause I did not focus on the back-end at the start, I believe that I was missed some core concepts of Spring and Spring Boot. This series is the way I recheck my knowledge and complement the missing part.'
 date_start: '2021/12/28'
 date_end: '2021/12/28'
 published: true
@@ -51,8 +51,7 @@ In this part, the author wrote very clearly, so I just index the main content:
 
 >- The container gets its instructions on what objects to instantiate, configure, and assemble by reading **configuration metadata**. **The configuration metadata** is represented in XML, Java annotations, or Java code. It lets you express the objects that compose your application and the rich interdependencies between those objects.
 
->*The following diagram shows a high-level view of how Spring works. **Your application classes are combined with configuration metadata** so that, **after the ApplicationContext is created and initialized, you have a fully configured and executable system or application**.  
-
+>The following diagram shows a high-level view of how Spring works. **Your application classes are combined with configuration metadata** so that, **after the ApplicationContext is created and initialized, you have a fully configured and executable system or application**.
 ![Spring diagram 1](https://i.imgur.com/ebjnujy.png?style=centerme)
 
 ## III. Configuration Metadata
