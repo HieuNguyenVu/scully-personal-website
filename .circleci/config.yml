@@ -16,7 +16,8 @@ jobs:
             - ~/.cache
       - run: |
           npm run build
-      - run: npm run scully -- --scanRoutes
+      - run: 
+          command: npm run scully -- --scanRoutes
           no_output_timeout: 1m
       - run:
           name: Run on fail build scully
