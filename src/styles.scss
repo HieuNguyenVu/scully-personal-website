@@ -35,12 +35,41 @@ body {
     background-color: white;
     .inner-bounds {
         background: rgb(255, 255, 255);
+        background: -moz-linear-gradient(
+            130deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(0, 113, 123, 0.05) 50%,
+        rgba(0, 113, 123, 0.05) 100%); /* FF 3.6+ */  
+        background: -ms-linear-gradient(
+            130deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(0, 113, 123, 0.05) 50%,
+            rgba(0, 113, 123, 0.05) 100%
+        ); /* IE10 */  
+        background: -webkit-gradient(
+            130deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(0, 113, 123, 0.05) 50%,
+            rgba(0, 113, 123, 0.05) 100%
+        ); /* Safari 4+, Chrome 2+ */  
+        background: -webkit-linear-gradient(
+            130deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(0, 113, 123, 0.05) 50%,
+        rgba(0, 113, 123, 0.05) 100%); /* Safari 5.1+, Chrome 10+ */  
+        background: -o-linear-gradient(
+            130deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(0, 113, 123, 0.05) 50%,
+            rgba(0, 113, 123, 0.05) 100%
+        ); /* Opera 11.10 */   
         background: linear-gradient(
             130deg,
             rgba(255, 255, 255, 1) 0%,
             rgba(0, 113, 123, 0.05) 50%,
             rgba(0, 113, 123, 0.05) 100%
         );
+
         padding: 3rem 0rem;
         width: 100%;
     }
@@ -289,7 +318,7 @@ body {
             }
         }
         .footer {
-            flex-direction: column;
+            flex-direction: column-reverse;
             justify-content: center;
             min-height: 150px;
             #footer-contact {

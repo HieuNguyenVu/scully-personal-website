@@ -30,6 +30,7 @@
     .topic-wrapper {
         .topic-container-row {
             flex-direction: column;
+            align-items: center;
             app-portfolio-item {
                 max-width: unset !important;
             }
