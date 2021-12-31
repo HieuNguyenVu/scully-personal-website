@@ -336,9 +336,10 @@ let BlogComponent = class BlogComponent {
         this.title2 = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
         this.startDate$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
         this.endDate$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
+        this.location$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
         this.headerImage$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
         this.displayControl = false;
-        this.activeTabIndex = 0;
+        this.activeTabIndex = 2;
     }
     ngAfterViewInit() { }
     // @HostListener('window:scroll', ['$event']) // for window scroll events
@@ -357,25 +358,26 @@ let BlogComponent = class BlogComponent {
     ngOnInit() {
         // debug current pages
         this.current = this.scully.getCurrent().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["share"])());
-        this.startDate$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
-            if (res)
-                return res.date_start;
-            return "";
-        }));
         this.endDate$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
             if (res)
                 return res.date_end;
-            return "";
+            let date = new Date();
+            return date.toISOString().split('T')[0];
         }));
         let sharedTitle$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
             if (res)
                 return res.title;
-            return "";
+            return "This is a secret";
         }));
         this.headerImage$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
             if (res)
                 return res.header_image;
-            return "";
+            return "https://i.imgur.com/9SYJ5pX.png";
+        }));
+        this.location$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
+            if (res)
+                return res.location;
+            return "Hanoi, Vietnam";
         }));
         this.title = sharedTitle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((title) => title.replace("<br>", " ")));
         this.title1 = sharedTitle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((title) => title.split("<br>")[0]));
@@ -1244,7 +1246,7 @@ Prism.languages.rss = Prism.languages.xml;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-tab-group id=\"mainTab\" mat-align-tabs=\"center\" dynamicHeight [(selectedIndex)]=\"activeTabIndex\" (click)=\"onTabGroupClicked()\">\n    <mat-tab label=\"ABOUT ME\"></mat-tab>\n    <mat-tab label=\"PORTFOLIO\"></mat-tab>\n    <mat-tab label=\"AFTER WORK\"></mat-tab>\n</mat-tab-group>\n<div class=\"bounds\" id=\"blog-post\">\n    <div class=\"inner-bounds\">\n        <div class=\"header-image\">\n            <img [src]=\"headerImage$ | async\" loading=\"lazy\" />\n        </div>\n        <div class=\"content\">\n            <h1 class=\"header\">\n                <span class=\"header-sub-wrapper\"\n                    ><span>{{ title1 | async }}</span\n                    ><span>{{ title2 | async }}</span></span\n                >\n            </h1>\n            <div class=\"main-content markdown-body\">\n                <div>\n                    <div>\n                        <h3 class=\"author\"><span>VU HIEU</span><span class=\"sur-name\"> NGUYEN</span></h3>\n                        <div style=\"width: 50px; height: 20px; border-bottom: 3px solid #f29e03; margin-bottom: 50px\" class=\"yellow-line\"></div>\n                        <div style=\"min-height: 350px\">\n                            <scully-content></scully-content>\n                        </div>\n                        <div class=\"post-date\" style=\"text-align: right\">{{ startDate$ | async }} - {{ endDate$ | async }}</div>\n                        <div class=\"post-thank\" style=\"text-align: right; font-style: italic\">Thank for reading!</div>\n                    </div>\n                    <div></div>\n                </div>\n            </div>\n            <div class=\"footer\">\n                <div id=\"footer-contact\">\n                    <div id=\"m-icon\">\n                        <a class=\"m-icon gmail\" href=\"https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F\" target=\"_blank\" style=\"cursor: pointer\"></a>\n                    </div>\n                    <div id=\"m-contact\" style=\"cursor: pointer\">\n                        <h3><span class=\"fname\">VU HIEU</span><span class=\"sname\"> NGUYEN</span></h3>\n                        <h3 class=\"email\">nhvu.95@gmail.com</h3>\n                    </div>\n                </div>\n                <div id=\"footer-download-cv\">\n                    <div\n                        class=\"download\"\n                        onclick=\"window.open(\n                        'https://drive.google.com/file/d/1sNJLiX9THvwkWe3FFBDrOJPMWuLw9ykW/view?usp=sharing',\n                        '_blank'\n                      );\"\n                        style=\"cursor: pointer\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-tab-group id=\"mainTab\" mat-align-tabs=\"center\" dynamicHeight [(selectedIndex)]=\"activeTabIndex\" (click)=\"onTabGroupClicked()\">\n    <mat-tab label=\"ABOUT ME\"></mat-tab>\n    <mat-tab label=\"PORTFOLIO\"></mat-tab>\n    <mat-tab label=\"AFTER WORK\"></mat-tab>\n</mat-tab-group>\n<div class=\"bounds\" id=\"blog-post\">\n    <div class=\"inner-bounds\">\n        <div class=\"header-image\">\n            <img [src]=\"headerImage$ | async\" loading=\"lazy\" />\n        </div>\n        <div class=\"content\">\n            <h1 class=\"header\">\n                <span class=\"header-sub-wrapper\"\n                    ><span>{{ title1 | async }}</span\n                    ><span>{{ title2 | async }}</span></span\n                >\n            </h1>\n            <div class=\"main-content markdown-body\">\n                <div>\n                    <div>\n                        <h3 class=\"author\"><span>VU HIEU</span><span class=\"sur-name\"> NGUYEN</span></h3>\n                        <div style=\"width: 50px; height: 20px; border-bottom: 3px solid #f29e03; margin-bottom: 50px\" class=\"yellow-line\"></div>\n                        <div style=\"min-height: 350px\">\n                            <scully-content></scully-content>\n                        </div>\n                        <div class=\"post-date\" style=\"text-align: right\">{{location$ | async}} - {{ endDate$ | async }}</div>\n                        <div class=\"post-thank\" style=\"text-align: right; font-style: italic\">Thank for reading!</div>\n                    </div>\n                    <div></div>\n                </div>\n            </div>\n            <div class=\"footer\">\n                <div id=\"footer-contact\">\n                    <div id=\"m-icon\">\n                        <a class=\"m-icon gmail\" href=\"https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F\" target=\"_blank\" style=\"cursor: pointer\"></a>\n                    </div>\n                    <div id=\"m-contact\" style=\"cursor: pointer\">\n                        <h3><span class=\"fname\">VU HIEU</span><span class=\"sname\"> NGUYEN</span></h3>\n                        <h3 class=\"email\">nhvu.95@gmail.com</h3>\n                    </div>\n                </div>\n                <div id=\"footer-download-cv\">\n                    <div\n                        class=\"download\"\n                        onclick=\"window.open(\n                        'https://drive.google.com/file/d/1sNJLiX9THvwkWe3FFBDrOJPMWuLw9ykW/view?usp=sharing',\n                        '_blank'\n                      );\"\n                        style=\"cursor: pointer\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n");
 
 /***/ }),
 
