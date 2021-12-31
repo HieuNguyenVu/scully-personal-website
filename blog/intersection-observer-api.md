@@ -81,13 +81,13 @@ And by this way, sites no longer need to do anything on the main thread to watch
 ### Let see the way we create an Intersection Observer.
 
 ```javascript
-    let options = {
-        root: document.querySelector('#scrollArea'),
-        rootMargin: '0px',
-        threshold: 1.0
-    }
+let options = {
+    root: document.querySelector('#scrollArea'),
+    rootMargin: '0px',
+    threshold: 1.0
+}
 
-    let observer = new IntersectionObserver(callback, options);
+let observer = new IntersectionObserver(callback, options);
 ```
 - **threshold**: It was call **intersection ratio**. This is a representation of the percentage of the target element, which is visible as a value between 0.0 and 1.0
 - **root**: The element that is used as the viewport for checking visibility of the target. Must be the ancestor of the target. Defaults to the browser viewport if not specified or if null.  
@@ -97,27 +97,27 @@ If you specified the root option, the target must be a descendant of the root el
 ### Once you have created the observer, you need to give it a target element to watch.
 
 ```javascript
-    let target = document.querySelector('#listItem');
-    observer.observe(target);
-    // the callback we setup for the observer will be executed now for the first time
-    // it waits until we assign a target to our observer (even if the target is currently not visible)
+let target = document.querySelector('#listItem');
+observer.observe(target);
+// the callback we setup for the observer will be executed now for the first time
+// it waits until we assign a target to our observer (even if the target is currently not visible)
 ```
 Whenever the target meets a threshold specified for the IntersectionObserver, the callback is invoked. The callback receives a list of IntersectionObserverEntry objects and the observer:
 
 ```javascript
-    let callback = (entries, observer) => {
-        entries.forEach(entry => {
-            // Each entry describes an intersection change for one observed
-            // target element:
-            //   entry.boundingClientRect
-            //   entry.intersectionRatio
-            //   entry.intersectionRect
-            //   entry.isIntersecting
-            //   entry.rootBounds
-            //   entry.target
-            //   entry.time
-        });
-    };
+let callback = (entries, observer) => {
+    entries.forEach(entry => {
+        // Each entry describes an intersection change for one observed
+        // target element:
+        //   entry.boundingClientRect
+        //   entry.intersectionRatio
+        //   entry.intersectionRect
+        //   entry.isIntersecting
+        //   entry.rootBounds
+        //   entry.target
+        //   entry.time
+    });
+};
 ```
 
 The list of entries received by the callback includes one entry for each target which reported a change in its intersection status.  

@@ -73,49 +73,49 @@ Instead of using XML to describe a bean wiring, the developer moves the configur
 
 In stand-alone applications, it is common to create an instance of ClassPathXmlApplicationContext or FileSystemXmlApplicationContext. **This is the way we create ApplicationContext in Spring Application**
 ```java
-    ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
+ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
 ```
 and there is example content of xml. All the beans have to put on `<beans>` tag. And `<beans>` have to manage at least 1 `<bean>`
 
 ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <beans xmlns="http://www.springframework.org/schema/beans"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
-            https://www.springframework.org/schema/beans/spring-beans.xsd">
-        <!-- services -->
-        <bean id="petStore" class="org.springframework.samples.jpetstore.services.PetStoreServiceImpl">
-            <property name="accountDao" ref="accountDao"/>
-            <property name="itemDao" ref="itemDao"/>
-            <!-- additional collaborators and configuration for this bean go here -->
-        </bean>
-        <!-- more bean definitions for services go here -->
-    </beans>
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- services -->
+    <bean id="petStore" class="org.springframework.samples.jpetstore.services.PetStoreServiceImpl">
+        <property name="accountDao" ref="accountDao"/>
+        <property name="itemDao" ref="itemDao"/>
+        <!-- additional collaborators and configuration for this bean go here -->
+    </bean>
+    <!-- more bean definitions for services go here -->
+</beans>
 ```
 
 And we also can write like this:
 
 ```xml
-    <beans>
-        <import resource="services.xml"/>
-        <import resource="resources/messageSource.xml"/>
-        <import resource="/resources/themeSource.xml"/>
+<beans>
+    <import resource="services.xml"/>
+    <import resource="resources/messageSource.xml"/>
+    <import resource="/resources/themeSource.xml"/>
 
-        <bean id="bean1" class="..."/>
-        <bean id="bean2" class="..."/>
-    </beans>
+    <bean id="bean1" class="..."/>
+    <bean id="bean2" class="..."/>
+</beans>
 ```
 
 **But in Spring Boot**, Application context will default return after ``SpringApplication.run()`` was called.
 
 ```java
-    @SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
-    public class HostingImageApplication {
-        public static void main(String[] args) {
-            SpringApplication.run(HostingImageApplication.class, args);
-            // ApplicationContext context = SpringApplication.run(HostingImageApplication.class, args);
-        }
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
+public class HostingImageApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(HostingImageApplication.class, args);
+        // ApplicationContext context = SpringApplication.run(HostingImageApplication.class, args);
     }
+}
 ```
 
 ### V. Get current ApplicationContext, Beans
@@ -123,64 +123,64 @@ And we also can write like this:
 1. We can inject it as normal, like this
 
 ```java
-    @Autowired
-    private ApplicationContext appContext;
+@Autowired
+private ApplicationContext appContext;
 ```
 
 2. Or implement the ApplicationContextAware, by this way we can use it in side a non-bean class.
 
 ```java
-    package com.java2novice.spring;
-    import org.springframework.beans.BeansException;
-    import org.springframework.context.ApplicationContext;
-    import org.springframework.context.ApplicationContextAware;
+package com.java2novice.spring;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
-    public class ApplicationContextProvider implements ApplicationContextAware{
-        private static ApplicationContext context;
+public class ApplicationContextProvider implements ApplicationContextAware{
+    private static ApplicationContext context;
 
-        public static ApplicationContext getApplicationContext() {
-            return context;
-        }
-
-        @Override
-        public void setApplicationContext(ApplicationContext ac)
-                throws BeansException {
-            context = ac;
-        }
+    public static ApplicationContext getApplicationContext() {
+        return context;
     }
+
+    @Override
+    public void setApplicationContext(ApplicationContext ac)
+            throws BeansException {
+        context = ac;
+    }
+}
 ```
 
 then add an entry in application-context.xml
 
 ```xml
-    <bean id="applicationContextProvider"
-    class="com.java2novice.spring.ApplicationContextProvider"/>
+<bean id="applicationContextProvider"
+class="com.java2novice.spring.ApplicationContextProvider"/>
 ```
 
 or just add to it an annotation
 
 ```java
-    @Component
-    public class ApplicationContextProvider implements ApplicationContextAware{
-        ...
-    }
+@Component
+public class ApplicationContextProvider implements ApplicationContextAware{
+    ...
+}
 ```
 
 then we can get the context like this:
 
 ```java
-    TestBean tb = ApplicationContextProvider.getApplicationContext().getBean("testBean", TestBean.class);
+TestBean tb = ApplicationContextProvider.getApplicationContext().getBean("testBean", TestBean.class);
 ```
 
 After that, we can get Beans from ApplicationContext, and use them:
 
 ```java
-    // create and configure beans
-    ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
-    // retrieve configured instance
-    PetStoreService service = context.getBean("petStore", PetStoreService.class);
-    // use configured instance
-    List<String> userList = service.getUsernameList();
+// create and configure beans
+ApplicationContext context = new ClassPathXmlApplicationContext("services.xml", "daos.xml");
+// retrieve configured instance
+PetStoreService service = context.getBean("petStore", PetStoreService.class);
+// use configured instance
+List<String> userList = service.getUsernameList();
 ```
 
 **It's the end!!**
