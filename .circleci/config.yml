@@ -17,17 +17,18 @@ jobs:
           npm run build
       - run: 
           command: |
-            timeout=$(command -v timeout)
-            if [ -z $timeout ]; then
-                timeout=$(command -v gtimeout)
+            timeoutFunc=$(command -v timeout)
+            if [ -z $timeoutFunc ]; then
+                timeoutFunc=$(command -v gtimeout)
             fi
 
-            if [ -z $timeout ]; then
+            if [ -z $timeoutFunc ]; then
                 echo "WARNING: timeout program not found, running without it\n"
             else
-                timeout_cmd="$timeout 80"
+                timeout_cmd="$timeoutFunc 80"
             fi
-            $timeout_cmd npx scully -- --scanRoutes || timeout_cmd npx scully -- --scanRoutes
+
+            eval '$timeout_cmd npx scully -- --scanRoutes' || eval '$timeout_cmd npx scully -- --scanRoutes'
       - persist_to_workspace:
           root: ~/scully-personal-website
           paths:
