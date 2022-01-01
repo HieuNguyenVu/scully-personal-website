@@ -16,18 +16,18 @@ jobs:
       - run: |
           npm run build
       - run: 
-          command: npx scully -- --scanRoutes
-          no_output_timeout: 1m
-      - run:
-          name: Run on fail build scully 1
-          command: npx scully -- --scanRoutes
-          no_output_timeout: 1m
-          when: on_fail
-      - run:
-          name: Run on fail build scully 2
-          command: npx scully -- --scanRoutes
-          no_output_timeout: 1m
-          when: on_fail
+          command: |
+            timeout=$(command -v timeout)
+            if [ -z $timeout ]; then
+                timeout=$(command -v gtimeout)
+            fi
+
+            if [ -z $timeout ]; then
+                echo "WARNING: timeout program not found, running without it\n"
+            else
+                timeout_cmd="$timeout 80"
+            fi
+            $timeout_cmd npx scully -- --scanRoutes || timeout_cmd npx scully -- --scanRoutes
       - persist_to_workspace:
           root: ~/scully-personal-website
           paths:
@@ -70,6 +70,8 @@ workflows:
               ignore:
                 - gh-pages
       - deploy:
+          requires:
+            - build
           filters:
             branches:
               only:
