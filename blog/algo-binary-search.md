@@ -1,6 +1,6 @@
 ---
 title: 'Algo-ex:<br>Binary Search and some Attention Points '
-description: "These are some attention points I got when practicing on leetcode. These can help you succeed in the first submit, and the Interviewer doesn't like that."
+description: "These are some attention points I got when practicing on leetcode. These can help you succeed in the first submit, and the Interviewer will like that."
 date_start: "2022/01/01"
 date_end: '2022/01/01'
 published: true

@@ -15,8 +15,8 @@ import { Project } from './project.model';
           class="topic-image"
           style="background-image: url('{{ project.image }}');"></div>
         <div class="topic">
-          <h3 class="title">{{ project.title }}</h3>
-          <p class="description">
+          <h3 class="title" matTooltip="{{project.title}}" matTooltipClass="title-tooltip" [matTooltipShowDelay]="500">{{ project.title }}</h3>
+          <p class="description" matTooltip="{{project.description}}" matTooltipClass="normal-tooltip" [matTooltipShowDelay]="500">
             {{ project.description }}
           </p>
           <div class="topic-footer">
