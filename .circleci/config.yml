@@ -27,8 +27,7 @@ jobs:
             else
                 timeout_cmd="$timeoutFunc 80"
             fi
-
-            eval '$timeout_cmd npx scully -- --scanRoutes' || eval '$timeout_cmd npx scully -- --scanRoutes'
+            $timeout_cmd npx scully -- --scanRoutes
       - persist_to_workspace:
           root: ~/scully-personal-website
           paths:
