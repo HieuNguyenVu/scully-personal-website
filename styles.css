@@ -831,6 +831,9 @@ body {
     max-width: fit-content;
     margin-right: 10px;
   }
+  .bounds .inner-bounds {
+    background: #f3f8f9;
+  }
 }
 @media screen and (max-width: 539px) {
   .bounds .content {
@@ -859,9 +862,6 @@ body {
     margin-right: 0px;
     margin-bottom: 1rem;
     margin-top: 2rem;
-  }
-  .bounds .inner-bounds {
-    background: #f3f8f9;
   }
 }
 /**
