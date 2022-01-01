@@ -21,7 +21,7 @@ I assume that you already have knowledge about Binary Search. If you don't, plea
 1. **The searching array is already sorted in order.**
 2. **The searching array is like binaries continuously. Example: [false,false,false,false,false,true,true,true] or [0,0,0,0,0,0,1,1,1,1]**
 3. **The searching value is in a range, have min and max, and we have to find a good fit value to meet the requirement**
-4. **Whe can compare each element by value.**
+4. **We can compare each element by value.**
 
 ## II. Some attention points
 
@@ -71,8 +71,7 @@ You should use casting as `int mid = (left + right)/2;` if your range have const
 **I prefer the `Math.floor()` causes it is safer and not too much difference in speed**.
 
 * What if the range meet the `Integer.MAX_INT`?
-Both the code above will got the timeout. Cause computer will take alot of time to calculate the `left + right` then divide it to `2`.
-**Instead of that, you should use** `left + (right - left)/2`.
+Both the code above will got the timeout. Cause computer will take alot of time to calculate the `left + right` then divide it to `2`. **Instead of that, you should use** `left + (right - left)/2`.
 
 ```java
     int mid = (int)Math.floor(left + (right - left)/2);
