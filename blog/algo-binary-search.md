@@ -7,7 +7,7 @@ published: true
 image: 'https://i.imgur.com/K1BOwur.jpg'
 header_image: 'https://i.imgur.com/BEuDltz.jpg'
 tags: ['Algo','Binary Search']
-priority: 0
+priority: 1
 link: '/blog/algo-binary-search'
 slug: algo-binary-search
 location: 'Hanoi, Vietnam'
