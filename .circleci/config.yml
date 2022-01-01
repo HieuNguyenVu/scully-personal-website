@@ -17,14 +17,14 @@ jobs:
           npm run build
       - run: 
           # command: npx scully -- --scanRoutes
-          command: git push -q https://${GITHUB_TOKEN}@github.com/scully-personal-website.git main
+          command: git push -q https://${{secrets.GITHUB_TOKEN}}@github.com/scully-personal-website.git main
           no_output_timeout: 1m
       - run:
           name: Run on fail build scully
           command: |
             echo 'nhvu95.com' > ./CNAME
             git commit --allow-empty -m "Trigger deployment"
-            git push -q https://${GITHUB_TOKEN}@github.com/scully-personal-website.git main
+            git push -q https://${{secrets.GITHUB_TOKEN}}@github.com/scully-personal-website.git main
           when: on_fail
       - persist_to_workspace:
           root: ~/scully-personal-website
