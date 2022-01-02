@@ -108,7 +108,6 @@ body {
     max-height: 60px;
     width: 100%;
     align-items: center;
-    margin-top: 30px;
     
     #footer-contact {
         display: flex;
@@ -143,6 +142,9 @@ body {
         min-width: 154px;
         border-radius: 13px 0 0 13px;
     }
+}
+#blog-post .footer {
+    margin-top: 30px;
 }
 
 /// ICON ==========================
