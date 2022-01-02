@@ -689,7 +689,6 @@ body {
   max-height: 60px;
   width: 100%;
   align-items: center;
-  margin-top: 30px;
 }
 .footer #footer-contact {
   display: flex;
@@ -723,6 +722,9 @@ body {
   width: 154px;
   min-width: 154px;
   border-radius: 13px 0 0 13px;
+}
+#blog-post .footer {
+  margin-top: 30px;
 }
 .facebook {
   background-image: url("/assets/images/facebook.svg");
