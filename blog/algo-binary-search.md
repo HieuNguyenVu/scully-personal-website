@@ -257,4 +257,4 @@ public int findMin(int[] nums) {
 [278]: https://leetcode.com/problems/first-bad-version/
 [162]: https://leetcode.com/problems/find-peak-element/
 [153]: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
-[34]: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14880/search-for-a-range
+[34]: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14880/search-for-a-range 
