@@ -25,13 +25,10 @@ I assume that you already have knowledge about Binary Search. If you don't, plea
 
 ## II. Some attention points
 
-### 1. Binary search have some variation*, you should learn only one
-
+Binary search have some variation*, each variation use to solve a specific type of challenge. Of course, you can use one for other. But with the correctly type implement, you can solve it faster and reduce the condition check.
 _Variation(n): biến thể_
 
-There are some variations of binary search, you can run in one direction, both directions ... Of course, I don't mean that you should focus on only one. But I believe that you can't solve almost challenge by use only one, and they are not too much different in BigO complexity. So just learn and use one, it will make you safe for make a perfect submit (successfully submit for the first time).
-
-**My favorite variation is:**
+### #Template 1: No depend on other elements and neighbor elements
 
 ```java
 public int search(int[] nums, int target) {
@@ -50,14 +47,90 @@ public int search(int[] nums, int target) {
 }
 ```
 
-### 2. Some attention points in above code
+* This is most basic and elementary form of Binary Search.
+* Search Condition **can be determined without comparing to the element's neighbors** (or use specific elements around it)
+* No post-processing required because at each step, you are checking to see if the element has been found. If you reach the end, then you know the element is not found.
+* End only when `left > right`.
+* Some attention points in above code
 
-* `left` always greater or equal `>=` `target` at `CHECK_POINT`.
-* `right` always is index smaller than `target` at `CHECK_POINT`.
-
-* Don't forget check value valid of `left`. It can be out of range.  
+>1. `left` always greater or equal `>=` `target` at `CHECK_POINT`.
+>2. `right` always is index smaller than `target` at `CHECK_POINT`.
+>3. Don't forget check value valid of `left`. It can be out of range.  
 For example: **nums** is `[-1,0,3,5,9,12]` and **target** is `13`.  
 `left` will equal `6` at `CHECK_POINT`, and it can make `ArrayIndexOutOfBounds` exception.
+
+**Example challenge:**  
+[**69. Sqrt(x)**][069]  
+[**374. Guess Number Higher or Lower**][374]  
+[**33. Search in Rotated Sorted Array**][033]  
+
+### #Template 2: Search for an element or condition which requires accessing the current index and its immediate right neighbors index
+
+```java
+int binarySearch(int[] nums, int target){
+  if(nums == null || nums.length == 0)
+    return -1;
+
+  int left = 0, right = nums.length;
+  while(left < right){
+    // Prevent (left + right) overflow
+    int mid = left + (right - left) / 2;
+    if(nums[mid] == target){ return mid; }
+    else if(nums[mid] < target) { left = mid + 1; }
+    else { right = mid; }
+  }
+
+  // Post-processing:
+  // End Condition: left == right
+  if(left != nums.length && nums[left] == target) return left;
+  return -1;
+}
+```
+
+>1. Search Condition needs to access element's immediate right neighbor
+>2. Use element's right neighbor to determine if condition is met and decide whether to go left or right
+>3. Gurantees Search Space is at least 2 in size at each step
+>4. Post-processing required. Loop/Recursion ends when you have 1 element left. Need to assess if the remaining element meets the condition.
+
+**Example challenge:**  
+[**278. First Bad Version**][278]  
+[**162. Find Peak Element**][162]  
+[**153. Find Minimum in Rotated Sorted Array**][153]  
+
+### #Template 3: Search for an element or condition which requires accessing the current index and both its immediate left and right neighbors index
+
+```java
+int binarySearch(int[] nums, int target) {
+    if (nums == null || nums.length == 0)
+        return -1;
+
+    int left = 0, right = nums.length - 1;
+    while (left + 1 < right){
+        // Prevent (left + right) overflow
+        int mid = left + (right - left) / 2;
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] < target) {
+            left = mid;
+        } else {
+            right = mid;
+        }
+    }
+
+    // Post-processing:
+    // End Condition: left + 1 == right
+    if(nums[left] == target) return left;
+    if(nums[right] == target) return right;
+    return -1;
+}
+```
+
+>1. Search Condition needs to access element's immediate left and right neighbors
+>2. Use element's neighbors to determine if condition is met and decide whether to go left or right
+>3. Gurantees Search Space is at least 3 in size at each step
+>4. Post-processing required. Loop/Recursion ends when you have 2 elements left. Need to assess if the remaining elements meet the condition.
+
+### Explain some hack point
 
 * What is the difference?
 ```java
@@ -77,10 +150,12 @@ Both the code above will got the timeout. Cause computer will take alot of time 
     // Exp: left = 5, right = 10;
     // mid = 5 + (10 - 5)/2 = (10 + 5)/2;
 ```
+[**162. Find Peak Element**][162]  
+[**34. Find First and Last Position of Element in Sorted Array**][34]  
 
 ## III. Some kind of Binary Search Challenges and Sample challenges
 
-### 1. Search value in an array return the index
+### 1. Search value in an array and return the index
 
 We can use normal binary search and it will work, not thing special. Effortless!!
 
@@ -175,3 +250,11 @@ public int findMin(int[] nums) {
 [3.1]: https://leetcode.com/problems/binary-search/
 [3.2]: https://leetcode.com/problems/first-bad-version/
 [3.3]: https://leetcode.com/problems/search-insert-position/
+
+[069]: https://leetcode.com/problems/sqrtx/
+[374]: https://leetcode.com/problems/guess-number-higher-or-lower/
+[033]: https://leetcode.com/problems/search-in-rotated-sorted-array/
+[278]: https://leetcode.com/problems/first-bad-version/
+[162]: https://leetcode.com/problems/find-peak-element/
+[153]: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
+[34]: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14880/search-for-a-range
