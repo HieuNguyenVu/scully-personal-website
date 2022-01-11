@@ -42,7 +42,7 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints:
-            - '03:11:cb:78:90:2d:73:bc:db:39:01:22:2c:17:9b:55'
+            - 'b3:98:9a:d1:11:78:a7:cc:61:2b:51:4b:29:0c:c2:e3'
       - attach_workspace:
           at: ~/scully-personal-website
       - run:
