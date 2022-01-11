@@ -37,7 +37,7 @@ jobs:
   deploy:
     working_directory: ~/scully-personal-website
     docker:
-      - image: node:8.10.0
+      - image: circleci/node:12-browsers
     steps:
       - checkout
       - add_ssh_keys:
