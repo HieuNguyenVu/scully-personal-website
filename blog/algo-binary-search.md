@@ -209,7 +209,7 @@ Why  `right = mid` in this stituation better than `right = mid - 1;`?
 Because we know that, the first occurrence of `1` will be on this position or `left` of it.
 Same with `right`, if you want to get the last of `0`, you should use `left = mid` and `right = mid - 1`.
 
-#### Ascending Order and Rotated array
+### 4. Ascending Order and Rotated array
 
 Rotated array is a Ascending Order array and was move some element to right.
 For example  
@@ -243,7 +243,7 @@ public int findMin(int[] nums) {
 ```
 
 
-### 4. Sample challenges
+### 5. Sample challenges
 
 [**704 - Binary Search**][3.1]  
 [**278. First Bad Version**][3.2]  
