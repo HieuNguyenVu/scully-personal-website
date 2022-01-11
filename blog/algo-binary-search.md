@@ -130,15 +130,20 @@ int binarySearch(int[] nums, int target) {
 >3. Gurantees Search Space is at least 3 in size at each step
 >4. Post-processing required. Loop/Recursion ends when you have 2 elements left. Need to assess if the remaining elements meet the condition.
 
+[**162. Find Peak Element**][162]  
+[**34. Find First and Last Position of Element in Sorted Array**][34]  
+
 ### Explain some hack point
 
 * What is the difference?
+
 ```java
     int mid = (left + right)/2;
     // if (left + right)/2 = -5.5 then mid = -5;
     int mid = (int)Math.floor((left + right)/2);
     // if (left + right)/2 = -5.5 then mid = -6;
 ```
+
 You should use casting as `int mid = (left + right)/2;` if your range have constraint >= 0, and use `Math.floor()` if your range have value < 0.
 **I prefer the `Math.floor()` causes it is safer and not too much difference in speed**.
 
@@ -150,8 +155,6 @@ Both the code above will got the timeout. Cause computer will take alot of time 
     // Exp: left = 5, right = 10;
     // mid = 5 + (10 - 5)/2 = (10 + 5)/2;
 ```
-[**162. Find Peak Element**][162]  
-[**34. Find First and Last Position of Element in Sorted Array**][34]  
 
 ## III. Some kind of Binary Search Challenges and Sample challenges
 
