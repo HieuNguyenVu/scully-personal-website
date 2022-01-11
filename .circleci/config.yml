@@ -39,10 +39,10 @@ jobs:
     docker:
       - image: node:8.10.0
     steps:
-      - checkout
       - add_ssh_keys:
           fingerprints:
             - 'b3:98:9a:d1:11:78:a7:cc:61:2b:51:4b:29:0c:c2:e3'
+      - checkout
       - attach_workspace:
           at: ~/scully-personal-website
       - run:
