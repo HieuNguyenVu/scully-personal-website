@@ -1,5 +1,5 @@
 ---
-title: 'DNS Resource<br>Record types'
+title: 'DNS Resource　Record types'
 description: 'Resource records provide information about the underlying components of your domain, such as your web host or email provider. When someone goes to your website, or uses your domain name to send or receive email, resource records ensure all pieces connect and the website works properly. Resource records can also improve website security and authenticate domain name ownership.'
 date_start: '2021/09/02'
 date_end: '2021/09/02'

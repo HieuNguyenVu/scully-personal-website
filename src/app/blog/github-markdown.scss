@@ -349,11 +349,6 @@
     font-size: 12px !important;
 }
 
-.markdown-body pre code {
-    padding-top: 25px !important;
-    padding-bottom: 25px !important;
-}
-
 .markdown-body pre {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
@@ -876,6 +871,11 @@
     word-wrap: normal !important;
     background-color: transparent !important;
     border: 0 !important;
+}
+
+.markdown-body pre code {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
 }
 
 .markdown-body .csv-data td,

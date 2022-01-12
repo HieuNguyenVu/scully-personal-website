@@ -1,5 +1,5 @@
 ---
-title: 'Lambda<br>Layers'
+title: 'Lambda　Layers'
 description: 'Using layers can make it faster to deploy applications with the AWS SAM or the Serverless framework. By moving runtime dependencies from your function code to a layer, this can help reduce the overall size of the archive uploaded during the deployment'
 date_start: '2021/10/12'
 date_end: '2021/10/12'

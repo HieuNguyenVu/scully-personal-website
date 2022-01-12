@@ -78,9 +78,9 @@ export class BlogComponent implements OnInit, AfterViewInit, AfterViewChecked {
                 return "Hanoi, Vietnam";
             })
         );
-        this.title = sharedTitle$.pipe(map((title) => title.replace("<br>", " ")));
-        this.title1 = sharedTitle$.pipe(map((title) => title.split("<br>")[0]));
-        this.title2 = sharedTitle$.pipe(map((title) => title.split("<br>").slice(1).join()));
+        this.title = sharedTitle$.pipe(map((title) => title.replace("　", " ")));
+        this.title1 = sharedTitle$.pipe(map((title) => title.split("　")[0]));
+        this.title2 = sharedTitle$.pipe(map((title) => title.split("　").slice(1).join()));
     }
 
     tabChanged(tabChangeEvent: MatTabChangeEvent) {
