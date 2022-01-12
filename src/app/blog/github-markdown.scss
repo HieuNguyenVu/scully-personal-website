@@ -298,7 +298,18 @@
 
 .markdown-body blockquote {
     margin: 0 !important;
-    padding: 0 1em !important;
+    padding: 1em 1em !important;
+    color: #57606a !important;
+    border-left: 0.25em solid #f29e03 !important;
+	border-bottom: 1px solid #f29e03 !important;
+	border-top: 1px solid #f29e03 !important;
+	border-right: 1px solid #f29e03 !important;
+	border-radius: 2px !important;
+
+    background-color: #ffffff !important;
+}.markdown-body blockquote {
+    margin: 0 !important;
+    padding: 1em 1em !important;
     color: #57606a !important;
     border-left: 0.25em solid #f29e03 !important;
 	border-bottom: 1px solid #f29e03 !important;
@@ -336,6 +347,11 @@
 .markdown-body code {
     font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !important;
     font-size: 12px !important;
+}
+
+.markdown-body code {
+    padding-top: 25px !important;
+    padding-bottom: 25px !important;
 }
 
 .markdown-body pre {
@@ -552,6 +568,10 @@
 .markdown-body details {
     margin-top: 0 !important;
     margin-bottom: 16px !important;
+}
+
+.markdown-body blockquote {
+    font-size: 14px !important;
 }
 
 .markdown-body blockquote > :first-child {

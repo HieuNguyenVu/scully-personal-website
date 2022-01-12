@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
 import { Observable, of } from "rxjs";
 import { map, share } from "rxjs/operators";
+import { SocialTagsService } from "../shared/social-tags-services";
 import { HighlightService } from "./highlight.service";
 
 declare var ng: any;
@@ -31,7 +32,9 @@ export class BlogComponent implements OnInit, AfterViewInit, AfterViewChecked {
     displayControl = false;
     activeTabIndex = 2;
 
-    constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService) {}
+    constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService, private socialTagService: SocialTagsService) {
+        socialTagService.setTitleAndTags();
+    }
     ngAfterViewInit(): void {}
 
     // @HostListener('window:scroll', ['$event']) // for window scroll events
@@ -53,8 +56,8 @@ export class BlogComponent implements OnInit, AfterViewInit, AfterViewChecked {
         this.endDate$ = this.current.pipe(
             map((res) => {
                 if (res) return res.date_end;
-                let date = new Date()
-                return date.toISOString().split('T')[0];
+                let date = new Date();
+                return date.toISOString().split("T")[0];
             })
         );
         let sharedTitle$ = this.current.pipe(
