@@ -131,7 +131,7 @@ int binarySearch(int[] nums, int target) {
 >4. Post-processing required. Loop/Recursion ends when you have 2 elements left. Need to assess if the remaining elements meet the condition.
 
 [**162. Find Peak Element**][162]  
-[**34. Find First and Last Position of Element in Sorted Array**][34]  
+[**34. Find First and Last Position of Element in Sorted Array**][34]
 
 ### Explain some hack point
 
@@ -156,7 +156,7 @@ Both the code above will got the timeout. Cause computer will take alot of time 
     // mid = 5 + (10 - 5)/2 = (10 + 5)/2;
 ```
 
-## III. Some kind of Binary Search Challenges and Sample challenges
+## III. Some kind of Binary Search Challenges you should know and Sample challenges
 
 ### 1. Search value in an array and return the index
 
@@ -242,8 +242,45 @@ public int findMin(int[] nums) {
 }
 ```
 
+### 5. Search displayed range of a number in array
 
-### 5. Sample challenges
+For example  
+`nums = [0,7,7,8,8,9] and target = 7`
+You have to return `[1,2]`
+
+```java
+public int[] searchRange(int[] nums, int target) {
+    if(nums == null || nums.length == 0) return new int[]{-1,-1};
+    int left = 0, right = nums.length - 1;
+    while(left + 1 < right){
+        int mid = left + (right - left) / 2;
+        if(nums[left]==nums[right]) break;
+        if(nums[mid] == target) {
+            if(nums[mid] > nums[mid - 1]) left = mid;
+            else if(nums[left] < target) left++;
+            
+            if(nums[mid] < nums[mid + 1]) right = mid;
+            else if(nums[right] > target) right--;
+        } else if(nums[mid] < target) {
+            left = mid;
+        } else {
+            right = mid;
+        }
+    }
+    int[]  res = new int[]{-1, -1};
+    if(nums[left] == target) {
+        res[0] = left;
+        res[1] = left;
+    }    
+    if(nums[right] == target){
+        if(res[0] == -1) res[0] = right;
+        res[1] = right;
+    }
+    return res;
+}
+```
+
+### 6. Sample challenges
 
 [**704 - Binary Search**][3.1]  
 [**278. First Bad Version**][3.2]  
