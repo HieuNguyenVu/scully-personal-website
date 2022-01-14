@@ -22,6 +22,10 @@ export class AfterWorkComponent implements OnInit {
     let links$ = this.scullyService.allRoutes$.pipe(
       map(scullyRoutes => scullyRoutes.filter(scullyRoute => scullyRoute.route.startsWith("/blog"))),
       map(scullyRoutes => scullyRoutes.sort((postA, postB) => postA.priority - postB.priority)),
+      map(scullyRoutes => scullyRoutes.map(routes => {
+        routes.title = routes.title.replace("　", " ");
+        return routes;
+      })),
       share());
     this.projects$ = links$.pipe(
       map(links => links.slice(0, 6)),
