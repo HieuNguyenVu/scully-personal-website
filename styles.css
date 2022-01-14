@@ -826,6 +826,12 @@ body {
   min-width: 450px;
   color: white !important;
 }
+::ng-deep .snack-bar-container {
+  background: #dcdcdc !important;
+}
+::ng-deep .snack-bar-container .button:hover .mat-button-wrapper {
+  color: #f29e03;
+}
 @media screen and (max-width: 1279px) {
   .bounds .content {
     padding: 0rem 0rem;

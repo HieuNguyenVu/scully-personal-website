@@ -483,12 +483,12 @@ let BlogComponent = class BlogComponent {
                 if (oDate) {
                     let oldDate = new Date(oDate);
                     if (oldDate < date) {
-                        localStorage.setItem(res.slug, date.toISOString().split("T")[0]);
+                        localStorage.setItem(res.slug, res.date_end);
                         this.openSnackBar();
                     }
                 }
                 else {
-                    localStorage.setItem(res.slug, date.toISOString().split("T")[0]);
+                    localStorage.setItem(res.slug, res.date_end);
                 }
             }
         }), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_10__["map"])((res) => {
