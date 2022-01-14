@@ -108,7 +108,7 @@ body {
     max-height: 60px;
     width: 100%;
     align-items: center;
-    
+
     #footer-contact {
         display: flex;
         flex-direction: row;
@@ -246,18 +246,24 @@ body {
     background-position: center;
 }
 
-.title-tooltip{
+.title-tooltip {
     font-size: 1rem;
     line-height: 1;
     min-width: 300px;
     color: white !important;
 }
 
-.normal-tooltip{
+.normal-tooltip {
     font-size: 14px;
     line-height: 1.2;
     min-width: 450px;
     color: white !important;
+}
+::ng-deep .snack-bar-container {
+    background: #dcdcdc !important;
+    .button:hover .mat-button-wrapper{
+        color: $main-color2;
+    }
 }
 
 @media screen and (max-width: 1279px) {
