@@ -333,7 +333,7 @@ let SocialTagsService = class SocialTagsService {
                     this.titleService.setTitle(link.title);
                     this.meta.updateTag({ name: "description", content: link.description });
                     this.meta.updateTag({ name: "image", content: link.header_image });
-                    this.meta.updateTag({ name: "og:title", property: "og:title", content: link.title });
+                    this.meta.updateTag({ name: "og:title", property: "og:title", content: link.title.replace("　", " ") });
                     this.meta.updateTag({ name: "og:description", property: "og:description", content: link.description });
                     this.meta.updateTag({ name: "og:type", property: "og:type", content: "article" });
                     this.meta.updateTag({ name: "article:section", property: "article:section", content: link.tags[0] });
