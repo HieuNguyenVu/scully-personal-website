@@ -2,7 +2,7 @@
 title: 'Did-I-Miss:　Spring Core Technologies(1)'
 description: 'Cause I did not focus on the back-end at the start, I believe that I was missed some core concepts of Spring and Spring Boot. This series is the way I recheck my knowledge and complement the missing part.'
 date_start: '2021/12/28'
-date_end: '2021/01/01'
+date_end: '2022/01/01'
 published: true
 image: 'https://i.imgur.com/driRgww.png'
 header_image: 'https://i.imgur.com/LGxkTwi.png'
