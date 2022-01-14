@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"blog-blog-module":"blog-blog-module","main-screen-main-screen-module":"main-screen-main-screen-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"default~blog-blog-module~main-screen-main-screen-module":"default~blog-blog-module~main-screen-main-screen-module","blog-blog-module":"blog-blog-module","main-screen-main-screen-module":"main-screen-main-screen-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function
