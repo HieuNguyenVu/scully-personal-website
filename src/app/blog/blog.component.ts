@@ -1,7 +1,8 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { AfterViewChecked, ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from "@angular/core";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
+import * as removeFbclid from "remove-fbclid";
 import { Observable, of } from "rxjs";
 import { map, share } from "rxjs/operators";
 import { SocialTagsService } from "../shared/social-tags-services";
@@ -17,7 +18,7 @@ declare var ng: any;
     encapsulation: ViewEncapsulation.Emulated,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BlogComponent implements OnInit, AfterViewInit, AfterViewChecked {
+export class BlogComponent implements OnInit, AfterViewChecked {
     // links$: Observable<ScullyRoute[]> = this.scully.available$;
     scroll$: Observable<boolean> = of(true);
     current: Observable<ScullyRoute> = of(null);
@@ -35,7 +36,6 @@ export class BlogComponent implements OnInit, AfterViewInit, AfterViewChecked {
     constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService, private socialTagService: SocialTagsService) {
         socialTagService.setTitleAndTags();
     }
-    ngAfterViewInit(): void {}
 
     // @HostListener('window:scroll', ['$event']) // for window scroll events
     // @debounce()
@@ -52,6 +52,8 @@ export class BlogComponent implements OnInit, AfterViewInit, AfterViewChecked {
     }
     ngOnInit() {
         // debug current pages
+        removeFbclid();
+
         this.current = this.scully.getCurrent().pipe(share());
         this.endDate$ = this.current.pipe(
             map((res) => {

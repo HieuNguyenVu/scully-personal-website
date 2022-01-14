@@ -3,6 +3,8 @@ import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { MatGridListModule } from "@angular/material/grid-list";
 import { MatTabsModule } from "@angular/material/tabs";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { FooterModule } from "../shared/footer/footer.module";
 import { AfterWorkComponent } from "./after-work/after-work.component";
 import { AfterWorkItemComponent } from "./after-work/afterwork-item.component";
 import { HelloComponent } from "./hello/hello.component";
@@ -10,11 +12,10 @@ import { MainRoutingModule } from "./main-screen-routing.module";
 import { MainComponent } from "./main/main.component";
 import { PortfolioItemComponent } from "./portfolio/portfolio-item.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
-import { MatTooltipModule } from "@angular/material/tooltip";
 
 @NgModule({
     declarations: [HelloComponent, MainComponent, PortfolioComponent, PortfolioItemComponent, AfterWorkComponent, AfterWorkItemComponent],
-    imports: [CommonModule, MainRoutingModule, MatTabsModule, MatGridListModule, HttpClientModule, MatTooltipModule],
+    imports: [CommonModule, MainRoutingModule, MatTabsModule, MatGridListModule, HttpClientModule, MatTooltipModule, FooterModule],
     providers: [],
 })
 export class MainScreenModule {}

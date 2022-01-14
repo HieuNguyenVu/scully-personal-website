@@ -14,7 +14,7 @@ export class BlogGuard implements CanActivate {
       this.router.navigateByUrl('/404');
       return false;
     } else {
-      let url = state.url;
+      let url = state.url.replace(/\?.*/, "");
       this.scully.allRoutes$.subscribe(routes => {
         if (!routes.map(rout => rout.route).includes(url)) {
           this.router.navigateByUrl('/404');
@@ -46,7 +46,8 @@ export class MainGuard implements CanActivate {
 const routes: Routes = [
   {
     path: '', loadChildren: () => import('./main-screen/main-screen.module').then(m => m.MainScreenModule),
-    canActivate: [MainGuard]
+    canActivate: [MainGuard],
+    pathMatch: 'full'
   },
   {
     path: 'blog', loadChildren: () => import('./blog/blog.module').then(m => m.BlogModule),
