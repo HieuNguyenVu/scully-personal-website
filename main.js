@@ -49,7 +49,7 @@ const environment = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-tab-group mat-align-tabs=\"center\" dynamicHeight (selectedTabChange)=\"tabChanged($event)\">\n    <mat-tab label=\"ABOUT ME\"></mat-tab>\n    <mat-tab label=\"PORTFOLIO\"></mat-tab>\n    <mat-tab label=\"AFTER WORK\"></mat-tab>\n</mat-tab-group>\n<div class=\"bounds\" id=\"not-found\">\n    <div class=\"content\"   >\n        <h1  class=\"header\">\n            <span>#PAGE </span><span>NOT FOUND</span>\n        </h1>\n        <div  class=\"content\" >\n            <div style=\"justify-content: center; height: 100%; margin-top: auto\" >\n                <div class=\"not-found\"></div>\n                <h1 class=\"e404\">404</h1>\n            </div>\n            <a style=\"text-align: center;margin-bottom: auto; margin-top: 20px; font-style: italic; text-decoration: underline; font-size: 20px;\"\n                class=\"main-color\" href=\"/\">Back to homepage</a>\n        </div>\n        <div   class=\"footer\"  >\n            <div class=\"icon-container\" id=\"footer-contact\"  \n                >\n                <div >\n                    <a class=\"gmail\"\n                        href=\"https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F\"\n                        target=\"_blank\"></a>\n                </div>\n                <div >\n                    <h3><span>VU HIEU</span><span> NGUYEN</span></h3>\n                    <h3>nhvu.95@gmail.com</h3>\n                </div>\n            </div>\n            <div   style=\"justify-content: flex-end;\"\n                >\n                <div class=\"download\">\n                </div>\n            </div>\n        </div>\n    </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-tab-group mat-align-tabs=\"center\" dynamicHeight (selectedTabChange)=\"tabChanged($event)\">\n    <mat-tab label=\"ABOUT ME\"></mat-tab>\n    <mat-tab label=\"PORTFOLIO\"></mat-tab>\n    <mat-tab label=\"AFTER WORK\"></mat-tab>\n</mat-tab-group>\n<div class=\"bounds\">\n    <div class=\"inner-bounds\">\n      <div class=\"content\">\n        <h1 class=\"header\"><span>#PAGE</span><span>NOT FOUND</span></h1>\n        <div class=\"main-content\">\n            <div class=\"content\">\n                <div style=\"justify-content: center; height: 100%; margin-top: auto; display: flex;\">\n                    <div class=\"not-found\"></div>\n                    <h1 class=\"e404\">404</h1>\n                </div>\n                <a style=\"text-align: center; margin-bottom: auto; margin-top: 20px; font-style: italic; text-decoration: underline; font-size: 20px\" class=\"main-color\" href=\"/\">Back to homepage</a>\n            </div>\n        </div>\n        <app-footer></app-footer>\n      </div>\n    </div>\n  </div>\n  ");
 
 /***/ }),
 
@@ -144,6 +144,42 @@ AppComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 /***/ }),
 
+/***/ "U5vU":
+/*!******************************************************!*\
+  !*** ./src/app/shared/not-found/not-found.module.ts ***!
+  \******************************************************/
+/*! exports provided: NotFoundModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotFoundModule", function() { return NotFoundModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material/tabs */ "wZkO");
+/* harmony import */ var _footer_footer_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../footer/footer.module */ "cNqA");
+/* harmony import */ var _not_found_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./not-found.component */ "OoyU");
+
+
+
+
+
+let NotFoundModule = class NotFoundModule {
+};
+NotFoundModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_not_found_component__WEBPACK_IMPORTED_MODULE_4__["NotFoundComponent"]],
+        imports: [_angular_material_tabs__WEBPACK_IMPORTED_MODULE_2__["MatTabsModule"], _footer_footer_module__WEBPACK_IMPORTED_MODULE_3__["FooterModule"]],
+        exports: [_not_found_component__WEBPACK_IMPORTED_MODULE_4__["NotFoundComponent"]],
+        providers: [],
+        bootstrap: [],
+    })
+], NotFoundModule);
+
+
+
+/***/ }),
+
 /***/ "VzVu":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
@@ -176,7 +212,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @scullyio/ng-lib */ "sbAP");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app-routing.module */ "vY5A");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "Sy1n");
-/* harmony import */ var _shared_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/not-found/not-found.component */ "OoyU");
+/* harmony import */ var _shared_footer_footer_module__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shared/footer/footer.module */ "cNqA");
+/* harmony import */ var _shared_not_found_not_found_module__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shared/not-found/not-found.module */ "U5vU");
+
 
 
 
@@ -191,22 +229,112 @@ let AppModule = class AppModule {
 };
 AppModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-        declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
-            _shared_not_found_not_found_component__WEBPACK_IMPORTED_MODULE_9__["NotFoundComponent"]
-        ],
-        imports: [
-            _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
-            _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_6__["ScullyLibModule"],
-            _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
-            _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"]
-        ],
+        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
+        imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_6__["ScullyLibModule"], _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClientModule"], _shared_footer_footer_module__WEBPACK_IMPORTED_MODULE_9__["FooterModule"], _shared_not_found_not_found_module__WEBPACK_IMPORTED_MODULE_10__["NotFoundModule"]],
         providers: [],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]],
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "cNqA":
+/*!************************************************!*\
+  !*** ./src/app/shared/footer/footer.module.ts ***!
+  \************************************************/
+/*! exports provided: FooterModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterModule", function() { return FooterModule; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _footer_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer.component */ "jQpT");
+
+
+
+let FooterModule = class FooterModule {
+};
+FooterModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        declarations: [_footer_component__WEBPACK_IMPORTED_MODULE_2__["FooterComponent"]],
+        imports: [],
+        exports: [_footer_component__WEBPACK_IMPORTED_MODULE_2__["FooterComponent"]],
+        providers: [],
+        bootstrap: [],
+    })
+], FooterModule);
+
+
+
+/***/ }),
+
+/***/ "f2YT":
+/*!*****************************************************!*\
+  !*** ./src/app/shared/footer/footer.component.scss ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJmb290ZXIuY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "jGP6":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/shared/footer/footer.component.html ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"footer\">\n    <div id=\"footer-contact\">\n        <div id=\"m-icon\">\n            <a class=\"m-icon gmail\" href=\"https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F\" target=\"_blank\" style=\"cursor: pointer\"></a>\n        </div>\n        <div id=\"m-contact\" style=\"cursor: pointer\">\n            <h3><span class=\"fname\">VU HIEU</span><span class=\"sname\"> NGUYEN</span></h3>\n            <h3 class=\"email\">nhvu.95@gmail.com</h3>\n        </div>\n    </div>\n    <div id=\"footer-download-cv\">\n        <div\n            class=\"download\"\n            onclick=\"window.open(\n                    'https://drive.google.com/file/d/1sNJLiX9THvwkWe3FFBDrOJPMWuLw9ykW/view?usp=sharing',\n                    '_blank'\n                  );\"\n            style=\"cursor: pointer\"></div>\n    </div>\n</div>\n");
+
+/***/ }),
+
+/***/ "jQpT":
+/*!***************************************************!*\
+  !*** ./src/app/shared/footer/footer.component.ts ***!
+  \***************************************************/
+/*! exports provided: FooterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FooterComponent", function() { return FooterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "mrSG");
+/* harmony import */ var _raw_loader_footer_component_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! raw-loader!./footer.component.html */ "jGP6");
+/* harmony import */ var _footer_component_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./footer.component.scss */ "f2YT");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/core */ "fXoL");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "tyNb");
+
+
+
+
+
+let FooterComponent = class FooterComponent {
+    constructor(router) {
+        this.router = router;
+    }
+    ngOnInit() {
+    }
+};
+FooterComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"] }
+];
+FooterComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_3__["Component"])({
+        selector: 'app-footer',
+        template: _raw_loader_footer_component_html__WEBPACK_IMPORTED_MODULE_1__["default"],
+        styles: [_footer_component_scss__WEBPACK_IMPORTED_MODULE_2__["default"]]
+    })
+], FooterComponent);
 
 
 
@@ -245,7 +373,7 @@ let BlogGuard = class BlogGuard {
             return false;
         }
         else {
-            let url = state.url;
+            let url = state.url.replace(/\?.*/, "");
             this.scully.allRoutes$.subscribe(routes => {
                 if (!routes.map(rout => rout.route).includes(url)) {
                     this.router.navigateByUrl('/404');
@@ -291,7 +419,8 @@ MainGuard = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 const routes = [
     {
         path: '', loadChildren: () => __webpack_require__.e(/*! import() | main-screen-main-screen-module */ "main-screen-main-screen-module").then(__webpack_require__.bind(null, /*! ./main-screen/main-screen.module */ "+FOH")).then(m => m.MainScreenModule),
-        canActivate: [MainGuard]
+        canActivate: [MainGuard],
+        pathMatch: 'full'
     },
     {
         path: 'blog', loadChildren: () => __webpack_require__.e(/*! import() | blog-blog-module */ "blog-blog-module").then(__webpack_require__.bind(null, /*! ./blog/blog.module */ "U4+L")).then(m => m.BlogModule),
@@ -331,7 +460,7 @@ AppRoutingModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = (".bounds#not-found {\n  background: white;\n  background: linear-gradient(130deg, white 0%, rgba(0, 113, 123, 0.05) 50%, rgba(0, 113, 123, 0.05) 100%);\n  padding: 2rem 5rem !important;\n  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;\n  max-width: 1600px;\n  display: flex;\n  flex-direction: row;\n  margin: auto;\n  margin-bottom: 30px;\n}\n.bounds#not-found ::ng-deep h2,\n.bounds#not-found ::ng-deep h3 {\n  margin: 0 !important;\n}\n.bounds#not-found .icon .icon-container div,\n.bounds#not-found .footer .icon-container div {\n  display: flex !important;\n  align-items: center !important;\n  justify-content: center !important;\n}\n.bounds#not-found .footer .icon-container div:last-child {\n  display: flex !important;\n  flex-direction: column !important;\n  align-items: flex-start !important;\n}\n.bounds#not-found .footer .icon-container div:last-child h3 {\n  font-weight: lighter !important;\n  font-size: 24px !important;\n}\n.bounds#not-found .footer .icon-container div:last-child h3:first-child {\n  font-size: 30px !important;\n  font-weight: normal !important;\n}\n.bounds#not-found .footer .icon-container div:last-child h3:first-child span:last-child {\n  font-weight: lighter !important;\n}\n.bounds#not-found .footer > div {\n  margin-top: 1rem !important;\n}\n.bounds#not-found .strong {\n  font-weight: bold !important;\n}\n.bounds#not-found p {\n  text-align: justify;\n  font-weight: normal !important;\n}\n.bounds#not-found .center-item {\n  justify-content: center !important;\n}\n.bounds#not-found .e404 {\n  font-size: 100px !important;\n  margin-bottom: 0px;\n  line-height: 1em;\n  height: 1em;\n}\n.bounds#not-found .not-found {\n  width: 100px;\n  min-width: 100px;\n  height: 100px;\n  min-height: 100px;\n  margin-right: 10px;\n  background-image: url(\"/assets/images/not-found.svg\");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n}\n.bounds-xs#not-found {\n  padding: 1rem 2rem !important;\n}\n.bounds-xs#not-found .ava-container .avatar {\n  width: 230px !important;\n  height: 230px !important;\n}\n.bounds-xs#not-found .icon-container > div > div {\n  min-width: 65px !important;\n  width: 65px !important;\n  min-height: 65px !important;\n  height: 65px !important;\n}\n.bounds-xs#not-found .icon-container#footer-contact h3:first-child {\n  font-size: 24px !important;\n}\n.bounds-xs#not-found .icon-container#footer-contact h3:last-child {\n  font-size: 20px !important;\n}\n.bounds-xs#not-found .icon-container#footer-contact > div:first-child {\n  min-width: 65px !important;\n  max-width: 65px !important;\n  min-height: 65px !important;\n  max-height: 65px !important;\n  margin-right: 10px;\n}\n.bounds-xs#not-found .image-container .name#h2 {\n  font-size: 35px !important;\n}\n.bounds-xs#not-found .image-container .role#h3 {\n  font-size: 30px !important;\n}\n.bounds-xs#not-found .introduce {\n  margin-top: 20px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL25vdC1mb3VuZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNJLGlCQUFBO0VBQ0Esd0dBQUE7RUFNQSw2QkFBQTtFQUNBLDRFQUFBO0VBRUEsaUJBQUE7RUFDQSxhQUFBO0VBQ0EsbUJBQUE7RUFDQSxZQUFBO0VBQ0EsbUJBQUE7QUFQSjtBQVNJOztFQUVJLG9CQUFBO0FBUFI7QUFVSTs7RUFFSSx3QkFBQTtFQUNBLDhCQUFBO0VBQ0Esa0NBQUE7QUFSUjtBQVVJO0VBQ0ksd0JBQUE7RUFDQSxpQ0FBQTtFQUNBLGtDQUFBO0FBUlI7QUFTUTtFQUNJLCtCQUFBO0VBQ0EsMEJBQUE7QUFQWjtBQVNRO0VBQ0ksMEJBQUE7RUFDQSw4QkFBQTtBQVBaO0FBUVk7RUFDSSwrQkFBQTtBQU5oQjtBQVVJO0VBQ0ksMkJBQUE7QUFSUjtBQVdJO0VBQ0ksNEJBQUE7QUFUUjtBQVdJO0VBQ0ksbUJBQUE7RUFDQSw4QkFBQTtBQVRSO0FBV0k7RUFDSSxrQ0FBQTtBQVRSO0FBV0k7RUFDSSwyQkFBQTtFQUNBLGtCQUFBO0VBQ0EsZ0JBQUE7RUFDQSxXQUFBO0FBVFI7QUFXSTtFQUNJLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxpQkFBQTtFQUNBLGtCQUFBO0VBRUEscURBQUE7RUFDQSw0QkFBQTtFQUNBLHdCQUFBO0VBQ0EsMkJBQUE7QUFWUjtBQWNBO0VBQ0ksNkJBQUE7QUFYSjtBQWNRO0VBQ0ksdUJBQUE7RUFDQSx3QkFBQTtBQVpaO0FBZUk7RUFDSSwwQkFBQTtFQUNBLHNCQUFBO0VBQ0EsMkJBQUE7RUFDQSx1QkFBQTtBQWJSO0FBZUk7RUFDSSwwQkFBQTtBQWJSO0FBZUk7RUFDSSwwQkFBQTtBQWJSO0FBZUk7RUFDSSwwQkFBQTtFQUNBLDBCQUFBO0VBQ0EsMkJBQUE7RUFDQSwyQkFBQTtFQUNBLGtCQUFBO0FBYlI7QUFpQlE7RUFDSSwwQkFBQTtBQWZaO0FBaUJRO0VBQ0ksMEJBQUE7QUFmWjtBQWtCSTtFQUNJLGdCQUFBO0FBaEJSIiwiZmlsZSI6Im5vdC1mb3VuZC5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIkBpbXBvcnQgXCJzdHlsZXMvZ2xvYmFsLXZhci5zY3NzXCI7XG5cbi5ib3VuZHMjbm90LWZvdW5kIHtcbiAgICBiYWNrZ3JvdW5kOiByZ2IoMjU1LCAyNTUsIDI1NSk7XG4gICAgYmFja2dyb3VuZDogbGluZWFyLWdyYWRpZW50KFxuICAgICAgICAxMzBkZWcsXG4gICAgICAgIHJnYmEoMjU1LCAyNTUsIDI1NSwgMSkgMCUsXG4gICAgICAgIHJnYmEoMCwgMTEzLCAxMjMsIDAuMDUpIDUwJSxcbiAgICAgICAgcmdiYSgwLCAxMTMsIDEyMywgMC4wNSkgMTAwJVxuICAgICk7XG4gICAgcGFkZGluZzogMnJlbSA1cmVtICFpbXBvcnRhbnQ7XG4gICAgYm94LXNoYWRvdzogcmdiYSgwLCAwLCAwLCAwLjE2KSAwcHggM3B4IDZweCwgcmdiYSgwLCAwLCAwLCAwLjIzKSAwcHggM3B4IDZweDtcblxuICAgIG1heC13aWR0aDogMTYwMHB4O1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgZmxleC1kaXJlY3Rpb246IHJvdztcbiAgICBtYXJnaW46IGF1dG87XG4gICAgbWFyZ2luLWJvdHRvbTogMzBweDtcblxuICAgIDo6bmctZGVlcCBoMixcbiAgICA6Om5nLWRlZXAgaDMge1xuICAgICAgICBtYXJnaW46IDAgIWltcG9ydGFudDtcbiAgICB9XG5cbiAgICAuaWNvbiAuaWNvbi1jb250YWluZXIgZGl2LFxuICAgIC5mb290ZXIgLmljb24tY29udGFpbmVyIGRpdiB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXggIWltcG9ydGFudDtcbiAgICAgICAgYWxpZ24taXRlbXM6IGNlbnRlciAhaW1wb3J0YW50O1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlciAhaW1wb3J0YW50O1xuICAgIH1cbiAgICAuZm9vdGVyIC5pY29uLWNvbnRhaW5lciBkaXY6bGFzdC1jaGlsZCB7XG4gICAgICAgIGRpc3BsYXk6IGZsZXggIWltcG9ydGFudDtcbiAgICAgICAgZmxleC1kaXJlY3Rpb246IGNvbHVtbiAhaW1wb3J0YW50O1xuICAgICAgICBhbGlnbi1pdGVtczogZmxleC1zdGFydCAhaW1wb3J0YW50O1xuICAgICAgICBoMyB7XG4gICAgICAgICAgICBmb250LXdlaWdodDogbGlnaHRlciAhaW1wb3J0YW50O1xuICAgICAgICAgICAgZm9udC1zaXplOiAyNHB4ICFpbXBvcnRhbnQ7XG4gICAgICAgIH1cbiAgICAgICAgaDM6Zmlyc3QtY2hpbGQge1xuICAgICAgICAgICAgZm9udC1zaXplOiAzMHB4ICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICBmb250LXdlaWdodDogbm9ybWFsICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICBzcGFuOmxhc3QtY2hpbGQge1xuICAgICAgICAgICAgICAgIGZvbnQtd2VpZ2h0OiBsaWdodGVyICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICB9XG4gICAgICAgIH1cbiAgICB9XG4gICAgLmZvb3RlciA+IGRpdiB7XG4gICAgICAgIG1hcmdpbi10b3A6IDFyZW0gIWltcG9ydGFudDtcbiAgICB9XG5cbiAgICAuc3Ryb25nIHtcbiAgICAgICAgZm9udC13ZWlnaHQ6IGJvbGQgIWltcG9ydGFudDtcbiAgICB9XG4gICAgcCB7XG4gICAgICAgIHRleHQtYWxpZ246IGp1c3RpZnk7XG4gICAgICAgIGZvbnQtd2VpZ2h0OiBub3JtYWwgIWltcG9ydGFudDtcbiAgICB9XG4gICAgLmNlbnRlci1pdGVtIHtcbiAgICAgICAganVzdGlmeS1jb250ZW50OiBjZW50ZXIgIWltcG9ydGFudDtcbiAgICB9XG4gICAgLmU0MDQge1xuICAgICAgICBmb250LXNpemU6IDEwMHB4ICFpbXBvcnRhbnQ7XG4gICAgICAgIG1hcmdpbi1ib3R0b206IDBweDtcbiAgICAgICAgbGluZS1oZWlnaHQ6IDFlbTtcbiAgICAgICAgaGVpZ2h0OiAxZW07XG4gICAgfVxuICAgIC5ub3QtZm91bmQge1xuICAgICAgICB3aWR0aDogMTAwcHg7XG4gICAgICAgIG1pbi13aWR0aDogMTAwcHg7XG4gICAgICAgIGhlaWdodDogMTAwcHg7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDEwMHB4O1xuICAgICAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG5cbiAgICAgICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiL2Fzc2V0cy9pbWFnZXMvbm90LWZvdW5kLnN2Z1wiKTtcbiAgICAgICAgYmFja2dyb3VuZC1yZXBlYXQ6IG5vLXJlcGVhdDtcbiAgICAgICAgYmFja2dyb3VuZC1zaXplOiBjb250YWluO1xuICAgICAgICBiYWNrZ3JvdW5kLXBvc2l0aW9uOiBjZW50ZXI7XG4gICAgfVxufVxuXG4uYm91bmRzLXhzI25vdC1mb3VuZCB7XG4gICAgcGFkZGluZzogMXJlbSAycmVtICFpbXBvcnRhbnQ7XG5cbiAgICAuYXZhLWNvbnRhaW5lciB7XG4gICAgICAgIC5hdmF0YXIge1xuICAgICAgICAgICAgd2lkdGg6IDIzMHB4ICFpbXBvcnRhbnQ7XG4gICAgICAgICAgICBoZWlnaHQ6IDIzMHB4ICFpbXBvcnRhbnQ7XG4gICAgICAgIH1cbiAgICB9XG4gICAgLmljb24tY29udGFpbmVyID4gZGl2ID4gZGl2IHtcbiAgICAgICAgbWluLXdpZHRoOiA2NXB4ICFpbXBvcnRhbnQ7XG4gICAgICAgIHdpZHRoOiA2NXB4ICFpbXBvcnRhbnQ7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDY1cHggIWltcG9ydGFudDtcbiAgICAgICAgaGVpZ2h0OiA2NXB4ICFpbXBvcnRhbnQ7XG4gICAgfVxuICAgIC5pY29uLWNvbnRhaW5lciNmb290ZXItY29udGFjdCBoMzpmaXJzdC1jaGlsZCB7XG4gICAgICAgIGZvbnQtc2l6ZTogMjRweCAhaW1wb3J0YW50O1xuICAgIH1cbiAgICAuaWNvbi1jb250YWluZXIjZm9vdGVyLWNvbnRhY3QgaDM6bGFzdC1jaGlsZCB7XG4gICAgICAgIGZvbnQtc2l6ZTogMjBweCAhaW1wb3J0YW50O1xuICAgIH1cbiAgICAuaWNvbi1jb250YWluZXIjZm9vdGVyLWNvbnRhY3QgPiBkaXY6Zmlyc3QtY2hpbGQge1xuICAgICAgICBtaW4td2lkdGg6IDY1cHggIWltcG9ydGFudDtcbiAgICAgICAgbWF4LXdpZHRoOiA2NXB4ICFpbXBvcnRhbnQ7XG4gICAgICAgIG1pbi1oZWlnaHQ6IDY1cHggIWltcG9ydGFudDtcbiAgICAgICAgbWF4LWhlaWdodDogNjVweCAhaW1wb3J0YW50O1xuICAgICAgICBtYXJnaW4tcmlnaHQ6IDEwcHg7XG4gICAgfVxuXG4gICAgLmltYWdlLWNvbnRhaW5lciB7XG4gICAgICAgIC5uYW1lI2gyIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMzVweCAhaW1wb3J0YW50O1xuICAgICAgICB9XG4gICAgICAgIC5yb2xlI2gzIHtcbiAgICAgICAgICAgIGZvbnQtc2l6ZTogMzBweCAhaW1wb3J0YW50O1xuICAgICAgICB9XG4gICAgfVxuICAgIC5pbnRyb2R1Y2Uge1xuICAgICAgICBtYXJnaW4tdG9wOiAyMHB4O1xuICAgIH1cbn1cbiJdfQ== */");
+/* harmony default export */ __webpack_exports__["default"] = (".e404 {\n  font-size: 200px !important;\n  margin-bottom: 0px;\n  line-height: 1em;\n  height: 1em;\n}\n\n.not-found {\n  width: 200px;\n  min-width: 200px;\n  height: 200px;\n  min-height: 200px;\n  background-image: url(\"/assets/images/not-found.svg\");\n  background-repeat: no-repeat;\n  background-size: contain;\n  background-position: center;\n}\n\n@media screen and (max-width: 1279px) {\n  .not-found {\n    width: 10vw;\n    min-width: 30px;\n    height: 10vw;\n    min-height: 30px;\n  }\n\n  .e404 {\n    font-size: 10vw !important;\n    margin-bottom: 0px;\n    line-height: 1em;\n    height: 1em;\n  }\n\n  .main-content {\n    min-height: 70px !important;\n  }\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL25vdC1mb3VuZC5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFFQTtFQUNJLDJCQUFBO0VBQ0Esa0JBQUE7RUFDQSxnQkFBQTtFQUNBLFdBQUE7QUFESjs7QUFHQTtFQUNJLFlBQUE7RUFDQSxnQkFBQTtFQUNBLGFBQUE7RUFDQSxpQkFBQTtFQUVBLHFEQUFBO0VBQ0EsNEJBQUE7RUFDQSx3QkFBQTtFQUNBLDJCQUFBO0FBREo7O0FBSUE7RUFDSTtJQUNJLFdBQUE7SUFDQSxlQUFBO0lBQ0EsWUFBQTtJQUNBLGdCQUFBO0VBRE47O0VBR0U7SUFDSSwwQkFBQTtJQUNBLGtCQUFBO0lBQ0EsZ0JBQUE7SUFDQSxXQUFBO0VBQU47O0VBRUU7SUFDSSwyQkFBQTtFQUNOO0FBQ0YiLCJmaWxlIjoibm90LWZvdW5kLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcInN0eWxlcy9nbG9iYWwtdmFyLnNjc3NcIjtcblxuLmU0MDQge1xuICAgIGZvbnQtc2l6ZTogMjAwcHggIWltcG9ydGFudDtcbiAgICBtYXJnaW4tYm90dG9tOiAwcHg7XG4gICAgbGluZS1oZWlnaHQ6IDFlbTtcbiAgICBoZWlnaHQ6IDFlbTtcbn1cbi5ub3QtZm91bmQge1xuICAgIHdpZHRoOiAyMDBweDtcbiAgICBtaW4td2lkdGg6IDIwMHB4O1xuICAgIGhlaWdodDogMjAwcHg7XG4gICAgbWluLWhlaWdodDogMjAwcHg7XG5cbiAgICBiYWNrZ3JvdW5kLWltYWdlOiB1cmwoXCIvYXNzZXRzL2ltYWdlcy9ub3QtZm91bmQuc3ZnXCIpO1xuICAgIGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XG4gICAgYmFja2dyb3VuZC1zaXplOiBjb250YWluO1xuICAgIGJhY2tncm91bmQtcG9zaXRpb246IGNlbnRlcjtcbn1cblxuQG1lZGlhIHNjcmVlbiBhbmQgKG1heC13aWR0aDogMTI3OXB4KSB7XG4gICAgLm5vdC1mb3VuZCB7XG4gICAgICAgIHdpZHRoOiAxMHZ3O1xuICAgICAgICBtaW4td2lkdGg6IDMwcHg7XG4gICAgICAgIGhlaWdodDogMTB2dztcbiAgICAgICAgbWluLWhlaWdodDogMzBweDtcbiAgICB9XG4gICAgLmU0MDQge1xuICAgICAgICBmb250LXNpemU6IDEwdncgIWltcG9ydGFudDtcbiAgICAgICAgbWFyZ2luLWJvdHRvbTogMHB4O1xuICAgICAgICBsaW5lLWhlaWdodDogMWVtO1xuICAgICAgICBoZWlnaHQ6IDFlbTtcbiAgICB9XG4gICAgLm1haW4tY29udGVudHtcbiAgICAgICAgbWluLWhlaWdodDogNzBweCAhaW1wb3J0YW50O1xuICAgIH1cbn1cbiJdfQ== */");
 
 /***/ }),
 

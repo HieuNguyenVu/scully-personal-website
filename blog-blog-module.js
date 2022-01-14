@@ -409,10 +409,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "tyNb");
 /* harmony import */ var _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @scullyio/ng-lib */ "sbAP");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs */ "qCKp");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
-/* harmony import */ var _shared_social_tags_services__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../shared/social-tags-services */ "AaGi");
-/* harmony import */ var _highlight_service__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./highlight.service */ "t/lj");
+/* harmony import */ var remove_fbclid__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! remove-fbclid */ "RxMq");
+/* harmony import */ var remove_fbclid__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(remove_fbclid__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! rxjs */ "qCKp");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/operators */ "kU1M");
+/* harmony import */ var _shared_social_tags_services__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../shared/social-tags-services */ "AaGi");
+/* harmony import */ var _highlight_service__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./highlight.service */ "t/lj");
+
 
 
 
@@ -432,20 +435,19 @@ let BlogComponent = class BlogComponent {
         this.highlightService = highlightService;
         this.socialTagService = socialTagService;
         // links$: Observable<ScullyRoute[]> = this.scully.available$;
-        this.scroll$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])(true);
-        this.current = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])(null);
-        this.title = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
-        this.title1 = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
-        this.title2 = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
-        this.startDate$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
-        this.endDate$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
-        this.location$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
-        this.headerImage$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_7__["of"])("");
+        this.scroll$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])(true);
+        this.current = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])(null);
+        this.title = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])("");
+        this.title1 = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])("");
+        this.title2 = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])("");
+        this.startDate$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])("");
+        this.endDate$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])("");
+        this.location$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])("");
+        this.headerImage$ = Object(rxjs__WEBPACK_IMPORTED_MODULE_8__["of"])("");
         this.displayControl = false;
         this.activeTabIndex = 2;
         socialTagService.setTitleAndTags();
     }
-    ngAfterViewInit() { }
     // @HostListener('window:scroll', ['$event']) // for window scroll events
     // @debounce()
     // onScroll(event) {
@@ -461,31 +463,32 @@ let BlogComponent = class BlogComponent {
     }
     ngOnInit() {
         // debug current pages
-        this.current = this.scully.getCurrent().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["share"])());
-        this.endDate$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
+        remove_fbclid__WEBPACK_IMPORTED_MODULE_7__();
+        this.current = this.scully.getCurrent().pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["share"])());
+        this.endDate$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])((res) => {
             if (res)
                 return res.date_end;
             let date = new Date();
             return date.toISOString().split("T")[0];
         }));
-        let sharedTitle$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
+        let sharedTitle$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])((res) => {
             if (res)
                 return res.title;
             return "This is a secret";
         }));
-        this.headerImage$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
+        this.headerImage$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])((res) => {
             if (res)
                 return res.header_image;
             return "https://i.imgur.com/9SYJ5pX.png";
         }));
-        this.location$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((res) => {
+        this.location$ = this.current.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])((res) => {
             if (res)
                 return res.location;
             return "Hanoi, Vietnam";
         }));
-        this.title = sharedTitle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((title) => title.replace("　", " ")));
-        this.title1 = sharedTitle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((title) => title.split("　")[0]));
-        this.title2 = sharedTitle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_8__["map"])((title) => title.split("　").slice(1).join()));
+        this.title = sharedTitle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])((title) => title.replace("　", " ")));
+        this.title1 = sharedTitle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])((title) => title.split("　")[0]));
+        this.title2 = sharedTitle$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_9__["map"])((title) => title.split("　").slice(1).join()));
     }
     tabChanged(tabChangeEvent) {
         let index = tabChangeEvent.index;
@@ -505,8 +508,8 @@ BlogComponent.ctorParameters = () => [
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_5__["ActivatedRoute"] },
     { type: _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_6__["ScullyRoutesService"] },
-    { type: _highlight_service__WEBPACK_IMPORTED_MODULE_10__["HighlightService"] },
-    { type: _shared_social_tags_services__WEBPACK_IMPORTED_MODULE_9__["SocialTagsService"] }
+    { type: _highlight_service__WEBPACK_IMPORTED_MODULE_11__["HighlightService"] },
+    { type: _shared_social_tags_services__WEBPACK_IMPORTED_MODULE_10__["SocialTagsService"] }
 ];
 BlogComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"])({
@@ -743,6 +746,50 @@ Prism.languages.js = Prism.languages.javascript;
 
 /***/ }),
 
+/***/ "RxMq":
+/*!*********************************************!*\
+  !*** ./node_modules/remove-fbclid/index.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+function removeFbclid(theWindow = window) {
+  const currentHref = theWindow.location.href;
+  if (!currentHref) return;
+  if (typeof currentHref !== "string") return;
+
+  const questionmarkIndex = currentHref.indexOf("?");
+  if (questionmarkIndex === -1) return;
+
+  const url = currentHref.substring(0, questionmarkIndex);
+  const hashIndex = currentHref.indexOf("#");
+
+  const query =
+    hashIndex !== -1
+      ? currentHref.substr(questionmarkIndex + 1, hashIndex - questionmarkIndex - 1)
+      : currentHref.substr(questionmarkIndex + 1);
+
+  const hash = hashIndex !== -1 ? currentHref.substr(hashIndex + 1) : undefined;
+
+  const params = query.split("&").filter(param => !param.startsWith("fbclid="));
+
+  const newHref = url + (params.length ? "?" + params.join("&") : "") + (hash !== undefined ? "#" + hash : "");
+ 	if (currentHref === newHref) return;
+
+  if (theWindow.history && theWindow.history.replaceState) {
+    theWindow.history.replaceState(undefined, undefined, newHref);
+  } else {
+    theWindow.location.replace(newHref);
+  }
+}
+module.exports = removeFbclid;
+
+
+/***/ }),
+
 /***/ "U4+L":
 /*!*************************************!*\
   !*** ./src/app/blog/blog.module.ts ***!
@@ -758,8 +805,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "fXoL");
 /* harmony import */ var _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/tabs */ "wZkO");
 /* harmony import */ var _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @scullyio/ng-lib */ "sbAP");
-/* harmony import */ var _blog_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./blog-routing.module */ "9ilz");
-/* harmony import */ var _blog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blog.component */ "LgBW");
+/* harmony import */ var _shared_footer_footer_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/footer/footer.module */ "cNqA");
+/* harmony import */ var _blog_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./blog-routing.module */ "9ilz");
+/* harmony import */ var _blog_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./blog.component */ "LgBW");
+
 
 
 
@@ -771,9 +820,9 @@ let BlogModule = class BlogModule {
 };
 BlogModule = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-        declarations: [_blog_component__WEBPACK_IMPORTED_MODULE_6__["BlogComponent"]],
+        declarations: [_blog_component__WEBPACK_IMPORTED_MODULE_7__["BlogComponent"]],
         providers: [],
-        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _blog_routing_module__WEBPACK_IMPORTED_MODULE_5__["BlogRoutingModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_4__["ScullyLibModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"]],
+        imports: [_angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"], _blog_routing_module__WEBPACK_IMPORTED_MODULE_6__["BlogRoutingModule"], _scullyio_ng_lib__WEBPACK_IMPORTED_MODULE_4__["ScullyLibModule"], _angular_material_tabs__WEBPACK_IMPORTED_MODULE_3__["MatTabsModule"], _shared_footer_footer_module__WEBPACK_IMPORTED_MODULE_5__["FooterModule"]],
     })
 ], BlogModule);
 
@@ -1351,7 +1400,7 @@ Prism.languages.rss = Prism.languages.xml;
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<mat-tab-group id=\"mainTab\" mat-align-tabs=\"center\" dynamicHeight [(selectedIndex)]=\"activeTabIndex\" (click)=\"onTabGroupClicked()\">\n    <mat-tab label=\"ABOUT ME\"></mat-tab>\n    <mat-tab label=\"PORTFOLIO\"></mat-tab>\n    <mat-tab label=\"AFTER WORK\"></mat-tab>\n</mat-tab-group>\n<div class=\"bounds\" id=\"blog-post\">\n    <div class=\"inner-bounds\">\n        <div class=\"header-image\">\n            <img [src]=\"headerImage$ | async\" loading=\"lazy\" />\n        </div>\n        <div class=\"content\">\n            <h1 class=\"header\">\n                <span class=\"header-sub-wrapper\"\n                    ><span>{{ title1 | async }}</span\n                    ><span>{{ title2 | async }}</span></span\n                >\n            </h1>\n            <div class=\"main-content markdown-body\">\n                <div>\n                    <div>\n                        <h3 class=\"author\"><span>VU HIEU</span><span class=\"sur-name\"> NGUYEN</span></h3>\n                        <div style=\"width: 50px; height: 20px; border-bottom: 3px solid #f29e03; margin-bottom: 50px\" class=\"yellow-line\"></div>\n                        <div style=\"min-height: 350px\">\n                            <scully-content></scully-content>\n                        </div>\n                        <div class=\"post-date\" style=\"text-align: right\">{{location$ | async}} - {{ endDate$ | async }}</div>\n                        <div class=\"post-thank\" style=\"text-align: right; font-style: italic\">Thank for reading!</div>\n                    </div>\n                    <div></div>\n                </div>\n            </div>\n            <div class=\"footer\">\n                <div id=\"footer-contact\">\n                    <div id=\"m-icon\">\n                        <a class=\"m-icon gmail\" href=\"https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F\" target=\"_blank\" style=\"cursor: pointer\"></a>\n                    </div>\n                    <div id=\"m-contact\" style=\"cursor: pointer\">\n                        <h3><span class=\"fname\">VU HIEU</span><span class=\"sname\"> NGUYEN</span></h3>\n                        <h3 class=\"email\">nhvu.95@gmail.com</h3>\n                    </div>\n                </div>\n                <div id=\"footer-download-cv\">\n                    <div\n                        class=\"download\"\n                        onclick=\"window.open(\n                        'https://drive.google.com/file/d/1sNJLiX9THvwkWe3FFBDrOJPMWuLw9ykW/view?usp=sharing',\n                        '_blank'\n                      );\"\n                        style=\"cursor: pointer\"></div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<mat-tab-group id=\"mainTab\" mat-align-tabs=\"center\" dynamicHeight [(selectedIndex)]=\"activeTabIndex\" (click)=\"onTabGroupClicked()\">\n    <mat-tab label=\"ABOUT ME\"></mat-tab>\n    <mat-tab label=\"PORTFOLIO\"></mat-tab>\n    <mat-tab label=\"AFTER WORK\"></mat-tab>\n</mat-tab-group>\n<div class=\"bounds\" id=\"blog-post\">\n    <div class=\"inner-bounds\">\n        <div class=\"header-image\">\n            <img [src]=\"headerImage$ | async\" loading=\"lazy\" />\n        </div>\n        <div class=\"content\">\n            <h1 class=\"header\">\n                <span class=\"header-sub-wrapper\"\n                    ><span>{{ title1 | async }}</span\n                    ><span>{{ title2 | async }}</span></span\n                >\n            </h1>\n            <div class=\"main-content markdown-body\">\n                <div>\n                    <div>\n                        <h3 class=\"author\"><span>VU HIEU</span><span class=\"sur-name\"> NGUYEN</span></h3>\n                        <div style=\"width: 50px; height: 20px; border-bottom: 3px solid #f29e03; margin-bottom: 50px\" class=\"yellow-line\"></div>\n                        <div style=\"min-height: 350px\">\n                            <scully-content></scully-content>\n                        </div>\n                        <div class=\"post-date\" style=\"text-align: right\">{{location$ | async}} - {{ endDate$ | async }}</div>\n                        <div class=\"post-thank\" style=\"text-align: right; font-style: italic\">Thank for reading!</div>\n                    </div>\n                    <div></div>\n                </div>\n            </div>\n            <app-footer></app-footer>\n        </div>\n    </div>\n</div>\n");
 
 /***/ }),
 
