@@ -281,10 +281,15 @@ public int[] searchRange(int[] nums, int target) {
 ```
 
 ### 6. Sample challenges
-
+Easy - Medium
 [**704 - Binary Search**][3.1]  
 [**278. First Bad Version**][3.2]  
 [**35. Search Insert Position**][3.3]  
+Medium - Hard
+[**287. Find the Duplicate Number**][287]
+[**4. Median of Two Sorted Arrays**][4]
+[**719. Find K-th Smallest Pair Distance**][719]
+[**410. Split Array Largest Sum**][410]
 
 [1]: https://www.geeksforgeeks.org/binary-search/
 [3.1]: https://leetcode.com/problems/binary-search/
@@ -298,3 +303,7 @@ public int[] searchRange(int[] nums, int target) {
 [162]: https://leetcode.com/problems/find-peak-element/
 [153]: https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/
 [34]: https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/discuss/14880/search-for-a-range 
+[287]: https://leetcode.com/problems/find-the-duplicate-number/
+[4]: https://leetcode.com/problems/median-of-two-sorted-arrays/
+[719]: https://leetcode.com/problems/find-k-th-smallest-pair-distance/
+[410]: https://leetcode.com/problems/split-array-largest-sum/

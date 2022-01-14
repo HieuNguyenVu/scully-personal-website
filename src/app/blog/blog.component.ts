@@ -1,10 +1,11 @@
 import { AfterViewChecked, ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
 import * as removeFbclid from "remove-fbclid";
 import { Observable, of } from "rxjs";
-import { map, share } from "rxjs/operators";
+import { map, share, tap } from "rxjs/operators";
 import { SocialTagsService } from "../shared/social-tags-services";
 import { HighlightService } from "./highlight.service";
 
@@ -33,7 +34,14 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     displayControl = false;
     activeTabIndex = 2;
 
-    constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService, private socialTagService: SocialTagsService) {
+    constructor(
+        private _snackBar: MatSnackBar,
+        private router: Router,
+        private route: ActivatedRoute,
+        private scully: ScullyRoutesService,
+        private highlightService: HighlightService,
+        private socialTagService: SocialTagsService
+    ) {
         socialTagService.setTitleAndTags();
     }
 
@@ -50,12 +58,37 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     ngAfterViewChecked() {
         this.highlightService.highlightAll();
     }
+
+    openSnackBar() {
+        this._snackBar
+            .open("I was updated this post, Please refresh to get lastest version!", "Refresh")
+            .onAction()
+            .subscribe((_) => {
+                history.go(0);
+            });
+    }
+
     ngOnInit() {
         // debug current pages
         removeFbclid();
 
         this.current = this.scully.getCurrent().pipe(share());
         this.endDate$ = this.current.pipe(
+            tap((res) => {
+                if (res) {
+                    let date = new Date(res.date_end);
+                    let oDate = localStorage.getItem(res.slug);
+                    if (oDate) {
+                        let oldDate = new Date(oDate);
+                        if (oldDate < date) {
+                            localStorage.setItem(res.slug, date.toISOString().split("T")[0]);
+                            this.openSnackBar();
+                        }
+                    } else {
+                        localStorage.setItem(res.slug, date.toISOString().split("T")[0]);
+                    }
+                }
+            }),
             map((res) => {
                 if (res) return res.date_end;
                 let date = new Date();
