@@ -6,14 +6,14 @@ date_end: '2022/01/16'
 published: true
 image: 'https://i.imgur.com/hec5VZk.jpg'
 header_image: 'https://i.imgur.com/6Ptn2TK.png'
-tags: ['Algo','Two Pointers']
+tags: ['Algorithm','Two Pointers']
 priority: 1
 link: '/blog/algo-two-pointers'
 slug: algo-two-pointers
 location: 'Phu Tho, Vietnam'
 ---
 
-_**This series is the note of me when I exercise Two Pointers in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and from the internet. But I hope this may help you for the next interview.  
+_**This series is the note of me when I exercise Two Pointers in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.  
 I assume that you already have knowledge about Two Pointers. If you don't, it's ok, you just know at least about Loop.**_
 
 ## I. What is Two Pointers approach?
@@ -145,6 +145,7 @@ Let's look this challenge.
 Let do it yourself. It's not easy as you thinks.
 
 ### 6. Sample challenges
+
 [**1. Two Sum**][1]  
 [**15. Three Sum**][15]  
 [**986. Interval List Intersections**][986]  

@@ -6,14 +6,14 @@ date_end: '2022/01/14'
 published: true
 image: 'https://i.imgur.com/K1BOwur.jpg'
 header_image: 'https://i.imgur.com/BEuDltz.jpg'
-tags: ['Algo','Binary Search']
+tags: ['Algorithm','Binary Search']
 priority: 1
 link: '/blog/algo-binary-search'
 slug: algo-binary-search
 location: 'Hanoi, Vietnam'
 ---
 
-_**This series is the note of me when I exercise Binary Search in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and from the internet. But I hope this may help you for the next interview.  
+_**This series is the note of me when I exercise Binary Search in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.  
 I assume that you already have knowledge about Binary Search. If you don't, please read it [here][1].**_
 
 ## I. Which challenges we should think to solve by the Binary Search ?
@@ -281,15 +281,15 @@ public int[] searchRange(int[] nums, int target) {
 ```
 
 ### 6. Sample challenges
-Easy - Medium
+Easy - Medium  
 [**704 - Binary Search**][3.1]  
 [**278. First Bad Version**][3.2]  
 [**35. Search Insert Position**][3.3]  
-Medium - Hard
-[**287. Find the Duplicate Number**][287]
-[**4. Median of Two Sorted Arrays**][4]
-[**719. Find K-th Smallest Pair Distance**][719]
-[**410. Split Array Largest Sum**][410]
+Medium - Hard  
+[**287. Find the Duplicate Number**][287]  
+[**4. Median of Two Sorted Arrays**][4]  
+[**719. Find K-th Smallest Pair Distance**][719]  
+[**410. Split Array Largest Sum**][410]  
 
 [1]: https://www.geeksforgeeks.org/binary-search/
 [3.1]: https://leetcode.com/problems/binary-search/
