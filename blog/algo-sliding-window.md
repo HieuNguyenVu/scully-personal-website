@@ -13,7 +13,7 @@ slug: algo-sliding-window
 location: 'Phu Tho, Vietnam'
 ---
 
-_**This series is the note of me when I exercise Sliding Window in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.  
+_**This series is my notes when I exercise algorithm in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.  
 I assume that you already have knowledge about Sliding Window. If you don't, it's ok, you just know at least about Loop.**_
 
 ## I. Which challenges we should think to solve by the Sliding Window ?
@@ -38,7 +38,7 @@ The flexible-size sliding window asks you to re-calculate the sub-array many tim
 
 The re-calculate action may ask you to do some stuff like another loop, or binary search...
 
-There are [**plenty challenges**][1] of this topic, it's quite simple, Let's try it yourself.
+There are [**plenty of challenges**][1] about this topic, it's quite simple, Let's try it yourself.
 
 
 <!-- ### #Template 3: The sliding windows which require to re-calculate many times -->

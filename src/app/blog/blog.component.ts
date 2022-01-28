@@ -1,5 +1,4 @@
 import { AfterViewChecked, ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from "@angular/core";
-import { MatSnackBar } from "@angular/material/snack-bar";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 import { ActivatedRoute, Router } from "@angular/router";
 import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
@@ -35,7 +34,6 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     activeTabIndex = 2;
 
     constructor(
-        private _snackBar: MatSnackBar,
         private router: Router,
         private route: ActivatedRoute,
         private scully: ScullyRoutesService,
@@ -45,27 +43,8 @@ export class BlogComponent implements OnInit, AfterViewChecked {
         socialTagService.setTitleAndTags();
     }
 
-    // @HostListener('window:scroll', ['$event']) // for window scroll events
-    // @debounce()
-    // onScroll(event) {
-    //   if (window.pageYOffset > window.innerHeight * 3) {
-    //     this.displayControl = true;
-    //   } else {
-    //     this.displayControl = false;
-    //   }
-    // }
-    /* ... */
     ngAfterViewChecked() {
         this.highlightService.highlightAll();
-    }
-
-    openSnackBar() {
-        this._snackBar
-            .open("I was updated this post, Please refresh to get lastest version!", "Refresh")
-            .onAction()
-            .subscribe((_) => {
-                history.go(0);
-            });
     }
 
     ngOnInit() {
@@ -82,7 +61,7 @@ export class BlogComponent implements OnInit, AfterViewChecked {
                         let oldDate = new Date(oDate);
                         if (oldDate < date) {
                             localStorage.setItem(res.slug, res.date_end);
-                            this.openSnackBar();
+                            // this.openSnackBar();
                         }
                     } else {
                         localStorage.setItem(res.slug, res.date_end);

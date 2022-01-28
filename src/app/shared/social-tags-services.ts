@@ -45,6 +45,9 @@ export class SocialTagsService {
                         this.meta.updateTag({ name: "og:type", property: "og:type", content: "article" });
                         this.meta.updateTag({ name: "article:section", property: "article:section", content: (link.tags as string[])[0] });
                         this.meta.updateTag({ name: "og:image", content: link.header_image});
+
+                        // this.meta.updateTag({ name: "http-equiv", property: "expires", content: "0" });
+
                         // this.meta.updateTag({ name: "twitter:title", content: link.title.substring(0, 69) });
                         // this.meta.updateTag({ name: "twitter:description", content: (link.description as string).substring(0, 123) });
                         // this.meta.updateTag({ name: "twitter:image", content: this.urlPrefix + "/" + link.photo });

@@ -1,8 +1,8 @@
 ---
 title: 'Algo-ex:　Two Pointers and some Attention Points'
 description: "These are some attention points I got when practicing on leetcode. These can help you succeed in the first submit, and the Interviewer will like that."
-date_start: "2022/01/16"
-date_end: '2022/01/16'
+date_start: "2022/01/12"
+date_end: '2022/01/12'
 published: true
 image: 'https://i.imgur.com/hec5VZk.jpg'
 header_image: 'https://i.imgur.com/6Ptn2TK.png'
@@ -13,7 +13,7 @@ slug: algo-two-pointers
 location: 'Phu Tho, Vietnam'
 ---
 
-_**This series is the note of me when I exercise Two Pointers in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.  
+_**This series is my notes when I exercise algorithm in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.  
 I assume that you already have knowledge about Two Pointers. If you don't, it's ok, you just know at least about Loop.**_
 
 ## I. What is Two Pointers approach?

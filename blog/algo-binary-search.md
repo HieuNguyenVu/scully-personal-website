@@ -2,7 +2,7 @@
 title: 'Algo-ex:　Binary Search and some Attention Points'
 description: "These are some attention points I got when practicing on leetcode. These can help you succeed in the first submit, and the Interviewer will like that."
 date_start: "2022/01/01"
-date_end: '2022/01/14'
+date_end: '2022/01/10'
 published: true
 image: 'https://i.imgur.com/K1BOwur.jpg'
 header_image: 'https://i.imgur.com/BEuDltz.jpg'
@@ -13,7 +13,7 @@ slug: algo-binary-search
 location: 'Hanoi, Vietnam'
 ---
 
-_**This series is the note of me when I exercise Binary Search in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.  
+_**This series is my notes when I exercise algorithm in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.  
 I assume that you already have knowledge about Binary Search. If you don't, please read it [here][1].**_
 
 ## I. Which challenges we should think to solve by the Binary Search ?
