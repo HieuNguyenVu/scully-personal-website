@@ -418,12 +418,12 @@ MainGuard = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
 
 const routes = [
     {
-        path: '', loadChildren: () => Promise.all(/*! import() | main-screen-main-screen-module */[__webpack_require__.e("default~blog-blog-module~main-screen-main-screen-module"), __webpack_require__.e("main-screen-main-screen-module")]).then(__webpack_require__.bind(null, /*! ./main-screen/main-screen.module */ "+FOH")).then(m => m.MainScreenModule),
+        path: '', loadChildren: () => __webpack_require__.e(/*! import() | main-screen-main-screen-module */ "main-screen-main-screen-module").then(__webpack_require__.bind(null, /*! ./main-screen/main-screen.module */ "+FOH")).then(m => m.MainScreenModule),
         canActivate: [MainGuard],
         pathMatch: 'full'
     },
     {
-        path: 'blog', loadChildren: () => Promise.all(/*! import() | blog-blog-module */[__webpack_require__.e("default~blog-blog-module~main-screen-main-screen-module"), __webpack_require__.e("blog-blog-module")]).then(__webpack_require__.bind(null, /*! ./blog/blog.module */ "U4+L")).then(m => m.BlogModule),
+        path: 'blog', loadChildren: () => __webpack_require__.e(/*! import() | blog-blog-module */ "blog-blog-module").then(__webpack_require__.bind(null, /*! ./blog/blog.module */ "U4+L")).then(m => m.BlogModule),
         canActivate: [BlogGuard]
     },
     {
