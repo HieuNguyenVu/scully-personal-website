@@ -27,9 +27,10 @@ setPluginConfig(SitemapPlugin, {
         "/blog/:slug": {
             changeFreq: "daily",
             priority: "0.9",
-            sitemapFilename: "sitemap-blog.xml",
+            sitemapFilename: "sitemap-blog.xml"
         },
     },
+    trailingSlash: true
 });
 
 export const config: ScullyConfig = {

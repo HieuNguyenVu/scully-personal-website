@@ -34,7 +34,10 @@
     "remove-fbclid": "^0.9.6",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.2",
+    "fast-xml-parser": "^3.17.4",
+    "path-to-regexp": "^0.1.7",
+    "xmlbuilder": "^13.0.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1100.4",
