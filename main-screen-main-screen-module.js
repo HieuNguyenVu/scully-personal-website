@@ -88,12 +88,10 @@ __webpack_require__.r(__webpack_exports__);
 let AfterWorkItemComponent = class AfterWorkItemComponent {
     constructor() { }
     ngOnInit() {
-        this.topicImage.nativeElement.style.backgroundImage = `url('${this.project.image}')`;
     }
 };
 AfterWorkItemComponent.ctorParameters = () => [];
 AfterWorkItemComponent.propDecorators = {
-    topicImage: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["ViewChild"], args: ["topicImage",] }],
     project: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_3__["Input"] }]
 };
 AfterWorkItemComponent = Object(tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"])([
@@ -386,7 +384,7 @@ const Breakpoints = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"project && project.exist\" class=\"topic-container\">\n    <div class=\"topic-image\" #topicImage></div>\n    <div class=\"topic\">\n        <h3 [ngClass]=\"project.priority === 1 ? 'title' : 'title title2line'\" matTooltip=\"{{ project.title }}\" matTooltipClass=\"title-tooltip\" [matTooltipShowDelay]=\"500\">{{ project.title }}</h3>\n        <div class=\"tags\">\n            <ng-container *ngFor=\"let tag of project.tags\">\n                <label class=\"tag-item\"\n                    ><a href=\"#\">#{{ tag }}</a></label\n                >\n            </ng-container>\n        </div>\n        <p class=\"description\" matTooltip=\"{{ project.description }}\" matTooltipClass=\"normal-tooltip\" [matTooltipShowDelay]=\"500\">\n            {{ project.description }}\n        </p>\n        <div class=\"topic-footer\">\n            <div class=\"date\">{{ project.date_end }}</div>\n            <div class=\"topic-link\">\n                <a href=\"{{ project.link }}\" target=\"_blank\">Read More</a>\n            </div>\n        </div>\n    </div>\n</div>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"project && project.exist\" class=\"topic-container\">\n    <div class=\"topic-image\" [ngStyle]=\"{ backgroundImage: url(this.project.image) }\"></div>\n    <div class=\"topic\">\n        <h3 [ngClass]=\"project.priority === 1 ? 'title' : 'title title2line'\" matTooltip=\"{{ project.title }}\" matTooltipClass=\"title-tooltip\" [matTooltipShowDelay]=\"500\">{{ project.title }}</h3>\n        <div class=\"tags\">\n            <ng-container *ngFor=\"let tag of project.tags\">\n                <label class=\"tag-item\"\n                    ><a href=\"#\">#{{ tag }}</a></label\n                >\n            </ng-container>\n        </div>\n        <p class=\"description\" matTooltip=\"{{ project.description }}\" matTooltipClass=\"normal-tooltip\" [matTooltipShowDelay]=\"500\">\n            {{ project.description }}\n        </p>\n        <div class=\"topic-footer\">\n            <div class=\"date\">{{ project.date_end }}</div>\n            <div class=\"topic-link\">\n                <a href=\"{{ project.link }}\" target=\"_blank\">Read More</a>\n            </div>\n        </div>\n    </div>\n</div>\n");
 
 /***/ }),
 
