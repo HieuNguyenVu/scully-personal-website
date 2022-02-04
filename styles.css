@@ -832,6 +832,9 @@ body {
 ::ng-deep .snack-bar-container .button:hover .mat-button-wrapper {
   color: #f29e03;
 }
+.pointer {
+  cursor: pointer !important;
+}
 @media screen and (max-width: 1279px) {
   .bounds .content {
     padding: 0rem 0rem;
