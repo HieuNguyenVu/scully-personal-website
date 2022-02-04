@@ -7,11 +7,9 @@ import { Project } from "../portfolio/project.model";
     styleUrls: ["./afterwork-item.component.scss"],
 })
 export class AfterWorkItemComponent implements OnInit {
-    @ViewChild("topicImage") topicImage: ElementRef<HTMLElement>;
     @Input() project: Project;
 
     constructor() {}
     ngOnInit(): void {
-        this.topicImage.nativeElement.style.backgroundImage = `url('${this.project.image}')`;
     }
 }
