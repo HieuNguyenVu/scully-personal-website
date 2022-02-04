@@ -36,9 +36,9 @@ export class AfterWorkComponent implements OnInit {
       map(projects => {
         let projs = projects;
         let tripleProj = [];
-        console.log(projects);
         while (true) {
           let takeData = projs.splice(0, 3);
+          console.log(takeData);
           if (takeData.length == 0) {
             break;
           }
