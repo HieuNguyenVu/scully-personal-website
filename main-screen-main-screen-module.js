@@ -90,7 +90,7 @@ let AfterWorkItemComponent = class AfterWorkItemComponent {
     ngOnInit() { }
     ngOnChanges(changes) {
         console.log(changes.project);
-        this.topicImage.nativeElement.style.backgroundImage = `url('${changes.project.image}')`;
+        this.topicImage.nativeElement.style.backgroundImage = `url('${this.project.image}')`;
     }
 };
 AfterWorkItemComponent.ctorParameters = () => [];
