@@ -1,9 +1,17 @@
 <mat-tab-group mat-align-tabs="center" dynamicHeight (selectedTabChange)="tabChanged($event)" [selectedIndex]="defaultSelect" id="mainTab">
-    <mat-tab label="ABOUT ME"><app-hello></app-hello></mat-tab>
+    <mat-tab label="ABOUT ME">
+        <ng-template matTabContent>
+            <app-hello></app-hello>
+        </ng-template>
+    </mat-tab>
     <mat-tab label="PORTFOLIO">
-        <app-portfolio [currentNavIndex]="navIndex"></app-portfolio>
+        <ng-template matTabContent>
+            <app-portfolio [currentNavIndex]="navIndex"></app-portfolio>
+        </ng-template>
     </mat-tab>
     <mat-tab label="AFTER WORK">
-        <app-after-work [currentNavIndex]="navIndex"></app-after-work>
+        <ng-template matTabContent>
+            <app-after-work [currentNavIndex]="navIndex"></app-after-work>
+        </ng-template>
     </mat-tab>
 </mat-tab-group>
