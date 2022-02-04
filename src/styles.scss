@@ -261,9 +261,12 @@ body {
 }
 ::ng-deep .snack-bar-container {
     background: #dcdcdc !important;
-    .button:hover .mat-button-wrapper{
+    .button:hover .mat-button-wrapper {
         color: $main-color2;
     }
+}
+.pointer {
+    cursor: pointer !important;
 }
 
 @media screen and (max-width: 1279px) {

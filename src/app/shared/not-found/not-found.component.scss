@@ -17,7 +17,20 @@
     background-size: contain;
     background-position: center;
 }
-
+.main-content .content > div {
+    justify-content: center;
+    height: 100%;
+    margin-top: auto;
+    display: flex;
+}
+.main-content .content > a {
+    text-align: center;
+    margin-bottom: auto;
+    margin-top: 20px;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 20px;
+}
 @media screen and (max-width: 1279px) {
     .not-found {
         width: 10vw;
@@ -31,7 +44,7 @@
         line-height: 1em;
         height: 1em;
     }
-    .main-content{
+    .main-content {
         min-height: 70px !important;
     }
 }
