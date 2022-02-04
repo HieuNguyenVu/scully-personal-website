@@ -18,8 +18,10 @@ setPluginConfig("md", { enableSyntaxHighlighting: true });
 
 const SitemapPlugin = getSitemapPlugin();
 setPluginConfig(SitemapPlugin, {
-    urlPrefix: "https://gamma.stream",
+    urlPrefix: "https://nhvu95.com",
     sitemapFilename: "sitemap.xml",
+    merge: false,
+    trailingSlash: false,
     changeFreq: "monthly",
     priority: ["1.0", "0.9", "0.8", "0.7", "0.6", "0.5", "0.4", "0.3", "0.2", "0.1", "0.0"],
     ignoredRoutes: ["/404"],
@@ -27,10 +29,10 @@ setPluginConfig(SitemapPlugin, {
         "/blog/:slug": {
             changeFreq: "daily",
             priority: "0.9",
-            sitemapFilename: "sitemap-blog.xml"
+            sitemapFilename: "sitemap-blog.xml",
+            merge: true,
         },
     },
-    trailingSlash: true
 });
 
 export const config: ScullyConfig = {
