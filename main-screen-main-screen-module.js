@@ -87,9 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let AfterWorkItemComponent = class AfterWorkItemComponent {
     constructor() { }
-    ngOnInit() { }
-    ngOnChanges(changes) {
-        console.log(changes.project);
+    ngOnInit() {
         this.topicImage.nativeElement.style.backgroundImage = `url('${this.project.image}')`;
     }
 };
