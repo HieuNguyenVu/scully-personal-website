@@ -17,6 +17,7 @@ location: 'Hanoi, Vietnam'
 **observe(v)**: Quan sát
 
 ## 1. How it come?
+
 Today, when I work on project [Angular Pinterest Clone](https://github.com/HieuNguyenVu/angular-pinterest-clone).
 
 I have to face a challenge:
@@ -35,6 +36,7 @@ The keyword I got at the answer of [AndyE](https://stackoverflow.com/a/15203639)
 </p>
 
 ## 2. So now, What is Intersection Observer API ?
+
 Firstly, I have to say that: `Intersection Observer API` is a Web API.  
 That mean It was default provided by browser. You can see the full doc in [here](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API).
 

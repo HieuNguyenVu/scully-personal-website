@@ -1,5 +1,5 @@
 ---
-title: 'CircleCI retry after build failed'
+title: 'CircleCI　retry after build failed'
 description: 'This technique is my lesson learned from personal website development. I use Scully to generate static pages and It usually crashes my CI/CD pipelines.'
 date_start: '2022/01/28'
 date_end: '2022/01/28'
@@ -115,6 +115,92 @@ And when new commit comes, the CircleCI was triggered again. :D
 ```
 
 To avoid trigger CircleCI when commit build result to Github Pages, I add the `[skip ci] ` before the commit message.
+
+### My complete .yml file
+
+```yml
+jobs:
+  build:
+    working_directory: ~/scully-personal-website
+    docker:
+      - image: circleci/node:12-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: scully-personal-website-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      - run: npm ci
+      - save_cache:
+          key: scully-personal-website-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          paths:
+            - ~/.npm
+            - ~/.cache
+      - run: |
+          npm run build
+      - run: 
+          command: npx scully -- --scanRoutes
+          no_output_timeout: 1m
+      - run:
+          name: Rebuild on fail build scully (hack)
+          command: |
+            git config user.email "nhvu.95@gmail.com"
+            git config user.name "Vue Nguyen"
+            echo 'nhvu95.com' > ./CNAME
+            echo $((1 + $RANDOM % 1000)) >> ./CNAME
+            git add .
+            git commit -m "[ci] Re build :D"
+            git push origin main
+          when: on_fail
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - persist_to_workspace:
+          root: ~/scully-personal-website
+          paths:
+            - dist/*
+  deploy:
+    working_directory: ~/scully-personal-website
+    docker:
+      - image: node:8.10.0
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - 'your_finger_prints'
+      - checkout
+      - attach_workspace:
+          at: ~/scully-personal-website
+      - run:
+          name: Install gh-pages
+          command: |
+            npm install -g --silent gh-pages
+      - run:
+          name: Configure git
+          command: |
+            git config user.email "nhvu.95@gmail.com"
+            git config user.name "Vue Nguyen"
+      - run:
+          name: Deploy to gh-pages branch
+          command: |
+            echo 'nhvu95.com' > ./dist/static/CNAME
+            gh-pages --message "[skip ci] deploy gh-pages" -d ./dist/static
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+workflows:
+  version: 2
+  build_deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              ignore:
+                - gh-pages
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - main
+```
 
 [1]: https://jamstack.org/
 [2]: https://scully.io/
