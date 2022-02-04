@@ -1,5 +1,4 @@
-import { Component, ElementRef, Input, OnInit, SimpleChanges, ViewChild } from "@angular/core";
-import { Observable } from "rxjs";
+import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from "@angular/core";
 import { Project } from "../portfolio/project.model";
 
 @Component({
@@ -7,7 +6,7 @@ import { Project } from "../portfolio/project.model";
     templateUrl: "afterwork-item.component.html",
     styleUrls: ["./afterwork-item.component.scss"],
 })
-export class AfterWorkItemComponent implements OnInit {
+export class AfterWorkItemComponent implements OnInit, OnChanges {
     @ViewChild("topicImage") topicImage: ElementRef<HTMLElement>;
     @Input() project: Project;
 
@@ -16,6 +15,6 @@ export class AfterWorkItemComponent implements OnInit {
 
     ngOnChanges(changes: SimpleChanges) {
         console.log(changes.project);
-        this.topicImage.nativeElement.style.backgroundImage = `url('${(<Project>changes.project).image}')`;
+        this.topicImage.nativeElement.style.backgroundImage = `url('${this.project.image}')`;
     }
 }
