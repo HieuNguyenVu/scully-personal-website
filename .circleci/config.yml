@@ -59,7 +59,8 @@ jobs:
           name: Deploy to gh-pages branch
           command: |
             echo 'nhvu95.com' > ./dist/static/CNAME
-            echo 'Sitemap: https://nhvu95.com/sitemap.xml' >> 'Sitemap: https://nhvu95.com/sitemap-blog.xml' >> ./dist/static/robots.txt
+            echo 'Sitemap: https://nhvu95.com/sitemap.xml' > ./dist/static/robots.txt
+            echo 'Sitemap: https://nhvu95.com/sitemap-blog.xml' >> ./dist/static/robots.txt
             gh-pages --message "[skip ci] deploy gh-pages" -d ./dist/static
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
