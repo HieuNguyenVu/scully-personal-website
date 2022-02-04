@@ -28,17 +28,16 @@ export class AfterWorkComponent implements OnInit {
       })),
       share());
     this.projects$ = links$.pipe(
-      map(links => links.slice(0, 6)),
+      map(links => links.slice(0, 5)),
       map(links => this.scullyRouteTopProject(links)));
     this.projectsMore$ = links$.pipe(
-      map(links => links.slice(6)),
+      map(links => links.slice(5)),
       map(links => this.scullyRouteTopProject(links)),
       map(projects => {
         let projs = projects;
         let tripleProj = [];
         while (true) {
           let takeData = projs.splice(0, 3);
-          console.log(takeData);
           if (takeData.length == 0) {
             break;
           }
