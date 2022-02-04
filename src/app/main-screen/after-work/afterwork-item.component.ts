@@ -9,7 +9,7 @@ import { Project } from "../portfolio/project.model";
 })
 export class AfterWorkItemComponent implements OnInit {
     @ViewChild("topicImage") topicImage: ElementRef<HTMLElement>;
-    project: Project;
+    @Input() project: Project;
 
     constructor() {}
     ngOnInit(): void {}
