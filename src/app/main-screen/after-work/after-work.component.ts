@@ -41,7 +41,7 @@ export class AfterWorkComponent implements OnInit {
           if (takeData.length == 0) {
             break;
           }
-          for (let i = 0; i < 3 - takeData.length; i++) {
+          for (let i = 3; i > takeData.length; i--) {
             takeData.push({ exist: false });
           }
           tripleProj.push(takeData);
