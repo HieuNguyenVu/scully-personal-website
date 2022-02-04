@@ -10,6 +10,7 @@ export class BlogGuard implements CanActivate {
 
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
+    if(state.url.endsWith('sitemap-blog.xml')) return true;
     if (!route.firstChild || Object.keys(route.firstChild.params).length == 0) {
       this.router.navigateByUrl('/404');
       return false;
