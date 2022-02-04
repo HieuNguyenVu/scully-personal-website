@@ -1476,6 +1476,7 @@ let AfterWorkComponent = class AfterWorkComponent {
         this.projectsMore$ = links$.pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(links => links.slice(6)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(links => this.scullyRouteTopProject(links)), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_6__["map"])(projects => {
             let projs = projects;
             let tripleProj = [];
+            console.log(projects);
             while (true) {
                 let takeData = projs.splice(0, 3);
                 if (takeData.length == 0) {
