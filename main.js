@@ -368,6 +368,8 @@ let BlogGuard = class BlogGuard {
         this.scully = scully;
     }
     canActivate(route, state) {
+        if (state.url.endsWith('sitemap-blog.xml'))
+            return true;
         if (!route.firstChild || Object.keys(route.firstChild.params).length == 0) {
             this.router.navigateByUrl('/404');
             return false;
