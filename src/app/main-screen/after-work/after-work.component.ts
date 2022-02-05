@@ -34,7 +34,7 @@ export class AfterWorkComponent implements OnInit {
             map((links) => this.scullyRouteTopProject(links))
         );
         this.projectsMore$ = links$.pipe(
-            map((links) => links.slice(5)),
+            // map((links) => links.slice(5)),
             map((links) => this.scullyRouteTopProject(links)),
             map((projects) => {
                 let projs = projects;
@@ -57,7 +57,7 @@ export class AfterWorkComponent implements OnInit {
     scullyRouteTopProject(scullyRoutes: ScullyRoute[]): Project[] {
         return scullyRoutes.map<Project>((scullyRoute) => {
             return {
-                title: scullyRoute.title.replace("<br>", " "),
+                title: scullyRoute.title.replace("　", " "),
                 image: scullyRoute.image,
                 tags: scullyRoute.tags,
                 description: scullyRoute.description,
