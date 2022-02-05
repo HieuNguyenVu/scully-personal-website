@@ -12,10 +12,10 @@
     height: 200px;
     min-height: 200px;
 
-    background-image: url("/assets/images/not-found.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: $bg-image;
+    background-size: 416.75px 352.5px;
+    background-position-x: -2.75px;
+    background-position-y: 0px;
 }
 .main-content .content > div {
     justify-content: center;
@@ -33,13 +33,16 @@
 }
 @media screen and (max-width: 1279px) {
     .not-found {
-        width: 10vw;
-        min-width: 30px;
-        height: 10vw;
-        min-height: 30px;
+        width: 30px;
+        min-width: 55px;
+        height: 30px;
+        min-height: 55px;
+        background-size: 196.75px 96.5px;
+        background-position-x: -42px;
+        background-position-y: 0px;
     }
     .e404 {
-        font-size: 10vw !important;
+        font-size: 60px !important;
         margin-bottom: 0px;
         line-height: 1em;
         height: 1em;
