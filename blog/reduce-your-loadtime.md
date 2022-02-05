@@ -135,14 +135,14 @@ Source: https://web.dev/render-blocking-resources/
 Lighthouse in Chrome Dev Tool can help you detect the render-blocking resource. Normally, link with the `rel=stylesheet` property will be the main reason and effective your render time. You should set the correct type rel, or set `async`/`defer` if not required.
 You also can read more about `rel` [here][9].
 
-2. **Don't make browser tired**
+2. **Don't make browser tired**  
 In case your browser runs on a very old computer or your customer use an old browser like IE. You should avoid using the CSS style which make browser tired :D 
 
 - `overflow: hidden` + `border-radius`.
 - `drop-shadow` or `box-shadow`.
 - or combine two of them together.
 
-Of course, It will work fine if your page is small. But in case your page has a few thousand items with `overflow: hidden` and `border-radius`. It will be bad, trust me, I have once.
+    Of course, It will work fine if your page is small. But in case your page has a few thousand items with `overflow: hidden` and `border-radius`. It will be bad, trust me, I have once.
 
 [1]: https://compresspng.com/
 [2]: https://www.iloveimg.com/resize-image
