@@ -219,38 +219,38 @@ body {
     background-position-y: 0px;
 }
 
-.down-arrow {
-    width: 50px;
-    min-width: 50px;
-    height: 50px;
-    min-height: 50px;
-    opacity: 0.4;
+// .down-arrow {
+//     width: 50px;
+//     min-width: 50px;
+//     height: 50px;
+//     min-height: 50px;
+//     opacity: 0.4;
 
-    background-image: url("/assets/images/down-arrow.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
+//     background-image: url("/assets/images/down-arrow.svg");
+//     background-repeat: no-repeat;
+//     background-size: contain;
+//     background-position: center;
+// }
 
-.down-arrow:hover {
-    opacity: 0.5;
-}
-.down-arrow:active {
-    opacity: 0.7;
-    background-image: url("/assets/images/down-arrow-click.svg");
-}
+// .down-arrow:hover {
+//     opacity: 0.5;
+// }
+// .down-arrow:active {
+//     opacity: 0.7;
+//     background-image: url("/assets/images/down-arrow-click.svg");
+// }
 
-.note-undone {
-    width: 83px;
-    min-width: 83px;
-    height: 103px;
-    min-height: 103px;
+// .note-undone {
+//     width: 83px;
+//     min-width: 83px;
+//     height: 103px;
+//     min-height: 103px;
 
-    background-image: url("/assets/images/note-undone.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-}
+//     background-image: $bg-image;
+//     background-size: 527px 355px;
+//     background-position-x: -327.75px;
+//     background-position-y: 0px;
+// }
 
 .title-tooltip {
     font-size: 1rem;
