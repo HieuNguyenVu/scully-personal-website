@@ -140,7 +140,7 @@ body {
         min-height: 50px;
         width: 154px;
         min-width: 154px;
-        border-radius: 13px 0 0 13px;
+        // border-radius: 13px 0 0 13px;
     }
 }
 #blog-post .footer {
@@ -148,69 +148,77 @@ body {
 }
 
 /// ICON ==========================
+$bg-size: 313.75px 263.5px;
+$bg-image: url("/assets/images/icon_sets.svg");
 
 .facebook {
-    background-image: url("/assets/images/facebook.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: $bg-image;
+    background-size: $bg-size;
+    background-position-x: -102.75px;
+    background-position-y: -163.75px;
 }
 
 .facebook:hover {
-    background-image: url("/assets/images/facebook_hover.svg");
+    background-position-x: -152.75px;
+    background-position-y: -163.75px;
 }
 
 .linkedin {
-    background-image: url("/assets/images/linkedin.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: $bg-image;
+    background-size: $bg-size;
+    background-position-x: -152.75px;
+    background-position-y: -49.75px;
 }
 .linkedin:hover {
-    background-image: url("/assets/images/linkedin_hover.svg");
+    background-position-x: -202.75px;
+    background-position-y: -49.75px;
 }
 .github {
-    background-image: url("/assets/images/github.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: $bg-image;
+    background-size: $bg-size;
+    background-position-x: -152.75px;
+    background-position-y: -100.75px;
 }
 .github:hover {
-    background-image: url("/assets/images/github_hover.svg");
+    background-position-x: -202.75px;
+    background-position-y: -100.75px;
 }
 .cclaim {
-    background-image: url("/assets/images/cclaim.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: $bg-image;
+    background-size: $bg-size;
+    background-position-x: -202.75px;
+    background-position-y: -163.75px;
 }
 .cclaim:hover {
-    background-image: url("/assets/images/cclaim_hover.svg");
+    background-position-x: -252.75px;
+    background-position-y: -163.75px;
 }
 .gmail {
-    background-image: url("/assets/images/email.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: $bg-image;
+    background-size: $bg-size;
+    background-position-x: -2.75px;
+    background-position-y: -163.75px;
 }
 .gmail:hover {
-    background-image: url("/assets/images/email_hover.svg");
+    background-position-x: -52.75px;
+    background-position-y: -163.75px;
 }
 .download {
-    background-image: url("/assets/images/download.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: $bg-image;
+    background-size: $bg-size;
+    background-position-x: -2.75px;
+    background-position-y: -213.75px;
 }
 .download:hover {
-    background-image: url("/assets/images/download_hover.svg");
+    background-position-x: -156.75px;
+    background-position-y: -213.75px;
 }
 
 .note {
-    background-image: url("/assets/images/note.svg");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-image: $bg-image;
+    background-size: 527px 355px;
+    background-position-x: -327.75px;
+    background-position-y: 0px;
 }
 
 .down-arrow {
