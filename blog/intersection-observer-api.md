@@ -1,5 +1,5 @@
 ---
-title: 'Intersection　Observer API'
+title: '[TIL]　Intersection Observer API'
 description: "The Intersection Observer API provides a way to asynchronously observe changes in the intersection of a target element with an ancestor element or with a top-level document's viewport."
 date_start: "2021/09/24"
 date_end: '2021/09/28'

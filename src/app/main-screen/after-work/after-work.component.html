@@ -10,58 +10,34 @@
                 </mat-tab-group>
             </h1>
 
-            <div class="main-content">
+            <div class="main-content" *ngIf="projects$ | async as projects">
                 <!-- First part -->
-                <div *ngIf="projects$ | async as projects" class="first-part">
-                    <div class="first-part-column1_1">
-                        <div class="first-part-column1">
-                            <div>
-                                <app-afterwork-item [project]="projects[1]"></app-afterwork-item>
-                                <app-afterwork-item [project]="projects[2]"></app-afterwork-item>
-                            </div>
-                            <div class="row-note">
-                                <div class="note-container">
-                                    <div class="overlay">
-                                        <div class="note-headline"></div>
-                                        <div class="note-wraper">
-                                            <div class="note"></div>
-                                        </div>
-                                        <div class="note-content">
-                                            <p class="main-color">
-                                                Hi there! So glad you are here. I write these not to show my experience, knowledge, or the things like that. This part is like a notebook, where I note all the
-                                                things learned after a long day at work, the exciting thing I got when I did my PET project, or maybe just something I got from the internet. The
-                                                non-tech tab will be a little silly cause I write about my life, experiences, and whatever is helpful. I hope you will see me better day by day, and I
-                                                hope you enjoy them.
-                                            </p>
-                                        </div>
-                                    </div>
+                <div class="contents">
+                    <div class="content-col">
+                        <div class="note-container">
+                            <div class="overlay">
+                                <div class="note-headline"></div>
+                                <div class="note-wraper">
+                                    <div class="note"></div>
                                 </div>
-                                <app-afterwork-item [project]="projects[0]" class="newest-topic"></app-afterwork-item>
+                                <div class="note-content">
+                                    <p class="main-color">
+                                        Hi there! So glad you are here. I write these not to show my experience, knowledge, or the things like that. This part is like a notebook, where I note all the
+                                        things learned after a long day at work, the exciting thing I got when I did my PET project, or maybe just something I got from the internet. The non-tech tab
+                                        will be a little silly cause I write about my life, experiences, and whatever is helpful. I hope you will see me better day by day, and I hope you enjoy them.
+                                    </p>
+                                </div>
                             </div>
                         </div>
+                        <app-afterwork-item *ngFor="let pj of projects[0]" [project]="pj"></app-afterwork-item>
                     </div>
-                    <div class="first-part-column2">
-                        <app-afterwork-item [project]="projects[3]"></app-afterwork-item>
-                        <app-afterwork-item [project]="projects[4]"></app-afterwork-item>
+                    <div class="content-col">
+                        <app-afterwork-item *ngFor="let pj of projects[1]" [project]="pj"></app-afterwork-item>
+                    </div>
+                    <div class="content-col">
+                        <app-afterwork-item *ngFor="let pj of projects[2]" [project]="pj"></app-afterwork-item>
                     </div>
                 </div>
-                <!-- Second part -->
-                <ng-container *ngIf="projectsMore$ | async as projectsMore">
-                    <ng-container *ngIf="projectsMore.length > 0">
-                        <div *ngFor="let triple of projectsMore" class="second-part">
-                            <div>
-                                <app-afterwork-item [project]="triple[0]"></app-afterwork-item>
-                            </div>
-                            <div>
-                                <app-afterwork-item [project]="triple[1]"></app-afterwork-item>
-                            </div>
-                            <div>
-                                <app-afterwork-item [project]="triple[2]"></app-afterwork-item>
-                            </div>
-                        </div>
-                    </ng-container>
-                </ng-container>
-                <!-- <button (click)="loadMore()">Load More</button> -->
             </div>
             <app-footer></app-footer>
         </div>

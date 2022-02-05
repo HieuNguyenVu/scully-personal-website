@@ -15,11 +15,8 @@ export class AfterWorkComponent implements OnInit {
     currentNavIndex = 0;
 
     constructor(private service: MainScreenService, private scullyService: ScullyRoutesService) {}
-    _projects: BehaviorSubject<Project[]> = new BehaviorSubject<Project[]>([]);
-    projects$: Observable<Project[]> = this._projects.asObservable();
-
-    _projectsMore: BehaviorSubject<Project[][]> = new BehaviorSubject<Project[][]>([]);
-    projectsMore$: Observable<Project[][]> = this._projectsMore.asObservable();
+    _projects: BehaviorSubject<Project[][]> = new BehaviorSubject<Project[][]>([]);
+    projects$: Observable<Project[][]> = this._projects.asObservable();
 
     remains: Project[] = [];
 
@@ -38,8 +35,10 @@ export class AfterWorkComponent implements OnInit {
         );
 
         links$.subscribe((links) => {
-            this._projects.next(this.scullyRouteTopProject(links.slice(0, 5)));
+            let first = this.scullyRouteTopProject(links.slice(0, 5));
             this.remains = this.scullyRouteTopProject(links.slice(5));
+            let arrs = [[first[0]], [first[1], first[3]], [first[2], first[4]]];
+            this._projects.next(arrs);
         });
     }
 
@@ -57,7 +56,7 @@ export class AfterWorkComponent implements OnInit {
 
     loadMore() {
         let takeTwoRow = this.remains.splice(0, 6);
-        let tripleProj = [];
+        let news = this._projects.getValue();
         while (true) {
             let takeData = takeTwoRow.splice(0, 3);
             if (takeData.length == 0) {
@@ -66,10 +65,11 @@ export class AfterWorkComponent implements OnInit {
             for (let i = 3; i > takeData.length; i--) {
                 takeData.push({ exist: false });
             }
-            tripleProj.push(takeData);
+            news[0].push(takeData[0]);
+            news[1].push(takeData[1]);
+            news[2].push(takeData[2]);
         }
-        let news = this._projectsMore.getValue().concat(tripleProj);
-        this._projectsMore.next(news);
+        this._projects.next(news);
     }
 
     scullyRouteTopProject(scullyRoutes: ScullyRoute[]): Project[] {

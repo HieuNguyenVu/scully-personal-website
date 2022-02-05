@@ -1,7 +1,8 @@
 <div *ngIf="project && project.exist" class="topic-container">
-    <div class="topic-image" [ngStyle]="{ 'background-image': 'url(\''+this.project.image+'\')' }"></div>
+    <div class="topic-image-container">
+        <div class="topic-image" [ngStyle]="{ 'background-image': 'url(\'' + this.project.image + '\')' }"></div>
+    </div>
     <div class="topic">
-        <h3 [ngClass]="project.priority === 1 ? 'title' : 'title title2line'" matTooltip="{{ project.title }}" matTooltipClass="title-tooltip" [matTooltipShowDelay]="500">{{ project.title }}</h3>
         <div class="tags">
             <ng-container *ngFor="let tag of project.tags">
                 <label class="tag-item"
@@ -9,7 +10,8 @@
                 >
             </ng-container>
         </div>
-        <p class="description" matTooltip="{{ project.description }}" matTooltipClass="normal-tooltip" [matTooltipShowDelay]="500">
+        <h3 class="title">{{ project.title }}</h3>
+        <p class="description">
             {{ project.description }}
         </p>
         <div class="topic-footer">

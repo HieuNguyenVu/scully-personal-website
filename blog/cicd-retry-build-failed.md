@@ -1,5 +1,5 @@
 ---
-title: 'CircleCI　retry after build failed'
+title: '[Tips]　CircleCI retry after build failed'
 description: 'This technique is my lesson learned from personal website development. I use Scully to generate static pages and It usually crashes my CI/CD pipelines.'
 date_start: '2022/01/28'
 date_end: '2022/01/28'

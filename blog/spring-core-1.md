@@ -1,5 +1,5 @@
 ---
-title: 'Did-I-Miss:　Spring Core Technologies(1)'
+title: '[Did-I-Miss]:　Spring Core Technologies [Part 1]'
 description: 'Cause I did not focus on the back-end at the start, I believe that I was missed some core concepts of Spring and Spring Boot. This series is the way I recheck my knowledge and complement the missing part.'
 date_start: '2021/12/28'
 date_end: '2022/01/01'
@@ -15,7 +15,8 @@ location: 'Hanoi, Vietnam'
 
 _**My study way is reading the Spring document, then I quote the main concept, and explain them in my way. Same as the Rubber Duck Debugging method. I just want to explain them twice, first read to understand, and second explain to understand.**_
 
-## I. Overview about Spring IoC Container and Beans.
+## I. Overview about Spring IoC Container and Beans
+
 First I will start with the defined in the [Spring document][1], they said:
 
 >This chapter covers the Spring Framework implementation of the **Inversion of Control (IoC)** principle. **IoC is also known as dependency injection (DI)**. It is a process whereby objects define their dependencies (that is, the other objects they work with) only through constructor arguments, arguments to a factory method, or properties that are set on the object instance after it is constructed or returned from a factory method. **The container then injects those dependencies when it creates the bean**. **This process is fundamentally the inverse** (hence the name, Inversion of Control) of the bean itself controlling the instantiation or location of its dependencies by using direct construction of classes or a mechanism such as the Service Locator pattern.
