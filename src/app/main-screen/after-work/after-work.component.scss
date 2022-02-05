@@ -54,7 +54,7 @@
                         width: 60px;
                         min-width: 60px;
                         height: 65px;
-                        min-height: 65px
+                        min-height: 65px;
                     }
                     .note-headline {
                         height: 100%;
@@ -113,8 +113,12 @@
             min-width: calc(33.33% - 7px);
             max-width: calc(33.33% - 7px);
         }
-        margin-left: 10px;
-        margin-right: 10px;
+        // margin-left: 10px;
+        // margin-right: 10px;
+        > div:nth-child(2),
+        > div:nth-child(3) {
+            margin-left: 10px;
+        }
     }
 
     .topic-wrapper {
