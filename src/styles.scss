@@ -138,8 +138,8 @@ body {
     #footer-download-cv .download {
         height: 50px;
         min-height: 50px;
-        width: 154px;
-        min-width: 154px;
+        width: 150px;
+        min-width: 150px;
         // border-radius: 13px 0 0 13px;
     }
 }
@@ -152,71 +152,71 @@ body {
 .facebook {
     background-image: $bg-image;
     background-size: $bg-size;
-    background-position-x: -102.75px;
-    background-position-y: -163.25px;
+    background-position-x: -100px;
+    background-position-y: 0px;
 }
 
 .facebook:hover {
-    background-position-x: -152.75px;
-    background-position-y: -163.25px;
+    background-position-x: -150px;
+    background-position-y: 0px;
 }
 
 .linkedin {
     background-image: $bg-image;
     background-size: $bg-size;
-    background-position-x: -152.75px;
-    background-position-y: -49.75px;
+    background-position-x: -400px;
+    background-position-y: 0px;
 }
 .linkedin:hover {
-    background-position-x: -202.75px;
-    background-position-y: -49.75px;
+    background-position-x: -450px;
+    background-position-y: 0px;
 }
 .github {
     background-image: $bg-image;
     background-size: $bg-size;
-    background-position-x: -152.75px;
-    background-position-y: -100.75px;
+    background-position-x: -300px;
+    background-position-y: 0px;
 }
 .github:hover {
-    background-position-x: -202.75px;
-    background-position-y: -100.75px;
+    background-position-x: -350px;
+    background-position-y: 0px;
 }
 .cclaim {
     background-image: $bg-image;
     background-size: $bg-size;
-    background-position-x: -202.75px;
-    background-position-y: -163.25px;
+    background-position-x: -200px;
+    background-position-y: 0px;
 }
-.cclaim:hover { 
-    background-position-x: -252.75px;
-    background-position-y: -163.25px;
+.cclaim:hover {
+    background-position-x: -250px;
+    background-position-y: 0px;
 }
 .gmail {
     background-image: $bg-image;
     background-size: $bg-size;
-    background-position-x: -2.75px;
-    background-position-y: -163.25px;
+    background-position-x: 0x;
+    background-position-y: 0px;
 }
 .gmail:hover {
-    background-position-x: -52.75px;
-    background-position-y: -163.25px;
+    background-position-x: -50px;
+    background-position-y: 0px;
 }
 .download {
     background-image: $bg-image;
     background-size: $bg-size;
-    background-position-x: -2.75px;
-    background-position-y: -213.75px;
+    background-position-x: -250px;
+    background-position-y: -50px;
 }
 .download:hover {
-    background-position-x: -156.75px;
-    background-position-y: -213.75px;
+    background-position-x: -250px;
+    background-position-y: -100px;
 }
 
 .note {
     background-image: $bg-image;
-    background-size: 527px 355px;
-    background-position-x: -327.75px;
-    background-position-y: 0px;
+    background-size: $bg-size;
+    background-position-x: -50px;
+    background-position-y: -50px;
 }
 
 // .down-arrow {
@@ -276,7 +276,11 @@ body {
 }
 
 @media screen and (max-width: 1279px) {
+    body {
+        margin: 0px;
+    }
     .bounds {
+        margin-bottom: 0px;
         .content {
             padding: 0rem 0rem;
             .header {
