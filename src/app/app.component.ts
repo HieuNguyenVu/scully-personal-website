@@ -7,6 +7,8 @@ import { AppUpdateService } from "./app-update.service";
     styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-    constructor(private updates: AppUpdateService) {}
+    constructor(private updates: AppUpdateService) {
+        this.updates.checkForUpdates();
+    }
     ngOnInit(): void {}
 }

@@ -17,15 +17,14 @@ export class AppUpdateService {
             console.log("Check new version update!");
             return updates.checkForUpdate();
         });
+    }
 
-        updates.available.subscribe((event) => {
-            if (true) {
-                updates.activateUpdate().then(() => {
-                    console.log('current version is', event.current);
-                    console.log('available version is', event.available);
-                    document.location.reload();
-                });
-            }
-        });
+    public checkForUpdates(): void {
+        this.updates.available.subscribe((event) => this.promptUser());
+    }
+
+    private promptUser(): void {
+        console.log("updating to new version");
+        this.updates.activateUpdate().then(() => document.location.reload());
     }
 }

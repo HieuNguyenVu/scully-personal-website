@@ -101,7 +101,7 @@ I will note some main content in this post.
 
 2. F12 in browser and check your file return was gzipped or not by finding the "Content-Encoding: gzip" in Response Headers. If not (do like in the [source][7] or find a way by yourself :D )
 
-3. Analyze your webpack bundle by use [**webpack-bundle-analyzer**][8]. It help you to detec unused package, or inappropriate large-sized third party package.
+3. Analyze your webpack bundle by use [**webpack-bundle-analyzer**][8]. It help you to detect unused package, or inappropriate large-sized third party package.
 
 4. Lazy loading, lazy load module, lazy load component, do what ever can help you faster load.  
 For example, If I add `matTabContent` and push the content inside `ng-template`, the component only loads when the corresponding tab was activated. And It can reduce your first load `bunddle.js`from 1Mb to 300Kbs.
