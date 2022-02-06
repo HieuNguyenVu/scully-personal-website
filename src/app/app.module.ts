@@ -8,11 +8,31 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { FooterModule } from "./shared/footer/footer.module";
 import { NotFoundModule } from "./shared/not-found/not-found.module";
+import { ServiceWorkerModule } from "@angular/service-worker";
+import { environment } from "../environments/environment";
+import { AppUpdateService } from "./app-update.service";
 
 @NgModule({
     declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, ScullyLibModule, BrowserAnimationsModule, MatTabsModule, HttpClientModule, FooterModule, NotFoundModule],
-    providers: [],
+    imports: [
+        ServiceWorkerModule,
+        BrowserModule,
+        AppRoutingModule,
+        ScullyLibModule,
+        BrowserAnimationsModule,
+        MatTabsModule,
+        HttpClientModule,
+        FooterModule,
+        NotFoundModule,
+        HttpClientModule,
+        ServiceWorkerModule.register('ngsw-worker.js', {
+          enabled: environment.production,
+          // Register the ServiceWorker as soon as the app is stable
+          // or after 30 seconds (whichever comes first).
+          registrationStrategy: 'registerWhenStable:5000'
+        }),
+    ],
+    providers: [AppUpdateService],
     bootstrap: [AppComponent],
 })
 export class AppModule {}

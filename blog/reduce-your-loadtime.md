@@ -14,7 +14,7 @@ location: 'Phutho, Vietnam'
 ---
 
 Website load time is crucial for user experience, and for an SEO website, It is more important.
-I start to start to read about SEO after one of my brothers said: "Why don't you set sitemap to make better SEO?". Of course, It is not relevant to this topic too much. The true reason is when I test my SEO scores, it's so terrible. And because I usually use a super-fast internet connection, I don't notice that the loading time of my website is slow (Until I get bad SEO scores).
+I start to read about SEO after one of my brothers said: "Why don't you set sitemap to make better SEO?". Of course, It is not relevant to this topic too much. The true reason is when I test my SEO scores, it's so terrible. And because I usually use a super-fast internet connection, I don't notice that the loading time of my website is slow (Until I get bad SEO scores).
 
 ## I. Overview about my understanding
 

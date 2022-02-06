@@ -38,6 +38,7 @@ setPluginConfig(SitemapPlugin, {
 export const config: ScullyConfig = {
     projectRoot: "./src",
     projectName: "portfolio",
+    distFolder: "./dist/portfolio/browser",
     outDir: "./dist/static",
     routes: {
         "/blog/:slug": {
