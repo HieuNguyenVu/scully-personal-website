@@ -86,6 +86,9 @@
         .topic-image {
             width: 100%;
         }
+        .topic-image-container {
+            width: calc(100% - 20px);;
+        }
         .topic {
             width: calc(100% - 20px);
             padding-left: 10px;
