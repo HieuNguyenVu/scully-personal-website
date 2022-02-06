@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1644138724932,
+  "timestamp": 1644157666898,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -12,13 +12,13 @@
       },
       "urls": [
         "/4.ada9a33e05f3ea57d97a.js",
-        "/5.205374334c2c4fc164dd.js",
+        "/5.4061c74c16d1692a80fd.js",
         "/index.html",
         "/main.425d8ca1c58284d205ab.js",
         "/manifest.webmanifest",
         "/polyfills.1f78ba433808c13f56e3.js",
-        "/runtime.27804b8de85213c48f6b.js",
-        "/styles.1797269ac1c031174105.css"
+        "/runtime.091b1c26958385c2138e.js",
+        "/styles.182402230a25426c5591.css"
       ],
       "patterns": []
     },
@@ -55,8 +55,8 @@
   "dataGroups": [],
   "hashTable": {
     "/4.ada9a33e05f3ea57d97a.js": "641db21c87ccc5c81108e8d42ea522e8a6396dd4",
-    "/5.205374334c2c4fc164dd.js": "93b02740b495d3831630344fd7ccf7ef624ccf9e",
-    "/assets/configs/portfolio.json": "738b18610c35db45104f0483cb54c4601f599d9b",
+    "/5.4061c74c16d1692a80fd.js": "ee1b553d701069bb93e05cbc2a725a7d911e7124",
+    "/assets/configs/portfolio.json": "a76065a2b3724461afe5f68e5463f4e4cf807237",
     "/assets/icons/favicon-128x128.png": "ffaa8a2b8d1422f9491bf6fbe3065b30b3670002",
     "/assets/icons/favicon-16x16.png": "6be0aa45440845422edac643fbed51f954094db4",
     "/assets/icons/favicon-196x196.png": "53a3123253ff5b543b9494f2c48446cbad6f71b4",
@@ -70,16 +70,16 @@
     "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
     "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
-    "/assets/images/icon_sets.svg": "0869d00759af6500ad3003585bd029c3a37e0117",
+    "/assets/images/icon_sets.svg": "db1fcb08e0176735e5c62f0d803e67fd2ec9623c",
     "/assets/scully-routes.json": "cfc310ddcfd889c6d96c6e5fc1cb52c0babdc82c",
-    "/assets/styles/global-var.scss": "ca5d929d8378cf1dd02cff4ca3b1551a07beaabc",
+    "/assets/styles/global-var.scss": "efb156e985a2736cd02eb32d66955fbdee877d70",
     "/assets/styles/prism-coy-without-shadows.scss": "66f5ff753dee45ba4c0dcff44547e24dc5dc5bbc",
-    "/index.html": "890260d63aca7a1b2912a3cdd98638c563de795b",
+    "/index.html": "8773140f472580dab757e76b79b4ef633f012717",
     "/main.425d8ca1c58284d205ab.js": "31e53ef75274883070b35571bc483d4cc709ac42",
     "/manifest.webmanifest": "e14484a4f652e2f158ec8045c44ef1b6d61e9f2d",
     "/polyfills.1f78ba433808c13f56e3.js": "46cc9324049f55fa376d3aaa09fbd3ce476f5cde",
-    "/runtime.27804b8de85213c48f6b.js": "7193933a01e4d5b11e756cabc1ded56773d16513",
-    "/styles.1797269ac1c031174105.css": "09789d49089a8e0af5dc71548d2bdd864b534f9a"
+    "/runtime.091b1c26958385c2138e.js": "2a918fd0af1e20b1cca69c857c19ba97c40b683c",
+    "/styles.182402230a25426c5591.css": "e02ed3b6352ffaea9f44eef71cfb350cbc4fa1f7"
   },
   "navigationUrls": [
     {

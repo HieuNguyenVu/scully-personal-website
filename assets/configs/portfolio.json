@@ -1,9 +1,9 @@
 [
     {
-        "title": "Angular send file peer to peer",
-        "description": "Using webrtc as main technical. This web site allow user send file directly peer to peer between two browser without save file in external server like google drive, one drive, etc. And it can work as torrent browser, which allow a browser share a big file for every one.",
+        "title": "F2F: File to friends by Peer to Peer",
+        "description": "Using WebRTC as main technical. This website allow user send file directly Peer to Peer between two browser without save file in external server like google drive, one drive, etc. And it can work as torrent browser, which allow a browser share a big file for every one.",
         "guide": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
-        "image": "https://dsm01pap001files.storage.live.com/y4mAWwaJHz01o4rXnPVC1aTxFe5vl1bWC0pNcymOEyfm5w1SXm34Qbw6u7kJGrptI6OVqf4Gi1w8M6i4r0K17rDvlDQCwyCRy87qdwaLl22W4c_oVfsvLVKi1iADQTBFOVjiWc2vgJy9qD_RBFsZm3W5jVRjzXNZrCy3Jou3fzC2I30nF_8gdhQRCighXInA1oQ?width=256&height=256&cropmode=none",
+        "image": "https://i.imgur.com/2O9end0.jpg",
         "link": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "link_source": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "date_start": "2021/09/02",
@@ -39,7 +39,7 @@
         "title": "Image Hosting",
         "description": "Image hosting system, allow user upload image and get direct link to download. Auto resize to multiple screen size, also support for lazy load.",
         "guide": "https://github.com/HieuNguyenVu/ebay-automation-tool",
-        "image": "https://i.imgur.com/zniECYx.jpg",
+        "image": "https://i.imgur.com/CHSIb86.png",
         "link": "https://github.com/HieuNguyenVu/ebay-automation-tool",
         "link_source": "https://github.com/HieuNguyenVu/ebay-automation-tool",
         "date_start": "2021/12/28",
