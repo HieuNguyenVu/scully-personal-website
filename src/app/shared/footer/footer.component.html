@@ -1,7 +1,7 @@
 <div class="footer">
     <div id="footer-contact">
         <div id="m-icon">
-            <a class="m-icon gmail pointer" href="https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F" target="_blank"></a>
+            <button class="m-icon gmail pointer" (click)="openLink('https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F')"></button>
         </div>
         <div id="m-contact" class="pointer">
             <h3><span class="fname">VU HIEU</span><span class="sname"> NGUYEN</span></h3>
@@ -9,11 +9,11 @@
         </div>
     </div>
     <div id="footer-download-cv">
-        <div
-            class="download pointer"
+        <button
+            class="m-icon download pointer"
             onclick="window.open(
                     'https://drive.google.com/file/d/1sNJLiX9THvwkWe3FFBDrOJPMWuLw9ykW/view?usp=sharing',
                     '_blank'
-                  );"></div>
+                  );"></button>
     </div>
 </div>

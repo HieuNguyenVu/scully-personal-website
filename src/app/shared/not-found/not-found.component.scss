@@ -13,9 +13,9 @@
     min-height: 200px;
 
     background-image: $bg-image;
-    background-size: 416.75px 352.5px;
-    background-position-x: -2.75px;
-    background-position-y: 0px;
+    background-size: 1000px 300px;
+    background-position-x: -800px;
+    background-position-y: -100px;
 }
 .main-content .content > div {
     justify-content: center;
@@ -30,6 +30,12 @@
     font-style: italic;
     text-decoration: underline;
     font-size: 20px;
+}
+.main-content {
+    justify-content: center;
+}
+.main-content .content {
+    text-align: center;
 }
 @media screen and (max-width: 1279px) {
     .not-found {
