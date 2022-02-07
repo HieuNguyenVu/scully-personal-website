@@ -1,9 +1,7 @@
 @import "styles/global-var.scss";
 
 .topic-container {
-    background-image: $bg_topic_img;
-    background-size: cover;
-    background-position: center;
+    background-color: $bg_topic_img;
     // min-height: 280px;
     margin-bottom: 10px;
     border: 1px solid $main-color2;

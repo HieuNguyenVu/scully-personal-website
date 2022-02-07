@@ -29,9 +29,7 @@
         border-radius: 10px;
         overflow: hidden;
         display: flex;
-        background-image: $bg_topic_img;
-        background-size: cover;
-        background-position: center;
+        background-color: $bg_topic_img;
 
         .overlay {
             display: flex;

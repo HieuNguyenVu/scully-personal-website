@@ -1,8 +1,7 @@
 @import "styles/global-var.scss";
 
 .topic-container {
-    background-image: $bg_topic_img;
-    background-size: cover;
+    background-color: $bg_topic_img;
 
     min-height: 170px;
     margin-bottom: 18px;
@@ -14,7 +13,7 @@
 }
 .overlay {
     display: flex;
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: $bg_overlay;
 }
 .topic-image-container {
     padding: 10px;
@@ -28,6 +27,7 @@
     background-size: cover;
     background-position: center;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
 }
 
 .topic {
