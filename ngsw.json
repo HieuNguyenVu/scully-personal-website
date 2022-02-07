@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1644223663483,
+  "timestamp": 1644224113717,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -58,7 +58,7 @@
     "/assets/scully-routes.json": "cfc310ddcfd889c6d96c6e5fc1cb52c0babdc82c",
     "/assets/styles/global-var.scss": "072371464fe29e34603bab770c2550a9a7ac3bc1",
     "/assets/styles/prism-coy-without-shadows.scss": "66f5ff753dee45ba4c0dcff44547e24dc5dc5bbc",
-    "/index.html": "d43b848bfecbe884690ce72528c70d7603ac650e",
+    "/index.html": "ef661eeddc8c38313a8330b19e93fca121d22a2f",
     "/main.944016ffa60830e68dc4.js": "65742ae7554222bdfdcf3ea9b7b728a85df03b34",
     "/manifest.webmanifest": "00aaf6cb1e68f421f5632ee491e66b60bf769245",
     "/polyfills.1f78ba433808c13f56e3.js": "46cc9324049f55fa376d3aaa09fbd3ce476f5cde",
