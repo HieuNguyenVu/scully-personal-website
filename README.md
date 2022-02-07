@@ -1,5 +1,5 @@
 # Portfolio
-Demo web site here: https://nhvu95.com/
+Demo website here: https://nhvu95.com/
 
 Responsive UI is available.
 
@@ -16,7 +16,9 @@ Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The 
 Run `npm run scully:serve` to serve static server. Make sure that you run build (1-2) first.
 
 ## Scores
-![scores](https://i.imgur.com/stUkhjE.png)
+<p align="center">
+  <img src="https://i.imgur.com/stUkhjE.png" />
+</p>
 
 ## Page preview
 1. Home
