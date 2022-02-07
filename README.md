@@ -15,11 +15,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 Run `npm run start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 Run `npm run scully:serve` to serve static server. Make sure that you run build (1-2) first.
 
+## Scores
+![scores](https://i.imgur.com/stUkhjE.png)
+
 ## Page preview
 1. Home
-![portfolio1](https://user-images.githubusercontent.com/26276890/132381111-231045e3-cc7d-44d9-b886-ee28a8a18da8.png)
+![portfolio1](https://i.imgur.com/tEWTRJU.png)
 2. Blog summary
-![portfolio2](https://user-images.githubusercontent.com/26276890/132381150-fd8ea34a-0fc2-4be4-921d-8b06d20a0487.png)
+![portfolio2](https://i.imgur.com/60FomAh.png)
+3. Portfolio summary
+![portfolio3](https://i.imgur.com/BkbAGuB.png)
 
 ## Code scaffolding
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
