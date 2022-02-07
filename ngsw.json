@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1644159716062,
+  "timestamp": 1644199910215,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -56,7 +56,7 @@
   "hashTable": {
     "/4.ada9a33e05f3ea57d97a.js": "641db21c87ccc5c81108e8d42ea522e8a6396dd4",
     "/5.cc0d3a5521e051d54628.js": "fd42845a067a6785eabf8d2108902c71c3ae7fe4",
-    "/assets/configs/portfolio.json": "a76065a2b3724461afe5f68e5463f4e4cf807237",
+    "/assets/configs/portfolio.json": "2469057993389607bb466a99cf8ace00f0df5caa",
     "/assets/icons/favicon-128x128.png": "ffaa8a2b8d1422f9491bf6fbe3065b30b3670002",
     "/assets/icons/favicon-16x16.png": "6be0aa45440845422edac643fbed51f954094db4",
     "/assets/icons/favicon-196x196.png": "53a3123253ff5b543b9494f2c48446cbad6f71b4",
