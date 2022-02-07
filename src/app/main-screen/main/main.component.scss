@@ -1,4 +1,9 @@
 // CUSTOM MAT TAB
+#mainTab {
+    ::ng-deep .mat-tab-label {
+        background-color: unset;
+    }
+}
 @media screen and (max-width: 539px) {
     #mainTab {
         ::ng-deep .mat-tab-label {

@@ -1,4 +1,4 @@
-<mat-tab-group mat-align-tabs="center" dynamicHeight (selectedTabChange)="tabChanged($event)" [selectedIndex]="defaultSelect" id="mainTab">
+<mat-tab-group mat-align-tabs="center" dynamicHeight (selectedTabChange)="tabChanged($event)" active [selectedIndex]="defaultSelect" id="mainTab">
     <mat-tab label="ABOUT ME">
         <ng-template matTabContent>
             <app-hello></app-hello>
