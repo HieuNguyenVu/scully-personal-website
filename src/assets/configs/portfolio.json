@@ -1,6 +1,6 @@
 [
     {
-        "title": "F2F: File to friends by Peer to Peer",
+        "title": "F2F: File to friends",
         "description": "Using WebRTC as main technical. This website allow user send file directly Peer to Peer between two browser without save file in external server like google drive, one drive, etc. And it can work as torrent browser, which allow a browser share a big file for every one.",
         "guide": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
         "image": "https://i.imgur.com/2O9end0.jpg",
