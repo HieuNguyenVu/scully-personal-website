@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1644375565348,
+  "timestamp": 1644431018551,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -55,7 +55,7 @@
     "/assets/icons/favicon-32x32.png": "c33871d138b2a409b08e372a7a23891ea77b8907",
     "/assets/icons/favicon-96x96.png": "6744fd09690621b4182c62735cd4e4b1cb01d184",
     "/assets/images/icon_sets.svg": "db1fcb08e0176735e5c62f0d803e67fd2ec9623c",
-    "/assets/scully-routes.json": "cfc310ddcfd889c6d96c6e5fc1cb52c0babdc82c",
+    "/assets/scully-routes.json": "bfdc33d84970430acec3faa8aa114aaa4f906c0a",
     "/assets/styles/global-var.scss": "072371464fe29e34603bab770c2550a9a7ac3bc1",
     "/assets/styles/prism-coy-without-shadows.scss": "66f5ff753dee45ba4c0dcff44547e24dc5dc5bbc",
     "/index.html": "75e82c9d0c548e8f9e06c048100d086bc8741bd8",
