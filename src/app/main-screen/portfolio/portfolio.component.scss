@@ -32,28 +32,6 @@ mat-tab-group {
 
     .topic-wrapper {
         .topic-container-row {
-            flex-direction: column;
-            align-items: center;
-            app-portfolio-item {
-                max-width: unset !important;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1279px) {
-    .bounds {
-        .header {
-            flex-direction: column;
-            align-items: center;
-            mat-tab-group {
-                margin-left: 0px !important;
-            }
-        }
-    }
-
-    .topic-wrapper {
-        .topic-container-row {
             align-items: center;
             app-portfolio-item {
                 max-width: unset !important;
