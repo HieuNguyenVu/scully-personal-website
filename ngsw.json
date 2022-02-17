@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1645117327677,
+  "timestamp": 1645118749273,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "/4.ada9a33e05f3ea57d97a.js",
         "/5.8e1b95df020baf52dddf.js",
         "/index.html",
-        "/main.944016ffa60830e68dc4.js",
+        "/main.ae01dfcdc0f591c3d9ad.js",
         "/manifest.webmanifest",
         "/polyfills.1f78ba433808c13f56e3.js",
         "/runtime.5ac390521c2e91e26f5d.js",
@@ -58,8 +58,8 @@
     "/assets/scully-routes.json": "bfdc33d84970430acec3faa8aa114aaa4f906c0a",
     "/assets/styles/global-var.scss": "072371464fe29e34603bab770c2550a9a7ac3bc1",
     "/assets/styles/prism-coy-without-shadows.scss": "66f5ff753dee45ba4c0dcff44547e24dc5dc5bbc",
-    "/index.html": "0309843beceb07e3d557764ea7f6c800b633d065",
-    "/main.944016ffa60830e68dc4.js": "65742ae7554222bdfdcf3ea9b7b728a85df03b34",
+    "/index.html": "54b9f366eea93e9632ba05dcfdf46acdd7b8d1c9",
+    "/main.ae01dfcdc0f591c3d9ad.js": "b77874f5188b05d4698e64e291f3f1cbc8b11030",
     "/manifest.webmanifest": "00aaf6cb1e68f421f5632ee491e66b60bf769245",
     "/polyfills.1f78ba433808c13f56e3.js": "46cc9324049f55fa376d3aaa09fbd3ce476f5cde",
     "/runtime.5ac390521c2e91e26f5d.js": "d2a2279207ba6fe1fe78ca37e93b8c344e940543",
