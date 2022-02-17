@@ -24,7 +24,10 @@ export class AppUpdateService {
     }
 
     private promptUser(): void {
-        console.log("updating to new version");
-        this.updates.activateUpdate().then(() => document.location.reload());
+        console.log("Updating to new version");
+        this.updates.activateUpdate().then(() => {
+            console.log("Trying to reload");
+            document.location.reload();
+        });
     }
 }
