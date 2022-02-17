@@ -1,5 +1,5 @@
 ---
-title: '[Algo-ex]　Prepared for frontend interview'
+title: '[Algo-ex]　Preparing for frontend interview'
 description: "Soon, I will join an interview for the frontend position. This note is used to list and keep what I will learn and exercise."
 date_start: "2022/02/18"
 date_end: '2022/02/19'
@@ -8,8 +8,8 @@ image: 'https://i.imgur.com/AxItho4.png'
 header_image: 'https://i.imgur.com/paResCU.png'
 tags: ['Practice', 'Frontend', 'Interview']
 priority: 1
-link: '/blog/frontend-interview-prepared'
-slug: frontend-interview-prepared
+link: '/blog/frontend-interview-preparing'
+slug: frontend-interview-preparing
 location: 'Hanoi, Vietnam'
 ---
 
