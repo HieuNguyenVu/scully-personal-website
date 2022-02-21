@@ -13,6 +13,9 @@ import "prismjs/components/prism-json";
 import "prismjs/components/prism-markup";
 import "prismjs/components/prism-typescript";
 import { getSitemapPlugin } from "@gammastream/scully-plugin-sitemap";
+const { MinifyHtml } = require("scully-plugin-minify-html");
+
+require("scully-plugin-canonical");
 
 setPluginConfig("md", { enableSyntaxHighlighting: true });
 
@@ -46,6 +49,7 @@ export const config: ScullyConfig = {
             slug: {
                 folder: "./blog",
             },
+            postRenderers: ["setCanonicalLinkPlugin", MinifyHtml],
         },
     },
 };

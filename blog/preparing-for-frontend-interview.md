@@ -22,14 +22,14 @@ _**Don't overestimate me! I don't remember and know all these ;) but I believe a
 During the reading, please don’t hesitate to notify me of misleading information if you spot a misunderstanding!**_
 
 1. [**Base web knowledge.**](#i-base-web-knowledge)
-   * [**Session, Cookie, Cache.**](#1-session-cookie-cache)
-   * [**Web Storage**](#2-web-storage)
-   * [**Cors**](#3-cors)
-   * [**RESTful API**](#4-restful-api)
-   * [**SSL**](#5-ssl---secure-sockets-layer)
+   * [Session, Cookie, Cache.](#1-session-cookie-cache)
+   * [Web Storage](#2-web-storage)
+   * [Cors](#3-cors)
+   * [RESTful API](#4-restful-api)
+   * [SSL](#5-ssl---secure-sockets-layer)
 2. [**Javascript.**](#ii-javascript)
-   * [**How JS work?**](#1-how-js-work)
-   * [**Concurrency & Event Loop**](#2-concurrency--the-event-loop)
+   * [How JS work?](#1-how-js-work)
+   * [Concurrency & Event Loop](#2-concurrency--the-event-loop)
    * Type Coercion
    * Prototype & Prototype chain
    * Closure
@@ -69,7 +69,7 @@ Before going deeply into each section, I want to appreciate my thanks to the sou
 
 ## I. Base web knowledge
 
-### 1. [Session](#session), [Cookie](#cookies), [Cache](#cache)
+### 1. Session, Cookie, Cache
 
 Essentially, All of them are used for **store the data** and keep track the information provided by a visitor, but their uses are different.
 
@@ -86,8 +86,6 @@ After read some post, I believe that [this](https://stackoverflow.com/a/3804387/
 >Of course there are other aspects to consider, like you don't want people to hijack other's sessions, you want sessions to not last forever but to expire, and so on.
 >
 >In your specific example, the user id (could be username or another unique ID in your user database) is stored in the session data, server-side, after successful identification. Then for every HTTP request you get from the client, the session id (given by the client) will point you to the correct session data (stored by the server) that contains the authenticated user id - that way your code will know what user it is talking to.
-
-_________
 
 This is a long answer. I will summarize some main content which you can glimpse.
 
@@ -216,13 +214,13 @@ Essentialy, SSL was born to solve this issue, by generate to two key, `public_ke
 So flow will look like that.
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/21PGTQo.png"/>
+    <img loading="lazy" src="https://i.imgur.com/21PGTQo.png"/>
 </p>
 
 In the step 3, if your SLL cert is not provided by a trusted CA, you will see some thing like this.
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/gZoy9tS.png"/>
+    <img loading="lazy" src="https://i.imgur.com/gZoy9tS.png"/>
 </p>
 
 If this happens, although your browser warned, your connection is still encrypted. The browser warns just because it wants to notify you that: "because your SSL is not provided by a trust CA, or it cannot detect the CA, so it cannot assurance that your connection is secured."
@@ -249,7 +247,7 @@ and they are consists of two main components:
 * **Call Stack** — this is where your stack frames are as your code executes
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/kt29GU5.png"/>
+    <img loading="lazy" src="https://i.imgur.com/kt29GU5.png"/>
 </p>
 
 #### Runtime
@@ -285,7 +283,7 @@ printSquare(5);
 >When the engine starts executing this code, the Call Stack will be empty. Afterwards, the steps will be the following:
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/mtmSqDj.png"/>
+    <img loading="lazy" src="https://i.imgur.com/mtmSqDj.png"/>
 </p>
 
 **I note some main content**.
@@ -309,18 +307,18 @@ function start() {
 start();
 ```
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/bc55B5p.png"/>
+    <img loading="lazy" src="https://i.imgur.com/bc55B5p.png"/>
 </p>
 
 Stack overflow
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/IcELMT6.png"/>
+    <img loading="lazy" src="https://i.imgur.com/IcELMT6.png"/>
 </p>
 
 >... running on a single thread is quite limiting as well. Since JavaScript has a single Call Stack, **what happens when things are slow?**. It will cause page unresponsive.
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/MDRKjFn.jpg
+    <img loading="lazy" src="https://i.imgur.com/MDRKjFn.jpg
 "/>
 </p>
 

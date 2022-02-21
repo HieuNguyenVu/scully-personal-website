@@ -8,14 +8,12 @@ import { map, share, tap } from "rxjs/operators";
 import { SocialTagsService } from "../shared/social-tags-services";
 import { HighlightService } from "./highlight.service";
 
-declare var ng: any;
-
 @Component({
     selector: "app-blog",
     templateUrl: "./blog.component.html",
     styleUrls: ["./blog.component.scss", "./github-markdown.scss"],
     preserveWhitespaces: true,
-    encapsulation: ViewEncapsulation.Emulated,
+    encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BlogComponent implements OnInit, AfterViewChecked {

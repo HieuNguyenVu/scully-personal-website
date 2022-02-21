@@ -1,0 +1,583 @@
+<!DOCTYPE html><html><head>
+      <title>[Did-I-Miss]&#x3000;Preparing for a front-end interview</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <p><em><strong>Singapore is the center of technology in ASEAN, and come with that, jobs here have more requirements than VietNam where I live. This note is my preparation for an interview to apply to some companies in Singapore.<br>
+I work as a Fullstack Developer, It seems like I have a lot of things to prepare, and these will help me review my knowledge in whatever position I apply to.</strong></em></p>
+<p><em><strong>The main content of this post will about some base knowledge of Javascript, and Angular&apos;s Core knowledge, also a bit about Design Patterns and Scalable Design for Frontend Systems.</strong></em></p>
+<p><em><strong>Don&apos;t overestimate me! I don&apos;t remember and know all these &#x1F609; but I believe after this post, I will understand them, and also take your appreciation at that time &#x1F604; Let&apos;s learn together!.<br>
+During the reading, please don&#x2019;t hesitate to notify me of misleading information if you spot a misunderstanding!</strong></em></p>
+<ol>
+<li><a href="#i-base-web-knowledge"><strong>Base web knowledge.</strong></a>
+<ul>
+<li><a href="#1-session-cookie-cache"><strong>Session, Cookie, Cache.</strong></a></li>
+<li><a href="#2-web-storage"><strong>Web Storage</strong></a></li>
+<li><a href="#3-cors"><strong>Cors</strong></a></li>
+<li><a href="#4-restful-api"><strong>RESTful API</strong></a></li>
+<li><a href="#5-ssl---secure-sockets-layer"><strong>SSL</strong></a></li>
+</ul>
+</li>
+<li><a href="#ii-javascript"><strong>Javascript.</strong></a>
+<ul>
+<li><a href="#1-how-js-work"><strong>How JS work?</strong></a></li>
+<li><a href="#2-concurrency--the-event-loop"><strong>Concurrency &amp; Event Loop</strong></a></li>
+<li>Type Coercion</li>
+<li>Prototype &amp; Prototype chain</li>
+<li>Closure</li>
+<li>Promise &amp; Async/Await</li>
+<li>Web worker / Service Worker / Worklets</li>
+<li>DOM / Shadow Dom / Virtual Dom</li>
+</ul>
+</li>
+<li>Angular
+<ul>
+<li>Dependency Injection</li>
+<li>Change Detection - NgZone</li>
+<li>Pipe</li>
+<li>RxJS</li>
+<li>State Management</li>
+<li>Optimize</li>
+<li>View Engine</li>
+<li>Performance Handling</li>
+<li>AOT / JIT How they work</li>
+<li>Webpack &amp; Custom Webpack</li>
+<li>Scalable Design</li>
+<li>CI/CD</li>
+<li>Docker for Frontend</li>
+</ul>
+</li>
+</ol>
+<p>Before going deeply into each section, I want to appreciate my thanks to the sources below, which I usually read, and also use some content from them for this post.</p>
+<details>
+   <summary><b><u>Sources:</u></b></summary>
+<p><a href="https://www.youtube.com/watch?v=dGGCEGi4JWg&amp;list=PL73F-X98U6DvFLRC4dmNjgI9MT8IFQdG3"><strong>1. Javascript s&#xE2;u s&#x1EAF;c - TiepPhan</strong></a><br>
+<a href="https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf"><strong>2. How JS work - Sessionstack team</strong></a><br>
+<a href="https://github.com/sudheerj/javascript-interview-questions"><strong>3. Javascript Interview Question - sudheerj</strong></a><br>
+<a href="https://github.com/angular-vietnam/100-days-of-angular"><strong>4. 100 Days of Angular - Angular Vietnam</strong></a><br>
+<a href="https://www.cloudflare.com/learning/privacy/what-are-cookies/"><strong>5. What-Are-Cookies - Clouldflare</strong></a><br>
+<a href="https://medium.com/@electra_chong/what-is-cors-what-is-it-used-for-308cafa4df1a"><strong>6. What is &#x2018;CORS&#x2019;? What is it used for? - Electra Chong</strong></a><br>
+<a href="https://en.wikipedia.org/wiki/Representational_state_transfer"><strong>7. API - REST - RESTfulAPI - Wiki</strong></a><br>
+<a href="https://stackoverflow.com/questions/25172600/rest-what-exactly-is-meant-by-uniform-interface"><strong>8. Uniform interface REST - inf3rno</strong></a></p>
+</details>
+<h2 class="mume-header" id="i-base-web-knowledge">I. Base web knowledge</h2>
+
+<h3 class="mume-header" id="1-session-cookie-cache">1. Session, Cookie, Cache</h3>
+
+<p>Essentially, All of them are used for <strong>store the data</strong> and keep track the information provided by a visitor, but their uses are different.</p>
+<h4 class="mume-header" id="session">Session</h4>
+
+<p>After read some post, I believe that <a href="https://stackoverflow.com/a/3804387/17103635">this</a> explaination is good, and when explain them for fresher or the interviewer. Explain like this will impress and clearly.</p>
+<blockquote>
+<p><strong>Because HTTP is stateless</strong>, in order to associate a request to any other request, you need a way to store user data between HTTP requests.</p>
+<p>Cookies or URL parameters ( for ex. like <a href="http://example.com/myPage?asd=lol&amp;boo=no">http://example.com/myPage?asd=lol&amp;boo=no</a> ) are both suitable ways to transport data between 2 or more request. However they are not good in case you don&apos;t want that data to be readable/editable on client side.</p>
+<p>The solution is to <strong>store that data server side</strong>, <strong>give it an &quot;id&quot;</strong>, and let the client only know (and pass back at every http request) that id. There you go, sessions implemented. Or you can use the client as a convenient remote storage, but you would encrypt the data and keep the secret server-side.</p>
+<p>Of course there are other aspects to consider, like you don&apos;t want people to hijack other&apos;s sessions, you want sessions to not last forever but to expire, and so on.</p>
+<p>In your specific example, the user id (could be username or another unique ID in your user database) is stored in the session data, server-side, after successful identification. Then for every HTTP request you get from the client, the session id (given by the client) will point you to the correct session data (stored by the server) that contains the authenticated user id - that way your code will know what user it is talking to.</p>
+</blockquote>
+<hr>
+<p>This is a long answer. I will summarize some main content which you can glimpse.</p>
+<ul>
+<li>Because HTTP is stateless, we need to associate the last HTTP request with the other  HTTP requests to distinguish each user&apos;s browser.</li>
+<li>We can use Cookies or URL parameters but they are readable/ editable.</li>
+<li>The solution is to <strong>store that data server side</strong>, <strong>give it an &quot;id&quot;</strong>, and let the client only know (and pass back at every http request) that id.</li>
+<li>From that session ID, the server maps them to specific data which identifies the user data.</li>
+<li>The <strong>user session</strong> begins when the user logs in to a specific network application and ends when the user logs out of the program, shuts down the machine, or the Session ID get timeout.</li>
+</ul>
+<h4 class="mume-header" id="cookies">Cookies</h4>
+
+<p>Not like normal people I ussually focus on the core, nature of it. <a href="https://www.cloudflare.com/learning/privacy/what-are-cookies/">Here cloudflare anwser</a> is the answer I feel enough clearly.</p>
+<p>We can get some main content from this:</p>
+<ul>
+<li><strong>Cookies are small files of information</strong> that a <strong>web server generates</strong> and <strong>sends to a web browser</strong></li>
+<li><strong>Web browsers store the cookies they receive</strong> for a predetermined period of time, or for the length of a user&apos;s session on a website. Cookies help inform websites about the user (through user info or sser sessions), enabling the websites to personalize the user experience, Tracking the user flow. They will be attach to HTTP request and sendback to server.</li>
+<li>Browser store cookies in a designated file. We can view cookies from browser from dev tool.</li>
+<li>There are some kind of cookies:
+<ul>
+<li><strong>Session cookies</strong> helps a website track a user&apos;s session. Session cookies are deleted after a user&apos;s session ends, so session cookies have no expiration date, which signifies to the browser that they should be deleted once the session is over.</li>
+<li><strong>Persistent cookies</strong> remain in a user&apos;s browser for a predetermined length of time, which could be a day, a week, several months, or even years. Persistent cookies always contain an expiration date</li>
+<li><strong>Authentication cookies</strong> help manage user sessions; they are generated when a user logs into an account via their browser.</li>
+<li><strong>Tracking cookies</strong> are generated by tracking services. They record user activity, and browsers send this record to the associated tracking service the next time they load a website that uses that tracking service.</li>
+<li><strong>Zombie cookies</strong> regenerate after they are deleted. Zombie cookies create backup versions of themselves outside of a browser&apos;s typical cookie storage location. They use these backups to reappear within a browser after they are deleted. Zombie cookies are sometimes used by unscrupulous ad networks, and even by cyber attackers.</li>
+</ul>
+</li>
+</ul>
+<h4 class="mume-header" id="cache">Cache</h4>
+
+<blockquote>
+<p>A web cache (or HTTP cache) is an information technology for the temporary storage (caching) of web documents, such as HTML pages and images, to reduce bandwidth usage, server load, and perceived lag. Cache is just a collection of data downloaded to help display a web page.<br>
+Cache expires manually and consumes large space in terms of capacity. Cache does not attach with requests, it use as last response of a request and use until exprise.</p>
+</blockquote>
+<h3 class="mume-header" id="2-web-storage">2. Web Storage</h3>
+
+<p>The limit size of cookies is only 4KB, and in some case, user can disable cookies in their browser, so the cookies function cannot work. Besides, cookies always attach to the request; it will take time with the big file.<br>
+Therefore, Web Storage was born.</p>
+<ul>
+<li>Web Storage can store the data from 2MB to 10MB depend on the browser</li>
+<li>Web Storage store at the local but never send to server, so it not impact the bandwidth</li>
+<li>Web Storage is new feature of HTML5 but also support old browser</li>
+<li>Should never store the crucial data as password on Web Storage</li>
+</ul>
+<p>There are two kind of Web Storage.</p>
+<ol>
+<li><strong>Local Storage</strong>: The data store here will not remove after closing the tab or closing the browser. It is only removed after clearing the history.</li>
+<li><strong>Session Storage</strong>: The data of an user session can store here. It is removed after close the tab</li>
+</ol>
+<h3 class="mume-header" id="3-cors">3. Cors</h3>
+
+<p>&#x201C;CORS&#x201D; stands for Cross-Origin Resource Sharing. It allows you to make requests from one website to another website in the browser, which is normally prohibited by another browser policy called the <a href="#same-origin-policy-sop">Same-Origin Policy (SOP)</a>.</p>
+<h4 class="mume-header" id="same-origin-policy-sop">Same-Origin Policy (SOP)</h4>
+
+<blockquote>
+<p>At the crux of it, <strong>CORS and SOP are both browser policies</strong> that have developed in response to issues of browser security and vulnerabilities.</p>
+</blockquote>
+<p>Did you ever hear about CSRF (Cross-Site Request Forgery) or XSRF? Same-Origin Policy was born to prevent that.</p>
+<blockquote>
+<p>Before browsers implemented SOP, malicious websites were able to exploit cookies stored by your browser to make unauthorized requests to other domains. Some of these unauthorized requests could do things like make purchases, delete user information, fetch sensitive data, etc. &#x1F631;</p>
+<p>The <strong>Same-Origin Policy</strong> is a security measure standardized among browsers. The &quot;origin&quot; mostly refers to a &quot;domain&quot;. It prevents different origins from interacting with each other, to prevent attacks such as Cross Site Request Forgery.</p>
+</blockquote>
+<p>-<em><strong>Of course, SOP cannot prevent all the CSRF attack, but atleast It can prevent CSRF in some case.</strong></em></p>
+<h4 class="mume-header" id="cross-origin-resources-sharing">Cross Origin Resources Sharing</h4>
+
+<p>As mentioned above, SOP prevents us to send a request to your APIs in browsers. So, How can we public our API to some specific domain, or public for everyone?<br>
+At last, we&#x2019;ve arrived at CORS.</p>
+<blockquote>
+<p>CORS allows servers to specify certain trusted &#x2018;origins&#x2019; they are willing to permit requests from. Origins are defined as the combination of protocol (http or https), host (a domain like <a href="http://www.example.com">www.example.com</a> or an IP address) and port. Browsers which implement the CORS policy will include a HTTP header called &#x2018;Origin&#x2019; in requests made with AJAX, including above information the value.</p>
+</blockquote>
+<h4 class="mume-header" id="simple-requests-cors">Simple requests - CORS</h4>
+
+<blockquote>
+<ol>
+<li>To instruct the browser to expose server responses to a HTTP requests from certain origin, the web server must respond to the request with an additional HTTP response header, &#x2018;Access-Control-Allow-Origin: <code>&lt;origin&gt;</code>.</li>
+<li>Alternatively, the web server may expose its responses to all origins by specifying a value of &#x2018;*&#x2019;, e.g. &#x2018;Access-Control-Allow-Origin: *&#x2019;.</li>
+</ol>
+</blockquote>
+<h4 class="mume-header" id="preflight-requests-cors">Preflight requests - CORS</h4>
+
+<blockquote>
+<p>This might be sufficient for simple GET, HEAD, or POST requests without any special http headers. However, for DELETE and PUT request, &#x2018;unsafe&#x2019; requests which may impact the server&#x2019;s data, or GET, HEAD and POST requests with customized headers, <strong>the browser will send a &#x201C;preflight&#x201D; request to find out the CORS result prior to sending the actual request</strong> (only if the preflight response determines access is permitted).</p>
+</blockquote>
+<blockquote>
+<p>The preflight request is an OPTIONS request made to the same HTTP path as the actual request, with a couple of HTTP headers: Origin, Access-Control-Request-Method, Access-Control-Request-Headers<br>
+And the Server if support CORS will response to the preflight request with headers: Access-Control-Allow-Origin, Access-Control-Allow-Methods, Access-Control-Allow-Headers.</p>
+</blockquote>
+<p>Usually, all of these will be automatic if we enable CORS on Backend-side, we just need to add headers to the request, and the browser will auto create a preflight request for us.</p>
+<h3 class="mume-header" id="4-restful-api">4. RESTful API</h3>
+
+<h4 class="mume-header" id="api-application-programming-interface">API - Application Programming Interface</h4>
+
+<ol>
+<li>API is a type <strong>Software Interface</strong>, <strong>offering a service to other pieces of software</strong>.</li>
+<li>While User Interface connects a computer/software with the person, an API of software allowed other software to connect with it.</li>
+<li>Purpose of APIs is to <strong>hide the internal details</strong> of how a system works, and exposing only those parts a programmer will find useful and should to know.</li>
+</ol>
+<h4 class="mume-header" id="rest-representational-state-transfer">REST (REpresentational State Transfer)</h4>
+
+<ol>
+<li>REST is <strong>a software architectural style</strong> that was created to <strong>guide the design and development of the architecture for the World Wide Web</strong>.</li>
+<li>REST <strong>defines a set of constraints</strong> for how the architecture of an Internet-scale distributed hypermedia system, <strong>such as the Web, should behave.</strong></li>
+</ol>
+<p><strong>Below is some of REST constrains:</strong> It&apos;s quite long, but I will only note some main concept.</p>
+<ul>
+<li><strong>Client&#x2013;server architecture - The client-server design pattern:</strong> separation of concerns, separating the user interface concerns from the data storage concerns.</li>
+<li><strong>Statelessness:</strong> no session information is retained by the receiver, usually a server.</li>
+<li><strong>Cacheability:</strong> Clients and intermediaries can cache responses. Responses must, implicitly or explicitly, define themselves as either cacheable or non-cacheable.</li>
+<li><strong>Layered system:</strong> We can have a lot of intermediaries along the way. Client and Server don&apos;t need to know about them. We can increase the number of intermediaries to improve security but it does not impact the source code of both client and server.</li>
+<li><strong>Code on demand (optional):</strong> Can change User Interface from Server</li>
+<li><strong>Uniform interface:</strong> The uniform interface constraint is fundamental to the design of any RESTful system. It simplifies and decouples the architecture, which enables each part to evolve independently.
+<ul>
+<li><strong>Identification of resources</strong> - You use the URI (IRI) standard to identify a resource. In this case, a resource is a web document.</li>
+<li><strong>Manipulation of resources through these representations</strong> - You use the HTTP standard to describe communication. So for example GET means that you want to retrieve data about the URI-identified resource. You can describe an operation with an HTTP method and a URI.</li>
+<li><strong>Self-descriptive messages</strong> - You use standard MIME types and (standard) <a href="https://developer.mozilla.org/en-US/docs/Glossary/RDF">RDF vocabs</a> to make messages self-descriptive.</li>
+<li><strong>Hypermedia as the engine of application state</strong> (a.k.a. HATEOAS) - You use hyperlinks and possibly URI Parameters, to decouple the client from the application-specific URI structure. You also can annotate these hyperlinks with semantics. Like this <a href="https://developer.mozilla.org/en-US/docs/Glossary/RDF">Example</a>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>So after understanding about API and REST, we come to RESTful API</strong></p>
+<h4>RESTful API</h4>
+<ol>
+<li>RESTful API is a principle to designing API and conform the REST constraints and REST architectural style, and allows for interaction with RESTful web services.</li>
+<li>5 HTTP method: GET, PUT, POST, PATCH and DELETE suitable to perform action in a REST system. But people usually use CRUD: POST, GET, PUT, DELETE.</li>
+<li>RESTful API don&apos;t use <code>session</code> and <code>cookie</code>, they use <code>access_token</code> with each request.</li>
+<li>Nowadays, People like to use JSON format for the response body of RESTful API, however, some systems also use XML format, it depends on your design.</li>
+</ol>
+<h3 class="mume-header" id="5-ssl-secure-sockets-layer">5. SSL - Secure Sockets Layer</h3>
+
+<h4 class="mume-header" id="what-problem-did-ssl-solved">What problem did SSL solved?</h4>
+
+<p>If you already learn about Two-way Encryption in school, you may know that it have two key: <code>public_key</code> and <code>private_key</code>, first one to encrypt, and second one to decrypt<br>
+Before SSL was created, the data package is just sent without encryption from the client (user) to the server, it was called HTTP. And this is a risk, cause data packages can be captured by the computer in the same network (If you learned to use Wireshark at University in the Network class, you may know that we can capture and read the content of data packages). This technique was called Man-In-The-Middle (MitM).</p>
+<p>Essentialy, SSL was born to solve this issue, by generate to two key, <code>public_key</code> and <code>private_key</code>.<br>
+So flow will look like that.</p>
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/21PGTQo.png">
+</p>
+<p>In the step 3, if your SLL cert is not provided by a trusted CA, you will see some thing like this.</p>
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/gZoy9tS.png">
+</p>
+<p>If this happens, although your browser warned, your connection is still encrypted. The browser warns just because it wants to notify you that: &quot;because your SSL is not provided by a trust CA, or it cannot detect the CA, so it cannot assurance that your connection is secured.&quot;</p>
+<h4 class="mume-header" id="by-appling-ssltls-to-http-it-become-https-that-all">=&gt; By appling SSL/TLS to HTTP, it become HTTPS. That all</h4>
+
+<blockquote>
+<p>Note : TLS is a successor of SSL. They have many differences, about handsakeing ways, protocol, algorithm behind..etc. But they are created for same purposed.<br>
+Some people still call them are &quot;<strong>SSL certificates</strong>&quot; and some also call &quot;<strong>TLS certificates</strong>&quot;.</p>
+</blockquote>
+<h2 class="mume-header" id="ii-javascript">II. Javascript</h2>
+
+<h3 class="mume-header" id="1-how-js-work">1. How JS work?</h3>
+
+<h4 class="mume-header" id="there-are-some-javascript-engine">There are some JavaScript Engine</h4>
+
+<ul>
+<li><strong>V8</strong> from Google is the most used JavaScript engine.</li>
+<li><strong>SpiderMonkey</strong> is developed by Mozilla.</li>
+<li><strong>JavaScriptCore</strong> is Apple&apos;s engine for its Safari browser.</li>
+<li><strong>Chakra</strong> is the engine of the Internet Explorer browser</li>
+</ul>
+<p>and they are consists of two main components:</p>
+<ul>
+<li><strong>Memory Heap</strong> &#x2014; this is where the memory allocation happens</li>
+<li><strong>Call Stack</strong> &#x2014; this is where your stack frames are as your code executes</li>
+</ul>
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/kt29GU5.png">
+</p>
+<h4 class="mume-header" id="runtime">Runtime</h4>
+
+<blockquote>
+<p>There are APIs in the browser that have been used by almost any JavaScript developer out there (e.g. &#x201C;setTimeout, setInterval&#x201D;). Those APIs, however, are not provided by the Engine.<br>
+So, where are they coming from?</p>
+<p>We have those things called <strong>Web APIs</strong> which are provided by browsers, like the DOM, AJAX, setTimeout and much more.</p>
+</blockquote>
+<p><strong>Q?</strong>: My question, <strong>if <code>setTimeout()</code> is WebAPIs, how it can work in NodeJs?</strong></p>
+<p>NodeJS also give a module called The Timers module. And this module contains functions that execute code after a set period of time like <code>setTimeout()</code>, <code>setImmediate()</code>, <code>setInterval()</code></p>
+<h4 class="mume-header" id="call-stack">Call Stack</h4>
+
+<blockquote>
+<p>JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.</p>
+<p>The Call Stack is a data structure which records basically where in the program we are.</p>
+<p>If we step into a function, we put it on the top of the stack. If we return from a function, we pop off the top of the stack. That&#x2019;s all the stack can do.</p>
+<p>Let&#x2019;s see an example. Take a look at the following code:</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token function">multiply</span><span class="token punctuation">(</span><span class="token parameter">x<span class="token punctuation">,</span> y</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-return">return</span> x <span class="token operator">*</span> y<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">printSquare</span><span class="token punctuation">(</span><span class="token parameter">x</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-var">var</span> s <span class="token operator">=</span> <span class="token function">multiply</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">printSquare</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><blockquote>
+<p>When the engine starts executing this code, the Call Stack will be empty. Afterwards, the steps will be the following:</p>
+</blockquote>
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/mtmSqDj.png">
+</p>
+<p><strong>I note some main content</strong>.</p>
+<ul>
+<li>JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.</li>
+<li>The Call Stack is a data structure which records basically where in the program we are.</li>
+<li>Each entry in the Call Stack is called a Stack Frame.</li>
+<li>By stack it help us to trace the exception. In case stack overflow mean that the function was push to much into stack and out of space.</li>
+</ul>
+<p>Trace exception:</p>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript"><span class="token keyword keyword-function">function</span> <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-throw">throw</span> <span class="token keyword keyword-new">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">&apos;SessionStack will help you resolve crashes :)&apos;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword keyword-function">function</span> <span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><p align="center" width="100%">
+    <img src="https://i.imgur.com/bc55B5p.png">
+</p>
+<p>Stack overflow</p>
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/IcELMT6.png">
+</p>
+<blockquote>
+<p>... running on a single thread is quite limiting as well. Since JavaScript has a single Call Stack, <strong>what happens when things are slow?</strong>. It will cause page unresponsive.</p>
+</blockquote>
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/MDRKjFn.jpg
+">
+</p>
+<p>To avoid that, we should use asynchronous callbacks or service workers.</p>
+<h3 class="mume-header" id="2-concurrency-the-event-loop">2. Concurrency &amp; the Event Loop</h3>
+
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
