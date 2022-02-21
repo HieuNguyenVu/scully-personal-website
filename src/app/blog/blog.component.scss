@@ -61,7 +61,10 @@ img[src$="centerme"] {
             min-height: 350px;
         }
         .s-content > p{
-            font-family: charter, Georgia, Cambria, "Times New Roman", Times, serif !important;
+            font-family: $roboto-font-serif !important;
+        }
+        ol li {
+            font-family: $roboto-font-serif !important;
         }
         .post-date {
             text-align: right;
