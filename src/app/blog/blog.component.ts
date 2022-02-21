@@ -8,6 +8,8 @@ import { map, share, tap } from "rxjs/operators";
 import { SocialTagsService } from "../shared/social-tags-services";
 import { HighlightService } from "./highlight.service";
 
+declare var ng: any;
+
 @Component({
     selector: "app-blog",
     templateUrl: "./blog.component.html",
