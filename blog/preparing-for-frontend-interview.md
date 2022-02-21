@@ -29,7 +29,7 @@ During the reading, please don’t hesitate to notify me of misleading informati
    * [**SSL**](#5-ssl---secure-sockets-layer)
 2. [**Javascript.**](#ii-javascript)
    * [**How JS work?**](#1-how-js-work)
-   * Event Loop
+   * [**Concurrency & Event Loop**](#2-concurrency--the-event-loop)
    * Type Coercion
    * Prototype & Prototype chain
    * Closure
@@ -266,7 +266,68 @@ NodeJS also give a module called The Timers module. And this module contains fun
 #### Call Stack
 
 >JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.
-
+>
 >The Call Stack is a data structure which records basically where in the program we are.
+>
+>If we step into a function, we put it on the top of the stack. If we return from a function, we pop off the top of the stack. That’s all the stack can do.
+>
+>Let’s see an example. Take a look at the following code:
+```javascript
+function multiply(x, y) {
+    return x * y;
+}
+function printSquare(x) {
+    var s = multiply(x, x);
+    console.log(s);
+}
+printSquare(5);
+```
+>When the engine starts executing this code, the Call Stack will be empty. Afterwards, the steps will be the following:
+
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/mtmSqDj.png"/>
+</p>
+
+**I note some main content**.
+
+* JavaScript is a single-threaded programming language, which means it has a single Call Stack. Therefore it can do one thing at a time.
+* The Call Stack is a data structure which records basically where in the program we are.
+* Each entry in the Call Stack is called a Stack Frame.
+* By stack it help us to trace the exception. In case stack overflow mean that the function was push to much into stack and out of space.
+
+Trace exception:
+```javascript
+function foo() {
+    throw new Error('SessionStack will help you resolve crashes :)');
+}
+function bar() {
+    foo();
+}
+function start() {
+    bar();
+}
+start();
+```
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/bc55B5p.png"/>
+</p>
+
+Stack overflow
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/IcELMT6.png"/>
+</p>
+
+>... running on a single thread is quite limiting as well. Since JavaScript has a single Call Stack, **what happens when things are slow?**. It will cause page unresponsive.
+
+<p align="center" width="100%">
+    <img src="https://i.imgur.com/MDRKjFn.jpg
+"/>
+</p>
+
+To avoid that, we should use asynchronous callbacks or service workers.
+
+
+### 2. Concurrency & the Event Loop
+
 
 
