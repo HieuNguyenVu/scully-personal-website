@@ -8,8 +8,8 @@ image: 'https://i.imgur.com/AxItho4.png'
 header_image: 'https://i.imgur.com/vbZSvxD.png'
 tags: ['Practice', 'Frontend', 'Interview']
 priority: 0
-link: '/blog/preparing-for-frontend-interview.md'
-slug: preparing-for-frontend-interview.md
+link: '/blog/preparing-for-frontend-interview'
+slug: preparing-for-frontend-interview
 location: 'Hanoi, Vietnam'
 ---
 
