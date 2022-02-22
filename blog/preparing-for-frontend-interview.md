@@ -213,17 +213,17 @@ Before SSL was created, the data package is just sent without encryption from th
 Essentialy, SSL was born to solve this issue, by generate to two key, `public_key` and `private_key`.
 So flow will look like that.
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/21PGTQo.png"/>
       <figcaption>Fig.1 - How does SSL handshaking.</figcaption>
-</p>
+</figure>
 
 In the step 3, if your SLL cert is not provided by a trusted CA, you will see some thing like this.
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/gZoy9tS.png"/>
     <figcaption>Fig.2 - Error when SSL cert invalid.</figcaption>
-</p>
+</figure>
 
 If this happens, although your browser warned, your connection is still encrypted. The browser warns just because it wants to notify you that: "because your SSL is not provided by a trust CA, or it cannot detect the CA, so it cannot assurance that your connection is secured."
 
@@ -248,10 +248,10 @@ and they are consists of two main components:
 * **Memory Heap** — this is where the memory allocation happens
 * **Call Stack** — this is where your stack frames are as your code executes
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/kt29GU5.png"/>
     <figcaption>Fig.3 - JS components.</figcaption>
-</p>
+</figure>
 
 #### Runtime
 
@@ -285,10 +285,10 @@ printSquare(5);
 ```
 >When the engine starts executing this code, the Call Stack will be empty. Afterwards, the steps will be the following:
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/mtmSqDj.png"/>
     <figcaption>Fig.4 - How callstack work.</figcaption>
-</p>
+</figure>
 
 **I note some main content**.
 
@@ -309,22 +309,22 @@ function start() {
 }
 start();
 ```
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/bc55B5p.png"/>
     <figcaption>Fig.5 - Tracing a exception.</figcaption>
-</p>
+</figure>
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/IcELMT6.png"/>
     <figcaption>Fig.6 - Stack overflow.</figcaption>
-</p>
+</figure>
 
 >... running on a single thread is quite limiting as well. Since JavaScript has a single Call Stack, **what happens when things are slow?**. It will cause page unresponsive.
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/MDRKjFn.jpg"/>
     <figcaption>Fig.7 - Browser unresponsive.</figcaption>
-</p>
+</figure>
 
 To avoid that, we should use asynchronous callbacks or service workers.
 
