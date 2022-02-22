@@ -215,12 +215,14 @@ So flow will look like that.
 
 <p align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/21PGTQo.png"/>
+      <figcaption>Fig.1 - How does SSL handshaking.</figcaption>
 </p>
 
 In the step 3, if your SLL cert is not provided by a trusted CA, you will see some thing like this.
 
 <p align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/gZoy9tS.png"/>
+    <figcaption>Fig.2 - Error when SSL cert invalid.</figcaption>
 </p>
 
 If this happens, although your browser warned, your connection is still encrypted. The browser warns just because it wants to notify you that: "because your SSL is not provided by a trust CA, or it cannot detect the CA, so it cannot assurance that your connection is secured."
@@ -248,6 +250,7 @@ and they are consists of two main components:
 
 <p align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/kt29GU5.png"/>
+    <figcaption>Fig.3 - JS components.</figcaption>
 </p>
 
 #### Runtime
@@ -284,6 +287,7 @@ printSquare(5);
 
 <p align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/mtmSqDj.png"/>
+    <figcaption>Fig.4 - How callstack work.</figcaption>
 </p>
 
 **I note some main content**.
@@ -293,7 +297,6 @@ printSquare(5);
 * Each entry in the Call Stack is called a Stack Frame.
 * By stack it help us to trace the exception. In case stack overflow mean that the function was push to much into stack and out of space.
 
-Trace exception:
 ```javascript
 function foo() {
     throw new Error('SessionStack will help you resolve crashes :)');
@@ -308,24 +311,21 @@ start();
 ```
 <p align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/bc55B5p.png"/>
+    <figcaption>Fig.5 - Tracing a exception.</figcaption>
 </p>
 
-Stack overflow
 <p align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/IcELMT6.png"/>
+    <figcaption>Fig.6 - Stack overflow.</figcaption>
 </p>
 
 >... running on a single thread is quite limiting as well. Since JavaScript has a single Call Stack, **what happens when things are slow?**. It will cause page unresponsive.
 
 <p align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/MDRKjFn.jpg
-"/>
+    <img loading="lazy" src="https://i.imgur.com/MDRKjFn.jpg"/>
+    <figcaption>Fig.7 - Browser unresponsive.</figcaption>
 </p>
 
 To avoid that, we should use asynchronous callbacks or service workers.
 
-
 ### 2. Concurrency & the Event Loop
-
-
-

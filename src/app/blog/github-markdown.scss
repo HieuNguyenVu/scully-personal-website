@@ -659,6 +659,8 @@
         border-left: 0.25em solid #f29e03;
         background-color: white;
         border-radius: 4px;
+        padding-top: 5px;
+        padding-bottom: 5px;
     }
 
     .markdown-body blockquote p{
@@ -787,6 +789,7 @@
         max-width: 100%;
         box-sizing: initial;
         background-color: #fff !important;
+        border-radius: 5px;
     }
 
     .markdown-body img[align="right"] {

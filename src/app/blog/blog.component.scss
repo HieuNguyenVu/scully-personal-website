@@ -21,6 +21,11 @@ $max-blog-width: 850px;
     .content {
         padding: 0;
     }
+
+    app-footer .footer{
+        padding: 0 5rem;
+        width: auto;
+    }
 }
 
 img[src$="centerme"] {
