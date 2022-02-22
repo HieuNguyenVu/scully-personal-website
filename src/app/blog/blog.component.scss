@@ -26,6 +26,10 @@ $max-blog-width: 850px;
         padding: 0 5rem;
         width: auto;
     }
+
+    figcaption {
+        font-style: italic;
+    }
 }
 
 img[src$="centerme"] {
