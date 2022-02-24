@@ -12,6 +12,18 @@
         "typeIndex": 0
     },
     {
+        "title": "F2F: File to friends",
+        "description": "Using WebRTC as main technical. This website allow user send file directly Peer to Peer between two browser without save file in external server like google drive, one drive, etc. And it can work as torrent browser, which allow a browser share a big file for every one.",
+        "guide": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
+        "image": "https://i.imgur.com/2O9end0.jpg",
+        "link": "https://f2f.nhvu95.com/",
+        "link_source": "https://github.com/nhvu95/serverless-send-file-peer-to-peer",
+        "date_start": "2021/09/02",
+        "date_end": "2021/09/20",
+        "exist": true,
+        "typeIndex": 1
+    },
+    {
         "title": "Sound Memos",
         "description": "Sound Recording Web Application, all sound resolve process is handled on the browser side, and do not store any data of the user. Fast and easy to use.",
         "guide": "https://github.com/nhvu95/soundmemos-vuejs",
@@ -34,6 +46,30 @@
         "date_end": "2021/08/25",
         "exist": true,  
         "typeIndex": 2
+    },
+    {
+        "title": "Scully Plugin Emoji",
+        "description": "This is a scully plugin, Run as post process after static site render, to convert all emoji syntax :grinning: to 😀",
+        "guide": "https://www.npmjs.com/package/@nhvu95/scully-plugin-emoji",
+        "image": "https://i.imgur.com/EIaJsSc.png",
+        "link": "https://www.npmjs.com/package/@nhvu95/scully-plugin-emoji",
+        "link_source": "https://github.com/nhvu95/scully-plugins/tree/master/projects/scully-plugin-emoji",
+        "date_start": "2022/02/22",
+        "date_end": "2021/02/24",
+        "exist": true,
+        "typeIndex": 2
+    },
+    {
+        "title": "Image Hosting",
+        "description": "Work In Progress!!!. Image hosting system, allow user upload image and get direct link to download. Auto resize to multiple screen size, also support for lazy load.",
+        "guide": "https://github.com/nhvu95/hosting-image",
+        "image": "https://i.imgur.com/CHSIb86.png",
+        "link": "https://github.com/nhvu95/hosting-image",
+        "link_source": "https://github.com/nhvu95/host-image-client",
+        "date_start": "2021/12/28",
+        "date_end": "2021/12/04",
+        "exist": true,  
+        "typeIndex": 0
     },
     {
         "title": "Image Hosting",
