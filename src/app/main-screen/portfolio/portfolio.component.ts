@@ -39,11 +39,7 @@ export class PortfolioComponent implements OnInit {
    */
   resultHandler(res: Project[], type: number) {
     let list = [];
-    if (type != 3) {
-      res = res.filter((item) => item.typeIndex == type);
-    } else {
-      res = [...new Set(res)];
-    }
+    res = res.filter((item) => item.typeIndex.includes(type));
     while (res.length > 0) {
       let chunk = res.splice(0, 2);
       if (chunk.length === 1) chunk.push({...chunk[0], exist: false});

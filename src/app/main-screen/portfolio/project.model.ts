@@ -9,7 +9,7 @@ export interface Project_ {
     date_start: string,
     date_end: string,
     exist: boolean,
-    typeIndex: number,
+    typeIndex: number[],
     priority: number
 }
 export interface Project extends Partial<Project_> {
