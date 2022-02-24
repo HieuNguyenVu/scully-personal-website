@@ -49,7 +49,7 @@
     },
     {
         "title": "Scully Plugin Emoji",
-        "description": "This is a scully plugin, Run as post process after static site render, to convert all emoji syntax :grinning: to 😀",
+        "description": "This is a scully plugin, Run as post process after static site was rendered to convert all emoji syntax like :grinning: to 😀",
         "guide": "https://www.npmjs.com/package/@nhvu95/scully-plugin-emoji",
         "image": "https://i.imgur.com/EIaJsSc.png",
         "link": "https://www.npmjs.com/package/@nhvu95/scully-plugin-emoji",

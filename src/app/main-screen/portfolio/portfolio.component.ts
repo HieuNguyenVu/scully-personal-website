@@ -41,6 +41,8 @@ export class PortfolioComponent implements OnInit {
     let list = [];
     if (type != 3) {
       res = res.filter((item) => item.typeIndex == type);
+    } else {
+      res = [...new Set(res)];
     }
     while (res.length > 0) {
       let chunk = res.splice(0, 2);
