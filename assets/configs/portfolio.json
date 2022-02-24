@@ -9,19 +9,19 @@
         "date_start": "2021/09/02",
         "date_end": "2021/09/20",
         "exist": true,
-        "typeIndex": 0
+        "typeIndex": [0, 3]
     },
     {
         "title": "F2F: File to friends",
-        "description": "Using WebRTC as main technical. This website allow user send file directly Peer to Peer between two browser without save file in external server like google drive, one drive, etc. And it can work as torrent browser, which allow a browser share a big file for every one.",
-        "guide": "https://github.com/HieuNguyenVu/angular-send-file-peer-to-peer",
+        "description": "Using Severless FW, AWS Lambda, AWS ActiveMQ as main technicals. This website allow user send file directly Peer to Peer between two browser without save file in external server like google drive, one drive, etc. And it can work as torrent browser, which allow a browser share a big file for every one.",
+        "guide": "https://github.com/nhvu95/serverless-send-file-peer-to-peer",
         "image": "https://i.imgur.com/2O9end0.jpg",
         "link": "https://f2f.nhvu95.com/",
         "link_source": "https://github.com/nhvu95/serverless-send-file-peer-to-peer",
         "date_start": "2021/09/02",
         "date_end": "2021/09/20",
         "exist": true,
-        "typeIndex": 1
+        "typeIndex": [1]
     },
     {
         "title": "Sound Memos",
@@ -33,7 +33,7 @@
         "date_start": "2021/10/01",
         "date_end": "2021/10/10",
         "exist": true,
-        "typeIndex": 0
+        "typeIndex": [0, 3]
     },
     {
         "title": "Ebay Automation Tool",
@@ -45,7 +45,7 @@
         "date_start": "2021/08/20",
         "date_end": "2021/08/25",
         "exist": true,  
-        "typeIndex": 2
+        "typeIndex": [2, 3]
     },
     {
         "title": "Scully Plugin Emoji",
@@ -57,7 +57,7 @@
         "date_start": "2022/02/22",
         "date_end": "2021/02/24",
         "exist": true,
-        "typeIndex": 2
+        "typeIndex": [2, 3]
     },
     {
         "title": "Image Hosting",
@@ -69,7 +69,7 @@
         "date_start": "2021/12/28",
         "date_end": "2021/12/04",
         "exist": true,  
-        "typeIndex": 0
+        "typeIndex": [0]
     },
     {
         "title": "Image Hosting",
@@ -81,6 +81,6 @@
         "date_start": "2021/12/28",
         "date_end": "2021/12/04",
         "exist": true,  
-        "typeIndex": 1
+        "typeIndex": [1, 3]
     }
 ]
