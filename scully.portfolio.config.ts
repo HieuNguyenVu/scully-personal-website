@@ -15,7 +15,7 @@ import "prismjs/components/prism-typescript";
 import { getSitemapPlugin } from "@gammastream/scully-plugin-sitemap";
 const { MinifyHtml } = require("scully-plugin-minify-html");
 
-require("scully-plugin-canonical");
+import { getEmojiPlugin } from "@nhvu95/scully-plugin-emoji";
 
 setPluginConfig("md", { enableSyntaxHighlighting: true });
 
@@ -38,6 +38,8 @@ setPluginConfig(SitemapPlugin, {
     },
 });
 
+const EmojiPlugin = getEmojiPlugin();
+
 export const config: ScullyConfig = {
     projectRoot: "./src",
     projectName: "portfolio",
@@ -49,7 +51,7 @@ export const config: ScullyConfig = {
             slug: {
                 folder: "./blog",
             },
-            postRenderers: ["setCanonicalLinkPlugin", MinifyHtml],
+            postRenderers: [EmojiPlugin, MinifyHtml],
         },
     },
 };

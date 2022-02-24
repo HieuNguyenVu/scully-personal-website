@@ -18,7 +18,7 @@ I work as a Fullstack Developer, It seems like I have a lot of things to prepare
 
 _**The main content of this post will about some base knowledge of Javascript, and Angular's Core knowledge, also a bit about Design Patterns and Scalable Design for Frontend Systems.**_
 
-_**Don't overestimate me! I don't remember and know all these ;) but I believe after this post, I will understand them, and also take your appreciation at that time :D Let's learn together!.  
+_**Don't overestimate me! I don't remember and know all these :smile: but I believe after this post, I will understand them, and also take your appreciation at that time :smile: Let's learn together!.  
 During the reading, please don’t hesitate to notify me of misleading information if you spot a misunderstanding!**_
 
 1. [**Base web knowledge.**](#i-base-web-knowledge)
