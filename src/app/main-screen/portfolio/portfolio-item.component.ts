@@ -10,7 +10,7 @@ import { Project } from "./project.model";
             </div>
             <div class="topic">
                 <h3 class="title" matTooltip="{{ project.title }}" matTooltipClass="title-tooltip" [matTooltipShowDelay]="500">{{ project.title }}</h3>
-                <div class="technologies">
+                <div class="technologies" matTooltip="{{ project[type].technologies.join(' ') }}" matTooltipClass="flex-tooltip" [matTooltipShowDelay]="500">
                     <ng-container *ngFor="let tech of project[type].technologies">
                         <label class="tag-item"
                             ><a href="#">#{{ tech }}</a></label

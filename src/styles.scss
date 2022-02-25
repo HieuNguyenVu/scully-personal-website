@@ -263,7 +263,7 @@ button.m-icon {
 .title-tooltip {
     font-size: 1rem;
     line-height: 1;
-    min-width: 300px;
+    // min-width: 300px;
     color: white !important;
 }
 
@@ -271,6 +271,11 @@ button.m-icon {
     font-size: 14px;
     line-height: 1.2;
     min-width: 450px;
+    color: white !important;
+}
+.flex-tooltip {
+    font-size: 14px;
+    line-height: 1.2;
     color: white !important;
 }
 ::ng-deep .snack-bar-container {
@@ -304,7 +309,7 @@ button.m-icon {
             justify-content: center;
             #footer-contact {
                 max-width: fit-content;
-                margin-right: 10px;
+                margin-right: 20vw;
             }
         }
         .inner-bounds {

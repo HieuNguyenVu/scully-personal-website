@@ -10,12 +10,13 @@
         app-portfolio-item {
             margin-left: 5px;
             margin-right: 5px;
-            margin-bottom: 10px;
+            // margin-bottom: 10px;
             max-width: calc(50% - 10px);
             width: 100%;
         }
     }
 }
+
 mat-tab-group {
     margin-left: auto
 }

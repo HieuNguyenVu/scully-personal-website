@@ -4,7 +4,7 @@
     background-color: $bg_topic_img;
 
     min-height: 170px;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     border: 1px solid $main-color2;
     border-radius: 10px;
     overflow: hidden;
@@ -32,7 +32,11 @@
 
 .technologies {
     line-height: 1;
-    margin-bottom: 5px;
+    max-height: 29px;
+    overflow: hidden;
+    label {
+        margin-bottom: 5px;
+    }
     .tag-item {
         display: inline-block;
         background-color: #0f9d5830;
@@ -83,7 +87,7 @@
                 margin-right: 10px;
             }
         }
-        span{
+        span {
             margin: auto;
         }
     }
@@ -112,7 +116,7 @@
             width: 100%;
         }
         .topic-image-container {
-            width: calc(100% - 20px);;
+            width: calc(100% - 20px);
         }
         .topic {
             padding-left: 10px;
