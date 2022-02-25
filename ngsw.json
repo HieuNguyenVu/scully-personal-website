@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1645727444932,
+  "timestamp": 1645779843317,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -12,13 +12,13 @@
       },
       "urls": [
         "/4.901122dcec5899ff8c0b.js",
-        "/5.9ced8c1edd98d6943b67.js",
+        "/5.dd0558cba1238bb98818.js",
         "/index.html",
         "/main.46df0d93b3c11551a440.js",
         "/manifest.webmanifest",
         "/polyfills.1f78ba433808c13f56e3.js",
-        "/runtime.cc3f3ca1ff90954e87c0.js",
-        "/styles.c53bd8fdc3b4b4555d84.css"
+        "/runtime.fbaf7ddbe3c543610499.js",
+        "/styles.4387980d2b16fa1b0951.css"
       ],
       "patterns": []
     },
@@ -47,8 +47,8 @@
   "dataGroups": [],
   "hashTable": {
     "/4.901122dcec5899ff8c0b.js": "d2d8660de7e1697f8d7a9d3a239e90e3bbd06c3f",
-    "/5.9ced8c1edd98d6943b67.js": "311e88e0798d4dc97bb13026d6c9a6b82c93188d",
-    "/assets/configs/portfolio.json": "5d03c91d7fe323c9c531e55205300365d41bae47",
+    "/5.dd0558cba1238bb98818.js": "ce7dfb11b4195b033abdecb7cc8a131d7955b188",
+    "/assets/configs/portfolio.json": "c1f58b0add671a6c4865ae0591bf9095a7ff12f3",
     "/assets/icons/favicon-128x128.png": "ffaa8a2b8d1422f9491bf6fbe3065b30b3670002",
     "/assets/icons/favicon-16x16.png": "6be0aa45440845422edac643fbed51f954094db4",
     "/assets/icons/favicon-196x196.png": "53a3123253ff5b543b9494f2c48446cbad6f71b4",
@@ -58,12 +58,12 @@
     "/assets/scully-routes.json": "451e8f081f200aa9348c8e689475980bf81e4478",
     "/assets/styles/global-var.scss": "c9b784b35b25fe8815e02a76e53468e79193733d",
     "/assets/styles/prism-coy-without-shadows.scss": "66f5ff753dee45ba4c0dcff44547e24dc5dc5bbc",
-    "/index.html": "d67c78ac5530e23a2cae6edc84e19f86ffb96edc",
+    "/index.html": "f52cbb67d4011b47f64bf445f735bb6fc23d80b8",
     "/main.46df0d93b3c11551a440.js": "ab72da6385089989b09b9cf32b5fe73bafd90d22",
     "/manifest.webmanifest": "00aaf6cb1e68f421f5632ee491e66b60bf769245",
     "/polyfills.1f78ba433808c13f56e3.js": "46cc9324049f55fa376d3aaa09fbd3ce476f5cde",
-    "/runtime.cc3f3ca1ff90954e87c0.js": "85feb6fad95e5c69c321103a774a2da7e912f0df",
-    "/styles.c53bd8fdc3b4b4555d84.css": "2431e32f34f328f96093acbc7b3b78c52497cd95"
+    "/runtime.fbaf7ddbe3c543610499.js": "ef703d9acd166a7da94833704c740e9ec89cb1e8",
+    "/styles.4387980d2b16fa1b0951.css": "dab3a5c2013b13271b7a1265fc8ae70d32ef99df"
   },
   "navigationUrls": [
     {
