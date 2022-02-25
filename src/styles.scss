@@ -2,6 +2,10 @@
 @import "@angular/material/prebuilt-themes/purple-green.css";
 @import "styles/global-var.scss";
 
+html {
+    overflow-y: overlay;
+}
+
 mat-tab-group.mat-primary .mat-ink-bar,
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: $main-color !important;
@@ -251,9 +255,9 @@ body {
 //     background-position-x: -327.75px;
 //     background-position-y: 0px;
 // }
-button.m-icon{
-  border: 0px;
-  background-color: unset;
+button.m-icon {
+    border: 0px;
+    background-color: unset;
 }
 
 .title-tooltip {

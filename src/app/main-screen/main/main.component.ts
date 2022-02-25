@@ -12,7 +12,7 @@ export class MainComponent implements OnInit, AfterViewInit {
     navIndex: number = 0;
     defaultSelect: number = 0;
     ngOnInit(): void {
-        console.log("WINDOW", window);
+        // console.log("WINDOW", window);
 
         let param = this.route.snapshot.queryParams;
         if (param && !isNaN(parseInt(param["index"]))) {

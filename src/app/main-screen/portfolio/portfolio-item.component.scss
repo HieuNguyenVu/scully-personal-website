@@ -30,6 +30,27 @@
     background-color: white;
 }
 
+.technologies {
+    line-height: 1;
+    margin-bottom: 5px;
+    .tag-item {
+        display: inline-block;
+        background-color: #0f9d5830;
+        border: 1px solid #0f9d5830;
+        margin-right: 5px;
+        border-radius: 5px;
+        padding: 4px;
+        min-width: 40px;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+    a:hover {
+        color: $main-color2 !important;
+    }
+}
+
 .topic {
     display: flex;
     flex-direction: column;
@@ -50,14 +71,20 @@
         display: -webkit-box;
         -webkit-line-clamp: 3;
         -webkit-box-orient: vertical;
+        line-height: normal;
+        min-height: 3rem;
     }
     .topic-footer {
         // margin-top: auto;
+        display: flex;
         .topic-link {
             a {
                 color: $main-color !important;
                 margin-right: 10px;
             }
+        }
+        span{
+            margin: auto;
         }
     }
 }

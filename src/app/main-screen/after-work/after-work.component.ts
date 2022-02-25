@@ -3,7 +3,7 @@ import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
 import { BehaviorSubject, Observable, of } from "rxjs";
 import { map, share } from "rxjs/operators";
 import { MainScreenService } from "../main-screen.service";
-import { Project } from "../portfolio/project.model";
+import { Post } from "../portfolio/project.model";
 
 @Component({
     selector: "app-after-work",
@@ -15,10 +15,10 @@ export class AfterWorkComponent implements OnInit {
     currentNavIndex = 0;
 
     constructor(private service: MainScreenService, private scullyService: ScullyRoutesService) {}
-    _projects: BehaviorSubject<Project[][]> = new BehaviorSubject<Project[][]>([]);
-    projects$: Observable<Project[][]> = this._projects.asObservable();
+    _projects: BehaviorSubject<Post[][]> = new BehaviorSubject<Post[][]>([]);
+    projects$: Observable<Post[][]> = this._projects.asObservable();
 
-    remains: Project[] = [];
+    remains: Post[] = [];
 
     ngOnInit(): void {
         let links$ = this.scullyService.allRoutes$.pipe(
@@ -26,7 +26,7 @@ export class AfterWorkComponent implements OnInit {
             map((scullyRoutes) => scullyRoutes.sort((postA, postB) => postA.priority - postB.priority)),
             map((scullyRoutes) =>
                 scullyRoutes.map((routes) => {
-                    console.log(routes);
+                    // console.log(routes);
                     routes.title = routes.title.replace("　", " ");
                     return routes;
                 })
@@ -72,8 +72,8 @@ export class AfterWorkComponent implements OnInit {
         this._projects.next(news);
     }
 
-    scullyRouteTopProject(scullyRoutes: ScullyRoute[]): Project[] {
-        return scullyRoutes.map<Project>((scullyRoute) => {
+    scullyRouteTopProject(scullyRoutes: ScullyRoute[]): Post[] {
+        return scullyRoutes.map<Post>((scullyRoute) => {
             return {
                 title: scullyRoute.title,
                 image: scullyRoute.image,
