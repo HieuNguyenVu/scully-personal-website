@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1645895745959,
+  "timestamp": 1645897717461,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -12,12 +12,12 @@
       },
       "urls": [
         "/4.901122dcec5899ff8c0b.js",
-        "/5.52db3303abe73b1b4d09.js",
+        "/5.9f1256aa594202ca053e.js",
         "/index.html",
         "/main.46df0d93b3c11551a440.js",
         "/manifest.webmanifest",
         "/polyfills.1f78ba433808c13f56e3.js",
-        "/runtime.b1acf16915b1353563c7.js",
+        "/runtime.cf13920155ea02379921.js",
         "/styles.d42595825394ccd2936a.css"
       ],
       "patterns": []
@@ -47,8 +47,8 @@
   "dataGroups": [],
   "hashTable": {
     "/4.901122dcec5899ff8c0b.js": "bc9b5416d0b889a752c266d60f8c7f054e569ec3",
-    "/5.52db3303abe73b1b4d09.js": "6d47887151a7f0a739be76058925afe1f3824eee",
-    "/assets/configs/portfolio.json": "7c35f52fc64aaf3089546b1966128966d3ba5a95",
+    "/5.9f1256aa594202ca053e.js": "7c97d1024e54911ce7ffe190a6de984df5c03407",
+    "/assets/configs/portfolio.json": "2c297172c4358121f024f4994343d2a2fa25a539",
     "/assets/icons/favicon-128x128.png": "ffaa8a2b8d1422f9491bf6fbe3065b30b3670002",
     "/assets/icons/favicon-16x16.png": "6be0aa45440845422edac643fbed51f954094db4",
     "/assets/icons/favicon-196x196.png": "53a3123253ff5b543b9494f2c48446cbad6f71b4",
@@ -58,11 +58,11 @@
     "/assets/scully-routes.json": "451e8f081f200aa9348c8e689475980bf81e4478",
     "/assets/styles/global-var.scss": "c9b784b35b25fe8815e02a76e53468e79193733d",
     "/assets/styles/prism-coy-without-shadows.scss": "66f5ff753dee45ba4c0dcff44547e24dc5dc5bbc",
-    "/index.html": "adcf0bdcd6482494a70a4eaa9d6d8adefdc9794e",
+    "/index.html": "b63fa4b6202b101e16f7762a1db715365e57f790",
     "/main.46df0d93b3c11551a440.js": "8120e5f655dad2eab8a8598c6b58159d59bce3e0",
     "/manifest.webmanifest": "00aaf6cb1e68f421f5632ee491e66b60bf769245",
     "/polyfills.1f78ba433808c13f56e3.js": "200f240d1490662633bc08ca4cba8212353a83fa",
-    "/runtime.b1acf16915b1353563c7.js": "776524f238d2f5a31fd5400bb8cb9a3c661b3a19",
+    "/runtime.cf13920155ea02379921.js": "9e9cff984cadc0b3361ff95e5edc578459c5f053",
     "/styles.d42595825394ccd2936a.css": "07226225766e25d5f3aaf871af0fa9baac262aa8"
   },
   "navigationUrls": [
