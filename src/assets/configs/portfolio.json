@@ -149,7 +149,7 @@
             "source": "https://github.com/nhvu95/hosting-image",
             "date_start": "2021/12/28",
             "date_end": "2021/12/04",
-            "technologies": ["SpringBoot", "Java", "Imgur"]
+            "technologies": ["SpringBoot", "PostgresSQL", "Imgur"]
         },
         "3": {
             "guide": "https://github.com/nhvu95/host-image-client",
@@ -158,7 +158,7 @@
             "source": "https://github.com/nhvu95/hosting-image",
             "date_start": "2021/12/28",
             "date_end": "2021/12/04",
-            "technologies": ["Angular", "TaigaUI", "RxJS", "SpringBoot", "Java"]
+            "technologies": ["Angular", "SpringBoot", "TaigaUI", "PostgresSQL", "RxJS"]
         }
     },
     {
