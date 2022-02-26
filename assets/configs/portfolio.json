@@ -54,7 +54,7 @@
         }
     },
     {
-        "title": "Scully Plugin Emoji",
+        "title": "Scully Plugin - Emoji",
         "description": "This is a scully plugin, Run as post process after static site was rendered to convert all emoji syntax like :grinning: to 😀",
         "exist": true,
         "projectTypes": [2, 3],
@@ -69,7 +69,7 @@
         }
     },
     {
-        "title": "Scully Plugin Emoji",
+        "title": "Scully Plugin - Scroll To Section",
         "description": "This is a scully plugin, Run as post process after static site was rendered to help <a> tag can scroll to a specific section in the static site",
         "exist": true,
         "projectTypes": [2, 3],
