@@ -23,11 +23,20 @@ import { Project } from "./project.model";
                 <div class="topic-footer">
                     <div class="date">{{ project[type].date_end }}</div>
                     <span></span>
-                    <div class="topic-link">
-                        <a *ngIf="project[type].demo" href="{{ project[type].demo }}" target="_blank">Demo</a>
-                        <a *ngIf="project[type].source" href="{{ project[type].source }}" target="_blank">Source</a>
-                        <a *ngIf="project[type].guide" href="{{ project[type].guide }}" target="_blank">Guide</a>
-                    </div>
+                    <ng-container *ngIf="type != 3; else type3">
+                        <div class="topic-link">
+                            <a *ngIf="project[type].demo" href="{{ project[type].demo }}" target="_blank">Demo</a>
+                            <a *ngIf="project[type].source" href="{{ project[type].source }}" target="_blank">Source</a>
+                            <a *ngIf="project[type].guide" href="{{ project[type].guide }}" target="_blank">Guide</a>
+                        </div>
+                    </ng-container>
+                    <ng-template #type3>
+                        <div class="topic-link">
+                            <a *ngIf="project[type].demo" href="{{ project[type].demo }}" target="_blank">Demo</a>
+                            <a *ngIf="project[type].source" href="{{ project[type].source }}" target="_blank">Source</a>
+                            <a *ngIf="project[type].guide" href="{{ project[type].guide }}" target="_blank">Guide</a>
+                        </div>
+                    </ng-template>
                 </div>
             </div>
         </div>
@@ -40,8 +49,5 @@ export class PortfolioItemComponent implements OnInit {
     @Input() project: Project;
     ngOnInit(): void {
         this.type = this.project.displayType;
-        if (this.type == 3) {
-            this.type = Math.min(...this.project.projectTypes);
-        }
     }
 }
