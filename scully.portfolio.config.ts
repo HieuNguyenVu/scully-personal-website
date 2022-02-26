@@ -16,6 +16,7 @@ import { getSitemapPlugin } from "@gammastream/scully-plugin-sitemap";
 const { MinifyHtml } = require("scully-plugin-minify-html");
 
 import { getEmojiPlugin } from "@nhvu95/scully-plugin-emoji";
+import { getScrollToSection } from "@nhvu95/scully-plugin-scroll2section";
 
 setPluginConfig("md", { enableSyntaxHighlighting: true });
 
@@ -39,6 +40,7 @@ setPluginConfig(SitemapPlugin, {
 });
 
 const EmojiPlugin = getEmojiPlugin();
+const ScrollToSection = getScrollToSection();
 
 export const config: ScullyConfig = {
     projectRoot: "./src",
@@ -51,7 +53,7 @@ export const config: ScullyConfig = {
             slug: {
                 folder: "./blog",
             },
-            postRenderers: [EmojiPlugin, MinifyHtml],
+            postRenderers: [EmojiPlugin, ScrollToSection, MinifyHtml],
         },
     },
 };
