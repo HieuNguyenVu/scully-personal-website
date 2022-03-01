@@ -13,12 +13,11 @@ slug: preparing-for-frontend-interview
 location: 'Hanoi, Vietnam'
 ---
 
-_**Singapore is the center of technology in ASEAN, and come with that, jobs here have more requirements than VietNam where I live. This note is my preparation for an interview to apply to some companies in Singapore.  
-I work as a Fullstack Developer, It seems like I have a lot of things to prepare, and these will help me review my knowledge in whatever position I apply to.**_
+_**I work as a Fullstack Developer, And because I didn't focus specifically on anything from the start of my career path, It seems like I have a lot of things to re-learn and prepare. I don't nervous too much about the new technical/ framework. I just worry about the core thing that I was misunderstood or I the things should know but I don't know. This note is my preparation for an interview to apply to my next job. An maybe I will review and update it in the future**_
 
 _**The main content of this post will about some base knowledge of Javascript, and Angular's Core knowledge, also a bit about Design Patterns and Scalable Design for Frontend Systems.**_
 
-_**Don't overestimate me! I don't remember and know all these :smile: but I believe after this post, I will understand them, and also take your appreciation at that time :smile: Let's learn together!.  
+_**Don't overestimate me! I don't remember and know all these :grinning: but I believe after this post, I will understand them, and also take your appreciation at that time :smile: Let's learn together!.  
 During the reading, please don’t hesitate to notify me of misleading information if you spot a misunderstanding!**_
 
 1. [**Base web knowledge.**](#i-base-web-knowledge)
@@ -30,25 +29,28 @@ During the reading, please don’t hesitate to notify me of misleading informati
 2. [**Javascript.**](#ii-javascript)
    * [How JS work?](#1-how-js-work)
    * [Concurrency & Event Loop](#2-concurrency--the-event-loop)
+   * [Promise & Async/Await](#3-promise--asyncawait)
    * Type Coercion
    * Prototype & Prototype chain
    * Closure
-   * Promise & Async/Await
    * Web worker / Service Worker / Worklets
    * DOM / Shadow Dom / Virtual Dom
 3. Angular
    * Dependency Injection
    * Change Detection - NgZone
    * Pipe
+   * Directive
+   * Decorator
+   * Content Projection
    * RxJS
    * State Management
-   * Optimize
    * View Engine
-   * Performance Handling
    * AOT / JIT How they work
    * Webpack & Custom Webpack
-   * Scalable Design
+   * Optimize
+   * Performance Handling
    * CI/CD
+   * Scalable Design
    * Docker for Frontend
 
 Before going deeply into each section, I want to appreciate my thanks to the sources below, which I usually read, and also use some content from them for this post.  
@@ -56,14 +58,13 @@ Before going deeply into each section, I want to appreciate my thanks to the sou
 <details>
    <summary><b><u>Sources:</u></b></summary>
 
-   [**1. Javascript sâu sắc - TiepPhan**](https://www.youtube.com/watch?v=dGGCEGi4JWg&list=PL73F-X98U6DvFLRC4dmNjgI9MT8IFQdG3)  
-   [**2. How JS work - Sessionstack team**](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)  
-   [**3. Javascript Interview Question - sudheerj**](https://github.com/sudheerj/javascript-interview-questions)  
-   [**4. 100 Days of Angular - Angular Vietnam**](https://github.com/angular-vietnam/100-days-of-angular)  
-   [**5. What-Are-Cookies - Clouldflare**](https://www.cloudflare.com/learning/privacy/what-are-cookies/)  
-   [**6. What is ‘CORS’? What is it used for? - Electra Chong**](https://medium.com/@electra_chong/what-is-cors-what-is-it-used-for-308cafa4df1a)  
-   [**7. API - REST - RESTfulAPI - Wiki**](https://en.wikipedia.org/wiki/Representational_state_transfer)  
-   [**8. Uniform interface REST - inf3rno**](https://stackoverflow.com/questions/25172600/rest-what-exactly-is-meant-by-uniform-interface)
+   [**1. Series How JS work - Sessionstack team**](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)  
+   [**2. Javascript Interview Question - sudheerj**](https://github.com/sudheerj/javascript-interview-questions)  
+   [**3. 100 Days of Angular - Angular Vietnam**](https://github.com/angular-vietnam/100-days-of-angular)  
+   [**4. What-Are-Cookies - Clouldflare**](https://www.cloudflare.com/learning/privacy/what-are-cookies/)  
+   [**5. What is ‘CORS’? What is it used for? - Electra Chong**](https://medium.com/@electra_chong/what-is-cors-what-is-it-used-for-308cafa4df1a)  
+   [**6. API - REST - RESTfulAPI - Wiki**](https://en.wikipedia.org/wiki/Representational_state_transfer)  
+   [**7. Uniform interface REST - inf3rno**](https://stackoverflow.com/questions/25172600/rest-what-exactly-is-meant-by-uniform-interface)
 
 </details>
 
@@ -319,7 +320,7 @@ start();
     <figcaption>Fig.6 - Stack overflow.</figcaption>
 </figure>
 
->... running on a single thread is quite limiting as well. Since JavaScript has a single Call Stack, **what happens when things are slow?**. It will cause page unresponsive.
+>... running on a single thread is quite limiting as well. Since JavaScript has a single Call Stack, **what happens when things are slow? Or they take a huge amount of time to be processed**. It will cause page unresponsive...
 
 <figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/MDRKjFn.jpg"/>
@@ -329,3 +330,113 @@ start();
 To avoid that, we should use asynchronous callbacks or service workers.
 
 ### 2. Concurrency & the Event Loop
+
+#### Concurrency
+
+> While the Call Stack has functions to execute, the browser can’t do anything else — it’s being blocked. This means that the browser can’t render, it can’t run any other code, it’s just stuck. And here comes the problem — your app UI is no longer efficient and pleasing. Your app is stuck.
+
+In the example of Call Stack above. I was use functions and Web APIs as the Stack Frame(unit to push on Call Stack). Essentially, Stack Frame is the blocks `{...}`, and popullarity of block is a function.
+
+To solve and prevent the application stucking, programing have a concept call asynchronous.
+
+>...tasks that cannot complete now are, by definition, going to complete asynchronously, which means you won’t have the above-mentioned blocking behavior as you might have subconsciously expected or hoped for.
+
+```javascript
+// ajax(..) is some arbitrary Ajax function given by a library
+var response = ajax('https://example.com/api');
+
+console.log(response);
+// `response` won't have the response
+```
+
+And because we don't know when the `async` task is complete, To waiting and take an action after an `async` task is complete, It usually use with `callback function` which is a function will call after an `async` task complete.
+
+```javascript
+ajax('https://example.com/api', function(response) {
+    console.log(response); // `response` is now available
+});
+```
+Of course we can actually make a `synchronous` Ajax requests, however never do that.
+>If you make a synchronous Ajax request, the UI of your JavaScript app will be blocked — the user won’t be able to click, enter data, navigate, or scroll. This would prevent any user interaction. It’s a terrible practice.
+That why an `await` must be use in an `async` function.  
+
+```javascript
+// This is assuming that you're using jQuery
+jQuery.ajax({
+    url: 'https://api.example.com/endpoint',
+    success: function(response) {
+        // This is your callback.
+    },
+    async: false // And this is a terrible idea
+});
+
+```
+Beside of ajax request, I just use ajax as an example, you also can use others way (ex: setTimeout).
+
+Cause we know that we have only a Stack, and stack is fist-in-last-out. How it can prioritize **`sync`** task before the **`async`** task?
+
+#### Event loop
+
+Before going deeply into the content of the event loop, I believe that we should make clear some items below, which I get from the [blog](https://blog.sessionstack.com/how-javascript-works-event-loop-and-the-rise-of-async-programming-5-ways-to-better-coding-with-2f077c4438b5) of Sessionstack team.
+
+1. Until ES6, JS actually never had any direct concept about asynchronicity built into it.
+2. The **`JS engine`** has never done anything more than execute a single chunk of your program at any given moment.
+3. The **`JS Engine`** runs inside a **`hosting environment`**, which for most developers is the typical web browser or Node.js
+4. Every single device, browser represents a different type of **`hosting environment`** for the **`JS Engine`**.
+5. Whether it's any **`hosting environment`**, they have the same common built-in mechanism called the **`event loop`**.
+6. **`Event loop`** handles the execution of multiple chunks of your program over time, each time invoking the JS Engine.
+
+Pretty obvious isn't it?
+
+>This means that the JS Engine is just an on-demand execution environment for any arbitrary JS code. It’s the surrounding environment that schedules the events (the JS code executions).
+
+>The Event Loop has one simple job — to monitor the Call Stack and the Callback Queue. If the Call Stack is empty, the Event Loop will take the first event from the queue and will push it to the Call Stack, which effectively runs it.  
+>Such an iteration is called a **`tick`** in the Event Loop. Each event is just a function callback.
+
+```javascript
+console.log('Hi');
+setTimeout(function cb1() { 
+    console.log('cb1');
+}, 5000);
+console.log('Bye');
+```
+Let’s “execute” this code and see what happens:
+
+<figure align="center" width="100%">
+    <img loading="lazy" src="https://i.imgur.com/587irzf.gif"/>
+    <figcaption>Fig.8 - Tracing a exception.</figcaption>
+</figure>
+
+>It’s interesting to note that ES6 specifies how the event loop should work, meaning that technically it’s within the scope of the JS engine’s responsibilities, which is no longer playing just a `hosting environment` role.
+
+>**One main reason for this change is the introduction of Promises in ES6 because the latter require access to a direct**, fine-grained control over scheduling operations on the event loop queue (we’ll discuss them in a greater detail later).
+
+### 3. Promise & async/await
+
+#### Job Queue
+
+From the ES6, They introduced a new concept called **`Job Queue`**. I had read some post, but they dont talk detail about it. I recommend you should read a post from Session blog, cause all summary items bellow is take from that.
+
+1. **`Job Queue`** is a layer on top of the Event Loop queue.
+2. It was born to dealing with the asynchronous behavior of **`Promise`** from ES6.
+3. The **`Job Queue`** is a queue that’s attached to the end of every tick in the Event Loop queue. (**Tick** is each time event loop check and take first callback from callback queue)
+4. An async action that may occur during a tick of the event loop will not cause a whole new event, and it will not to append into the event loop. Instead of that, It will add in to the **`Job Queue`**.
+5. By add to the **`Job Queue`**, the **`tick`** will be finish only the **`Job Queue`** empty. And only after a **`tick`** finished, the new stick will be run, and the **`callback`** will be take out from **`callback`** queue.
+
+#### Promise
+
+Cause promise is the basic content every frontend developer should know. So I just mark some points.
+
+1. Once a Promise is resolved, it stays that way forever — it becomes an immutable value at that point — and can then be observed as many times as necessary.
+2. If at any point in the creation of a Promise, or in the observation of its resolution, a JavaScript exception error occurs, such as a TypeError or ReferenceError, that exception will be caught, and it will force the Promise in question to become rejected.
+3. If an exception thrown inside the Promise creating function, it will be rejected, if an exception throw in promise handling function, handling uncaught exceptions by using **`.catch()`**
+
+#### Async / Await
+
+>JavaScript ES8 introduced async/await that makes the job of working with Promises easier.
+
+1. When an **`async`** is called, it returns a **`Promise`**. If the return value is not a **`Promise`**, a **`Promise`** will be automatically created and it will be resolved with the returned value from the function.
+2. When the **`async`** function throws an exception, the **`Promise`** will be rejected with the thrown value.
+<!-- 3.  -->
+
+---- W.I.P ----
