@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1646240524309,
+  "timestamp": 1646242271373,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -18,7 +18,7 @@
         "/manifest.webmanifest",
         "/polyfills.1f78ba433808c13f56e3.js",
         "/runtime.b70e3ce0af179e627ce4.js",
-        "/styles.8b4aed7b3746c3b6bfb0.css"
+        "/styles.eae9d30600c666dea990.css"
       ],
       "patterns": []
     },
@@ -58,12 +58,12 @@
     "/assets/scully-routes.json": "451e8f081f200aa9348c8e689475980bf81e4478",
     "/assets/styles/global-var.scss": "c9b784b35b25fe8815e02a76e53468e79193733d",
     "/assets/styles/prism-coy-without-shadows.scss": "66f5ff753dee45ba4c0dcff44547e24dc5dc5bbc",
-    "/index.html": "b65b704c8d97c1cbc5766ce6c0bb544d80b10b01",
+    "/index.html": "07833a5a2f9f173b45cce995cb2d1b998beb22c9",
     "/main.4f33b9643b58808c83ad.js": "644d5d349b3d2f0aa7e6b0b2c3432c4405f1995b",
     "/manifest.webmanifest": "00aaf6cb1e68f421f5632ee491e66b60bf769245",
     "/polyfills.1f78ba433808c13f56e3.js": "200f240d1490662633bc08ca4cba8212353a83fa",
     "/runtime.b70e3ce0af179e627ce4.js": "f73fe96de01d5aa3418931b6900f1490b7eb7621",
-    "/styles.8b4aed7b3746c3b6bfb0.css": "ba321757d0fb1e4c0c45bbd7fd130df54ee96aed"
+    "/styles.eae9d30600c666dea990.css": "236340c0cf586c43b5d7363bd8a6b370ff7f53b9"
   },
   "navigationUrls": [
     {
