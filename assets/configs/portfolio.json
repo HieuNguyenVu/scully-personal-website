@@ -57,6 +57,63 @@
         }
     },
     {
+        "title": "Portfolio Website",
+        "description": "This is my personal website, best for SEO scores and Performance scores, PWA, and also available mobile.",
+        "exist": true,
+        "projectTypes": [0, 3],
+        "0": {
+            "guide": "https://github.com/nhvu95/scully-personal-website",
+            "image": "/assets/icons/favicon-196x196.png",
+            "demo": "https://github.com/nhvu95/scully-personal-website",
+            "source": "https://github.com/nhvu95/scully-personal-website",
+            "date_start": "2021/09/01",
+            "date_end": "2050/01/01",
+            "technologies": ["Angular", "JamStack - Scully"]
+        },
+        "3": {
+            "guide": "https://github.com/nhvu95/scully-personal-website",
+            "image": "/assets/icons/favicon-196x196.png",
+            "demo": "https://github.com/nhvu95/scully-personal-website",
+            "source": "https://github.com/nhvu95/scully-personal-website",
+            "date_start": "2021/09/01",
+            "date_end": "2050/01/01",
+            "technologies": ["Angular", "JamStack - Scully"]
+        }
+    },
+    {
+        "title": "Image Hosting",
+        "description": "Work In Progress!!!. Image hosting system, allow user upload image and get direct demo to download. Auto resize to multiple screen size, also support for lazy load.",
+        "exist": true,
+        "projectTypes": [0, 1, 3],
+        "0": {
+            "guide": "https://github.com/nhvu95/host-image-client",
+            "image": "https://i.imgur.com/CHSIb86.png",
+            "demo": "https://github.com/nhvu95/host-image-client",
+            "source": "https://github.com/nhvu95/host-image-client",
+            "date_start": "2021/12/28",
+            "date_end": "2021/12/04",
+            "technologies": ["Angular", "TaigaUI", "RxJS"]
+        },
+        "1": {
+            "guide": "https://github.com/nhvu95/hosting-image",
+            "image": "https://i.imgur.com/CHSIb86.png",
+            "demo": "https://github.com/nhvu95/hosting-image",
+            "source": "https://github.com/nhvu95/hosting-image",
+            "date_start": "2021/12/28",
+            "date_end": "2021/12/04",
+            "technologies": ["SpringBoot", "PostgresSQL", "Imgur"]
+        },
+        "3": {
+            "guide": "https://github.com/nhvu95/host-image-client",
+            "image": "https://i.imgur.com/CHSIb86.png",
+            "demo": "https://github.com/nhvu95/hosting-image",
+            "source": "https://github.com/nhvu95/hosting-image",
+            "date_start": "2021/12/28",
+            "date_end": "2021/12/04",
+            "technologies": ["Angular", "SpringBoot", "TaigaUI", "PostgresSQL", "RxJS"]
+        }
+    },
+    {
         "title": "Ebay Automation Tool",
         "description": "This is an automation tool, use to feed clone accounts of eBay. Clone Accounts will be used for many different purposes.",
         "exist": true,
@@ -126,63 +183,6 @@
             "date_start": "2022/02/22",
             "date_end": "2021/02/24",
             "technologies": ["Angular", "JamStack", "Scully"]
-        }
-    },
-    {
-        "title": "Image Hosting",
-        "description": "Work In Progress!!!. Image hosting system, allow user upload image and get direct demo to download. Auto resize to multiple screen size, also support for lazy load.",
-        "exist": true,
-        "projectTypes": [0, 1, 3],
-        "0": {
-            "guide": "https://github.com/nhvu95/host-image-client",
-            "image": "https://i.imgur.com/CHSIb86.png",
-            "demo": "https://github.com/nhvu95/host-image-client",
-            "source": "https://github.com/nhvu95/host-image-client",
-            "date_start": "2021/12/28",
-            "date_end": "2021/12/04",
-            "technologies": ["Angular", "TaigaUI", "RxJS"]
-        },
-        "1": {
-            "guide": "https://github.com/nhvu95/hosting-image",
-            "image": "https://i.imgur.com/CHSIb86.png",
-            "demo": "https://github.com/nhvu95/hosting-image",
-            "source": "https://github.com/nhvu95/hosting-image",
-            "date_start": "2021/12/28",
-            "date_end": "2021/12/04",
-            "technologies": ["SpringBoot", "PostgresSQL", "Imgur"]
-        },
-        "3": {
-            "guide": "https://github.com/nhvu95/host-image-client",
-            "image": "https://i.imgur.com/CHSIb86.png",
-            "demo": "https://github.com/nhvu95/hosting-image",
-            "source": "https://github.com/nhvu95/hosting-image",
-            "date_start": "2021/12/28",
-            "date_end": "2021/12/04",
-            "technologies": ["Angular", "SpringBoot", "TaigaUI", "PostgresSQL", "RxJS"]
-        }
-    },
-    {
-        "title": "Portfolio Website",
-        "description": "This is my personal website, best for SEO scores and Performance scores, PWA, and also available mobile.",
-        "exist": true,
-        "projectTypes": [0, 3],
-        "0": {
-            "guide": "https://github.com/nhvu95/scully-personal-website",
-            "image": "/assets/icons/favicon-196x196.png",
-            "demo": "https://github.com/nhvu95/scully-personal-website",
-            "source": "https://github.com/nhvu95/scully-personal-website",
-            "date_start": "2021/09/01",
-            "date_end": "2050/01/01",
-            "technologies": ["Angular", "JamStack - Scully"]
-        },
-        "3": {
-            "guide": "https://github.com/nhvu95/scully-personal-website",
-            "image": "/assets/icons/favicon-196x196.png",
-            "demo": "https://github.com/nhvu95/scully-personal-website",
-            "source": "https://github.com/nhvu95/scully-personal-website",
-            "date_start": "2021/09/01",
-            "date_end": "2050/01/01",
-            "technologies": ["Angular", "JamStack - Scully"]
         }
     }
 ]
