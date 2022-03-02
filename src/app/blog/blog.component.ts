@@ -33,13 +33,7 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     displayControl = false;
     activeTabIndex = 2;
 
-    constructor(
-        private router: Router,
-        private route: ActivatedRoute,
-        private scully: ScullyRoutesService,
-        private highlightService: HighlightService,
-        private socialTagService: SocialTagsService
-    ) {
+    constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService, private socialTagService: SocialTagsService) {
         socialTagService.setTitleAndTags();
     }
 
@@ -69,9 +63,12 @@ export class BlogComponent implements OnInit, AfterViewChecked {
                 }
             }),
             map((res) => {
-                if (res) return res.date_end;
                 let date = new Date();
-                return date.toISOString().split("T")[0];
+                if (res) {
+                    date = new Date(res.date_end);
+                }
+                // return date.toISOString().split("T")[0];
+                return date.toLocaleString("en-US", { day: "2-digit", month: "short", year: "numeric" });
             })
         );
         let sharedTitle$ = this.current.pipe(

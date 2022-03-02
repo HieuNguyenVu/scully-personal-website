@@ -13,7 +13,7 @@ slug: preparing-for-frontend-interview
 location: 'Hanoi, Vietnam'
 ---
 
-_**I work as a Fullstack Developer, And because I didn't focus specifically on anything from the start of my career path, It seems like I have a lot of things to re-learn and prepare. I don't nervous too much about the new technical/ framework. I just worry about the core thing that I was misunderstood or I the things should know but I don't know. This note is my preparation for an interview to apply to my next job. An maybe I will review and update it in the future**_
+_**I work as a Fullstack Developer, And because I didn't focus specifically on anything from the start of my career path, It seems like I have a lot of things to re-learn and prepare. I don't nervous too much about the new technical/ framework. I just worry about the core thing that I was misunderstood or I the things should know but I don't know. This note is my preparation for an interview to apply to my next job. And maybe I will review and update it in the future**_
 
 _**The main content of this post will about some base knowledge of Javascript, and Angular's Core knowledge, also a bit about Design Patterns and Scalable Design for Frontend Systems.**_
 
@@ -30,8 +30,9 @@ During the reading, please don’t hesitate to notify me of misleading informati
    * [How JS work?](#1-how-js-work)
    * [Concurrency & Event Loop](#2-concurrency--the-event-loop)
    * [Promise & Async/Await](#3-promise--asyncawait)
-   * Type Coercion
-   * Prototype & Prototype chain
+   * [Type Coercion](#4-type-coercion)
+   * [Prototype & Prototype chain](#5-prototype--prototype-chain)
+   * [Scope & Scope chain](#6-scope--scope-chain)
    * Closure
    * Web worker / Service Worker / Worklets
    * DOM / Shadow Dom / Virtual Dom
@@ -65,6 +66,8 @@ Before going deeply into each section, I want to appreciate my thanks to the sou
    [**5. What is ‘CORS’? What is it used for? - Electra Chong**](https://medium.com/@electra_chong/what-is-cors-what-is-it-used-for-308cafa4df1a)  
    [**6. API - REST - RESTfulAPI - Wiki**](https://en.wikipedia.org/wiki/Representational_state_transfer)  
    [**7. Uniform interface REST - inf3rno**](https://stackoverflow.com/questions/25172600/rest-what-exactly-is-meant-by-uniform-interface)
+   [**8. Type Coercion**](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/)
+   [**9. Prototype & Prototype chain**](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
 
 </details>
 
@@ -427,7 +430,7 @@ From the ES6, They introduced a new concept called **`Job Queue`**. I had read s
 
 Cause promise is the basic content every frontend developer should know. So I just mark some points.
 
-1. Once a Promise is resolved, it stays that way forever — it becomes an immutable value at that point — and can then be observed as many times as necessary.
+>1. Once a Promise is resolved, it stays that way forever — it becomes an immutable value at that point — and can then be observed as many times as necessary.
 2. If at any point in the creation of a Promise, or in the observation of its resolution, a JavaScript exception error occurs, such as a TypeError or ReferenceError, that exception will be caught, and it will force the Promise in question to become rejected.
 3. If an exception thrown inside the Promise creating function, it will be rejected, if an exception throw in promise handling function, handling uncaught exceptions by using **`.catch()`**
 
@@ -437,6 +440,223 @@ Cause promise is the basic content every frontend developer should know. So I ju
 
 1. When an **`async`** is called, it returns a **`Promise`**. If the return value is not a **`Promise`**, a **`Promise`** will be automatically created and it will be resolved with the returned value from the function.
 2. When the **`async`** function throws an exception, the **`Promise`** will be rejected with the thrown value.
-<!-- 3.  -->
+3. An **`async`** function can contain an **`await`** expression, that pauses the execution of the function and waits for the passed Promise’s resolution, and then resumes the async function’s execution and returns the resolved value.
+4. The **`await`** keyword can only be used in **`async`** functions .
 
----- W.I.P ----
+```javascript
+// Just a standard JavaScript function
+function getNumber1() {
+    return Promise.resolve('374');
+}
+// This function does the same as getNumber1
+async function getNumber2() {
+    return 374;
+}
+
+// This function show how to use await
+async function getNumber3() {
+    let num1 = await getNumber1();
+    return num1;
+}
+```
+
+### 4. Type Coercion
+
+>Type coercion is the automatic or implicit conversion of values from one data type to another (such as strings to numbers).
+
+```javascript
+const value1 = '5';
+const value2 = 9;
+let sum = value1 + value2;
+
+console.log(sum); // 59
+```
+
+#### Explicit coercion
+
+>When a developer expresses the intention to convert between types by writing the appropriate code, like `Number(value)`, it’s called explicit type coercion (or type casting).
+
+#### Implicit coercion
+
+>Since JavaScript is a weakly-typed language, values can also be converted between different types automatically, and it is called implicit type coercion.
+It usually happens when you apply operators to values of different types, like `1 == null`,` 2/’5'`, `null + new Date()`, or it can be triggered by the surrounding context, like with `if (value) {…},` where value is coerced to boolean.
+
+There are three type of conversion
+
+* to string
+* to boolean
+* to number
+
+Conversion logic for primitives and objects works differently, but both primitives and objects can only be converted in those three ways.
+
+#### String conversion
+
+```javascript
+String(123) // explicit
+123 + ''    // implicit
+
+String(123)                   // '123'
+String(-12.3)                 // '-12.3'
+String(null)                  // 'null'
+String(undefined)             // 'undefined'
+String(true)                  // 'true'
+String(false)                 // 'false'
+```
+
+#### Boolean conversion
+
+>To explicitly convert a value to a boolean apply the Boolean() function.
+Implicit conversion happens in logical context, or is triggered by logical operators ( `||` `&&` `!`).
+
+```javascript
+Boolean(2)          // explicit
+if (2) { ... }      // implicit due to logical context
+!!2                 // implicit due to logical operator
+2 || 'hello'        // implicit due to logical operator
+```
+
+>Note: Logical operators such as `||` and `&&` do boolean conversions internally, but actually return the value of original operands, even if they are not boolean.
+
+```javascript
+Boolean('')           // false
+Boolean(0)            // false     
+Boolean(-0)           // false
+Boolean(NaN)          // false
+Boolean(null)         // false
+Boolean(undefined)    // false
+Boolean(false)        // false
+
+// All value not in the list above will convert to true
+```
+
+#### Numeric conversion
+
+* comparison operators (`>`, `<`, `<=`,`>=`)
+* bitwise operators ( `|` `&` `^` `~`)
+* arithmetic operators (`-` `+` `*` `/` `%`).  
+  Note, that binary+ does not trigger numeric conversion, when any operand is a string.
+* unary `+` operator
+* loose equality operator `==` (incl. `!=`).  
+Note that `==` does not trigger numeric conversion when both operands are strings.
+
+```javascript
+Number('123')   // explicit
++'123'          // implicit
+123 != '456'    // implicit
+4 > '5'         // implicit
+5/null          // implicit
+true | 0        // implicit3
+
+Number(null)                   // 0
+Number(undefined)              // NaN
+Number(true)                   // 1
+Number(false)                  // 0
+Number(" 12 ")                 // 12
+Number("-12.34")               // -12.34
+Number("\n")                   // 0
+Number(" 12s ")                // NaN
+Number(123)                    // 123
+```
+
+>When converting a string to a number, the engine first trims leading and trailing whitespace, `\n`, `\t` characters, returning `NaN` if the trimmed string does not represent a valid number. If string is empty, it returns `0`.
+
+>`null` and `undefined` are handled differently: `null` becomes `0`, whereas `undefined` becomes `NaN`.
+
+>Symbols cannot be converted to a number neither explicitly nor implicitly. Moreover, TypeError is thrown, instead of silently converting to `NaN`, like it happens for `undefined`. See more on Symbol conversion rules on MDN.
+
+```javascript
+Number(Symbol('my symbol'))    // TypeError is thrown
++Symbol('123')                 // TypeError is thrown
+```
+
+You should remember some points below for numeric conversion:
+
+1. When applying `==` to `null` or `undefined`, **numeric conversion does not happen**. `null` equals only to `null` or `undefined`, and does not equal to anything else.
+
+    ```javascript
+    null == 0               // false, null is not converted to 0
+    null == null            // true
+    undefined == undefined  // true
+    null == undefined       // true
+    ```
+
+2. `NaN` does not equal to anything even itself
+
+### 5. Prototype & Prototype chain
+
+#### Prototype & Prototype chain
+>Every object in JavaScript has a built-in property, which is called its **`prototype`**. The **`prototype`** is itself an object, so the **`prototype`** will have its own **`prototype`**, making what's called a **`prototype chain`**.  
+>The **`chain`** ends when we reach a **`prototype`** that has `null` for its own **`prototype`**.
+
+>1. When you try to access a property of an object: if the property can't be found in the object itself, the prototype is searched for the property.  
+>2. If the property still can't be found, then the prototype's prototype is searched, and so on until either the property is found, or the end of the chain is reached, in which case undefined is returned.
+
+For example:
+
+>So when we call `myObject.toString()`, the browser:
+>* looks for `toString` in `myObject`
+>* can't find it there, so looks in the prototype object of `myObject` for `toString`
+>* finds it there, and calls it.
+
+But how we get the prototype of an object?
+
+```javascript
+Object.getPrototypeOf(myObject); // Object {...}
+```
+
+>**`Object.prototype`** is the most basic prototype, that all objects have by default.
+The **`prototype`** of **`Object.prototype`** is null, this also the end of chain.
+
+```javascript
+const myDate = new Date();
+let object = myDate;
+
+do {
+  object = Object.getPrototypeOf(object);
+  console.log(object);
+} while (object);
+
+// Date.prototype
+// Object {...}
+// null
+```
+
+#### Shadowing properties
+
+The bottom line of it, it's similar to the `overload` in some languages, same name but has different params. The only difference here is the return value can also differ.
+
+```javascript
+const myDate = new Date(1995, 11, 17);
+
+console.log(myDate.getYear()); // 95
+
+myDate.getYear = function() {
+  console.log('something else!')
+};
+
+console.log(myDate.getYear()); // 'something else!'
+```
+
+#### Create prototype
+
+* Create through `Object.create`
+    ```javascript
+        const personPrototype = {
+            greet() {
+                console.log('hello!');
+            }
+        }
+
+        const carl = Object.create(personPrototype);
+        carl.greet();  // hello!
+    ```
+* Create through `constructor`
+    ```javascript
+        function Person(name) {
+            this.name = name;
+        }
+        Person.prototype = personPrototype;
+        Person.prototype.constructor = Person;
+    ```
+
+### 6. Scope & Scope chain

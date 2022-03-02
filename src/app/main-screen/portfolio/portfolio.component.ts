@@ -12,10 +12,15 @@ import { Project } from "./project.model";
 export class PortfolioComponent implements OnInit {
     @Input()
     currentNavIndex = 0;
+    panelOpenState = false;
+    loadMore = false;
+
     cache: Project[] = [];
     constructor(private service: MainScreenService) {}
     _listProjects$: BehaviorSubject<Project[][]> = new BehaviorSubject([]);
     listProjects$ = this._listProjects$.asObservable();
+    _listLoadMoreProjects$: BehaviorSubject<Project[][]> = new BehaviorSubject([]);
+    listLoadMoreProjects$ = this._listLoadMoreProjects$.asObservable();
     ngOnInit(): void {
         this.getListItem();
     }
@@ -38,6 +43,7 @@ export class PortfolioComponent implements OnInit {
      */
     resultHandler(res: Project[], type: number) {
         let list = [];
+        this.loadMore = false;
         res = res.filter((item) => item.projectTypes.indexOf(type) > -1);
         res = res.map((item) => {
             item.displayType = type;
@@ -48,7 +54,12 @@ export class PortfolioComponent implements OnInit {
             if (chunk.length === 1) chunk.push({ ...chunk[0], exist: false });
             list.push(chunk);
         }
-        this._listProjects$.next(list);
+        this._listProjects$.next(list.slice(0, 2));
+        this._listLoadMoreProjects$.next([]);
+        if (list.length > 2) {
+            this.loadMore = true;
+            this._listLoadMoreProjects$.next(list.slice(2));
+        }
     }
     /**
      * On Tab Change

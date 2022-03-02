@@ -18,8 +18,55 @@
 }
 
 mat-tab-group {
-    margin-left: auto
+    margin-left: auto;
 }
+
+::ng-deep mat-accordion {
+    .mat-expansion-panel {
+        background: none;
+    }
+    .mat-expansion-panel:not([class*="mat-elevation-z"]) {
+        box-shadow: none;
+    }
+    .mat-expansion-panel-body {
+        padding: 0;
+    }
+    .mat-expansion-indicator::after {
+        color: $main-color2;
+        // display: none;
+        border-width: 0 3px 3px 0;
+        padding: 5px;
+    }
+    .mat-content {
+        // height: 20px;
+        margin-top: 10px;
+        margin-right: 10px;
+    }
+    .mat-expansion-panel-header:not([aria-expanded="false"]) .mat-content {
+        margin-top: 0px;
+    }
+
+    .mat-expansion-panel-header:not([aria-disabled="true"]) .mat-content {
+        // position: absolute;
+        display: block;
+        // z-index: -9;
+        height: 3px;
+        width: calc(100% - 75px);
+        border-radius: 3px;
+        margin-right: 10px;
+        overflow: hidden;
+        background: linear-gradient(to right, rgba(0,0,0,0) 0%, #fff 30%, $main-color2 50%, $main-color2 55%, #fff 70%, #fff 100%);
+        background-size: 200% auto;
+        animation: shine 1s linear alternate-reverse;
+    }
+}
+
+@keyframes shine {
+    to {
+        background-position: 100% center;
+    }
+}
+
 @media screen and (max-width: 1279px) {
     .bounds {
         .header {
@@ -42,7 +89,6 @@ mat-tab-group {
 }
 
 @media screen and (max-width: 920px) {
-
     .topic-wrapper {
         .topic-container-row {
             flex-direction: column;

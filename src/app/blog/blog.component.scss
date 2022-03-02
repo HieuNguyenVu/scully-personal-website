@@ -3,6 +3,12 @@
 $max-blog-width: 850px;
 
 #blog-post {
+    .avatar {
+        width: 26px;
+        height: 26px;
+        display: inline-block;
+        border-radius: 50%;
+    }
     .inner-bounds {
         padding: 0px;
     }
@@ -22,7 +28,7 @@ $max-blog-width: 850px;
         padding: 0;
     }
 
-    app-footer .footer{
+    app-footer .footer {
         padding: 0 5rem;
         width: auto;
     }
@@ -37,7 +43,7 @@ img[src$="centerme"] {
     margin: 0 auto;
 }
 
-.bounds {
+.bounds#blog-post {
     .inner-bounds {
         width: 100%;
         .content {
@@ -87,45 +93,115 @@ img[src$="centerme"] {
         }
     }
 
-    h3.author {
+    label.author {
         font-size: 25px;
-        font-weight: 600;
-        .sur-name {
-            font-weight: lighter;
-        }
-    }
-}
-
-@media screen and (max-width: 1279px) {
-    .bounds {
-        flex-direction: column;
-    }
-    .main-content {
-        .author {
-            text-align: center;
-        }
-        .yellow-line {
-            width: 100% !important;
-        }
-    }
-}
-@media screen and (max-width: 539px) {
-    .header-sub-wrapper {
+        font-weight: 500;
         display: flex;
-        flex: 1 1 100%;
-        flex-direction: column;
-        font-size: 3rem;
+        align-items: center;
+        margin-top: 15px;
+        > span {
+            margin-left: 5px;
+            text-align: left;
+            width: fit-content;
+        }
+        .normal {
+            font-weight: 400;
+        }
     }
-    .main-content {
-        .post-date,
-        .post-thank {
-            text-align: center !important;
+}
+#blog-post {
+    @media screen and (max-width: 1279px) {
+        .post-container {
+            .header-image {
+                height: auto;
+                margin-bottom: 15px;
+            }
+        }
+        .bounds {
+            flex-direction: column;
+        }
+        .header {
+            justify-content:start;
+        }
+        .main-content {
+            label.author {
+                text-align: center;
+            }
+            .yellow-line {
+                width: 100% !important;
+            }
+            .s-content {
+                padding: 0 15px;
+            }
         }
     }
 
-    #mainTab {
-        ::ng-deep .mat-tab-label {
-            padding: 0 16px;
+    @media screen and (max-width: 920px) {
+        .header-sub-wrapper {
+            padding: 0 15px;
+            display: block;
+            font-size: 35px;
+            line-height: normal;
+            span:first-child {
+                margin-right: 5px;
+                display: inline-block;
+            }
+        }
+        .main-content {
+            label.author {
+                margin-top: 15px !important;
+                padding: 0 15px;
+            }
+            label.author span {
+                font-size: 25px;
+            }
+            .yellow-line {
+                border-width: 1px !important;
+            }
+            .post-date,
+            .post-thank {
+                text-align: center !important;
+            }
+        }
+    }
+
+    @media screen and (max-width: 539px) {
+        .post-container {
+            .header-image {
+                height: auto;
+                margin-bottom: 15px;
+            }
+        }
+        .header-sub-wrapper {
+            padding: 0 15px;
+            display: block;
+            font-size: 26px;
+            line-height: normal;
+            span:first-child {
+                margin-right: 5px;
+                display: inline-block;
+            }
+        }
+        .main-content {
+            label.author {
+                margin-top: 10px !important;
+                padding: 0 15px;
+            }
+            label.author span {
+                font-size: 16px;
+            }
+            .yellow-line {
+                border-width: 1px !important;
+            }
+            .post-date,
+            .post-thank {
+                text-align: center !important;
+            }
+        }
+        #mainTab {
+            ::ng-deep .mat-tab-label {
+                padding: 0 16px;
+            }
         }
     }
 }

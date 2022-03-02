@@ -12,10 +12,12 @@ import { MainRoutingModule } from "./main-screen-routing.module";
 import { MainComponent } from "./main/main.component";
 import { PortfolioItemComponent } from "./portfolio/portfolio-item.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
+import { MatExpansionModule } from "@angular/material/expansion";
+import { MatButtonModule } from "@angular/material/button";
 
 @NgModule({
     declarations: [HelloComponent, MainComponent, PortfolioComponent, PortfolioItemComponent, AfterWorkComponent, AfterWorkItemComponent],
-    imports: [CommonModule, MainRoutingModule, MatTabsModule, MatGridListModule, HttpClientModule, MatTooltipModule, FooterModule],
+    imports: [CommonModule, MainRoutingModule, MatTabsModule, MatGridListModule, HttpClientModule, MatTooltipModule, FooterModule, MatExpansionModule, MatButtonModule],
     providers: [],
 })
 export class MainScreenModule {}

@@ -17,6 +17,16 @@
                         <app-portfolio-item [project]="pair[0]" class="topic-container-left"></app-portfolio-item>
                         <app-portfolio-item [project]="pair[1]" class="topic-container-right"></app-portfolio-item>
                     </div>
+                    <mat-accordion>
+                        <mat-expansion-panel [disabled]="!loadMore" (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                            <mat-expansion-panel-header> </mat-expansion-panel-header>
+                            <!-- <p>I'm visible because I am open</p> -->
+                            <div *ngFor="let pair of _listLoadMoreProjects$ | async" class="topic-container-row">
+                                <app-portfolio-item [project]="pair[0]" class="topic-container-left"></app-portfolio-item>
+                                <app-portfolio-item [project]="pair[1]" class="topic-container-right"></app-portfolio-item>
+                            </div>
+                        </mat-expansion-panel>
+                    </mat-accordion>
                 </div>
             </div>
             <app-footer></app-footer>

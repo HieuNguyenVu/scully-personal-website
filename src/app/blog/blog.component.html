@@ -19,12 +19,17 @@
                 <div class="main-content markdown-body">
                     <div>
                         <div>
-                            <h3 class="author"><span>VU HIEU</span><span class="sur-name"> NGUYEN</span></h3>
+                            <label class="author">
+                                <div class="avatar"></div>
+                                <span>
+                                    <span>Vue Nguyen</span><span class="normal"> in </span><span class="">{{ location$ | async }}</span
+                                    ><span class="normal"> • {{ endDate$ | async }}</span>
+                                </span>
+                            </label>
                             <div class="yellow-line"></div>
                             <div class="s-content">
                                 <scully-content></scully-content>
                             </div>
-                            <div class="post-date">{{ location$ | async }} - {{ endDate$ | async }}</div>
                             <div class="post-thank">Thank for reading!</div>
                         </div>
                         <div></div>
