@@ -49,69 +49,34 @@
 #blog-post .footer {
     margin-top: 30px;
     min-height: 150px;
-
 }
-
-
 
 @media screen and (max-width: 1279px) {
-    .bounds {
-        .footer {
-            justify-content: center;
-            #footer-contact {
-                max-width: fit-content;
-                margin-right: 20vw;
-            }
+    .footer {
+        justify-content: center;
+        #footer-contact {
+            max-width: fit-content;
+            margin-right: 20vw;
         }
     }
 }
+
 @media screen and (max-width: 920px) {
     // Content
-    .bounds { 
-        .footer {
-            #footer-contact {
-                max-width: fit-content;
-                transform: scale(0.9);
-                #m-contact h3:not(.email) {
-                    display: flex;
-                    font-size: 22px !important;
-                }
-                #m-contact h3.email{
-                    font-size: 17px !important;;
-                }
-                #m-contact{
-                    width: max-content;
-                }
-            }
-            #footer-download-cv {
-                transform: scale(0.9);
-                // height: 50px;
-            }
-        }
+    .footer {
+        transform: scale(0.9);
     }
 }
+
 @media screen and (max-width: 539px) {
     // Content
-    .bounds {
-        .footer {
-            flex-direction: column-reverse;
-            justify-content: center;
-            #footer-contact {
-                max-width: fit-content;
-                margin-right: 0px;
-                margin-bottom: 1rem;
-                // margin-top: 2rem;
-                transform: scale(0.8);
-                #m-contact h3:not(.email) {
-                    font-size: 20px !important;
-                }
-                #m-contact h3.email{
-                    font-size: 17px !important;;
-                }
-            }
-            #footer-download-cv {
-                transform: scale(0.8);
-            }
+    .footer {
+        flex-direction: column-reverse;
+        justify-content: center;
+        transform: scale(0.85);
+        #footer-contact {
+            margin-right: 0px;
+            margin-top: 10px;
         }
     }
 }

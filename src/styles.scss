@@ -226,7 +226,7 @@ button.m-icon {
     body {
         margin: 0px;
     }
-    ::ng-deep mat-tab-group mat-tab-header{
+    #mainTab.mat-tab-group > mat-tab-header{
         background: white;
     }
     .bounds {
@@ -240,7 +240,7 @@ button.m-icon {
             .header {
                 justify-content: center;
             }
-
+            
             .main-content {
                 flex-direction: column !important;
                 align-items: center;
@@ -267,6 +267,9 @@ button.m-icon {
                 margin-left: auto;
                 margin-right: auto;
             }
+        }
+        .header{
+            font-size: 3rem !important;
         }
     }
 }
