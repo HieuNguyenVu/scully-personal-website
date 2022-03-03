@@ -10,7 +10,6 @@
         app-portfolio-item {
             margin-left: 5px;
             margin-right: 5px;
-            // margin-bottom: 10px;
             max-width: calc(50% - 10px);
             width: 100%;
         }
@@ -33,12 +32,10 @@ mat-tab-group {
     }
     .mat-expansion-indicator::after {
         color: $main-color2;
-        // display: none;
         border-width: 0 3px 3px 0;
         padding: 5px;
     }
     .mat-content {
-        // height: 20px;
         margin-top: 10px;
         margin-right: 10px;
     }
@@ -47,9 +44,7 @@ mat-tab-group {
     }
 
     .mat-expansion-panel-header:not([aria-disabled="true"]) .mat-content {
-        // position: absolute;
         display: block;
-        // z-index: -9;
         height: 3px;
         width: calc(100% - 75px);
         border-radius: 3px;

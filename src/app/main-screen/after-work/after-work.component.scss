@@ -7,13 +7,10 @@
     min-height: 100vh;
 }
 .main-content {
-    // max-height: fit-content !important;
-    // flex-direction: column;
     display: block;
     .contents {
         display: flex;
         flex: 1;
-        // min-height: 600px !important;
     }
     .content-col {
         width: 33.33%;
@@ -35,7 +32,6 @@
             display: flex;
             align-items: center;
             background-color: $bg_overlay;
-            // height: 100%;
         }
         .note {
             width: 50px;
@@ -63,12 +59,8 @@
         ::ng-deep .topic-image {
             height: 375.52px;
         }
-        ::ng-deep .description {
-            // height: 85px;
-        }
         ::ng-deep .topic-container {
             .topic .title {
-                // height: 100%;
                 max-height: calc(100% - 150px);
             }
             .topic .topic-footer {
