@@ -126,6 +126,13 @@ For example, If I add `matTabContent` and push the content inside `ng-template`,
 </mat-tab-group>
 ```
 
+5. Reduce your `.js / .json` load in `<script>` by merge they to one, then minify them. Always true the script with `*.min.js` - it already minify.
+
+### 3. Others file
+
+* Almost popular file types like SVG, png, json, jpg and pdf can compress. If it was a manual, a guide file, you should compress it before publish as a static file.
+* If you have a lot of files that need to load, you can compress them to `.zip` and load one time. It makes a better performance.
+
 ## III. Reduce the render time
 
 Nowaday render time is not important as 10 years ago, but in some case, it still be affect your user experience.
@@ -143,6 +150,8 @@ In case your browser runs on a very old computer or your customer use an old bro
 - or combine two of them together.
 
     Of course, It will work fine if your page is small. But in case your page has a few thousand items with `overflow: hidden` and `border-radius`. It will be bad, trust me, I have once.
+
+- In case you have to use `border-radius` you can use `outline` like Facebook did with their news feed.
 
 [1]: https://compresspng.com/
 [2]: https://www.iloveimg.com/resize-image
