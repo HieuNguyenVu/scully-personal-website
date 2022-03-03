@@ -118,56 +118,6 @@ body {
     min-height: 470px;
 }
 
-.footer {
-    display: flex;
-    flex: 1 1 100%;
-    flex-direction: row;
-    height: 100%;
-    max-height: 60px;
-    // min-height: 150px;
-    width: 100%;
-    align-items: center;
-
-    #footer-contact {
-        display: flex;
-        flex-direction: row;
-        flex: 1 1 100%;
-        align-items: center;
-
-        div .m-icon {
-            width: 50px;
-            min-width: 50px;
-            height: 50px;
-            min-height: 50px;
-            display: block;
-        }
-
-        #m-contact {
-            height: fit-content;
-            margin-left: 10px;
-            .sname {
-                font-weight: 300;
-            }
-            .email {
-                font-size: 20px !important;
-                line-height: 1rem;
-            }
-        }
-    }
-    #footer-download-cv .download {
-        height: 50px;
-        min-height: 50px;
-        width: 150px;
-        min-width: 150px;
-        // border-radius: 13px 0 0 13px;
-    }
-}
-#blog-post .footer {
-    margin-top: 30px;
-    min-height: 150px;
-
-}
-
 /// ICON ==========================
 
 .facebook {
@@ -239,39 +189,6 @@ body {
     background-position-x: -50px;
     background-position-y: -50px;
 }
-
-// .down-arrow {
-//     width: 50px;
-//     min-width: 50px;
-//     height: 50px;
-//     min-height: 50px;
-//     opacity: 0.4;
-
-//     background-image: url("/assets/images/down-arrow.svg");
-//     background-repeat: no-repeat;
-//     background-size: contain;
-//     background-position: center;
-// }
-
-// .down-arrow:hover {
-//     opacity: 0.5;
-// }
-// .down-arrow:active {
-//     opacity: 0.7;
-//     background-image: url("/assets/images/down-arrow-click.svg");
-// }
-
-// .note-undone {
-//     width: 83px;
-//     min-width: 83px;
-//     height: 103px;
-//     min-height: 103px;
-
-//     background-image: $bg-image;
-//     background-size: 527px 355px;
-//     background-position-x: -327.75px;
-//     background-position-y: 0px;
-// }
 button.m-icon {
     border: 0px;
     background-color: unset;
@@ -309,8 +226,12 @@ button.m-icon {
     body {
         margin: 0px;
     }
+    ::ng-deep mat-tab-group mat-tab-header{
+        background: white;
+    }
     .bounds {
         margin-bottom: 0px;
+        margin-top: 0px;
         border-radius: 0px;
         border: 0px;
         box-shadow: none;
@@ -325,41 +246,8 @@ button.m-icon {
                 align-items: center;
             }
         }
-        .footer {
-            justify-content: center;
-            #footer-contact {
-                max-width: fit-content;
-                margin-right: 20vw;
-            }
-        }
         .inner-bounds {
             background: #f3f8f9;
-        }
-    }
-}
-@media screen and (max-width: 920px) {
-    // Content
-    .bounds {
-       
-        .footer {
-            #footer-contact {
-                max-width: fit-content;
-                transform: scale(0.9);
-                #m-contact h3:not(.email) {
-                    display: flex;
-                    font-size: 22px !important;
-                }
-                #m-contact h3.email{
-                    font-size: 17px !important;;
-                }
-                #m-contact{
-                    width: max-content;
-                }
-            }
-            #footer-download-cv {
-                transform: scale(0.9);
-                height: 50px;
-            }
         }
     }
 }
@@ -378,26 +266,6 @@ button.m-icon {
                 max-width: 95%;
                 margin-left: auto;
                 margin-right: auto;
-            }
-        }
-        .footer {
-            flex-direction: column-reverse;
-            justify-content: center;
-            #footer-contact {
-                max-width: fit-content;
-                margin-right: 0px;
-                margin-bottom: 1rem;
-                // margin-top: 2rem;
-                transform: scale(0.8);
-                #m-contact h3:not(.email) {
-                    font-size: 20px !important;
-                }
-                #m-contact h3.email{
-                    font-size: 17px !important;;
-                }
-            }
-            #footer-download-cv {
-                transform: scale(0.8);
             }
         }
     }
