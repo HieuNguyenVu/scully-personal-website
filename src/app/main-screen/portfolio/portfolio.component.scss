@@ -57,7 +57,7 @@ mat-tab-group {
         overflow: hidden;
         background: linear-gradient(to right, rgba(0,0,0,0) 0%, #fff 30%, $main-color2 50%, $main-color2 55%, #fff 70%, #fff 100%);
         background-size: 200% auto;
-        animation: shine 1s linear alternate-reverse;
+        animation: shine 2s linear alternate-reverse;
     }
 }
 
