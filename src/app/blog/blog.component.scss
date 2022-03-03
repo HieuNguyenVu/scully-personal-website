@@ -28,11 +28,6 @@ $max-blog-width: 850px;
         padding: 0;
     }
 
-    app-footer .footer {
-        padding: 0 5rem;
-        width: auto;
-    }
-
     figcaption {
         font-style: italic;
     }
@@ -131,7 +126,7 @@ img[src$="centerme"] {
                 width: 100% !important;
             }
             .s-content {
-                padding: 0 15px;
+                // padding: 0 15px;
             }
         }
     }
@@ -150,7 +145,6 @@ img[src$="centerme"] {
         .main-content {
             label.author {
                 margin-top: 15px !important;
-                padding: 0 15px;
             }
             label.author span {
                 font-size: 25px;
@@ -185,7 +179,6 @@ img[src$="centerme"] {
         .main-content {
             label.author {
                 margin-top: 10px !important;
-                padding: 0 15px;
             }
             label.author span {
                 font-size: 16px;
