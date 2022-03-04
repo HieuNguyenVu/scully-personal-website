@@ -1,9 +1,16 @@
 import { AfterViewInit, Component, HostListener, Input, OnInit } from "@angular/core";
+import { MatTabChangeEvent } from "@angular/material/tabs";
 import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
 import { BehaviorSubject, Observable, of } from "rxjs";
 import { map, share } from "rxjs/operators";
 import { MainScreenService } from "../main-screen.service";
 import { Post } from "../portfolio/project.model";
+
+enum Mode {
+    "non-tech" = 0,
+    "tech" = 1,
+    "all" = 2,
+}
 
 @Component({
     selector: "app-after-work",
@@ -17,7 +24,7 @@ export class AfterWorkComponent implements OnInit {
     constructor(private service: MainScreenService, private scullyService: ScullyRoutesService) {}
     _projects: BehaviorSubject<Post[][]> = new BehaviorSubject<Post[][]>([]);
     projects$: Observable<Post[][]> = this._projects.asObservable();
-
+    cache: ScullyRoute[] = [];
     remains: Post[] = [];
 
     ngOnInit(): void {
@@ -35,11 +42,21 @@ export class AfterWorkComponent implements OnInit {
         );
 
         links$.subscribe((links) => {
-            let first = this.scullyRouteTopProject(links.slice(0, 5));
-            this.remains = this.scullyRouteTopProject(links.slice(5));
-            let arrs = [[first[0]], [first[1], first[3]], [first[2], first[4]]];
-            this._projects.next(arrs);
+            this.cache = links;
+            this.updateMode(Mode.all);
         });
+    }
+
+    updateMode(mode: Mode) {
+        let links = this.cache.filter((link) => {
+            if(mode == Mode.tech) return link.typeIndex == undefined;
+            if(mode == Mode["non-tech"]) return link.typeIndex !== undefined && link.typeIndex.includes(mode);
+            return true;
+        });
+        let first = this.scullyRouteTopProject(links.slice(0, 5));
+        this.remains = this.scullyRouteTopProject(links.slice(5));
+        let arrs = [[first[0]], [first[1], first[3]], [first[2], first[4]]];
+        this._projects.next(arrs);
     }
 
     @HostListener("window:scroll", ["$event"])
@@ -86,5 +103,13 @@ export class AfterWorkComponent implements OnInit {
                 priority: scullyRoute.priority,
             };
         });
+    }
+
+    /**
+     * On Tab Change
+     * @param tab {tab, index}
+     */
+    tabChanged(tab: MatTabChangeEvent) {
+        this.updateMode(tab.index);
     }
 }
