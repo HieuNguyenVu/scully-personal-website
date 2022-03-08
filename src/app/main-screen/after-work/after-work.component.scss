@@ -3,6 +3,78 @@
 .header .my-tab-group {
     margin-left: auto;
 }
+#afterWork {
+    .header ::ng-deep mat-tab-group .mat-tab-labels > div:nth-child(3) {
+        padding: 0px;
+    }
+
+    ::ng-deep .mat-tab-labels > div:nth-child(3).mat-tab-label-active .mat-chip-list-wrapper {
+        border: 2px solid $main-color2;
+        input {
+            width: 100%;
+            margin: 4px;
+        }
+    }
+
+    ::ng-deep .mat-tab-labels > div:nth-child(3).mat-tab-label-active *:focus-within .mat-chip-list-wrapper {
+        mat-chip ~ input {
+            max-width: 35%;
+        }
+
+        input {
+            border-bottom: 1px solid lightblue;
+            margin-bottom: 3px;
+        }
+    }
+
+    ::ng-deep .mat-tab-labels > div:nth-child(3).mat-tab-label-active  .mat-chip-list-wrapper {
+        mat-chip ~ input {
+            max-width: 0%;
+        }
+    }
+    ::ng-deep mat-tab-group[selected-index="2"] .mat-tab-label-container .mat-ink-bar {
+        opacity: 0;
+        animation: normal 500;
+    }
+
+    ::ng-deep mat-chip-list .mat-chip-list-wrapper {
+        display: block;
+        border: 2px solid $main-color;
+        border-radius: 30px;
+
+        overflow: hidden;
+        background-color: white;
+        min-height: 40px;
+
+        .mat-chip {
+            color: white !important;
+            align-items: flex-end;
+            pointer-events: none;
+        }
+        .mat-chip-remove {
+            opacity: 1;
+            pointer-events: visible;
+        }
+        input {
+            width: 0%;
+            margin: 0px;
+        }
+        // Custom scrollbar
+        /* width */
+    }
+
+    #keywordInput {
+        height: 32px;
+    }
+    button.mat-chip-remove {
+        padding: 0px;
+        // background-color: white;
+    }
+}
+mat-option {
+    background: white !important;
+}
+
 .content {
     min-height: 100vh;
 }

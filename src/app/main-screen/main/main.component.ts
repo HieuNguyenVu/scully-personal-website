@@ -7,7 +7,7 @@ import { ActivatedRoute, Router } from "@angular/router";
     templateUrl: "./main.component.html",
     styleUrls: ["./main.component.scss"],
 })
-export class MainComponent implements OnInit, AfterViewInit {
+export class MainComponent implements OnInit {
     constructor(private route: ActivatedRoute, private router: Router) {}
     navIndex: number = 0;
     defaultSelect: number = 0;
@@ -25,10 +25,10 @@ export class MainComponent implements OnInit, AfterViewInit {
             });
         }
     }
-    ngAfterViewInit(): void {
-        var elm = document.getElementById("mainTab").querySelector('div[tabindex="0"]') as HTMLElement;
-        elm.focus();
-    }
+    // ngAfterViewInit(): void {
+    //     var elm = document.getElementById("mainTab").querySelector('div[tabindex="0"]') as HTMLElement;
+    //     elm.focus();
+    // }
 
     tabChanged(tabChangeEvent: MatTabChangeEvent) {
         this.navIndex = tabChangeEvent.index;

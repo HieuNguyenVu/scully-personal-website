@@ -3,6 +3,9 @@
     ::ng-deep .mat-tab-label {
         background-color: unset;
     }
+    ::ng-deep .mat-tab-labels .mat-tab-label-active:not(.mat-tab-disabled) {
+        opacity: 1;
+    }
 }
 @media screen and (max-width: 539px) {
     #mainTab {

@@ -31,6 +31,10 @@ $max-blog-width: 850px;
     figcaption {
         font-style: italic;
     }
+    app-footer {
+        padding: 0 5rem;
+        display: block;
+    }
 }
 
 img[src$="centerme"] {
@@ -116,7 +120,7 @@ img[src$="centerme"] {
             flex-direction: column;
         }
         .header {
-            justify-content:start;
+            justify-content: start;
         }
         .main-content {
             label.author {

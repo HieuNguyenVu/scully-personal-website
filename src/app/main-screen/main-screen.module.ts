@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from "@angular/common/http";
 import { NgModule } from "@angular/core";
-import { MatGridListModule } from "@angular/material/grid-list";
 import { MatTabsModule } from "@angular/material/tabs";
 import { MatTooltipModule } from "@angular/material/tooltip";
 import { FooterModule } from "../shared/footer/footer.module";
@@ -13,11 +12,26 @@ import { MainComponent } from "./main/main.component";
 import { PortfolioItemComponent } from "./portfolio/portfolio-item.component";
 import { PortfolioComponent } from "./portfolio/portfolio.component";
 import { MatExpansionModule } from "@angular/material/expansion";
-import { MatButtonModule } from "@angular/material/button";
+import { MatAutocompleteModule } from "@angular/material/autocomplete";
+import { MatChipsModule } from "@angular/material/chips";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
     declarations: [HelloComponent, MainComponent, PortfolioComponent, PortfolioItemComponent, AfterWorkComponent, AfterWorkItemComponent],
-    imports: [CommonModule, MainRoutingModule, MatTabsModule, MatGridListModule, HttpClientModule, MatTooltipModule, FooterModule, MatExpansionModule, MatButtonModule],
+    imports: [
+        CommonModule,
+        MainRoutingModule,
+        MatTabsModule,
+        HttpClientModule,
+        MatTooltipModule,
+        FooterModule,
+        MatExpansionModule,
+        MatChipsModule,
+        MatAutocompleteModule,
+        ReactiveFormsModule,
+        MatFormFieldModule,
+    ],
     providers: [],
 })
 export class MainScreenModule {}

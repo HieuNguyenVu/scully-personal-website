@@ -25,7 +25,7 @@ export interface Post_ {
     date_start: string;
     date_end: string;
     exist: boolean;
-    typeIndex: number[];
+    type_index: number[];
     priority: number;
 }
 export interface Post extends Partial<Post_> {}

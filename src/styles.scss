@@ -38,7 +38,7 @@ body {
 
 .bounds {
     .inner-bounds {
-       padding: 3rem 0rem;
+        padding: 3rem 0rem;
         width: 100%;
     }
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -181,6 +181,13 @@ button.m-icon {
     background-color: unset;
 }
 
+.icn-cancel {
+    background-image: $bg-image;
+    background-size: 400px 126px;
+    background-position-x: -22px;
+    background-position-y: -230px;
+}
+
 .title-tooltip {
     font-size: 1rem;
     line-height: 1;
@@ -208,11 +215,32 @@ button.m-icon {
     cursor: pointer !important;
 }
 
+// Custom scrollbar
+/* width */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
 @media screen and (max-width: 1279px) {
     body {
         margin: 0px;
     }
-    #mainTab.mat-tab-group > mat-tab-header{
+    #mainTab.mat-tab-group > mat-tab-header {
         background: white;
     }
     .bounds {
@@ -226,7 +254,7 @@ button.m-icon {
             .header {
                 justify-content: center;
             }
-            
+
             .main-content {
                 flex-direction: column !important;
                 align-items: center;
@@ -254,7 +282,7 @@ button.m-icon {
                 margin-right: 20px;
             }
         }
-        .header{
+        .header {
             font-size: 3rem !important;
         }
     }

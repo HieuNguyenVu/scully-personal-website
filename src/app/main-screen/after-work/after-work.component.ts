@@ -1,10 +1,29 @@
-import { AfterViewInit, Component, HostListener, Input, OnInit } from "@angular/core";
-import { MatTabChangeEvent } from "@angular/material/tabs";
+import {
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    ElementRef,
+    HostListener,
+    Input,
+    OnDestroy,
+    OnInit,
+    Pipe,
+    PipeTransform,
+    QueryList,
+    Renderer2,
+    ViewChild,
+    ViewChildren,
+} from "@angular/core";
+import { FormControl } from "@angular/forms";
+import { MatTabChangeEvent, MatTabGroup } from "@angular/material/tabs";
 import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
 import { BehaviorSubject, Observable, of } from "rxjs";
-import { map, share } from "rxjs/operators";
+import { map, share, startWith, tap } from "rxjs/operators";
 import { MainScreenService } from "../main-screen.service";
 import { Post } from "../portfolio/project.model";
+import { COMMA, ENTER, SPACE } from "@angular/cdk/keycodes";
+import { MatChipInputEvent } from "@angular/material/chips";
+import { MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
 
 enum Mode {
     "non-tech" = 0,
@@ -12,20 +31,34 @@ enum Mode {
     "all" = 2,
 }
 
+const ALL_STR = "All";
+
 @Component({
     selector: "app-after-work",
     templateUrl: "./after-work.component.html",
     styleUrls: ["./after-work.component.scss"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AfterWorkComponent implements OnInit {
+export class AfterWorkComponent implements OnInit, OnDestroy {
     @Input()
     currentNavIndex = 0;
 
-    constructor(private service: MainScreenService, private scullyService: ScullyRoutesService) {}
     _projects: BehaviorSubject<Post[][]> = new BehaviorSubject<Post[][]>([]);
     projects$: Observable<Post[][]> = this._projects.asObservable();
-    cache: ScullyRoute[] = [];
+    allPosts: ScullyRoute[] = [];
+    allCurrentModePost: Post[] = [];
+
     remains: Post[] = [];
+
+    keywords$: Observable<String[]>;
+    selectedKeywords: String[] = [];
+    allKeywords: String[] = [];
+    searchFormControl = new FormControl();
+    separatorKeysCodes: number[] = [ENTER, COMMA, SPACE];
+    @ViewChild("keywordInput") keywordInput: ElementRef<HTMLInputElement>;
+    @ViewChild("matTabGroup") matTabGroup: MatTabGroup;
+
+    constructor(private service: MainScreenService, private scullyService: ScullyRoutesService) {}
 
     ngOnInit(): void {
         let links$ = this.scullyService.allRoutes$.pipe(
@@ -41,24 +74,65 @@ export class AfterWorkComponent implements OnInit {
             share()
         );
 
+        this.keywords$ = this.searchFormControl.valueChanges.pipe(
+            startWith(null),
+            map((key: string | null) => (key ? this._filter(key) : this.allKeywords.slice().filter((i) => !this.selectedKeywords.includes(i))))
+        );
+
         links$.subscribe((links) => {
-            this.cache = links;
+            this.allPosts = links;
             this.updateMode(Mode.all);
         });
     }
 
+    ngOnDestroy(): void {}
+    /**
+     * Update mode - Switch tab
+     * @param mode
+     */
     updateMode(mode: Mode) {
-        let links = this.cache.filter((link) => {
-            if(mode == Mode.tech) return link.typeIndex == undefined;
-            if(mode == Mode["non-tech"]) return link.typeIndex !== undefined && link.typeIndex.includes(mode);
+        let links = this.allPosts.filter((link) => {
+            if (mode == Mode.tech) return link.type_index == undefined;
+            if (mode == Mode["non-tech"]) return link.type_index !== undefined && link.type_index === mode;
             return true;
         });
-        let first = this.scullyRouteTopProject(links.slice(0, 5));
-        this.remains = this.scullyRouteTopProject(links.slice(5));
+
+        this.allKeywords = [...new Set(links.map((item) => item.tags as String[]).flat())] as String[];
+        if (this.selectedKeywords.length == 0) this.selectedKeywords.push(ALL_STR);
+
+        this.searchFormControl.setValue(null);
+
+        this.allCurrentModePost = this.scullyRoute2Project(links);
+        this.updateFilter(this.selectedKeywords);
+    }
+    /**
+     * Update display when filter change
+     */
+    updateFilter(keywords?: String[]) {
+        let result = this.allCurrentModePost;
+        if (keywords && keywords.length > 0) {
+            result = this.allCurrentModePost.filter((post) =>
+                // If this post have at least 1 tag
+                post.tags.some((tag) => {
+                    // which match with the selected key words
+                    return this.selectedKeywords.some((key: string) => {
+                        if (key === ALL_STR) return tag;
+                        return tag.includes(key);
+                    });
+                })
+            );
+        }
+        let first = result.slice(0, 5);
+        this.remains = result.slice(5);
         let arrs = [[first[0]], [first[1], first[3]], [first[2], first[4]]];
         this._projects.next(arrs);
     }
-
+    /**
+     * Scroll To
+     */
+    focusTo(focus: boolean) {
+        if (focus) this.keywordInput.nativeElement.focus();
+    }
     @HostListener("window:scroll", ["$event"])
     onWindowScroll() {
         //In chrome and some browser scroll is given to body tag
@@ -70,7 +144,9 @@ export class AfterWorkComponent implements OnInit {
             this.loadMore();
         }
     }
-
+    /**
+     * On load more
+     */
     loadMore() {
         let takeTwoRow = this.remains.splice(0, 6);
         let news = this._projects.getValue();
@@ -88,8 +164,12 @@ export class AfterWorkComponent implements OnInit {
         }
         this._projects.next(news);
     }
-
-    scullyRouteTopProject(scullyRoutes: ScullyRoute[]): Post[] {
+    /**
+     * Convert Scully routes to Project
+     * @param scullyRoutes
+     * @returns
+     */
+    scullyRoute2Project(scullyRoutes: ScullyRoute[]): Post[] {
         return scullyRoutes.map<Post>((scullyRoute) => {
             return {
                 title: scullyRoute.title,
@@ -111,5 +191,59 @@ export class AfterWorkComponent implements OnInit {
      */
     tabChanged(tab: MatTabChangeEvent) {
         this.updateMode(tab.index);
+        this.matTabGroup._elementRef.nativeElement.setAttribute("selected-index", String(tab.index));
+    }
+    /**
+     * Filter keywords match
+     * @param value keyword
+     * @returns
+     */
+    private _filter(value: string): String[] {
+        const filterValue = value.toLowerCase();
+        console.log(value);
+        return this.allKeywords.filter((keyword) => !this.selectedKeywords.includes(keyword) && keyword.toLowerCase().includes(filterValue));
+    }
+    /**
+     * Add a chip
+     * @param event
+     */
+    add(event: MatChipInputEvent): void {
+        const value = (event.value || "").trim();
+        if (value && !this.selectedKeywords.includes(value)) {
+            if (this.selectedKeywords[0] === ALL_STR) this.selectedKeywords = [];
+            this.selectedKeywords.push(value);
+        }
+        // Clear the input value
+        this.keywordInput.nativeElement.value = "";
+        this.searchFormControl.setValue(null);
+        this.updateFilter(this.selectedKeywords);
+    }
+    /**
+     * Remove a chip
+     * @param keyword
+     */
+    remove(keyword: string): void {
+        const index = this.selectedKeywords.indexOf(keyword);
+        if (index >= 0) {
+            this.selectedKeywords.splice(index, 1);
+        }
+        if (this.selectedKeywords.length == 0) this.selectedKeywords.push(ALL_STR);
+        this.keywordInput.nativeElement.focus();
+        this.updateFilter(this.selectedKeywords);
+    }
+    /**
+     * Select a chip from auto input
+     * @param event
+     */
+    selected(event: MatAutocompleteSelectedEvent): void {
+        if (this.selectedKeywords[0] === ALL_STR) this.selectedKeywords = [];
+        this.selectedKeywords.push(event.option.viewValue);
+        this.keywordInput.nativeElement.value = "";
+        this.searchFormControl.setValue(null);
+        this.updateFilter(this.selectedKeywords);
+    }
+
+    identify(index, keyword) {
+        return keyword;
     }
 }

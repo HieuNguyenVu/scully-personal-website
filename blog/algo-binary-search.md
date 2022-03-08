@@ -6,7 +6,7 @@ date_end: '2022/01/10'
 published: true
 image: 'https://i.imgur.com/K1BOwur.jpg'
 header_image: 'https://i.imgur.com/BEuDltz.jpg'
-tags: ['Algorithm','Binary Search']
+tags: ['Algorithm','BinarySearch']
 priority: 1
 link: '/blog/algo-binary-search'
 slug: algo-binary-search

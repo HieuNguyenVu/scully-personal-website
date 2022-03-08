@@ -1,12 +1,38 @@
-<div class="bounds">
+<div class="bounds" id="afterWork">
     <div class="inner-bounds">
         <div class="content">
             <h1 class="header">
                 <span class="header-sub-wrapper"><span>#AFTER</span><span>WORK</span></span>
-                <mat-tab-group *ngIf="currentNavIndex == 2" #afterwork mat-align-tabs="end" [selectedIndex]="2" class="my-tab-group" (selectedTabChange)="tabChanged($event)">
+                <mat-tab-group #matTabGroup *ngIf="currentNavIndex == 2" #afterwork mat-align-tabs="end" [selectedIndex]="2" selected-index="2" class="my-tab-group" (selectedTabChange)="tabChanged($event)">
                     <mat-tab label="Non-Tech"></mat-tab>
                     <mat-tab label="Tech"></mat-tab>
-                    <mat-tab label="All"></mat-tab>
+                    <mat-tab>
+                        <!-- <ng-template #default>All</ng-template> -->
+                        <ng-template mat-tab-label>
+                            <mat-form-field class="example-chip-list" appearance="fill" (click)="focusTo(true)">
+                                <mat-chip-list #chipList aria-label="Keyword searching" matTooltip="{{ selectedKeywords.join(' | ') }}" matTooltipClass="flex-tooltip" [matTooltipShowDelay]="300">
+                                    <mat-chip *ngFor="let keyword of selectedKeywords" (removed)="remove(keyword)" #chipItem>
+                                        {{ keyword }}
+                                        <button matChipRemove class="m-icon icn-cancel" aria-label="clearSearch"></button>
+                                    </mat-chip>
+                                    <input
+                                        id="keywordInput"
+                                        placeholder="Enter keyword..."
+                                        #keywordInput
+                                        [formControl]="searchFormControl"
+                                        [matAutocomplete]="auto"
+                                        [matChipInputFor]="chipList"
+                                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+                                        (matChipInputTokenEnd)="add($event)" />
+                                </mat-chip-list>
+                                <mat-autocomplete #auto="matAutocomplete" (optionSelected)="selected($event)">
+                                    <mat-option *ngFor="let keyword of keywords$ | async; trackBy: identify" [value]="keyword">
+                                        {{ keyword }}
+                                    </mat-option>
+                                </mat-autocomplete>
+                            </mat-form-field>
+                        </ng-template>
+                    </mat-tab>
                 </mat-tab-group>
             </h1>
 
@@ -22,9 +48,9 @@
                                 </div>
                                 <div class="note-content">
                                     <p class="main-color">
-                                        Hi there! So glad you are here. I write these not to show my experience, knowledge, or that. This part is like a notebook, where I note all the
-                                        things learned after a long day at work, the exciting thing I got when I did my PET project, or maybe just something I got from the internet. The non-tech tab
-                                        will be a little silly cause I write about my life, experiences, and whatever is helpful. I hope you will see me better day by day, and I hope you enjoy them.
+                                        Hi there! So glad you are here. I write these not to show my experience, knowledge, or that. This part is like a notebook, where I note all the things learned
+                                        after a long day at work, the exciting thing I got when I did my PET project, or maybe just something I got from the internet. The non-tech tab will be a little
+                                        silly cause I write about my life, experiences, and whatever is helpful. I hope you will see me better day by day, and I hope you enjoy them.
                                     </p>
                                 </div>
                             </div>
