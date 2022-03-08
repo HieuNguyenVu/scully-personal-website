@@ -6,7 +6,7 @@ date_end: '2022/02/10'
 published: true
 image: 'https://i.imgur.com/rVSEDix.png'
 header_image: 'https://i.imgur.com/CTSoNPy.png'
-tags: ['Algorithm','KMP Searching','knuth-morris-pratt']
+tags: ['Algorithm','KMPSearching','knuth-morris-pratt']
 priority: 1
 link: '/blog/algo-knuth-morris-pratt'
 slug: algo-knuth-morris-pratt
