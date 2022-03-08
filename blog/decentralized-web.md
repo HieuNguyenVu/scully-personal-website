@@ -14,7 +14,9 @@ location: 'Hanoi, Vietnam'
 type_index: 0
 ---
 
-_**We don't discuss the factors of this war on this topic, cause no matter the reason for it, civilians are always affected. And I hope that all the leaders can stay together and make a peaceful action instead.**_
+_**The first time I heard about the Decentralized web was on the TV series Silicon Valley. Until recently, the event Russia started the war in Ukraine made me really think about it. 
+
+We don't discuss the factors of this war on this topic, cause no matter the reason for it, civilians are always affected. And I hope that all the leaders can stay together and make a peaceful action instead.**_
 
 ## Why this topic come back to me?
 
@@ -37,7 +39,7 @@ If you follow me for a while, I was created a [services](https://f2f.nhvu95.com/
 
 People talk about the Decentralized web as a core of web 3.0 which begin to replace web 2.0 in the next few years. It will be a long story, and hard to come true. But who knows? Internet of years ago is so different from today. And let's see the next ten years.
 
-## How decentralized web me we got better life?
+## How decentralized web help we get the better life?
 
 I believe when decentralized web come true.
 
