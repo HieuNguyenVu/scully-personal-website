@@ -50,7 +50,7 @@ There is plenty of syntax like that, but I only know about them when I play with
 
 Actually, after practicing on LeetCode, I am still confused with some kind of challenges and I cannot distinguish them. So I start to classify and try to explain it in my [post](https://nhvu95.com/). Similar to Rubber Duck Debugging, I can remember faster and longer.
 
-### 2. Learn new knowledge and relearn what was missing
+### 2. Trying new things, learning new knowledge, and relearning what was missing
 
 Cause I am not starting at a specific position at the start. Like I join to work directly with Typescript, without going in deep in javascript. So I start to recheck and review all the missing.  
 [Prepare for a frontend interview](https://nhvu95.com/blog/preparing-for-frontend-interview/)
@@ -61,6 +61,8 @@ And Instead of continuing in the front-end, following the project's requirement,
 
 **I just example two posts above to tell about what I do, they are still not enough, I need to update it more. But at least, I know what I missing, and what I need to learn.**
 All knowledge I learned was noted in some posts, I summarize knowledge from many sources, quote them and explain them and try to explain it one more time again for the reader, this way makes me get more understanding.
+
+**I also try some technologies which I never had opportunities to use in my work. It's quite amazing, I will write about them in another post.**
 
 ### 3. Update my CV
 
