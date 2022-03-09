@@ -23,7 +23,7 @@ The website loading time is primarily dependent on two actors.
 1. Time to send requests, and get files. Files in this case are about web files ( HTML, CSS, JS, images...)
 2. Time to render and display them on the screen
 
-So to improve the load time, we just need to reduce the times above as much as **possible**.
+If your page call more than 20 request to get file, script at the loading page time, SEO analyze will not appreciate that. Cause it take a lot of time to send and receive the respone back. So to improve the load time, we just need to reduce the times above as much as **possible**.
 
 ## II. Reduce the get files time
 
@@ -127,6 +127,7 @@ For example, If I add `matTabContent` and push the content inside `ng-template`,
 ```
 
 5. Reduce your `.js / .json` load in `<script>` by merge they to one, then minify them. Always true the script with `*.min.js` - it already minify.
+6. In the `angular.json` > `configurations` > `production` like `optimization`, `buildOptimizer` for "aot",`vendorChunk`, `namedChunks` which you can use to optimize your bundle size. If you use VScode as IDE, it will show you the purpose of each of them. Try to customize it as you want to fit your purpose.
 
 ### 3. Others file
 
