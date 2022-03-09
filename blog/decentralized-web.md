@@ -15,7 +15,6 @@ type_index: 0
 ---
 
 _**The first time I heard about the Decentralized web was on the TV series Silicon Valley. Until recently, the event Russia started the war in Ukraine made me really think about it. 
-
 We don't discuss the factors of this war on this topic, cause no matter the reason for it, civilians are always affected. And I hope that all the leaders can stay together and make a peaceful action instead.**_
 
 ## Why this topic come back to me?
