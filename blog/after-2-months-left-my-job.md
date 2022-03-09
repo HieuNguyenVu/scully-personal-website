@@ -1,12 +1,12 @@
 ---
-title: '[Proud]:　After two months left my job'
+title: '[SumUp]:　After two months left my job'
 description: 'My adventure starts on 07/01/2022, the day I left my job to start and look for a new opportunity. I write this to summarize all my achievements after 2 months of free time learning.'
 date_start: '2022/03/08'
 date_end: '2022/03/08'
 published: true
 image: 'https://i.imgur.com/h5s07eP.png'
 header_image: 'https://i.imgur.com/bz04ujR.jpg'
-tags: ['Proud','LifeCanChange']
+tags: ['SumUp']
 priority: 0
 link: '/blog/after-two-months-left-my-job'
 slug: after-two-months-left-my-job
