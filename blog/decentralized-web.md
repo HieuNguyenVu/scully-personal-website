@@ -7,7 +7,7 @@ published: true
 image: 'https://i.imgur.com/skCqgCs.png'
 header_image: 'https://i.imgur.com/2WeySYu.png'
 tags: ['Crap','LifeCanChange']
-priority: 0
+priority: 1
 link: '/blog/decentralized-web'
 slug: decentralized-web
 location: 'Hanoi, Vietnam'
