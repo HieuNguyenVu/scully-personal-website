@@ -3,7 +3,8 @@ import { Project } from "./project.model";
 
 @Component({
     selector: "app-portfolio-item",
-    template: ` <div *ngIf="project" [ngClass]="project.exist ? 'topic-container' : 'topic-container topic-container-invisible'">
+    template: `
+    <div *ngIf="project && project[type]" [ngClass]="project.exist ? 'topic-container' : 'topic-container topic-container-invisible'">
         <div class="overlay">
             <div class="topic-image-container">
                 <div class="topic-image" style="background-image: url('{{ project[type].image }}');"></div>

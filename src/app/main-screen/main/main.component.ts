@@ -17,6 +17,7 @@ export class MainComponent implements OnInit {
         let param = this.route.snapshot.queryParams;
         if (param && !isNaN(parseInt(param["index"]))) {
             this.defaultSelect = parseInt(param["index"]);
+            this.navIndex = this.defaultSelect;
             this.router.navigate([], {
                 queryParams: {
                     index: null,
