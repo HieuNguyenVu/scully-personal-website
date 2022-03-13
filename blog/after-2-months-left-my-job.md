@@ -22,9 +22,9 @@ I always know that my achievements, my knowledge are not good as others, so in t
 
 ### 1. 300 children's code challenges
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img src="https://i.imgur.com/h5s07eP.png"/>
-</p>
+</figure>
 
 I start to solve the challenges in LeetCode and write post blogs to summarize the lesson learn about them.
 After two months, I just finished 150+ challenges and completed 5 posts about algorithms, which is not the number I want. However, It is quite acceptable, cause these numbers are affected by my requirement and the way I learn.
@@ -86,18 +86,18 @@ The funny thing is that, when I am coding and learning new things, an idea about
 
 During this time, I optimize my pet project to get better SEO scores, make it responsive for mobile, and update the UI to impress recruiters. I also try PWA to make my website and work web no internet and control cache. Which I never had an opportunity to try at my work.
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img src="https://i.imgur.com/skw2Poi.png"/>
-</p>
+</figure>
 
 #### Image Hosting
 
 An idea came when I upload an image for my post blog, and I just wonder, how does "Imgur" work?
 Can I make It better by resizing, compressing, and uploading it at the same time? Could I host my image by myself instead of using the Imgur server?
 
-<p align="center" width="100%">
+<figure align="center" width="100%">
     <img src="https://i.imgur.com/Lmicu3m.png"/>
-</p>
+</figure>
 
 All are worked. I designed a Database and used Spring Boot. My project also supports uploading for both the Imgur server and also my server.  
 It supports resizing images and compressing the image the same as TinyPNG does. All the core source codes are completed, I am still lazy in integrating between client and server, and have no money to hire an VPS to host it:laughing:, so I still throw it there. Maybe I will finish it after I get a new job.

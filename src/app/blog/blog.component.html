@@ -44,7 +44,7 @@
     <button aria-label="Go to top" class="m-icon top arrow" (click)="scrollToTop()"></button>
     <button aria-label="Like button" class="m-icon icn-clap shake"></button>
     <button aria-label="Comment button" class="m-icon icn-comment shake"></button>
-    <button aria-label="Source button" class="m-icon icn-source shake"></button>
+    <button aria-label="Source button" class="m-icon icn-source shake" (click)="gotoSource()"></button>
     <ng-container *ngIf="!subcribed; then subcribe; else unsubcribe"> </ng-container>
     <ng-template #subcribe>
         <button aria-label="Subcribe button" class="m-icon icn-subcribe shake"></button>

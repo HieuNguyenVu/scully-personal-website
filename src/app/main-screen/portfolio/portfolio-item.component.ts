@@ -18,9 +18,9 @@ import { Project } from "./project.model";
                         >
                     </ng-container>
                 </div>
-                <p class="description" matTooltip="{{ project.description }}" matTooltipClass="normal-tooltip" [matTooltipShowDelay]="500">
+                <figure class="description" matTooltip="{{ project.description }}" matTooltipClass="normal-tooltip" [matTooltipShowDelay]="500">
                     {{ project.description }}
-                </p>
+                </figure>
                 <div class="topic-footer">
                     <div class="date">{{ project[type].date_end }}</div>
                     <span></span>

@@ -21,18 +21,19 @@ declare var ng: any;
 export class BlogComponent implements OnInit, AfterViewChecked {
     // links$: Observable<ScullyRoute[]> = this.scully.available$;
     scroll$: Observable<boolean> = of(true);
-    current: Observable<ScullyRoute> = of(null);
-    title: Observable<String> = of("");
-    title1: Observable<String> = of("");
-    title2: Observable<String> = of("");
-    startDate$: Observable<String> = of("");
-    endDate$: Observable<String> = of("");
-    location$: Observable<String> = of("");
-    headerImage$: Observable<String> = of("");
+    current: Observable<ScullyRoute>;
+    title: Observable<String>;
+    title1: Observable<String>;
+    title2: Observable<String>;
+    startDate$: Observable<String>;
+    endDate$: Observable<String>;
+    location$: Observable<String>;
+    headerImage$: Observable<String>;
 
     displayControl = false;
     activeTabIndex = 2;
     subcribed = false;
+    link: string = "";
 
     constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService, private socialTagService: SocialTagsService) {
         socialTagService.setTitleAndTags();
@@ -50,17 +51,7 @@ export class BlogComponent implements OnInit, AfterViewChecked {
         this.endDate$ = this.current.pipe(
             tap((res) => {
                 if (res) {
-                    let date = new Date(res.date_end);
-                    let oDate = localStorage.getItem(res.slug);
-                    if (oDate) {
-                        let oldDate = new Date(oDate);
-                        if (oldDate < date) {
-                            localStorage.setItem(res.slug, res.date_end);
-                            // this.openSnackBar();
-                        }
-                    } else {
-                        localStorage.setItem(res.slug, res.date_end);
-                    }
+                    this.link = res.link;
                 }
             }),
             map((res) => {
@@ -109,5 +100,9 @@ export class BlogComponent implements OnInit, AfterViewChecked {
 
     scrollToBottom() {
         window.scrollTo({ left: 0, top: document.body.clientHeight, behavior: "smooth" });
+    }
+
+    gotoSource() {
+        window.open("https://github.com/nhvu95/scully-personal-website/tree/main/" + this.link + ".md", "_blank");
     }
 }
