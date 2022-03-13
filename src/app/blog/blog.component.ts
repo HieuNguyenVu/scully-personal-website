@@ -38,11 +38,15 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService, private socialTagService: SocialTagsService) {
         socialTagService.setTitleAndTags();
     }
-
+    /**
+     * After view checked - highlight code in Primsjs
+     */
     ngAfterViewChecked() {
         this.highlightService.highlightAll();
     }
-
+    /**
+     * On init
+     */
     ngOnInit() {
         // debug current pages
         removeFbclid();
@@ -85,37 +89,57 @@ export class BlogComponent implements OnInit, AfterViewChecked {
         this.title1 = sharedTitle$.pipe(map((title) => title.split("　")[0]));
         this.title2 = sharedTitle$.pipe(map((title) => title.split("　").slice(1).join()));
     }
-
+    /**
+     * On tab change event
+     * @param tabChangeEvent
+     */
     tabChanged(tabChangeEvent: MatTabChangeEvent) {
         let index = tabChangeEvent.index;
         this.router.navigateByUrl(`/?index=${index}`);
     }
+    /**
+     * Change tab click
+     */
     onTabGroupClicked() {
         this.router.navigateByUrl(`/?index=${this.activeTabIndex}`);
     }
-
+    /**
+     * Scroll to top
+     */
     scrollToTop() {
         window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
     }
-
+    /**
+     * Scroll to bottom
+     */
     scrollToBottom() {
         window.scrollTo({ left: 0, top: document.body.clientHeight, behavior: "smooth" });
     }
-
+    /**
+     * Go to source markdown file
+     */
     gotoSource() {
         window.open("https://github.com/nhvu95/scully-personal-website/tree/main/" + this.link + ".md", "_blank");
     }
+    /**
+     * Share post to facebook
+     */
     shareFb() {
         let u = location.href;
         let t = document.title;
         window.open("http://www.facebook.com/sharer.php?u=" + encodeURIComponent(u) + "&t=" + encodeURIComponent(t), "sharer", "toolbar=0,status=0,width=626,height=436");
     }
-    shareLinkedin(){
+    /**
+     * Share post to linkedin
+     */
+    shareLinkedin() {
         let u = location.href;
         window.open("https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(u), "sharer", "toolbar=0,status=0,width=626,height=436");
     }
-
-    shareTwitter(){
+    /**
+     * Share post to twitter
+     */
+    shareTwitter() {
         let u = location.href;
         window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(u), "sharer", "toolbar=0,status=0,width=626,height=436");
     }
