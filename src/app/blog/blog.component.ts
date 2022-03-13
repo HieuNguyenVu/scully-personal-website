@@ -105,4 +105,18 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     gotoSource() {
         window.open("https://github.com/nhvu95/scully-personal-website/tree/main/" + this.link + ".md", "_blank");
     }
+    shareFb() {
+        let u = location.href;
+        let t = document.title;
+        window.open("http://www.facebook.com/sharer.php?u=" + encodeURIComponent(u) + "&t=" + encodeURIComponent(t), "sharer", "toolbar=0,status=0,width=626,height=436");
+    }
+    shareLinkedin(){
+        let u = location.href;
+        window.open("https://www.linkedin.com/sharing/share-offsite/?url=" + encodeURIComponent(u), "sharer", "toolbar=0,status=0,width=626,height=436");
+    }
+
+    shareTwitter(){
+        let u = location.href;
+        window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(u), "sharer", "toolbar=0,status=0,width=626,height=436");
+    }
 }
