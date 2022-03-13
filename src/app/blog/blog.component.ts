@@ -32,6 +32,7 @@ export class BlogComponent implements OnInit, AfterViewChecked {
 
     displayControl = false;
     activeTabIndex = 2;
+    subcribed = false;
 
     constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService, private socialTagService: SocialTagsService) {
         socialTagService.setTitleAndTags();

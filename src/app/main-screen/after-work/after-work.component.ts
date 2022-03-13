@@ -45,16 +45,19 @@ export class AfterWorkComponent implements OnInit, OnDestroy {
 
     _projects: BehaviorSubject<Post[][]> = new BehaviorSubject<Post[][]>([]);
     projects$: Observable<Post[][]> = this._projects.asObservable();
+    keywords$: Observable<String[]>;
+
     allPosts: ScullyRoute[] = [];
     allCurrentModePost: Post[] = [];
 
     remains: Post[] = [];
-
-    keywords$: Observable<String[]>;
     selectedKeywords: String[] = [];
     allKeywords: String[] = [];
     searchFormControl = new FormControl();
     separatorKeysCodes: number[] = [ENTER, COMMA, SPACE];
+
+    subcribed = false;
+
     @ViewChild("keywordInput") keywordInput: ElementRef<HTMLInputElement>;
     @ViewChild("matTabGroup") matTabGroup: MatTabGroup;
 

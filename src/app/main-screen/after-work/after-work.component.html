@@ -69,3 +69,12 @@
         </div>
     </div>
 </div>
+<div class="menu-right">
+    <ng-container *ngIf="!subcribed; then subcribe; else unsubcribe"> </ng-container>
+    <ng-template #subcribe>
+        <button aria-label="Subcribe button" class="m-icon icn-subcribe shake"></button>
+    </ng-template>
+    <ng-template #unsubcribe>
+        <button aria-label="Unsubscribe button" class="m-icon icn-unsubcribe shake"></button>
+    </ng-template>
+</div>

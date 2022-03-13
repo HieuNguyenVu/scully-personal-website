@@ -6,10 +6,10 @@
 <div class="bounds" id="blog-post">
     <div class="inner-bounds">
         <div class="content">
+            <div class="header-image">
+                <img [src]="headerImage$ | async" loading="lazy" />
+            </div>
             <div class="post-container">
-                <div class="header-image">
-                    <img [src]="headerImage$ | async" loading="lazy" />
-                </div>
                 <h1 class="header">
                     <span class="header-sub-wrapper"
                         ><span>{{ title1 | async }}</span
@@ -39,4 +39,24 @@
             <app-footer></app-footer>
         </div>
     </div>
+</div>
+<div class="menu-left">
+    <button aria-label="Go to top" class="m-icon top arrow" (click)="scrollToTop()"></button>
+    <button aria-label="Like button" class="m-icon icn-clap shake"></button>
+    <button aria-label="Comment button" class="m-icon icn-comment shake"></button>
+    <button aria-label="Source button" class="m-icon icn-source shake"></button>
+    <ng-container *ngIf="!subcribed; then subcribe; else unsubcribe"> </ng-container>
+    <ng-template #subcribe>
+        <button aria-label="Subcribe button" class="m-icon icn-subcribe shake"></button>
+    </ng-template>
+    <ng-template #unsubcribe>
+        <button aria-label="Unsubscribe button" class="m-icon icn-unsubcribe shake"></button>
+    </ng-template>
+    <button aria-label="Go to bottom" class="m-icon bottom arrow" (click)="scrollToBottom()"></button>
+</div>
+<div class="menu-right">
+    <button aria-label="Share facebook button" class="m-icon facebook shake"></button>
+    <button aria-label="Share linkedin button" class="m-icon linkedin shake"></button>
+    <button aria-label="Share twitter button" class="m-icon twitter shake"></button>
+    <label aria-label="Share">Share to</label>
 </div>
