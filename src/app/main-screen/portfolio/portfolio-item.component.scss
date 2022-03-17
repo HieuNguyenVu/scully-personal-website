@@ -90,6 +90,10 @@
             margin: auto;
         }
     }
+    figure {
+        margin: 14px 0px;
+        text-align: justify;
+    }
 }
 
 .topic-container-invisible {
@@ -108,7 +112,7 @@
     }
 }
 
-@media screen and (max-width: 959px) {
+@media screen and (max-width: 539px) {
     .topic-container {
         flex-direction: column;
         .topic-image {

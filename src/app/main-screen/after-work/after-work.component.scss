@@ -27,7 +27,7 @@
         }
     }
 
-    ::ng-deep .mat-tab-labels > div:nth-child(3).mat-tab-label-active  .mat-chip-list-wrapper {
+    ::ng-deep .mat-tab-labels > div:nth-child(3).mat-tab-label-active .mat-chip-list-wrapper {
         mat-chip ~ input {
             max-width: 0%;
         }
@@ -92,7 +92,7 @@ mat-option {
         margin: 0px 10px;
     }
     .note-container {
-        min-height: 230px;
+        min-height: 190px;
         margin-bottom: 10px;
         border: 1px solid $main-color2;
         border-radius: 10px;
@@ -123,6 +123,10 @@ mat-option {
                 text-align: justify;
                 font-style: italic;
                 margin: 0;
+            }
+            figure {
+                margin: 14px 0px;
+                text-align: justify;
             }
         }
     }
