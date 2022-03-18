@@ -68,6 +68,7 @@ Before going deeply into each section, I want to appreciate my thanks to the sou
    [**7. Uniform interface REST - inf3rno**](https://stackoverflow.com/questions/25172600/rest-what-exactly-is-meant-by-uniform-interface)
    [**8. Type Coercion**](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/)
    [**9. Prototype & Prototype chain**](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
+   [**10. Closures & Lexical scoping**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures?retiredLocale=vi)
 
 </details>
 
@@ -660,3 +661,241 @@ console.log(myDate.getYear()); // 'something else!'
     ```
 
 ### 6. Scope & Scope chain
+
+We already know about function module, class and somes like module...
+We know they was declare in `Heap` (Javascript), or `Stack` and `Heap` in some languagues like Java/C++.
+
+Because all the variables and things are declared and allocated in the same storage. For easy for GC's job, and in some case we need to prevent acecssing to each other, so people created a concept called `scope`.
+
+There are differences in languages, however essentially, when a function was taken out from the call stack, it will know where to find and declare the variable, and they will look for in their scope which compiler allocate for then.
+
+After a function finish, in normal case, the scope of it will be clear by Garbage Collection (GC).  
+
+>We have three main types of scope
+>**1. Global scope**
+>**2. Function scope**
+>**3. Block scope**
+
+We already know about global and function, but how about block?
+
+* **Block scope**: This tells us that any variable declared inside a block ({}) can be accessed only inside that block.  
+* Block scope is related to variables declared with `let` and `const` only. Variables declared with `var` do not have block scope.
+* Block scope familiar use in statements like `if`,`for`,`while`,`switch`... or `{}`
+
+```javascript
+{
+    let a = 3;
+    var b = 2;
+}
+
+console.log(a); //Uncaught ReferenceError: a is not defined
+console.log(b); // 2 as variables declared with `var` is  
+functionally and globally scoped NOT block scoped
+```
+
+#### Lexical Scope
+
+* **Lexical Scope**: We also have a concept called **Lexical Scope** (Static scope). After read a lot of post, I wana say, It's so confusing...
+
+```javascript
+function init() {
+  var name = 'Mozilla'; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, a closure
+    alert(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
+```
+
+I will note main contents.
+
+1. **`Lexical scope`** was detected when complier parses the js code to machine code.
+2. Essentially, **`Lexical scope`** is the scope where a function is declared inside. And at the run time, when a function calls, `hosting environment` will help the new scope detect its `Lexical scope` and use that to create it own `Lexical environment`
+3. **`Lexical Scoping`** is the mechanism that allows the inner function can access and use all things declare in the **`Lexical scope`**. EX: `displayName()` call and use variable `name` which declare outside in the `init()`.
+
+#### Scope chain
+
+When a function looks for a variable in its scope but doesn't found, it will look for in its `lexical scope` and more. This will make a scope chain.
+
+> `displayName()` -> `init()` -> global scope.
+
+### 7. Closure
+
+>A closure is the **combination** of **a function** and **the lexical environment** within which that function was declared.
+
+Let look a bit about this code.
+
+```javascript
+function makeFunc() {
+  var name = 'Mozilla';
+  function displayName() {
+    alert(name);
+  }
+  return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+```
+
+As we know, when a memory, scope which not poiting by any reference, will be clean by GC.
+
+In this example, although `makeFunc()` was called and finished but the `myFunction()` still can `alert()` variable `name`. ​How’s that?
+
+_**This is the way Closure work. The definition above mentioned the `lexical environment`. And in this case, cause we return the `displayName()` function and cause the `displayName` still can access it's `lexical environment`(`makeFunc`) so the outter scope of it will not be clean by GC.**_
+
+Let's look another example:
+
+```javascript
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+```
+
+In this case, each time we call `makeAdder`, the `hosting environment` will help us to create two different `lexical environment`. And by this way, `makeAdder(5)` and `makeAdder(10)` point to different `lexical environment`.
+In this way, `add5()` and `add10()` don't impact each other.
+
+#### Practical use
+
+Actually, as a TS-user don't use JS native to build frontend framework too much, I rarely use closure, especially in Angular.
+
+1. For in an interview, Closure is frequently asked by the interviewer to check the interviewee's understanding of JS.
+2. For the event binding.
+
+```javascript
+function makeSizer(size) {
+  return function() {
+    document.body.style.fontSize = size + 'px';
+  };
+}
+function makeSizerNormal(size) {
+   document.body.style.fontSize = size + 'px';
+}
+
+var size12 = makeSizer(12);
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+//Test it here https://jsfiddle.net/vnkuZ/7726/
+```
+
+3. For creating a private function
+
+```javascript
+var counter = (function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+
+    decrement: function() {
+      changeBy(-1);
+    },
+
+    value: function() {
+      return privateCounter;
+    }
+  };
+})();
+
+console.log(counter.value());  // 0.
+
+counter.increment();
+counter.increment();
+console.log(counter.value());  // 2.
+
+counter.decrement();
+console.log(counter.value());  // 1.
+```
+
+#### Some attention points
+
+1. Createful create closure in a loop, or share the variable.
+
+```javascript
+for (var i = 0; i < helpText.length; i++) {
+    var item = helpText[i];
+    document.getElementById(item.id).onfocus = function() {
+      showHelp(item.help);
+    }
+}
+// This will make error, cause the closure of `onfocus` use same `item`, so it use the last `item`.
+
+```
+We should use `let` in ES2015, or declare `onfocus` outside like this
+
+```javascript
+function showHelp(help) {
+  document.getElementById('help').innerHTML = help;
+}
+
+function makeHelpCallback(help) {
+  return function() {
+    showHelp(help);
+  };
+}
+
+for (var i = 0; i < helpText.length; i++) {
+    var item = helpText[i];
+    document.getElementById(item.id).onfocus =
+       makeHelpCallback(item.help);
+}
+```
+Or use an anomyous function
+```javascript
+for (var i = 0; i < helpText.length; i++) {
+    (function() {
+       var item = helpText[i];
+       document.getElementById(item.id).onfocus = function() {
+         showHelp(item.help);
+       }
+    })(); // Immediate event listener attachment with the current value of item (preserved until iteration).
+}
+```
+
+2. Avoid nested loop, avoid use closure unless we have to. Cause it will impact our perfomance and memory.
+3. Create class in incorrect way.
+
+```javascript
+function MyObject(name, message) {
+  this.name = name.toString();
+  this.message = message.toString();
+  this.getName = function() {
+    return this.name;
+  };
+
+  this.getMessage = function() {
+    return this.message;
+  };
+}
+```
+
+Instead of that, we should declare like the way bellow, cause the previous way not is good practice for closure. Cause each time MyObject create, the function will be reassigned.
+
+```javascript
+function MyObject(name, message) {
+  this.name = name.toString();
+  this.message = message.toString();
+}
+MyObject.prototype.getName = function() {
+  return this.name;
+};
+MyObject.prototype.getMessage = function() {
+  return this.message;
+};
+```
+
