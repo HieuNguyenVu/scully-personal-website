@@ -1,62 +1,112 @@
-<mat-tab-group id="mainTab" mat-align-tabs="center" dynamicHeight [(selectedIndex)]="activeTabIndex" (click)="onTabGroupClicked()">
-    <mat-tab label="ABOUT ME"></mat-tab>
-    <mat-tab label="PORTFOLIO"></mat-tab>
-    <mat-tab label="AFTER WORK"></mat-tab>
-</mat-tab-group>
-<div class="bounds" id="blog-post">
-    <div class="inner-bounds">
-        <div class="content">
-            <div class="header-image">
-                <img [src]="headerImage$ | async" loading="lazy" />
-            </div>
-            <div class="post-container">
-                <h1 class="header">
-                    <span class="header-sub-wrapper"
-                        ><span>{{ title1 | async }}</span
-                        ><span>{{ title2 | async }}</span></span
-                    >
-                </h1>
-                <div class="main-content markdown-body">
-                    <div>
-                        <div>
-                            <label class="author">
-                                <div class="avatar"></div>
-                                <span>
-                                    <span>Vue Nguyen</span><span class="normal"> in </span><span class="">{{ location$ | async }}</span
-                                    ><span class="normal"> • {{ endDate$ | async }}</span>
-                                </span>
-                            </label>
-                            <div class="yellow-line"></div>
-                            <div class="s-content">
-                                <scully-content></scully-content>
+<div id="mainTab">
+    <div><a label="ABOUT ME" href="/?index=0">ABOUT ME</a></div>
+    <div><a label="PORTFOLIO" href="/?index=1">PORTFOLIO</a></div>
+    <div><a label="AFTER WORK" href="/?index=2">AFTER WORK</a></div>
+</div>
+<div class="container-wrapper">
+    <div class="control-container left-container" #leftContainer>
+        <div class="logo">
+            <a href="/?index=2"><img src="assets/icons/favicon-196x196.png" /></a>
+        </div>
+        <div class="menu-left">
+            <button aria-label="Go to top" class="m-icon top arrow" (click)="scrollToTop()"></button>
+            <button aria-label="Like button" class="m-icon icn-clap shake"></button>
+            <button aria-label="Comment button" class="m-icon icn-comment shake"></button>
+            <button aria-label="Source button" class="m-icon icn-source shake" (click)="gotoSource()"></button>
+            <ng-container *ngIf="!subcribed; then subcribe; else unsubcribe"> </ng-container>
+            <ng-template #subcribe>
+                <button aria-label="Subcribe button" class="m-icon icn-subcribe shake"></button>
+            </ng-template>
+            <ng-template #unsubcribe>
+                <button aria-label="Unsubscribe button" class="m-icon icn-unsubcribe shake"></button>
+            </ng-template>
+            <button aria-label="Go to bottom" class="m-icon bottom arrow" (click)="scrollToBottom()"></button>
+        </div>
+        <div class="footer">
+            <button
+                class="m-icon gmail pointer"
+                aria-label="sendEmail"
+                onclick="window.open('https://mail.google.com/mail/?view=cm&fs=1&to=nhvu.95@gmail.com&su=HOW%20CAN%20I%20HELP%20U%3F')"></button>
+        </div>
+    </div>
+    <div class="content-container">
+        <div class="bounds" id="blog-post" #scrollOne>
+            <div class="inner-bounds">
+                <div class="content" *ngIf="postContent$ | async as postContent">
+                    <div class="header-image">
+                        <img [src]="postContent.headerImage" loading="lazy" />
+                    </div>
+                    <div class="post-container">
+                        <h1 class="header">
+                            <span class="header-sub-wrapper">
+                                <span>{{ postContent.title1 }}</span>
+                                <span>{{ postContent.title2 }}</span></span
+                            >
+                        </h1>
+                        <div class="main-content markdown-body">
+                            <div>
+                                <div>
+                                    <label class="author">
+                                        <div class="avatar"></div>
+                                        <span>
+                                            <span>Vue Nguyen</span><span class="normal"> in </span><span class="">{{ postContent.location }}</span
+                                            ><span class="normal"> • {{ postContent.endDate }}</span>
+                                        </span>
+                                    </label>
+                                    <div class="yellow-line"></div>
+                                    <div class="s-content">
+                                        <scully-content></scully-content>
+                                    </div>
+                                    <div class="post-thank">Thank for reading!</div>
+                                </div>
+                                <div></div>
                             </div>
-                            <div class="post-thank">Thank for reading!</div>
                         </div>
-                        <div></div>
+                    </div>
+                    <!-- <app-footer></app-footer> -->
+                </div>
+            </div>
+        </div>
+        <div class="suggest-share-container right-container" #rightContainer>
+            <div class="share-container">
+                <label aria-label="Share" class="sharetitle">Share to</label>
+                <div class="menu">
+                    <button aria-label="Share facebook button" class="share-btn" (click)="shareFb()"><div class="icn-facebook-share"></div></button>
+                    <button aria-label="Share linkedin button" class="share-btn" (click)="shareLinkedin()"><div class="icn-linkedin-share"></div></button>
+                    <button aria-label="Share twitter button" class="share-btn" (click)="shareTwitter()"><div class="icn-twitter-share"></div></button>
+                </div>
+                <label class="share-des"
+                    ><i
+                        >Actually, I'm writing this article not to share knowledge, mainly to make notes for myself. However, If you think this can help others, please help me to share it.<br />
+                        Thank you !!!</i
+                    ></label
+                >
+            </div>
+            <div class="suggest-container">
+                <div class="suggest-items" *ngIf="posts$ | async as posts">
+                    <label class="stitle">Related</label>
+                    <app-afterwork-item *ngFor="let post of posts" [post]="post"></app-afterwork-item>
+                </div>
+                <div class="recommended">
+                    <label class="rtitle">Recommended topics</label>
+                    <div class="tags" *ngIf="tags$ | async as tags">
+                        <ng-container *ngFor="let tag of tags">
+                            <label class="tag-item"
+                                ><a href="#">#{{ tag }}</a></label
+                            >
+                        </ng-container>
+                    </div>
+                    <label class="rtitle">Recommended series</label>
+                    <div class="tags" *ngIf="series$ | async as series">
+                        <ng-container *ngFor="let ser of series">
+                            <label class="tag-item"
+                                ><a href="#">{{ ser }}</a></label
+                            >
+                        </ng-container>
                     </div>
                 </div>
             </div>
-            <app-footer></app-footer>
         </div>
     </div>
-</div>
-<div class="menu-left">
-    <button aria-label="Go to top" class="m-icon top arrow" (click)="scrollToTop()"></button>
-    <button aria-label="Like button" class="m-icon icn-clap shake"></button>
-    <button aria-label="Comment button" class="m-icon icn-comment shake"></button>
-    <button aria-label="Source button" class="m-icon icn-source shake" (click)="gotoSource()"></button>
-    <ng-container *ngIf="!subcribed; then subcribe; else unsubcribe"> </ng-container>
-    <ng-template #subcribe>
-        <button aria-label="Subcribe button" class="m-icon icn-subcribe shake"></button>
-    </ng-template>
-    <ng-template #unsubcribe>
-        <button aria-label="Unsubscribe button" class="m-icon icn-unsubcribe shake"></button>
-    </ng-template>
-    <button aria-label="Go to bottom" class="m-icon bottom arrow" (click)="scrollToBottom()"></button>
-</div>
-<div class="menu-right">
-    <button aria-label="Share facebook button" class="m-icon facebook shake" (click)="shareFb()"></button>
-    <button aria-label="Share linkedin button" class="m-icon linkedin shake" (click)="shareLinkedin()"></button>
-    <button aria-label="Share twitter button" class="m-icon twitter shake" (click)="shareTwitter()"></button>
-    <label aria-label="Share">Share to</label>
+    
 </div>

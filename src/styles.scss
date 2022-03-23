@@ -137,8 +137,8 @@ body {
     background-position-y: 0px;
 }
 .linkedin:hover {
-    background-position-x: -450px;
-    background-position-y: 0px;
+    background-position-x: -400px;
+    background-position-y: -50px;
 }
 .github {
     background-image: $bg-image;
@@ -173,11 +173,11 @@ body {
 .download {
     background-image: $bg-image;
     background-size: $bg-size;
-    background-position-x: -250px;
+    background-position-x: -150px;
     background-position-y: -50px;
 }
 .download:hover {
-    background-position-x: -250px;
+    background-position-x: -150px;
     background-position-y: -100px;
 }
 
@@ -193,80 +193,115 @@ button.m-icon {
 }
 
 .arrow {
-    background-image: $bg-image;
-    background-size: $bg-size;
-    background-position-x: -100px;
-    background-position-y: -50px;
+    background-image: $bg-image2;
+    background-size: $bg-size2;
+    background-position-x: -400px;
+    background-position-y: 0px;
 }
 
 .arrow:hover {
-    background-position-x: -150px;
+    background-position-x: -400px;
     background-position-y: -50px;
 }
 
 .icn-cancel {
     background-image: $bg-image;
-    background-size: 370px 148px;
+    background-size: 300px 120px;
     background-position-x: 0px;
-    background-position-y: -93px;
+    background-position-y: -212px;
+    // transform: scale(0.8);
 }
 
 .icn-clap {
-    background-image: $bg-image;
-    background-size: $bg-size;
-    background-position-x: -150px;
-    background-position-y: -100px;
+    background-image: $bg-image2;
+    background-size: $bg-size2;
+    background-position-x: -200px;
+    background-position-y: 0px;
 }
 
 .icn-clap:hover {
-
-    background-position-x: -200px;
-    background-position-y: -100px;
+    background-position-x: -250px;
+    background-position-y: 0px;
 }
 
 .icn-comment {
-    background-image: $bg-image;
-    background-size: $bg-size;
+    background-image: $bg-image2;
+    background-size: $bg-size2;
     background-position-x: -0px;
-    background-position-y: -150px;
+    background-position-y: 0px;
 }
 
 .icn-comment:hover {
     background-position-x: -50px;
-    background-position-y: -150px;
+    background-position-y: -0px;
 }
 
 .icn-source {
-    background-image: $bg-image;
-    background-size: $bg-size;
+    background-image: $bg-image2;
+    background-size: $bg-size2;
     background-position-x: -100px;
-    background-position-y: -150px;
+    background-position-y: 0px;
 }
 
 .icn-source:hover {
     background-position-x: -150px;
-    background-position-y: -150px;
+    background-position-y: 0px;
 }
 
-.icn-subcribe{
-    background-image: $bg-image;
-    background-size: $bg-size;
-    background-position-x: -200px;
-    background-position-y: -150px;
-}
-.icn-subcribe:hover{
-    background-position-x: -250px;
-    background-position-y: -150px;
-}
-.icn-unsubcribe{
-    background-image: $bg-image;
-    background-size: $bg-size;
+.icn-subcribe {
+    background-image: $bg-image2;
+    background-size: $bg-size2;
     background-position-x: -300px;
-    background-position-y: -150px;
+    background-position-y: 0px;
 }
-.icn-unsubcribe:hover{
+.icn-subcribe:hover {
     background-position-x: -350px;
-    background-position-y: -150px;
+    background-position-y: 0px;
+}
+.icn-unsubcribe {
+    background-image: $bg-image2;
+    background-size: $bg-size2;
+    background-position-x: -300px;
+    background-position-y: -50px;
+}
+.icn-unsubcribe:hover {
+    background-position-x: -350px;
+    background-position-y: -50px;
+}
+
+.icn-facebook-share {
+    background-image: $bg-image2;
+    background-size: $bg-size2;
+    background-position-x: 0px;
+    background-position-y: -50px;
+}
+*:hover > .icn-facebook-share,
+.icn-facebook-share:hover {
+    background-position-x: -50px;
+    background-position-y: -50px;
+}
+
+.icn-linkedin-share {
+    background-image: $bg-image2;
+    background-size: $bg-size2;
+    background-position-x: -100px;
+    background-position-y: -50px;
+}
+*:hover > .icn-linkedin-share,
+.icn-linkedin-share:hover {
+    background-position-x: -150px;
+    background-position-y: -50px;
+}
+.icn-twitter-share {
+    background-image: $bg-image2;
+    background-size: $bg-size2;
+    background-position-x: -200px;
+    background-position-y: -50px;
+}
+*:hover > .icn-twitter-share,
+.icn-twitter-share:hover {
+    background-position-x: -250px;
+    background-position-y: -50px;
 }
 
 .title-tooltip {
@@ -300,6 +335,7 @@ button.m-icon {
 /* width */
 ::-webkit-scrollbar {
     width: 6px;
+    overscroll-behavior: none;
 }
 
 /* Track */
@@ -317,44 +353,7 @@ button.m-icon {
     background: #555;
 }
 
-
-
-.menu-left {
-    position: fixed;
-    top: calc(50% - 200px);
-    left: 20px;
-    width: 60px;
-    opacity: 0.6;
-    transition: opacity 1s;
-    // height: 200px;
-    button {
-        display: inline-block;
-
-        width: 50px;
-        height: 50px;
-    }
-    .top {
-        transform: rotate(180deg);
-        opacity: 0.3;
-        margin-bottom: 50px;
-    }
-    .bottom{
-        margin-top: 50px;
-        opacity: 0.3;
-    }
-    .top:hover, .bottom:hover{
-        opacity: 1;
-    }
-    .top:active {
-        transform: scale(0.95) rotate(180deg);
-    }
-    .bottom:active {
-        transform: scale(0.95);
-    }
-}
-
-.menu-right:hover,
-.menu-left:hover {
+.menu-right:hover {
     opacity: 1;
     transition: opacity 1s;
     .shake:hover {
@@ -419,7 +418,6 @@ button.m-icon {
         transform: translate(1px, -2px) rotate(-1deg);
     }
 }
-
 
 @media screen and (max-width: 1279px) {
     body {

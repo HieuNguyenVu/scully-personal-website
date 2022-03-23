@@ -1,10 +1,13 @@
-import { AfterViewChecked, ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation } from "@angular/core";
+import { AfterViewChecked, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { MatTabChangeEvent } from "@angular/material/tabs";
-import { ActivatedRoute, Router } from "@angular/router";
+import { Router } from "@angular/router";
 import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
 import * as removeFbclid from "remove-fbclid";
 import { Observable, of } from "rxjs";
-import { map, share, tap } from "rxjs/operators";
+import { map, share, switchMap, tap } from "rxjs/operators";
+import { Mode } from "../main-screen/after-work/after-work.component";
+import { Post } from "../main-screen/portfolio/project.model";
+import { PostsService } from "../shared/posts.service";
 import { SocialTagsService } from "../shared/social-tags-services";
 import { HighlightService } from "./highlight.service";
 
@@ -25,6 +28,8 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     title: Observable<String>;
     title1: Observable<String>;
     title2: Observable<String>;
+    postContent$: Observable<{ title1: String; title2: String; location: String; headerImage: String; endDate: String }>;
+
     startDate$: Observable<String>;
     endDate$: Observable<String>;
     location$: Observable<String>;
@@ -34,8 +39,19 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     activeTabIndex = 2;
     subcribed = false;
     link: string = "";
+    // Posts
+    posts$: Observable<Post[]>;
 
-    constructor(private router: Router, private route: ActivatedRoute, private scully: ScullyRoutesService, private highlightService: HighlightService, private socialTagService: SocialTagsService) {
+    tags$: Observable<String[]>;
+    series$: Observable<String[]>;
+    @ViewChild("rightContainer") rightContainer: ElementRef<HTMLDivElement>;
+    constructor(
+        private router: Router,
+        private scully: ScullyRoutesService,
+        private highlightService: HighlightService,
+        private socialTagService: SocialTagsService,
+        private postService: PostsService
+    ) {
         socialTagService.setTitleAndTags();
     }
     /**
@@ -50,9 +66,10 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     ngOnInit() {
         // debug current pages
         removeFbclid();
-
+        // Get current post
         this.current = this.scully.getCurrent().pipe(share());
-        this.endDate$ = this.current.pipe(
+
+        this.postContent$ = this.current.pipe(
             tap((res) => {
                 if (res) {
                     this.link = res.link;
@@ -63,31 +80,30 @@ export class BlogComponent implements OnInit, AfterViewChecked {
                 if (res) {
                     date = new Date(res.date_end);
                 }
-                // return date.toISOString().split("T")[0];
-                return date.toLocaleString("en-US", { day: "2-digit", month: "short", year: "numeric" });
+                return {
+                    title1: res.title.split("　")[0],
+                    title2: res.title.split("　").slice(1).join(),
+                    location: res.location,
+                    headerImage: res.header_image,
+                    endDate: date.toLocaleString("en-US", { day: "2-digit", month: "short", year: "numeric" }),
+                };
             })
         );
-        let sharedTitle$ = this.current.pipe(
-            map((res) => {
-                if (res) return res.title;
-                return "This is a secret";
+
+        // get suggest post
+        this.posts$ = this.postService.getPosts(2, Mode.tech);
+        this.series$ = this.postService.getPosts(50, Mode.tech).pipe(
+            map((posts) => {
+                let seri = posts.map((post) => {
+                    return post.title.match(/^\[(\S+)\]/)[1];
+                });
+                return [...new Set(seri)];
             })
         );
-        this.headerImage$ = this.current.pipe(
-            map((res) => {
-                if (res) return res.header_image;
-                return "https://i.imgur.com/9SYJ5pX.png";
-            })
-        );
-        this.location$ = this.current.pipe(
-            map((res) => {
-                if (res) return res.location;
-                return "Hanoi, Vietnam";
-            })
-        );
-        this.title = sharedTitle$.pipe(map((title) => title.replace("　", " ")));
-        this.title1 = sharedTitle$.pipe(map((title) => title.split("　")[0]));
-        this.title2 = sharedTitle$.pipe(map((title) => title.split("　").slice(1).join()));
+        this.tags$ = this.postService.getTags(10);
+        window.onscroll = (event) => {
+            this.rightContainer.nativeElement.scrollTop = window.scrollY;
+        };
     }
     /**
      * On tab change event
@@ -96,12 +112,6 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     tabChanged(tabChangeEvent: MatTabChangeEvent) {
         let index = tabChangeEvent.index;
         this.router.navigateByUrl(`/?index=${index}`);
-    }
-    /**
-     * Change tab click
-     */
-    onTabGroupClicked() {
-        this.router.navigateByUrl(`/?index=${this.activeTabIndex}`);
     }
     /**
      * Scroll to top

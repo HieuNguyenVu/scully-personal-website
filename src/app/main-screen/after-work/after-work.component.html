@@ -3,7 +3,15 @@
         <div class="content">
             <h1 class="header">
                 <span class="header-sub-wrapper"><span>#AFTER</span><span>WORK</span></span>
-                <mat-tab-group #matTabGroup *ngIf="currentNavIndex == 2" #afterwork mat-align-tabs="end" [selectedIndex]="2" selected-index="2" class="my-tab-group" (selectedTabChange)="tabChanged($event)">
+                <mat-tab-group
+                    #matTabGroup
+                    *ngIf="currentNavIndex == 2"
+                    #afterwork
+                    mat-align-tabs="end"
+                    [selectedIndex]="2"
+                    selected-index="2"
+                    class="my-tab-group"
+                    (selectedTabChange)="tabChanged($event)">
                     <mat-tab label="Non-Tech"></mat-tab>
                     <mat-tab label="Tech"></mat-tab>
                     <mat-tab>
@@ -36,7 +44,7 @@
                 </mat-tab-group>
             </h1>
 
-            <div class="main-content" *ngIf="projects$ | async as projects">
+            <div class="main-content" *ngIf="posts$ | async as posts">
                 <!-- First part -->
                 <div class="contents">
                     <div class="content-col">
@@ -55,13 +63,13 @@
                                 </div>
                             </div>
                         </div>
-                        <app-afterwork-item *ngFor="let pj of projects[0]" [project]="pj"></app-afterwork-item>
+                        <app-afterwork-item *ngFor="let post of posts[0]" [post]="post"></app-afterwork-item>
                     </div>
                     <div class="content-col">
-                        <app-afterwork-item *ngFor="let pj of projects[1]" [project]="pj"></app-afterwork-item>
+                        <app-afterwork-item *ngFor="let post of posts[1]" [post]="post"></app-afterwork-item>
                     </div>
                     <div class="content-col">
-                        <app-afterwork-item *ngFor="let pj of projects[2]" [project]="pj"></app-afterwork-item>
+                        <app-afterwork-item *ngFor="let post of posts[2]" [post]="post"></app-afterwork-item>
                     </div>
                 </div>
             </div>

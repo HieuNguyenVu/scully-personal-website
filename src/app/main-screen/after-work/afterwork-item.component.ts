@@ -7,7 +7,7 @@ import { Post } from "../portfolio/project.model";
     styleUrls: ["./afterwork-item.component.scss"],
 })
 export class AfterWorkItemComponent implements OnInit {
-    @Input() project: Post;
+    @Input() post: Post;
 
     constructor() {}
     ngOnInit(): void {

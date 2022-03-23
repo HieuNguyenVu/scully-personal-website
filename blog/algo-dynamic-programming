@@ -1,0 +1,17 @@
+---
+title: '[Algo-ex]　Dynamic Programming'
+description: "Dynamic programming is hard. It's hard to use and hard to detect. I am usually confused when I have to face this kind of challenge on LeetCode. This is my note when practicing with it."
+date_start: "2022/03/20"
+date_end: '2022/03/20'
+published: false
+image: 'https://i.imgur.com/hlAfXAK.png'
+header_image: 'https://i.imgur.com/TGeCfBM.jpg'
+tags: ['Algorithm','DynamicProgramming']
+priority: 0
+link: '/blog/algo-dynamic-programming'
+slug: algo-dynamic-programming
+location: 'Hanoi, Vietnam'
+---
+
+_**This series is my notes when I practice algorithm in LeetCode. Actually, I'm not a good person who best knows about the algorithm, my knowledge just learned from my friend and summary from the internet. But I hope this may help you for the next interview.**_
+

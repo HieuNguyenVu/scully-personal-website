@@ -1,31 +1,16 @@
-import {
-    AfterViewInit,
-    ChangeDetectionStrategy,
-    Component,
-    ElementRef,
-    HostListener,
-    Input,
-    OnDestroy,
-    OnInit,
-    Pipe,
-    PipeTransform,
-    QueryList,
-    Renderer2,
-    ViewChild,
-    ViewChildren,
-} from "@angular/core";
-import { FormControl } from "@angular/forms";
-import { MatTabChangeEvent, MatTabGroup } from "@angular/material/tabs";
-import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
-import { BehaviorSubject, Observable, of } from "rxjs";
-import { map, share, startWith, tap } from "rxjs/operators";
-import { MainScreenService } from "../main-screen.service";
-import { Post } from "../portfolio/project.model";
 import { COMMA, ENTER, SPACE } from "@angular/cdk/keycodes";
-import { MatChipInputEvent } from "@angular/material/chips";
+import { ChangeDetectionStrategy, Component, ElementRef, HostListener, Input, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { FormControl } from "@angular/forms";
 import { MatAutocompleteSelectedEvent } from "@angular/material/autocomplete";
+import { MatChipInputEvent } from "@angular/material/chips";
+import { MatTabChangeEvent, MatTabGroup } from "@angular/material/tabs";
+import { ScullyRoute } from "@scullyio/ng-lib";
+import { BehaviorSubject, Observable } from "rxjs";
+import { map, startWith } from "rxjs/operators";
+import { Post } from "../portfolio/project.model";
+import { PostsService } from "../../shared/posts.service";
 
-enum Mode {
+export enum Mode {
     "non-tech" = 0,
     "tech" = 1,
     "all" = 2,
@@ -43,11 +28,11 @@ export class AfterWorkComponent implements OnInit, OnDestroy {
     @Input()
     currentNavIndex = 0;
 
-    _projects: BehaviorSubject<Post[][]> = new BehaviorSubject<Post[][]>([]);
-    projects$: Observable<Post[][]> = this._projects.asObservable();
+    _posts: BehaviorSubject<Post[][]> = new BehaviorSubject<Post[][]>([]);
+    posts$: Observable<Post[][]> = this._posts.asObservable();
     keywords$: Observable<String[]>;
 
-    allPosts: ScullyRoute[] = [];
+    allPosts: Post[] = [];
     allCurrentModePost: Post[] = [];
 
     remains: Post[] = [];
@@ -61,28 +46,15 @@ export class AfterWorkComponent implements OnInit, OnDestroy {
     @ViewChild("keywordInput") keywordInput: ElementRef<HTMLInputElement>;
     @ViewChild("matTabGroup") matTabGroup: MatTabGroup;
 
-    constructor(private service: MainScreenService, private scullyService: ScullyRoutesService) {}
+    constructor(private postsService: PostsService) {}
 
     ngOnInit(): void {
-        let links$ = this.scullyService.allRoutes$.pipe(
-            map((scullyRoutes) => scullyRoutes.filter((scullyRoute) => scullyRoute.route.startsWith("/blog"))),
-            map((scullyRoutes) => scullyRoutes.sort((postA, postB) => postA.priority - postB.priority)),
-            map((scullyRoutes) =>
-                scullyRoutes.map((routes) => {
-                    // console.log(routes);
-                    routes.title = routes.title.replace("　", " ");
-                    return routes;
-                })
-            ),
-            share()
-        );
-
         this.keywords$ = this.searchFormControl.valueChanges.pipe(
             startWith(null),
             map((key: string | null) => (key ? this._filter(key) : this.allKeywords.slice().filter((i) => !this.selectedKeywords.includes(i))))
         );
 
-        links$.subscribe((links) => {
+        this.postsService.getPosts(Number.MAX_VALUE, Mode.all).subscribe((links) => {
             this.allPosts = links;
             this.updateMode(Mode.all);
         });
@@ -94,18 +66,18 @@ export class AfterWorkComponent implements OnInit, OnDestroy {
      * @param mode
      */
     updateMode(mode: Mode) {
-        let links = this.allPosts.filter((link) => {
-            if (mode == Mode.tech) return link.type_index == undefined;
+        let displayPost = this.allPosts.filter((link) => {
+            if (mode == Mode.tech) return link.type_index === undefined || link.type_index === mode;
             if (mode == Mode["non-tech"]) return link.type_index !== undefined && link.type_index === mode;
             return true;
         });
 
-        this.allKeywords = [...new Set(links.map((item) => item.tags as String[]).flat())] as String[];
+        this.allKeywords = [...new Set(displayPost.map((item) => item.tags as String[]).flat())] as String[];
         if (this.selectedKeywords.length == 0) this.selectedKeywords.push(ALL_STR);
 
         this.searchFormControl.setValue(null);
 
-        this.allCurrentModePost = this.scullyRoute2Project(links);
+        this.allCurrentModePost = displayPost;
         this.updateFilter(this.selectedKeywords);
     }
     /**
@@ -128,7 +100,7 @@ export class AfterWorkComponent implements OnInit, OnDestroy {
         let first = result.slice(0, 5);
         this.remains = result.slice(5);
         let arrs = [[first[0]], [first[1], first[3]], [first[2], first[4]]];
-        this._projects.next(arrs);
+        this._posts.next(arrs);
     }
     /**
      * Scroll To
@@ -152,7 +124,7 @@ export class AfterWorkComponent implements OnInit, OnDestroy {
      */
     loadMore() {
         let takeTwoRow = this.remains.splice(0, 6);
-        let news = this._projects.getValue();
+        let news = this._posts.getValue();
         while (true) {
             let takeData = takeTwoRow.splice(0, 3);
             if (takeData.length == 0) {
@@ -165,27 +137,7 @@ export class AfterWorkComponent implements OnInit, OnDestroy {
             news[1].push(takeData[1]);
             news[2].push(takeData[2]);
         }
-        this._projects.next(news);
-    }
-    /**
-     * Convert Scully routes to Project
-     * @param scullyRoutes
-     * @returns
-     */
-    scullyRoute2Project(scullyRoutes: ScullyRoute[]): Post[] {
-        return scullyRoutes.map<Post>((scullyRoute) => {
-            return {
-                title: scullyRoute.title,
-                image: scullyRoute.image,
-                tags: scullyRoute.tags,
-                description: scullyRoute.description,
-                date_start: scullyRoute.date_start,
-                date_end: scullyRoute.date_end,
-                link: scullyRoute.route,
-                exist: scullyRoute.published,
-                priority: scullyRoute.priority,
-            };
-        });
+        this._posts.next(news);
     }
 
     /**

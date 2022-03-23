@@ -33,9 +33,9 @@ During the reading, please don’t hesitate to notify me of misleading informati
    * [Type Coercion](#4-type-coercion)
    * [Prototype & Prototype chain](#5-prototype--prototype-chain)
    * [Scope & Scope chain](#6-scope--scope-chain)
-   * Closure
-   * Web worker / Service Worker / Worklets
-   * DOM / Shadow Dom / Virtual Dom
+   * [Closure](#7-closure)
+   * [Web worker / Service Worker / Worklets](#8-web-worker---service-worker---worklets)
+   * [DOM / Shadow Dom / Virtual Dom](#9-dom--shadow-dom--virtual-dom)
 3. Angular
    * Dependency Injection
    * Change Detection - NgZone
@@ -69,6 +69,7 @@ Before going deeply into each section, I want to appreciate my thanks to the sou
    [**8. Type Coercion**](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/)
    [**9. Prototype & Prototype chain**](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
    [**10. Closures & Lexical scoping**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures?retiredLocale=vi)
+   [**11. Webworkers**](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
 
 </details>
 
@@ -899,3 +900,65 @@ MyObject.prototype.getMessage = function() {
 };
 ```
 
+### 8. Web workers - Service Worker - Worklets
+
+#### Dedicate Worker
+
+<figure align="center" width="100%">
+    <img loading="lazy" src="https://i.imgur.com/Vw5TilC.png"/>
+      <figcaption>Fig.9 - Dedicate worker.</figcaption>
+</figure>
+
+>1. Dedicate Worker are a simple means for web content to run scripts in background threads. The worker thread can perform tasks without interfering with the user interface.
+
+We know that, Javascript is single thread. And to solve problem about blocking user interface when execute big task, Dedicate Worker was borned.
+
+>2. Dedicate Worker are an effort to bring multi-threading to the JavaScript environment.
+>3. Dedicate Worker are not a part of javascript, they are features of browser that can access through javascript.
+
+Essentially, When a script creates a Web Worker, It will run in the browser, and not be limited by a tab. The browser will create a new process to execute the web worker's task, then pass a message back to the main script to return the result after done.
+
+>4. Remember that a dedicated worker cannot access `window`, which means that it cannot modify or change `DOM`.
+
+#### Service Worker
+
+<figure align="center" width="100%">
+  <img loading="lazy" src="https://i.imgur.com/BHkuXyk.jpg"/>
+  <figcaption>Fig.10 - Service worker.</figcaption>
+</figure>
+
+1. Service worker is a kind of web worker (shared worker). Which focus on event-driven.
+2. Service workers essentially act as proxy servers that sit between web applications, the browser, and the network (when available)
+3. Cause it work as a proxy, so people usually use it to control cache.
+4. After the first time user access page, and service worker was installed, then the next time user access page, service worker will run.
+5. One of applicability of service worker is on PWA (Progressive Web App).
+
+##### Other use case ideas
+
+Service workers are also intended to be used for such things as:
+>
+>* **_Background data synchronization_**:  Start up a service worker even when no users are at the site, so caches can be updated, etc.
+>* _**Reacting to push messages**_: Start up a service worker to send users a message to tell them new content is available.
+>* Responding to resource requests from other origins.
+>* Receiving centralized updates to expensive-to-calculate data such as geolocation or gyroscope, so multiple pages can make use of one set of data.
+>* Client-side compiling and dependency management of CoffeeScript, less, CJS/AMD modules, etc. for development purposes.
+>* Hooks for background services.
+>* Custom templating based on certain URL patterns.
+>* Performance enhancements, for example pre-fetching resources that the user is likely to need in the near future, such as the next few pictures in a photo album.
+
+#### Worklet
+
+>The Worklet interface is a lightweight version of Web Workers and gives developers access to low-level parts of the rendering pipeline.
+
+>With Worklets, you can run JavaScript and WebAssembly code to do graphics rendering or audio processing where high performance is required.
+
+* PaintWorklet
+* AudioWorklet
+* AnimationWorklet
+* LayoutWorklet
+
+### 9. DOM / Shadow Dom / Virtual Dom
+
+#### Original DOM
+
+>The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
