@@ -39,13 +39,13 @@ This approach is very efficient for linked list. It help you ignore the case nul
 
 Let see this challenge: [82. Remove Duplicates from Sorted List II][82]
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/UuTA63k.png"/>
+    <img src="https://i.imgur.com/UuTA63k.png" alt="Remove Duplicates from Sorted List II"/>
 </p>
 
 Sentinel Node is a way you create an alias pointer (pseudo-heads) to point on the head of Linked List or tail of Linked List. They are purely functional and usually don't hold any data. Their primary purpose is to standardize the situation to avoid edge case handling.
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/83lcRrs.png"/>
+    <img src="https://i.imgur.com/83lcRrs.png" alt="Sentinel Node"/>
 </p>
 
 Bellow is my code

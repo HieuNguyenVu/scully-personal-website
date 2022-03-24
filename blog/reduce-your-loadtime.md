@@ -30,7 +30,7 @@ If your page call more than 20 request to get file, script at the loading page t
 Let's look a bit about my comment I got in the https://seositecheckup.com/
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/2uH0RqE.png"/>
+    <img src="https://i.imgur.com/2uH0RqE.png" alt="Reduce the get files time"/>
 </p>
 
 ### 1. Reduce the images file size
@@ -46,26 +46,26 @@ To reduce the images file size, I usually use some way bellow:
 * For icons use for all in the website, I usually merge them to one file only like this.
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/DRgt33T.png"/>
+    <img src="https://i.imgur.com/DRgt33T.png" alt="Reduce the images file size"/>
 </p>
 
 My favorite tool is [**Figma**][3], you can use other tools of course, like **Adobe Photoshop** or **Adobe Illustrator**... what ever you want.  
 And in case your icon is not svg (png) may be, you can use the tool like [**Shoebox**][4]. It's amazing and usually use for game development or in case you make sprites animation. It will auto-detect items in the png file and allowed you to choose which will be used, and also return the XY coordinate of each frame to a .txt file.
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/pDBri6d.jpg"/>
-    <img src="https://i.imgur.com/MBSqkH9.jpg"/>
+    <img src="https://i.imgur.com/pDBri6d.jpg" alt="Image animation 1"/>
+    <img src="https://i.imgur.com/MBSqkH9.jpg" alt="Image animation 2"/>
 </p>
 
 By merging them together as I mention, the size of the images will be reduced. See the image below and you will notice that `icon sets.svg` is smaller than the total of all icons.
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/DIZDlNS.png"/>
+    <img src="https://i.imgur.com/DIZDlNS.png" alt="Reduce the images file"/>
 </p>
 
 This trick is also help us to reduce the time to send - receive requests when get each icons. And by cache image, we don't need to load them again. And I sure 100% that It will save your time better than send request for each like my stupid yesterday :(
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/Dk3xkwF.png"/>
+    <img src="https://i.imgur.com/Dk3xkwF.png" alt="HTML bad practice"/>
 </p>
 
 After load the `icon_sets.svg` or `icon_sets.png`, you can cut and use it by plenty way.
@@ -153,6 +153,14 @@ In case your browser runs on a very old computer or your customer use an old bro
     Of course, It will work fine if your page is small. But in case your page has a few thousand items with `overflow: hidden` and `border-radius`. It will be bad, trust me, I have once.
 
 - In case you have to use `border-radius` you can use `outline` like Facebook did with their news feed.
+
+Lighthouse can help you to check this problem, and it also talk you what to do,
+for example
+
+<figure align="center" width="100%">
+    <img src="https://i.imgur.com/ZrZYNL1.png" alt="Lighthouse performance"/>
+</figure>
+
 
 [1]: https://compresspng.com/
 [2]: https://www.iloveimg.com/resize-image

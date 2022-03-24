@@ -39,7 +39,7 @@ The AWS SDK allow you to interact programmatically with AWS services using one o
 However there is nor guarantee of the version provided in the execution environment. The SDK is upgraded frequently to support new AWS services and features. As a result, the version may change at any time. You can see the current version used by Lambda by declaring an instance of the SDK and logging out the version method:
 
 <p align="center" width="100%">
-    <img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/09/01/lambda-layers1.png"/>
+    <img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/09/01/lambda-layers1.png" alt="AWS SDK"/>
 </p>
 
 For production workloads, it's best practice to lock the version of the AWS SDK used in your functions. You can archive this by including the SDK with your code package.  
@@ -99,7 +99,7 @@ For the Stack name, enter “sharp-layer”. Enter your preferred AWS Region and
 In some runtimes, you can **specify a local set of packages for development**, **and another set for production**. For example, in Node.js, the package.json file allows you to specify two sections for dependencies. If your development machine uses a different operating system to Lambda, and therefore uses different binaries, you can use package.json to resolve this. In the Happy Path Resizer function, which uses the Sharp layer, the package.json refers to a local binary for development.
 
 <p align="center" width="100%">
-    <img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/09/01/lambda-layers6.png"/>
+    <img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/09/01/lambda-layers6.png" alt="Version"/>
 </p>
 
 AWS SAM defines Lambda functions with the AWS::Serverless::Function resource. Layers are defined as a property of functions, as a list of layer ARNs including the version:
@@ -131,7 +131,7 @@ aws lambda add-layer-version-permission \
 In the principal parameter, specify an individual account ID or use an asterisk to make the layer public. The CLI responds with a RevisionId containing the current revision of the policy:
 
 <p align="center" width="100%">
-    <img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/09/01/lambda-layers7.png"/>
+    <img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/09/01/lambda-layers7.png" alt="Sharing Lamdalayer"/>
 </p>
 
 You can check the permissions associated with a layer version by calling get-layer-version-policy with the layer name and version:
@@ -145,5 +145,5 @@ aws lambda remove-layer-version-permission \
 
 Once the permissions are removed, calling get-layer-version-policy results in an error:
 <p align="center" width="100%">
-    <img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/09/01/lambda-layers9.png"/>
+    <img src="https://d2908q01vomqb2.cloudfront.net/1b6453892473a467d07372d45eb05abc2031647a/2020/09/01/lambda-layers9.png" alt="Sharing Lamdalayer"/>
 </p>

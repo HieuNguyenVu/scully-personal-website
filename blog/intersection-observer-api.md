@@ -32,7 +32,7 @@ I already searched and found this question on [Stack Overflow](https://stackover
 The keyword I got at the answer of [AndyE](https://stackoverflow.com/a/15203639) reminded me about a post I have read before in group Angular Vietnam, and I forgot it. That is stupid. That's why If you only hear about something but never try to use it, you will forget it one day.
 
 <p align="center" width="100%">
-    <img src="https://dsm01pap001files.storage.live.com/y4mEnHNfRRSRhBDTNJ455Z2wAbL5QMA2-FgiRJz8OXDDo55QuEFau1zgGaLmJ6EBOmQvKeQ_yXdYC2I5Z2AwBb99eIfZfU1DP-JRbETuM9wulRNtcCL5x_BKKvMdV-cz6Pz39wLcIPdOMMDkj4Js6ssFXV4-WH_jpRMlulMl5NhzWsziodQ3AkcAzLRIgHj72yn?width=508&height=760&cropmode=none" width="508" height="760" />
+    <img src="https://dsm01pap001files.storage.live.com/y4mEnHNfRRSRhBDTNJ455Z2wAbL5QMA2-FgiRJz8OXDDo55QuEFau1zgGaLmJ6EBOmQvKeQ_yXdYC2I5Z2AwBb99eIfZfU1DP-JRbETuM9wulRNtcCL5x_BKKvMdV-cz6Pz39wLcIPdOMMDkj4Js6ssFXV4-WH_jpRMlulMl5NhzWsziodQ3AkcAzLRIgHj72yn?width=508&height=760&cropmode=none" width="508" height="760" alt="Intersection Observer"/>
 </p>
 
 ## 2. So now, What is Intersection Observer API ?
@@ -138,7 +138,7 @@ I note some point to catch the main concept.
 4. The clipping rectangle is the orange rectangle, and it will be used to calculate to check conditions about **threshold**. If conditions match, the callback will be called.
 
 <p align="center" width="100%">
-    <img src="https://dsm01pap001files.storage.live.com/y4mkyByY99oZeiyjl36HaI5gSToSKv2wQAG-D1Ra_i8D7nH1RTYN-cILL202jmqqYsGszVODuYMHTlLd3bKANT7bDJI3snPPP-1t7GcV9dypdkLbbrTSDVGcRxrI8PNpjG8xSSO2sygCQboPb6kmklvjSJYhVgx7YqrrLvG9W-6oL8VHXY77SaW-qtf4AGIYyX0?width=368&height=363&cropmode=none" width="368" height="363" />
+    <img src="https://dsm01pap001files.storage.live.com/y4mkyByY99oZeiyjl36HaI5gSToSKv2wQAG-D1Ra_i8D7nH1RTYN-cILL202jmqqYsGszVODuYMHTlLd3bKANT7bDJI3snPPP-1t7GcV9dypdkLbbrTSDVGcRxrI8PNpjG8xSSO2sygCQboPb6kmklvjSJYhVgx7YqrrLvG9W-6oL8VHXY77SaW-qtf4AGIYyX0?width=368&height=363&cropmode=none" width="368" height="363" alt="Intersection Observer calculated"/>
 </p>
 
 

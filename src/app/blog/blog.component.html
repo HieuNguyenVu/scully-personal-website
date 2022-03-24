@@ -6,7 +6,7 @@
 <div class="container-wrapper">
     <div class="control-container left-container" #leftContainer>
         <div class="logo">
-            <a href="/?index=2"><img src="assets/icons/favicon-196x196.png" /></a>
+            <a href="/?index=2" aria-label="Go to homepage"><img src="assets/icons/favicon-196x196.png" alt="Logo"/></a>
         </div>
         <div class="menu-left">
             <button aria-label="Go to top" class="m-icon top arrow" (click)="scrollToTop()"></button>
@@ -34,7 +34,7 @@
             <div class="inner-bounds">
                 <div class="content" *ngIf="postContent$ | async as postContent">
                     <div class="header-image">
-                        <img [src]="postContent.headerImage" loading="lazy" />
+                        <img [src]="postContent.headerImage" loading="lazy" alt="Head blog image" />
                     </div>
                     <div class="post-container">
                         <h1 class="header">

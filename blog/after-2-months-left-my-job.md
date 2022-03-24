@@ -53,11 +53,11 @@ Actually, after practicing on LeetCode, I am still confused with some kind of ch
 ### 2. Trying new things, learning new knowledge, and relearning what was missing
 
 Cause I am not starting at a specific position at the start. Like I join to work directly with Typescript, without going in deep in javascript. So I start to recheck and review all the missing.  
-[Prepare for a frontend interview](https://nhvu95.com/blog/preparing-for-frontend-interview/)
+[**Prepare for a frontend interview**](https://nhvu95.com/blog/preparing-for-frontend-interview/)
 
 And Instead of continuing in the front-end, following the project's requirement, I started to switch to work with Java and Spring Boot after the main skeleton was built by the Senior in a short time, cause this reason, It made me lack a few core concepts. So I start to investigate them.
 
-[Spring Core technology](https://nhvu95.com/blog/spring-core-1/)
+[**Spring Core technology**](https://nhvu95.com/blog/spring-core-1/)
 
 **I just example two posts above to tell about what I do, they are still not enough, I need to update it more. But at least, I know what I missing, and what I need to learn.**
 All knowledge I learned was noted in some posts, I summarize knowledge from many sources, quote them and explain them and try to explain it one more time again for the reader, this way makes me get more understanding.
@@ -87,7 +87,7 @@ The funny thing is that, when I am coding and learning new things, an idea about
 During this time, I optimize my pet project to get better SEO scores, make it responsive for mobile, and update the UI to impress recruiters. I also try PWA to make my website and work web no internet and control cache. Which I never had an opportunity to try at my work.
 
 <figure align="center" width="100%">
-    <img src="https://i.imgur.com/skw2Poi.png"/>
+    <img src="https://i.imgur.com/skw2Poi.png" alt="Portfolio"/>
 </figure>
 
 #### Image Hosting
@@ -96,7 +96,7 @@ An idea came when I upload an image for my post blog, and I just wonder, how doe
 Can I make It better by resizing, compressing, and uploading it at the same time? Could I host my image by myself instead of using the Imgur server?
 
 <figure align="center" width="100%">
-    <img src="https://i.imgur.com/Lmicu3m.png"/>
+    <img src="https://i.imgur.com/Lmicu3m.png" alt="Image Hosting"/>
 </figure>
 
 All are worked. I designed a Database and used Spring Boot. My project also supports uploading for both the Imgur server and also my server.  

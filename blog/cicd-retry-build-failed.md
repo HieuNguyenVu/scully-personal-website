@@ -68,13 +68,13 @@ Generating took 7.01 seconds for 9 pages:
 No matter what the next step is, no matter the reason cause is error or timeout, a step failed, the Job will be failed.
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/EpSlNku.png"/>
+    <img src="https://i.imgur.com/EpSlNku.png" alt="Circle CI failed"/>
 </p>
 
 And this will cause CircleCI got build failed, and the deploy job never trigger.
 
 <p align="center" width="100%">
-    <img src="https://i.imgur.com/RJB5BJv.png"/>
+    <img src="https://i.imgur.com/RJB5BJv.png" alt="Circle CI failed"/>
 </p>
 
 I have tried a code in the [forum][3], to hack it always to return true if the job gets timeouts. But It did not work in my case.

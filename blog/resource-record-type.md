@@ -15,7 +15,7 @@ location: 'Hanoi, Vietnam'
 
 When you use some services like Google Domain, Godaddy, and you have to config your domain with an Ip address through a DNS config. You will see a table like this: 
 
-<img src="https://dsm01pap001files.storage.live.com/y4mVGBP0XdkFdWBFGmNUkSV-fiwAP_AShpPpZlkgQDc01ctgkjgB_s4siancjgDrgi75SUMoCmyl6HG4m2-nBDgoQkOIqpANQigCTRbAXVSHe1PNr_FISsK8cy6O0dPAxoS1-iCjIuetpKMTpS7ws4UfEKbj7jgkcwni6r0y7_Huh82lq7J6QLHDQZPPNIfL2JH?width=1021&height=219&cropmode=none" width="100%" />
+<img src="https://dsm01pap001files.storage.live.com/y4mVGBP0XdkFdWBFGmNUkSV-fiwAP_AShpPpZlkgQDc01ctgkjgB_s4siancjgDrgi75SUMoCmyl6HG4m2-nBDgoQkOIqpANQigCTRbAXVSHe1PNr_FISsK8cy6O0dPAxoS1-iCjIuetpKMTpS7ws4UfEKbj7jgkcwni6r0y7_Huh82lq7J6QLHDQZPPNIfL2JH?width=1021&height=219&cropmode=none" width="100%" alt="Resource record type" />
 
 Did you ever thinks about what is A / AAAA / CNAME ? They are resource record types.
 

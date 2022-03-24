@@ -54,6 +54,7 @@ In this part, the author wrote very clearly, so I just index the main content:
 >- The container gets its instructions on what objects to instantiate, configure, and assemble by reading **configuration metadata**. **The configuration metadata** is represented in XML, Java annotations, or Java code. It lets you express the objects that compose your application and the rich interdependencies between those objects.
 
 >The following diagram shows a high-level view of how Spring works. **Your application classes are combined with configuration metadata** so that, **after the ApplicationContext is created and initialized, you have a fully configured and executable system or application**.
+
 ![Spring diagram 1](https://i.imgur.com/ebjnujy.png?style=centerme)
 
 ## III. Configuration Metadata

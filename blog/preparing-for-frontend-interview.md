@@ -220,14 +220,14 @@ Essentialy, SSL was born to solve this issue, by generate to two key, `public_ke
 So flow will look like that.
 
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/21PGTQo.png"/>
+    <img loading="lazy" src="https://i.imgur.com/21PGTQo.png" alt="How does SSL handshaking"/>
       <figcaption>Fig.1 - How does SSL handshaking.</figcaption>
 </figure>
 
 In the step 3, if your SLL cert is not provided by a trusted CA, you will see some thing like this.
 
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/gZoy9tS.png"/>
+    <img loading="lazy" src="https://i.imgur.com/gZoy9tS.png" alt="Error when SSL cert invalid"/>
     <figcaption>Fig.2 - Error when SSL cert invalid.</figcaption>
 </figure>
 
@@ -255,7 +255,7 @@ and they are consists of two main components:
 * **Call Stack** — this is where your stack frames are as your code executes
 
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/kt29GU5.png"/>
+    <img loading="lazy" src="https://i.imgur.com/kt29GU5.png" alt="JS components"/>
     <figcaption>Fig.3 - JS components.</figcaption>
 </figure>
 
@@ -292,7 +292,7 @@ printSquare(5);
 >When the engine starts executing this code, the Call Stack will be empty. Afterwards, the steps will be the following:
 
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/mtmSqDj.png"/>
+    <img loading="lazy" src="https://i.imgur.com/mtmSqDj.png" alt="How callstack work"/>
     <figcaption>Fig.4 - How callstack work.</figcaption>
 </figure>
 
@@ -316,19 +316,19 @@ function start() {
 start();
 ```
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/bc55B5p.png"/>
+    <img loading="lazy" src="https://i.imgur.com/bc55B5p.png" alt="Tracing a exception"/>
     <figcaption>Fig.5 - Tracing a exception.</figcaption>
 </figure>
 
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/IcELMT6.png"/>
+    <img loading="lazy" src="https://i.imgur.com/IcELMT6.png" alt="Stack overflow"/>
     <figcaption>Fig.6 - Stack overflow.</figcaption>
 </figure>
 
 >... running on a single thread is quite limiting as well. Since JavaScript has a single Call Stack, **what happens when things are slow? Or they take a huge amount of time to be processed**. It will cause page unresponsive...
 
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/MDRKjFn.jpg"/>
+    <img loading="lazy" src="https://i.imgur.com/MDRKjFn.jpg" alt="Browser unresponsive"/>
     <figcaption>Fig.7 - Browser unresponsive.</figcaption>
 </figure>
 
@@ -408,7 +408,7 @@ console.log('Bye');
 Let’s “execute” this code and see what happens:
 
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/587irzf.gif"/>
+    <img loading="lazy" src="https://i.imgur.com/587irzf.gif" alt="Tracing a exception"/>
     <figcaption>Fig.8 - Tracing a exception.</figcaption>
 </figure>
 
@@ -905,7 +905,7 @@ MyObject.prototype.getMessage = function() {
 #### Dedicate Worker
 
 <figure align="center" width="100%">
-    <img loading="lazy" src="https://i.imgur.com/Vw5TilC.png"/>
+    <img loading="lazy" src="https://i.imgur.com/Vw5TilC.png" alt="Dedicate worker"/>
       <figcaption>Fig.9 - Dedicate worker.</figcaption>
 </figure>
 
@@ -923,7 +923,7 @@ Essentially, When a script creates a Web Worker, It will run in the browser, and
 #### Service Worker
 
 <figure align="center" width="100%">
-  <img loading="lazy" src="https://i.imgur.com/BHkuXyk.jpg"/>
+  <img loading="lazy" src="https://i.imgur.com/BHkuXyk.jpg" alt="Service worker"/>
   <figcaption>Fig.10 - Service worker.</figcaption>
 </figure>
 

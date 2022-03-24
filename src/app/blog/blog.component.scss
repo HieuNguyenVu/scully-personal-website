@@ -46,6 +46,7 @@ $max-blog-width: 850px;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
         overflow: hidden;
+        background-color: white;
         img {
             object-fit: cover;
             width: 100%;
@@ -356,11 +357,11 @@ img[src$="centerme"] {
 
 @media screen and (max-width: 1325px) {
     #blog-post {
-        // min-width: calc(100% - 400px) !important;
         margin-top: 25px;
     }
     .control-container {
         max-width: 80px !important;
+        background-color: white;
     }
 }
 
@@ -386,20 +387,60 @@ img[src$="centerme"] {
 }
 
 @media screen and (max-width: 539px) {
-    .control-container {
-        max-width: 60px !important;
-        min-width: 60px !important;
-        .m-icon {
-            margin-right: 5px !important;
+    .container-wrapper {
+        flex-direction: column;
+        .control-container {
+            z-index: 100000;
+            height: 50px;
+            display: flex;
+            border-right: 0px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
         }
+        .logo {
+            transform: scale(0.8);
+            img {
+                margin-top: 0px;
+            }
+        }
+        .bounds#blog-post {
+            overflow: visible;
+            margin-top: 0px;
+        }
+        .menu-left {
+            width: 100%;
+            height: 50px;
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-between;
+            opacity: 1;
+            .top {
+                margin-bottom: 0px;
+            }
+            .bottom {
+                margin-top: 0px;
+            }
+            .button {
+                margin-left: 0px;
+            }
+        }
+        .footer {
+            display: none;
+        }
+    }
+
+    .control-container {
+        max-width: 100% !important;
+        min-width: 100% !important;
+        display: flex;
     }
     .suggest-share-container .share-container,
     .suggest-share-container .suggest-container {
         width: 100% !important;
         max-width: 100% !important;
-        margin: auto
+        margin: auto;
     }
-    .suggest-share-container{
+    .suggest-share-container {
         padding: 0px !important;
     }
     .bounds .main-content {
@@ -474,15 +515,20 @@ img[src$="centerme"] {
     }
 
     @media screen and (max-width: 539px) {
-        .post-container {
-            .header-image {
-                height: auto;
-                margin-bottom: 15px;
-            }
+        .header {
+            padding-left: 15px;
+        }
+        .header-image {
+            height: auto;
+            margin-bottom: 15px;
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
         }
 
         .header-sub-wrapper {
-            padding: 0 15px;
+            padding: 0 0px;
+            width: 100%;
+
             display: block;
             font-size: 26px;
             line-height: normal;
