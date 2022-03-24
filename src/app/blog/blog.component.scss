@@ -363,6 +363,9 @@ img[src$="centerme"] {
         max-width: 80px !important;
         background-color: white;
     }
+    #mainTab{
+        background-color: white;
+    }
 }
 
 @media screen and (max-width: 1124px) {
@@ -391,14 +394,16 @@ img[src$="centerme"] {
         flex-direction: column;
         .control-container {
             z-index: 100000;
-            height: 50px;
+            height: 40px;
             display: flex;
+            align-items: center;
             border-right: 0px;
             border-top-right-radius: 0px;
             border-bottom-right-radius: 0px;
+            margin-top: 0px;
         }
         .logo {
-            transform: scale(0.8);
+            transform: scale(0.6);
             img {
                 margin-top: 0px;
             }
@@ -416,12 +421,15 @@ img[src$="centerme"] {
             opacity: 1;
             .top {
                 margin-bottom: 0px;
+                transform: rotate(180deg) scale(0.6) !important;
             }
             .bottom {
                 margin-top: 0px;
             }
-            .button {
+            button {
                 margin-left: 0px;
+                display: block;
+                transform: scale(0.6);
             }
         }
         .footer {
@@ -434,14 +442,18 @@ img[src$="centerme"] {
         min-width: 100% !important;
         display: flex;
     }
-    .suggest-share-container .share-container,
-    .suggest-share-container .suggest-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: auto;
-    }
+
     .suggest-share-container {
         padding: 0px !important;
+        .share-container,
+        .suggest-container {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: auto;
+        }
+        .menu button {
+            transform: scale(0.7);
+        }
     }
     .bounds .main-content {
         margin-left: 0px !important;
