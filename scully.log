@@ -629,6 +629,7 @@ Using stored unhandled routes!.
 Using deprecated plugin type:"render"  use "postProcessByHtml" instead
 Using deprecated plugin type:"render"  use "postProcessByHtml" instead
 Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+<<<<<<< HEAD
 
 ----------------------------------
 Using stored unhandled routes!.
@@ -685,3 +686,6 @@ Using stored unhandled routes!.
 ----------------------------------The file .\blog\algo-dynamic-programming has extension  that has no plugin defined, scully will skip this file.
 
 Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+=======
+The file ./blog/algo-dynamic-programming has extension  that has no plugin defined, scully will skip this file.
+>>>>>>> 31ca74f68473a41d8777da33299eb9373f1bb196
