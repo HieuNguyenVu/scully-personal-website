@@ -101,10 +101,8 @@ export class BlogComponent implements OnInit, AfterViewChecked {
             })
         );
         this.tags$ = this.postService.getTags(10);
-        // block frame 60fps
-        const prevent = this.rightContainer.nativeElement.scrollHeight;
         window.onscroll = () => {
-            if (window.scrollY > prevent) return;
+            if (window.scrollY > this.rightContainer.nativeElement.scrollHeight) return;
             this.rightContainer.nativeElement.scrollTop = window.scrollY;
         };
     }
