@@ -627,3 +627,6 @@ Using stored unhandled routes!.
 ----------------------------------The file .\blog\algo-dynamic-programming has extension  that has no plugin defined, scully will skip this file.
 
 Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+The file ./blog/algo-dynamic-programming has extension  that has no plugin defined, scully will skip this file.
