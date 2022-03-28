@@ -17,6 +17,7 @@ const { MinifyHtml } = require("scully-plugin-minify-html");
 
 import { getEmojiPlugin } from "@nhvu95/scully-plugin-emoji";
 import { getScrollToSection } from "@nhvu95/scully-plugin-scroll2section";
+import { getLazyDisplay } from '@nhvu95/scully-plugin-lazydisplay';
 
 setPluginConfig("md", { enableSyntaxHighlighting: true });
 
@@ -41,6 +42,7 @@ setPluginConfig(SitemapPlugin, {
 
 const EmojiPlugin = getEmojiPlugin();
 const ScrollToSection = getScrollToSection();
+const LazyDisplay = getLazyDisplay();
 
 export const config: ScullyConfig = {
     projectRoot: "./src",
@@ -53,7 +55,7 @@ export const config: ScullyConfig = {
             slug: {
                 folder: "./blog",
             },
-            postRenderers: [EmojiPlugin, ScrollToSection, MinifyHtml],
+            postRenderers: [EmojiPlugin, ScrollToSection, LazyDisplay, MinifyHtml],
         },
     },
 };

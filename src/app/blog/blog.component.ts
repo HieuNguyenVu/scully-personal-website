@@ -1,4 +1,4 @@
-import { AfterViewChecked, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
+import { AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 import { Router } from "@angular/router";
 import { ScullyRoute, ScullyRoutesService } from "@scullyio/ng-lib";
@@ -12,7 +12,7 @@ import { SocialTagsService } from "../shared/social-tags-services";
 import { HighlightService } from "./highlight.service";
 
 declare var ng: any;
-
+declare var loadLazyDisplay;
 @Component({
     selector: "app-blog",
     templateUrl: "./blog.component.html",
@@ -21,7 +21,7 @@ declare var ng: any;
     encapsulation: ViewEncapsulation.None,
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class BlogComponent implements OnInit, AfterViewChecked {
+export class BlogComponent implements OnInit, AfterViewInit {
     // links$: Observable<ScullyRoute[]> = this.scully.available$;
     scroll$: Observable<boolean> = of(true);
     current: Observable<ScullyRoute>;
@@ -54,11 +54,11 @@ export class BlogComponent implements OnInit, AfterViewChecked {
     ) {
         socialTagService.setTitleAndTags();
     }
-    /**
-     * After view checked - highlight code in Primsjs
-     */
-    ngAfterViewChecked() {
+    ngAfterViewInit(): void {
         this.highlightService.highlightAll();
+        setTimeout(() => {
+            loadLazyDisplay();
+        }, 0);
     }
     /**
      * On init
