@@ -54,6 +54,9 @@ export class BlogComponent implements OnInit, AfterViewInit {
     ) {
         socialTagService.setTitleAndTags();
     }
+    /**
+     * After View Init
+     */
     ngAfterViewInit(): void {
         this.highlightService.highlightAll();
         setTimeout(() => {
