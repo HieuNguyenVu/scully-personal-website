@@ -36,17 +36,16 @@ During the reading, please don’t hesitate to notify me of misleading informati
    * [Closure](#7-closure)
    * [Web worker / Service Worker / Worklets](#8-web-worker---service-worker---worklets)
    * [DOM / Shadow Dom / Virtual Dom](#9-dom--shadow-dom--virtual-dom)
-3. Angular
-   * Dependency Injection
-   * Change Detection - NgZone
-   * Pipe
-   * Directive
-   * Decorator
-   * Content Projection
+3. [**Angular**](#iii-angular)
+   * [Dependency Injection](#1-dependency-injection)
+   * [View Engine](#2-view-engine)
+   * [Change Detection - NgZone](#3-change-detection---ngzone)
+   * [Pipe](#4-pipe)
+   * [Directive](#5-directive)
+   * [Decorator](#6-decorator)
+   * [Content Projection](#7-content-projection)
    * RxJS
    * State Management
-   * View Engine
-   * AOT / JIT How they work
    * Webpack & Custom Webpack
    * Optimize
    * Performance Handling
@@ -58,7 +57,7 @@ Before going deeply into each section, I want to appreciate my thanks to the sou
  
 <details>
    <summary><b><u>Sources:</u></b></summary>
-
+   [**0. Angular Homepage**](https://angular.io/)
    [**1. Series How JS work - Sessionstack team**](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)  
    [**2. Javascript Interview Question - sudheerj**](https://github.com/sudheerj/javascript-interview-questions)  
    [**3. 100 Days of Angular - Angular Vietnam**](https://github.com/angular-vietnam/100-days-of-angular)  
@@ -70,7 +69,8 @@ Before going deeply into each section, I want to appreciate my thanks to the sou
    [**9. Prototype & Prototype chain**](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object_prototypes)
    [**10. Closures & Lexical scoping**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures?retiredLocale=vi)
    [**11. Webworkers**](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers)
-
+   [**12. View Engine**](https://immanubhardwaj.medium.com/renderer2-angular-view-engine-d872498be1e6)
+   [**13. Angular Change Detection Strategy: An introduction?**](https://medium.com/@bencabanes/angular-change-detection-strategy-an-introduction-819aaa7204e7)
 </details>
 
 ## I. Base web knowledge
@@ -962,3 +962,468 @@ Service workers are also intended to be used for such things as:
 #### Original DOM
 
 >The Document Object Model (DOM) is a programming interface for web documents. It represents the page so that programs can change the document structure, style, and content. The DOM represents the document as nodes and objects; that way, programming languages can interact with the page.
+
+Forget this definition, I will give you another definition, this is my defintion 👍
+
+>HTML is a Text Markup Language, it just a text, to manage them and edit them, people create an Object Model called DOM to mapping HTML to an specific object. This Object DOM give us function to modify and intergrate with the HTML, and also have the attribute, which we can get the value and state of HTML.
+
+#### Shadow DOM
+
+Cause HTML can contain plenty of items inside them, so it will make DOM have to manage all those things, although these items are not necessary to show visible to the user.
+They create a cocept call "Shadow" DOM.
+
+>Shadow DOM allows hidden DOM trees to be attached to elements in the regular DOM tree — this shadow DOM tree starts with a shadow root, underneath which can be attached to any elements you want, in the same way as the normal DOM.
+
+<figure align="center" width="100%">
+  <img loading="lazy" src="https://i.imgur.com/6fKniqH.png" alt="Shadow DOM"/>
+  <figcaption>Fig.11 - Shadow DOM.</figcaption>
+</figure>
+
+As you can see in the image, they create a Node call Shadow Host, and this Node will map to another DOM tree (start with Shadow Root), instead of push all them as innerHTML of this node directly.
+
+At the time browser render a page, when it meet Shadow Host, it will ask the part Shadow Root then render them, and add them visible on Document tree depend on your config.
+
+```javascript
+// Create a shadow root
+let shadow = elementRef.attachShadow({mode: 'open'}); //Open mean
+let shadow = elementRef.attachShadow({mode: 'closed'});
+// Create shadow items.
+let para = document.createElement('p');
+// Then append them into shadows
+shadow.appendChild(para);
+// You can screate a <style> and style it as normal DOM.
+// Or it will auto work if you already defined
+```
+Shadow DOM can help you create a web component or a custom element.
+You can read more about it [here](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements).
+
+#### Virtual DOM
+
+Let's come up with the definition of ReactJS for Virtual DOM first. I don't have opportunities to work with ReactJs. So...
+
+>The virtual DOM (VDOM) is a programming concept where an ideal, or “virtual”, representation of a UI is kept in memory and synced with the “real” DOM by a library such as ReactDOM. This process is called reconciliation.
+
+As I understand, they create a concept "virtual" DOM. Instead of intergrate with the origin DOM, you will intergrate with the virtual DOM.
+
+The reason make the intergration with the DOM become slow most come from Rerendering time - Repainting time. As much DOM element you have, as much things you have to do.
+
+Virtual DOM prevents it by the way code impact which elements in virtual dom, then React only rerender, repaint the impact part in the real DOM.
+
+Cause Virtual DOM store in memory, so it have two big problem.
+
+- Higher memory use. (Cause it have to store two version of DOM)
+- No difference between static and dynamic.
+
+But with its pros, it's worth it.
+
+- More speed.
+- Binding data faster.
+
+#### Compare
+
+>Both the shadow DOM and virtual DOM have played a key role in the development of progressive web frameworks. While both add performance benefits, the virtual DOM is used to efficiently redraw UIs whereas the shadow DOM encapsulates the implementation of custom web components.
+
+Like a tweet, I read from Angular author. He said there is no which one is better, depending on the purpose and they are like foods. If you like which one, you can choose it.
+
+## III. Angular
+
+### 1. Dependency Injection
+
+I already write about this concept in Spring Boot on [here](https://nhvu95.com/blog/spring-core-1).
+This is a famous Design Pattern. Its main concept of it starts from Dependency Inversion, a principle of SOLID.
+
+**Dependency Inversion said:**
+
+>* High-level modules should not not depend on low-level modules. Both should depend on abstractions.
+>* Abstractions should not depend on details. Details (concrete implementations) should depend on abstractions.
+
+To prevent dependency inversion, people can use some design pattern, one of them are Dependency Injection.
+
+**The definition of Angular:**
+
+> Dependency injection, or DI, is a design pattern in which a class requests dependencies from external sources rather than creating them.
+
+When we create an instance of class A inside class B, it makes class A depend on class B. Class B destroy, then the instance of A also be destroyed.
+
+**Dependency:**
+
+Instead of that, we have someplace called IOC container(or just IOC). Our framework (Angular, Spring) will create the instance of A here and inject them to B through the **constructor** or **set function** or through **@Inject** or **Injector** service from `angular/core`.
+
+```typescript
+@Component({
+    selector: "app-hero-component",
+    templateUrl: "./hero-component.component.html",
+    styleUrls: ["./hero-component.component.scss"]
+})
+export class HeroComponent{
+  // First way
+  constructor(private heroService: HeroService){
+  }
+
+  // Second way
+  myService : HeroService;
+  constructor(private injector : Injector){
+    if(true){ // some condition
+      this.myService = injector.get<HeroService>(MyService);
+    }
+  }
+
+  // Third way
+  constructor(@Inject(HeroService) myService) {
+    this.myService = myService;
+  }
+
+  // Fourth way
+  _myService: HeroService;
+  @Input() set myService(myService: HeroService) {
+    this._myService = myService;
+    this.updatePeriodTypes();
+  }
+}
+```
+
+**Injector:**
+
+So To mark which one can be inject and should be inject, we have a decorator call `@Injectable`... Other decorator like `@Component`, `@Directive`.. can also inject into another, but not an offical way through constructor.
+
+```typescript
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class HeroService {
+  constructor() { }
+}
+```
+
+When B1, B2 inject the same instance of A, it will share the same property of A. Which B modify the property in A can impact others B.
+
+**Providers:**
+
+So what if we want to make the instance A only available for only B, instead of sharing them for everyone?
+
+Same as @Bean scope in Spring, Angular attach them with the **Module** and uses the keyword "**providedIn**" or "**providers**" to make sure that only some specific module can share with the others. Exactly, to make sure when a class will be created new or should be used exist one in IOC. When it was use out of `provider scope`, the new one will be create.
+
+`provideIn` comes from Angular 6.  
+`providers` and `provideIn` are almostly same. But when the complier found `provideIn`, it will ignore the same one in `providers`. 
+
+```typescript
+// First way
+@NgModule({
+    declarations: [HelloComponent],
+    imports: [],
+    providers: [HeroService],
+})
+export class MainScreenModule {}
+// Second way
+@Component({
+  /* . . . */
+  providers: [UserService]
+})
+// Third
+@Injectable({
+  providedIn: 'any',
+})
+export class UserService {
+}
+```
+
+* When the Module was lazy loaded, Angular will create new instance instead of use the exist one from root, and the new instance will mark as child injector of root.
+* `providers` in `@Component` is independent with `providers` in `@Modules`. When you use both of it in an lazyload module, mean that two news be created.
+
+
+### 2. View Engine
+
+=> If you wan a short conclude, you can move to the end of this part.
+
+>View Engine is responsible for compiling the components so that they can be consumed by the browser. In Angular, we write our components using TypeScript and it cannot be run directly in browsers and for this purpose we require View Engines which would convert TS into JS
+
+#### What is Renderer2??
+
+>Renderer2 is Angular’s View Engine, it was introduced starting with Angular v4 to boost performance of Angular applications. It is responsibility of view engine to compile components to JS and HTML.
+
+I really confused about this part of this article "_require View Engines which would convert TS into JS_".
+
+When compile TS to JS, Angular use Typescript complier. I thing some thing wrong here.
+
+Responsibilities of View Engine:
+
+* Template Parsing
+* Tree-Shaking
+* Compilation
+
+#### 2.1 Template Parsing
+
+<figure align="center" width="100%">
+  <img loading="lazy" src="https://i.imgur.com/YRk51PK.png" alt="Shadow DOM"/>
+  <figcaption>Fig.12 - Template Parsing.</figcaption>
+</figure>
+
+>Every angular component has to go through a 4 step process to be rendered in the DOM by browser.
+>
+>Firstly, all the decorators are removed and their configurations are stored in metadata.json file.  
+>
+>The template HTML is then converted into JavaScript instructions that are then used by the Angular Interpreter to understand how to display them in the DOM.
+
+<figure align="center" width="100%">
+  <img loading="lazy" src="https://i.imgur.com/8uYQzwW.png" alt="Shadow DOM"/>
+  <figcaption>Fig.12 - Template Parsing.</figcaption>
+</figure>
+
+>Here the HTML is processed to generate instructions that contains all the details about the HTML.
+
+<figure align="center" width="100%">
+  <img loading="lazy" src="https://i.imgur.com/2BYsI5y.png" alt="Shadow DOM"/>
+  <figcaption>Fig.12 - Template Parsing.</figcaption>
+</figure>
+
+>All the nodes are observed to check presence of listeners, pipes, directives, etc. and then corresponding actions are attached to the rendered elements.
+
+**My conclude**
+
+1. View Engine is an Engine of Angular, which come from Angular 4. It also call Rendered2.
+2. Main responsibility is mapping between HTML and Ts code, And also convert them from HTML, TS component to a `viewDef` and `viewNodes` to use later.
+3. After run through Typescript complier, it will convert to Javascript
+4. Angular interpreter will use `viewDef` and `viewNode` to render to HTML as needed, and browser will render this HTML.
+
+#### 2.2 Tree shaking
+
+>Tree shaking is a process to remove dead code from the bundle.
+
+The dead code is the HTML code not use any more.
+
+> Renderer2 does a static analysis of the code, it doesn’t actually execute the code and then determine which part of code to be included in the bundle,
+
+My conclude:
+
+* Tree shaking normally is a way Angular solves the unused code from the bundle. If a code (C) is used or provided in module A, it will be included in bundle A when A loaded.
+* C is not used, C belong to A, A is imported to this module B. Then only the time B calls C then C was added to the bundle.
+
+#### 2.3 Compilation
+
+Renderer2 offers two variants of code compilation:
+1. Ahead Of Time Compilation (AOT)
+
+2. Just In Time Compilation (JIT)
+
+* In AOT, the template parsing process takes place at the developer end and thus causing a much smaller and faster build.
+
+* In JIT, the source code and Angular compiler are sent to browser and the whole template parsing process takes place in the browser environment.
+
+|     AOT         |       JIT      |
+|-----------------|----------------|
+| 1. When you run build -- prod| 1. When you run ng build / ng serve
+| 2. Compliation take place at the time you run build| 2. The compliation is done in the browser|
+| 3. Smaller build size since complier not send to browser | 3. Fairly greater build size since the complier is shipped to browser for compliation later|
+|4. Suitable for product build| 4. Suitable for local development|
+
+We can choose complier to build ( “ng build — aot” ) but it not make sense, cause it already config in angular.
+___________________________
+
+### 3. Change Detection - NgZone
+
+This is a long topic, but I will note some main content.
+
+>Change Detection means updating the view (DOM) when the data has changed.
+
+Change detection have two main steps:
+
+1. Update the application model (developer);
+2. Reflect the state of the model in the view (Angular).
+
+#### 3.1 How is change detection implemented?
+
+We can separate change detection of angular to two level.
+**The low-level Change detection**
+
+1. At the time Angular startup, it will patch some low-level browser APIs, such as **`addEventListenter`**, **`setTimeout()`**, **`setInterval()`**..., and also **`Ajax HTTP requests`**.
+It will override like this. Beside call the origin function It also call change detection.
+
+      ```javascript
+      // this is the new version of addEventListener
+      function addEventListener(eventName, callback) {
+          // call the real addEventListener
+          callRealAddEventListener(eventName, function() {
+              // first call the original callback
+              callback(...);     
+              // and then run Angular-specific functionality
+              var changed = angular.runChangeDetection();
+              if (changed) {
+                  angular.reRenderUIPart();
+              }
+          });
+      }
+      ```
+2. This low-level patching of browser APIs is done by a library shipped with Angular call `Zone.js`. A zone is nothing more than an execution context that survives multiple Javascript VM execution turns.
+3. Angular uses Zones internally to trigger change detection, application profiling, or keep track of long stack traces that run across multiple VM turns.
+4. One limitation of this way is mechanism if an async browser APIs not supported by `Zone.js` then change detection will not be triggered. For example: IndexedDB Callback.
+
+**The high-level change detection**
+
+The high level of change detection is the change detecion in high-level like Component, Directive...
+
+#### 3.2 The Flow
+
+Your application is basically composed of what we call a component tree.
+<figure align="center" width="100%">
+  <img loading="lazy" src="https://i.imgur.com/IX3nfQW.png" alt="Shadow DOM"/>
+  <figcaption>Fig.13 - Component Tree.</figcaption>
+</figure>
+
+If we modify `TodosComponent`, by changing the value of the first item of the todos’ list (in yellow), we will have the following flow:
+
+1. The developer is making changes to the model (like a component’s bindings);
+2. Angular’s change detection kicks in to propagate the changes;
+3. Change detection goes through every components in the component tree (from top to bottom) to check if the model it depends on changed;
+4. If Yes, it will update the component;
+5. Angular updates the component’s view (DOM).
+
+Same if `AppComponent` change, all the lower level node - tree will be selected.
+
+#### 3.3 Angular Change Detection Strategies
+
+**ChangeDetectionStrategy.Default**
+In order to know whether the view should be updated, Angular needs to access the new value, compare it with the old one, and make the decision on whether the view should be updated. By default, Angular makes no assumption on what the component depends upon. So it has to be **conservative** and **will checks every time something may have changed**, **this is called dirty checking**.
+
+**ChangeDetectionStrategy.onPush**
+When using the onPush strategy on the component, you basically say to Angular that it should not make any guess on when it needs to perform the check for change.  It will rely only on the change of the Input references, some events triggered by itself (the component) or one of its children.
+
+Lastly, you, the developer, can ask explicitly Angular to do it with the componentRef.markForCheck() method.
+
+#### 3.4 NgZone
+NgZone is `zone.js` but modified for Angular.
+in the part [3.1](#31-how-is-change-detection-implemented) you know that all change detection of angular was implement here. And it was implement by patching the Web Browser APIs.
+
+`4. One limitation of this way is mechanism if an async browser APIs not supported by **Zone.js** then change detection will not be triggered. For example: IndexedDB Callback.`
+
+Cause this reason, ngZone also provide a function call `.run()` to solve this.
+
+What happend when we dont use Zone.js any more? or we wanna do some stuff without trigger any change detection.
+ngZone already support that, please read more about it [here](https://angular.io/guide/zone).
+
+### 4. Pipe
+
+>Use pipes to transform strings, currency amounts, dates, and other data for display. Pipes are simple functions to use in template expressions to accept an input value and return a transformed value. 
+
+>Applying two formats by chaining pipes
+
+```html
+The chained hero's birthday is
+{{ birthday | date | uppercase}}
+```
+
+Pipe have two types
+
+#### 4.1. Pure Pipe
+
+* By default, pipes are defined as pure so that Angular executes the pipe only when it detects a pure change to the input value.
+* A pure change is either a change to a primitive input value (such as String, Number, Boolean, or Symbol), or a changed object reference (such as Date, Array, Function, or Object).
+* A pure pipe must use a pure function, which is one that processes inputs and returns values without side effects.
+
+#### 4.2. Impure Pipe
+
+Cause pure pipe cannot work correct if input not change reference.
+We have impure pipe to solve this.
+An impure pipe is called for every change detection cycle no matter whether the value or parameter(s) changes. 
+> Angular executes an impure pipe every time it detects a change with every keystroke or mouse movement.
+
+>While an impure pipe can be useful, be careful using one. A long-running impure pipe could dramatically slow down your application.
+
+### 5. Directive
+
+>Directives are classes that add additional behavior to elements in your Angular applications. Use Angular's built-in directives to manage forms, lists, styles, and what users see.
+
+The different types of Angular directives are as follows:
+
+* **Components — directives** with a template. This type of directive is the most common directive type.
+* **Attribute directives** — directives that change the appearance or behavior of an element, component, or another directive.
+  Example: NgClass / NgStyle / NgModel or any custom directive similar
+* **Structural directives** — directives that change the DOM layout by adding and removing DOM elements.
+  Example: ngFor / ngIf / ngTemplateOutlet
+
+### 6. Decorator
+
+Decorator is a concept of Typescript
+
+>A Decorator is a special kind of declaration that can be attached to a class declaration, method, accessor, property, or parameter.
+
+>Decorators use the form @expression, where expression must evaluate to a function that will be called at runtime with information about the decorated declaration.
+>For example, given the decorator @sealed we might write the sealed function as follows:
+
+```typescript
+function sealed(target) {
+  // do something with 'target' ...
+}
+```
+
+Thus, Angular decorator have the same purpose as definition about typescript decorator. Just for running something.
+
+Each Angular decorator will map to one function in Angular/core. For example.
+@Injectable is an decorator tel Angular that Angular can inject itself to others.
+while @Component, @Directive show Angular what are they and what they can do.
+To read more about them you should visit @Angular website or read Angular/Core source code
+
+### 7. Content projection
+
+>_**Content projection is a pattern in which you insert, or project, the content you want to use inside another component**_. For example, you could have a Card component that accepts content provided by another component.
+
+There are three way to implement content projection.
+
+#### 7.1. Single-slot content projection.
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-zippy-basic',
+  template: `
+    <h2>Single-slot content projection</h2>
+    <ng-content></ng-content>
+  `
+})
+export class ZippyBasicComponent {}
+```
+Just add content inside <app-zippy-basic>
+
+```html
+<app-zippy-basic>
+  <p>Is content projection cool?</p>
+</app-zippy-basic>
+```
+
+#### 7.2. Multi-slot content projection
+
+```typescript
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-zippy-multislot',
+  template: `
+    <h2>Multi-slot content projection</h2>
+
+    Default:
+    <ng-content></ng-content>
+
+    Question:
+    <ng-content select="[question]"></ng-content>
+  `
+})
+export class ZippyMultislotComponent {}
+```
+
+```html
+<app-zippy-multislot>
+  <p question>
+    Is content projection cool?
+  </p>
+  <p>Let's learn about content projection!</p>
+</app-zippy-multislot>
+```
+
+Content that uses the `question` attribute is projected into the <ng-content> element with the `select=[question]` attribute.
+
+#### 7.3. Conditional content projection
+
+Same as the way you use `<ng-container>` and `<ng-template>` with `ngTemplateOutlet`
+[Read more](https://angular.io/guide/content-projection)
