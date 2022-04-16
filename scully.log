@@ -91,4 +91,9 @@ Using deprecated plugin type:"render"  use "postProcessByHtml" instead
 Using deprecated plugin type:"render"  use "postProcessByHtml" instead
 Using deprecated plugin type:"render"  use "postProcessByHtml" instead
 Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+<<<<<<< HEAD
 >>>>>>> e2d78cd7fc9dc6c70c5da8fe9adf0eba3cd13e92
+=======
+Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+>>>>>>> 7054cb75457fa017c03e3cca9cf22e52d33f34f3
