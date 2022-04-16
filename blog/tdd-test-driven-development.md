@@ -1,12 +1,12 @@
 ---
 title: '[Did-I-Miss]:　Test Driven Development'
-description: 'I failed at the process 3rd of a company in Singapore cause I don't understand correctly about TDD and how it should be. I failed but you don't need to be'
+description: "I failed at the process 3rd of a company in Singapore cause I don't understand correctly about TDD and how it should be. I failed but you don't need to be."
 date_start: '2022/04/08'
 date_end: '2022/04/08'
 published: true
 image: 'https://i.imgur.com/obXzV6h.png'
 header_image: 'https://i.imgur.com/bF64W2L.png'
-tags: ['Did-I-Miss', 'Vietnam', 'TDD']
+tags: ['Did-I-Miss','Vietnam','TDD']
 priority: 0
 link: '/blog/tdd-test-driven-development'
 slug: tdd-test-driven-development
@@ -22,11 +22,11 @@ _**"Thất bại là khi bạn thất bại mà méo học được cái gì"**_
 
 ### I. Đầu đuôi ra sao
 
-Chẳng là tớ có apply vào một vị trí Java của một công ty Z có văn phòng tại Singapore. Vài vòng đầu khá nhẹ nhàng, và vòng tiếp theo này **sẽ diễn ra khá suôn sẻ** **nếu** tớ thực sự dành thời gian để chuẩn bị cho buổi phỏng vấn tiếp theo. (Nếu), đúng rồi, vẫn là từ nếu.. 😆  
-Tiếc không? Tiếc bình thường, vì tớ cũng đã có 1 offer khác rồi, chỉ là tớ muốn thử xem tớ sẽ apply được bao xa với JD về Java. Nhưng thất bại, vẫn sẽ là thất bại, chúng ta không thể đổ lỗi hay coi thường nó vì chúng ta đã có những cơ hội khác.
+Chẳng là mình có apply vào một vị trí Java của một công ty Z có văn phòng tại Singapore. Vài vòng đầu khá nhẹ nhàng, và vòng tiếp theo này **sẽ diễn ra khá suôn sẻ** **nếu** mình thực sự dành thời gian để chuẩn bị cho buổi phỏng vấn tiếp theo. (Nếu), đúng rồi, vẫn là từ nếu.. 😆  
+Tiếc không? Tiếc bình thường, vì mình cũng đã có 1 offer khác rồi, chỉ là mình muốn thử xem sẽ apply được bao xa với JD về Java. Nhưng thất bại, vẫn sẽ là thất bại, chúng ta không thể đổ lỗi hay coi thường nó vì chúng ta đã có những cơ hội khác.
 
-Tớ được biết nội dung về buổi phỏng vấn tiếp theo chủ yếu sẽ là check về việc thông tạo IDE và cả thông thạo về TDD (Test Driven Development). Thực ra tớ cũng có đọc qua và cũng hiểu sơ qua về việc TDD hoạt động như thế nào nhưng cũng chỉ sơ qua thôi.  
-Và cái TDD mà tớ từng dùng ở công ty cũ nó có lẽ giống bản Shopee so với Amazon vậy. 👎
+Mình được biết nội dung về buổi phỏng vấn tiếp theo chủ yếu sẽ là check về việc thông tạo IDE và cả thông thạo về TDD (Test Driven Development). Thực ra mình cũng có đọc qua và cũng hiểu sơ qua về việc TDD hoạt động như thế nào nhưng cũng chỉ sơ qua thôi.  
+Và cái TDD mà mình từng dùng ở công ty cũ nó có lẽ giống bản Shopee so với Amazon vậy. 👎
 
 >Test Driven ấy gì? Viết test trước xong code, xong rồi chạy test update code, xong lại viết test tiếp rồi lại chạy code ấy gì? Đơn giản 😆
 
@@ -38,12 +38,13 @@ Sau màn chào hỏi nhẹ nhàng, giới thiệu sơ qua, chả cần chi tiế
 
 >Thomas: Chú biết gì về về TDD chưa? làm TDD bao giờ chưa?
 >
->_Tớ bắt đầu bật văn lên_  
+>_Mình bắt đầu bật văn lên_  
+>
 >Tớ:   Tình hình là em có làm 1-2 lần rồi, nhưng, đại khái là như này... như này...
 >
 >Thomas: Ờ, suýt thì đúng..
 
-Đến đoạn này thì tớ bắt đầu thấy sai sai rồi 😄 nhưng kệ chứ, vào phỏng vấn phải thoải mái lên.  
+Đến đoạn này thì mình bắt đầu thấy sai sai rồi 😄 nhưng kệ chứ, vào phỏng vấn phải thoải mái lên.  
 
 Đề bài khá đơn giản, đại khái là bài này [Roman Number](https://leetcode.com/problems/roman-to-integer/)
 
