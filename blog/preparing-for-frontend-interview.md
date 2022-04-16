@@ -44,7 +44,7 @@ During the reading, please don’t hesitate to notify me of misleading informati
    * [Directive](#5-directive)
    * [Decorator](#6-decorator)
    * [Content Projection](#7-content-projection)
-   * RxJS
+   * [RxJS](#8-rxjs)
    * State Management
    * Webpack & Custom Webpack
    * Optimize
@@ -1427,3 +1427,34 @@ Content that uses the `question` attribute is projected into the <ng-content> el
 
 Same as the way you use `<ng-container>` and `<ng-template>` with `ngTemplateOutlet`
 [Read more](https://angular.io/guide/content-projection)
+
+### 8. RxJS
+
+>**RxJS is a library** _ **for composing asynchronous and event-based programs** by using observable sequences. It provides one core type, the Observable, satellite types (Observer, Schedulers, Subjects) and operators inspired by Array#extras (map, filter, reduce, every, etc) to allow handling asynchronous events as collections.
+
+>Think of RxJS as Lodash for events.
+
+I will note some attention points.
+
+1. RxJS is a library
+2. use to composing async and event-base program by using observable sequences. Famous for Reactive programming
+3. Three ideas create RxJS are Observer pattern, Iterator pattern and functional programming with collections
+
+>The essential concepts in RxJS which solve async event management are:
+>
+>* **Observable**: represents the collection of future values or events.
+>* **Observer**: is a collection of callbacks that knows how to listen to values delivered by the Observable.
+>* **Subscription**: represents the execution of an Observable, is primarily useful for cancelling the execution.
+>* **Operators**: are pure functions that enable a functional programming style of dealing with collections with operations like map, filter, concat, reduce, etc.
+>* **Subject**: is equivalent to an EventEmitter, and the only way of multicasting a value or event to multiple Observers.
+>* **Schedulers**: are centralized dispatchers to control concurrency, allowing us to coordinate when computation happens on e.g. setTimeout or requestAnimationFrame or others.
+
+The popular operators:
+
+1. pipe, of, from, map, first, filter, switchMap, concatMap, mergeMap, takeUntil, combineLatest
+
+The popular Schedulers:
+
+1. interval
+
+### 9. State Management
