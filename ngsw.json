@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1648578272024,
+  "timestamp": 1650133434854,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -59,7 +59,7 @@
     "/assets/icons/favicon-96x96.png": "d15988d27e8faa539aafd2253d57fda105fc57bf",
     "/assets/images/icon_sets.svg": "2bb7e6fe2c88029b3ab11c3555846a08895ea7ab",
     "/assets/images/icon_sets2.svg": "f42af821fd23bb7ed0d2ebf3d4a8f7c139ba3f58",
-    "/assets/scully-routes.json": "043f8209d3d6e8877896e4a325ae2b5d7f47e8f1",
+    "/assets/scully-routes.json": "fde4bc92d596c23b564b2ba039aef45a0fd4f7fc",
     "/assets/styles/global-var.scss": "8c5965786d5a838adf0345820ab7335f12cfb50e",
     "/assets/styles/prism-coy-without-shadows.scss": "db87e5b8ba97d4827c48e996f0f6ce78eefea38a",
     "/index.html": "79af4ada4d998b288de783c57d35750ce2068503",
