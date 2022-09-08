@@ -100,6 +100,16 @@ img[src$="centerme"] {
             width: 70%;
             height: calc(100vh - 50px);
             overflow-y: auto;
+            .suggest-share-container.right-container {
+                display: none;
+                height: auto;
+                > div {
+                    width: 100% !important;
+                }
+                .share-btn {
+                    transform: scale(0.8);
+                }
+            }
         }
         .suggest-share-container {
             width: 30%;
@@ -281,7 +291,7 @@ img[src$="centerme"] {
     .footer {
         bottom: 10px;
         width: 100%;
-        margin-top: 100%;
+        // margin-top: 100%;
         text-align: right;
         .m-icon {
             width: 50px;
@@ -371,6 +381,85 @@ img[src$="centerme"] {
         .footer button{
             margin-right: 5px;
         }
+    }
+}
+
+@media screen and (max-width: 920px)  {
+    .content-container{
+        flex-direction: column;
+        .bounds#blog-post {
+            width: calc(100% - 5px) !important;
+            .suggest-share-container.right-container{
+                width: calc(100% - 5px) !important;
+                display: block !important;
+            }
+        }
+        .suggest-share-container.right-container{
+            width: calc(100% - 5px) !important;
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 1500px)  {
+    .bounds#blog-post .header{
+        padding: 0 10px !important;
+        justify-content: left;
+    }
+    .markdown-body {
+        margin-left: 10px !important;
+        margin-right: 10px !important;
+    }
+}
+
+@media screen and (max-width: 640px)  {
+    .bounds#blog-post .header{
+        font-size: 35px !important;
+    }
+}
+
+
+@media screen and (max-width: 520px)  {
+    .bounds#blog-post .header{
+        font-size: 30px !important;
+    }
+    .suggest-share-container{
+        min-width: unset !important;
+    }
+    #mainTab >div{
+        min-width: 72px;
+        padding: 0 16px;
+    }
+}
+
+@media screen and (max-width: 400px)  {
+    .left-container{
+        min-width: 45px !important;
+        max-width: 45px !important;
+        .menu-left{
+            width: 45px;
+        }
+        button {
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+        }
+        .footer .m-icon {
+            transform: scale(0.6);
+        }
+        .logo img {
+            transform: scale(0.6);
+        }
+    }
+    .bounds#blog-post {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+        min-width: 100% !important;
+    }
+    .right-container {
+        margin: 0 auto;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+        border-left: 0px;
     }
 }
 

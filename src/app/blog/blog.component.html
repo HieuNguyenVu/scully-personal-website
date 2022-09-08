@@ -66,47 +66,53 @@
                     <!-- <app-footer></app-footer> -->
                 </div>
             </div>
+            <ng-container [ngTemplateOutlet]="suggestSharecontainer"></ng-container>
         </div>
-        <div class="suggest-share-container right-container" #rightContainer>
-            <div class="share-container">
-                <label aria-label="Share" class="sharetitle">Share to</label>
-                <div class="menu">
-                    <button aria-label="Share facebook button" class="share-btn" (click)="shareFb()"><div class="icn-facebook-share"></div></button>
-                    <button aria-label="Share linkedin button" class="share-btn" (click)="shareLinkedin()"><div class="icn-linkedin-share"></div></button>
-                    <button aria-label="Share twitter button" class="share-btn" (click)="shareTwitter()"><div class="icn-twitter-share"></div></button>
-                </div>
-                <label class="share-des"
-                    ><i
-                        >Actually, I'm writing this article not to share knowledge, mainly to make notes for myself. However, If you think this can help others, please help me to share it.<br />
-                        Thank you !!!</i
-                    ></label
-                >
+        <ng-container [ngTemplateOutlet]="suggestSharecontainer">   
+        </ng-container>
+    </div>
+    
+</div>
+
+<ng-template #suggestSharecontainer>
+    <div class="suggest-share-container right-container" #rightContainer>
+        <div class="share-container">
+            <label aria-label="Share" class="sharetitle">Share to</label>
+            <div class="menu">
+                <button aria-label="Share facebook button" class="share-btn" (click)="shareFb()"><div class="icn-facebook-share"></div></button>
+                <button aria-label="Share linkedin button" class="share-btn" (click)="shareLinkedin()"><div class="icn-linkedin-share"></div></button>
+                <button aria-label="Share twitter button" class="share-btn" (click)="shareTwitter()"><div class="icn-twitter-share"></div></button>
             </div>
-            <div class="suggest-container">
-                <div class="suggest-items" *ngIf="posts$ | async as posts">
-                    <label class="stitle">Related</label>
-                    <app-afterwork-item *ngFor="let post of posts" [post]="post"></app-afterwork-item>
+            <label class="share-des"
+                ><i
+                    >Actually, I'm writing this article not to share knowledge, mainly to make notes for myself. However, If you think this can help others, please help me to share it.<br />
+                    Thank you !!!</i
+                ></label
+            >
+        </div>
+        <div class="suggest-container">
+            <div class="suggest-items" *ngIf="posts$ | async as posts">
+                <label class="stitle">Related</label>
+                <app-afterwork-item *ngFor="let post of posts" [post]="post"></app-afterwork-item>
+            </div>
+            <div class="recommended">
+                <label class="rtitle">Recommended topics</label>
+                <div class="tags" *ngIf="tags$ | async as tags">
+                    <ng-container *ngFor="let tag of tags">
+                        <label class="tag-item"
+                            ><a href="#">#{{ tag }}</a></label
+                        >
+                    </ng-container>
                 </div>
-                <div class="recommended">
-                    <label class="rtitle">Recommended topics</label>
-                    <div class="tags" *ngIf="tags$ | async as tags">
-                        <ng-container *ngFor="let tag of tags">
-                            <label class="tag-item"
-                                ><a href="#">#{{ tag }}</a></label
-                            >
-                        </ng-container>
-                    </div>
-                    <label class="rtitle">Recommended series</label>
-                    <div class="tags" *ngIf="series$ | async as series">
-                        <ng-container *ngFor="let ser of series">
-                            <label class="tag-item"
-                                ><a href="#">{{ ser }}</a></label
-                            >
-                        </ng-container>
-                    </div>
+                <label class="rtitle">Recommended series</label>
+                <div class="tags" *ngIf="series$ | async as series">
+                    <ng-container *ngFor="let ser of series">
+                        <label class="tag-item"
+                            ><a href="#">{{ ser }}</a></label
+                        >
+                    </ng-container>
                 </div>
             </div>
         </div>
     </div>
-    
-</div>
+</ng-template>
