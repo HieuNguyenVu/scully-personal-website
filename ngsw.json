@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1650133434854,
+  "timestamp": 1662652468141,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -12,13 +12,13 @@
       },
       "urls": [
         "/1.fbbdbf02db855bc32d8b.js",
-        "/5.4ae8b65690c478d8d701.js",
+        "/5.da814661592ff1a21d5c.js",
         "/6.d17e0aea3d226648d422.js",
         "/index.html",
         "/main.ee8f147fffbc92cc7835.js",
         "/manifest.webmanifest",
         "/polyfills.b13e191c52f7e9d4f975.js",
-        "/runtime.05ca65689412cde0cbb6.js",
+        "/runtime.46908e01c1b25a8364ff.js",
         "/styles.3cbbeed2a336f6287ca2.css"
       ],
       "patterns": []
@@ -49,7 +49,7 @@
   "dataGroups": [],
   "hashTable": {
     "/1.fbbdbf02db855bc32d8b.js": "20f3e3e333c1a4978226447f028b4ba2c0065396",
-    "/5.4ae8b65690c478d8d701.js": "8fba0079e599a73ad5e99fb77d2bd215539b886a",
+    "/5.da814661592ff1a21d5c.js": "72b5a8cc1708704080d9054208776564961a7c64",
     "/6.d17e0aea3d226648d422.js": "307a2761c0096823b360f6fe59b79dd40e609641",
     "/assets/configs/portfolio.json": "d9fa5eab1b9d5b53ce287c3abfb324710079f4a5",
     "/assets/icons/favicon-128x128.png": "77018918287b952cddeba9a488aa50bf13f2c6f3",
@@ -62,11 +62,11 @@
     "/assets/scully-routes.json": "fde4bc92d596c23b564b2ba039aef45a0fd4f7fc",
     "/assets/styles/global-var.scss": "8c5965786d5a838adf0345820ab7335f12cfb50e",
     "/assets/styles/prism-coy-without-shadows.scss": "db87e5b8ba97d4827c48e996f0f6ce78eefea38a",
-    "/index.html": "79af4ada4d998b288de783c57d35750ce2068503",
+    "/index.html": "123e64734cc2de96611267e1a21615e4804c6546",
     "/main.ee8f147fffbc92cc7835.js": "ba1e7c109e7ae1689087446d3c2a25acc0fec6ad",
     "/manifest.webmanifest": "00aaf6cb1e68f421f5632ee491e66b60bf769245",
     "/polyfills.b13e191c52f7e9d4f975.js": "765869a1c31777c9808e73dd981778c278452c14",
-    "/runtime.05ca65689412cde0cbb6.js": "3db579d5ae28a611acfa764f5e3f0ccdb0af0860",
+    "/runtime.46908e01c1b25a8364ff.js": "76e82190558d84d6700b65f2401cb666634ffdf7",
     "/styles.3cbbeed2a336f6287ca2.css": "56820f0bb050d822da51641d2e3b35ad0d73675c"
   },
   "navigationUrls": [
