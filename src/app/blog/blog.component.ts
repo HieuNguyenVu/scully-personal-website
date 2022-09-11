@@ -44,7 +44,8 @@ export class BlogComponent implements OnInit, AfterViewInit {
 
     tags$: Observable<String[]>;
     series$: Observable<String[]>;
-    @ViewChild("rightContainer") rightContainer: ElementRef<HTMLDivElement>;
+    @ViewChild("scrollOne", { static: true }) scrollOne: ElementRef<HTMLDivElement>;
+
     constructor(
         private router: Router,
         private scully: ScullyRoutesService,
@@ -60,8 +61,18 @@ export class BlogComponent implements OnInit, AfterViewInit {
     ngAfterViewInit(): void {
         this.highlightService.highlightAll();
         setTimeout(() => {
-            loadLazyDisplay();
+            if (loadLazyDisplay) {
+                loadLazyDisplay();
+            }
         }, 0);
+        const rightContainer = document.getElementById("rightContainerOutter");
+        this.scrollOne.nativeElement.onscroll = () => {
+            if (this.scrollOne.nativeElement.scrollTop > rightContainer.scrollHeight) {
+                return;
+            }
+            // debugger
+            rightContainer.scrollTop = this.scrollOne.nativeElement.scrollTop;
+        };
     }
     /**
      * On init
@@ -104,10 +115,6 @@ export class BlogComponent implements OnInit, AfterViewInit {
             })
         );
         this.tags$ = this.postService.getTags(10);
-        window.onscroll = () => {
-            if (window.scrollY > this.rightContainer.nativeElement.scrollHeight) return;
-            this.rightContainer.nativeElement.scrollTop = window.scrollY;
-        };
     }
 
     /**
@@ -122,13 +129,13 @@ export class BlogComponent implements OnInit, AfterViewInit {
      * Scroll to top
      */
     scrollToTop() {
-        window.scrollTo({ left: 0, top: 0, behavior: "smooth" });
+        this.scrollOne.nativeElement.scrollTo({ left: 0, top: 0, behavior: "smooth" });
     }
     /**
      * Scroll to bottom
      */
     scrollToBottom() {
-        window.scrollTo({ left: 0, top: document.body.clientHeight, behavior: "smooth" });
+        this.scrollOne.nativeElement.scrollTo({ left: 0, top: document.body.clientHeight, behavior: "smooth" });
     }
     /**
      * Go to source markdown file
@@ -158,6 +165,4 @@ export class BlogComponent implements OnInit, AfterViewInit {
         let u = location.href;
         window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(u), "sharer", "toolbar=0,status=0,width=626,height=436");
     }
-
-    
 }

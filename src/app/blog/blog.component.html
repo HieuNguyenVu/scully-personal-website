@@ -66,16 +66,16 @@
                     <!-- <app-footer></app-footer> -->
                 </div>
             </div>
-            <ng-container [ngTemplateOutlet]="suggestSharecontainer"></ng-container>
+            <ng-container [ngTemplateOutlet]="suggestSharecontainer" [ngTemplateOutletContext]="{tabId: 'rightContainerInner'}"></ng-container>
         </div>
-        <ng-container [ngTemplateOutlet]="suggestSharecontainer">   
+        <ng-container [ngTemplateOutlet]="suggestSharecontainer" [ngTemplateOutletContext]="{tabId: 'rightContainerOutter'}">   
         </ng-container>
     </div>
     
 </div>
 
-<ng-template #suggestSharecontainer>
-    <div class="suggest-share-container right-container" #rightContainer>
+<ng-template #suggestSharecontainer let-tabId="tabId">
+    <div class="suggest-share-container right-container" #rightContainer [id]="tabId">
         <div class="share-container">
             <label aria-label="Share" class="sharetitle">Share to</label>
             <div class="menu">
