@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1662907990631,
+  "timestamp": 1662913545223,
   "index": "/index.html",
   "assetGroups": [
     {
@@ -12,13 +12,13 @@
       },
       "urls": [
         "/1.fbbdbf02db855bc32d8b.js",
-        "/5.2f320041faa7273431d1.js",
+        "/5.57d1c4214255c4b65480.js",
         "/6.d17e0aea3d226648d422.js",
         "/index.html",
         "/main.ee8f147fffbc92cc7835.js",
         "/manifest.webmanifest",
         "/polyfills.b13e191c52f7e9d4f975.js",
-        "/runtime.35be53f7f92dd7f2acbe.js",
+        "/runtime.a5d6ae2e8c856c72ca74.js",
         "/styles.a9700015d18d4b3096e8.css"
       ],
       "patterns": []
@@ -49,7 +49,7 @@
   "dataGroups": [],
   "hashTable": {
     "/1.fbbdbf02db855bc32d8b.js": "20f3e3e333c1a4978226447f028b4ba2c0065396",
-    "/5.2f320041faa7273431d1.js": "1a7066f76f4e0e3e6128e87959530eaa7c4f1d53",
+    "/5.57d1c4214255c4b65480.js": "2b5efc587ea1412b9b51c21bd2c416ce4b4458a1",
     "/6.d17e0aea3d226648d422.js": "307a2761c0096823b360f6fe59b79dd40e609641",
     "/assets/configs/portfolio.json": "d9fa5eab1b9d5b53ce287c3abfb324710079f4a5",
     "/assets/icons/favicon-128x128.png": "77018918287b952cddeba9a488aa50bf13f2c6f3",
@@ -62,11 +62,11 @@
     "/assets/scully-routes.json": "fde4bc92d596c23b564b2ba039aef45a0fd4f7fc",
     "/assets/styles/global-var.scss": "8c5965786d5a838adf0345820ab7335f12cfb50e",
     "/assets/styles/prism-coy-without-shadows.scss": "db87e5b8ba97d4827c48e996f0f6ce78eefea38a",
-    "/index.html": "e2f0e2d4a1c6bcbca208d0a9d5f5a1234b817eab",
+    "/index.html": "6f676b7c2b6ac32a5c774b48ecdeb935828517f0",
     "/main.ee8f147fffbc92cc7835.js": "ba1e7c109e7ae1689087446d3c2a25acc0fec6ad",
     "/manifest.webmanifest": "00aaf6cb1e68f421f5632ee491e66b60bf769245",
     "/polyfills.b13e191c52f7e9d4f975.js": "765869a1c31777c9808e73dd981778c278452c14",
-    "/runtime.35be53f7f92dd7f2acbe.js": "92a1890b348b2226b72cd5a9a13c78e630f59587",
+    "/runtime.a5d6ae2e8c856c72ca74.js": "d04b521803fd3c3c1ce086895185d4b4e5796687",
     "/styles.a9700015d18d4b3096e8.css": "4c95dce693c547a24d8000a47f0f0a57150c7b75"
   },
   "navigationUrls": [
