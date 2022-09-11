@@ -439,7 +439,7 @@ img[src$="centerme"] {
         }
     }
     .container-wrapper {
-        flex-direction: column;
+        flex-direction: column-reverse;
     }
     .left-container{
         min-width: 30px !important;
@@ -448,8 +448,12 @@ img[src$="centerme"] {
         height: 30px !important;
         align-items: center;
         background-color: white !important;
-        border-bottom: 1px solid rgba(0,113,123,.3);
+        border-top: 1px solid rgba(0,113,123,.3);
 
+        position: fixed;
+        bottom: 0px;
+        top: unset;
+    }
         .menu-left {
             width: 100%;
             transform: scale(0.5);
