@@ -432,27 +432,66 @@ img[src$="centerme"] {
 }
 
 @media screen and (max-width: 400px)  {
+    #mainTab {
+        height: 35px;
+        div {
+            height: 35px !important;
+        }
+    }
+    .container-wrapper {
+        flex-direction: column;
+    }
     .left-container{
-        min-width: 45px !important;
-        max-width: 45px !important;
-        .menu-left{
-            width: 45px;
+        min-width: 30px !important;
+        max-width: 100% !important;
+        flex-direction: row;
+        height: 30px !important;
+        align-items: center;
+        .menu-left {
+            width: 100%;
+            transform: scale(0.5);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .arrow {
+                display: none;
+            }
+            button {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
         }
         button {
             margin-left: 0px !important;
             margin-right: 0px !important;
         }
-        .footer .m-icon {
-            transform: scale(0.6);
+        .footer {
+            width: 50px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .m-icon {
+                transform: scale(0.5);
+            }
+        }
+        .logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 30px;
         }
         .logo img {
-            transform: scale(0.6);
+            transform: scale(0.5);
+            margin-right: 0px !important;
         }
     }
     .bounds#blog-post {
         margin-left: 0px !important;
         margin-right: 0px !important;
         min-width: 100% !important;
+        height: calc(100vh - 80px) !important;
     }
     .right-container {
         margin: 0 auto;

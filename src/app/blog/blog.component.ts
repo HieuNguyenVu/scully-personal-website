@@ -158,4 +158,6 @@ export class BlogComponent implements OnInit, AfterViewInit {
         let u = location.href;
         window.open("https://twitter.com/intent/tweet?url=" + encodeURIComponent(u), "sharer", "toolbar=0,status=0,width=626,height=436");
     }
+
+    
 }
