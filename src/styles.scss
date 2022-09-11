@@ -471,13 +471,13 @@ button.m-icon {
     }
 }
 
-@media screen and (max-width: 400px)  {
-    #mainTab {
-        height: 35px;
-        div {
-            height: 35px !important;
-        }
-    }
-}
+// @media screen and (max-width: 400px)  {
+//     #mainTab {
+//         height: 35px;
+//         div {
+//             height: 35px !important;
+//         }
+//     }
+// }
 
 @import "styles/prism-coy-without-shadows.scss";
