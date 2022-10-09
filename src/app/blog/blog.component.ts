@@ -135,7 +135,7 @@ export class BlogComponent implements OnInit, AfterViewInit {
      * Scroll to bottom
      */
     scrollToBottom() {
-        this.scrollOne.nativeElement.scrollTo({ left: 0, top: document.body.clientHeight, behavior: "smooth" });
+        this.scrollOne.nativeElement.scrollTo({ left: 0, top: document.getElementById("inner-bounds").clientHeight, behavior: "smooth" });
     }
     /**
      * Go to source markdown file

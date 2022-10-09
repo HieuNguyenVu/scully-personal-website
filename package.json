@@ -11,7 +11,10 @@
     "scully": "npx scully --",
     "scully:serve": "npx scully serve --",
     "mobile": "ng serve --host=0.0.0.0 --disable-host-check",
-    "auto": "npm run build && npx scully -- --scanRoutes && npx scully serve --"
+    "auto": "npm run build && npx scully -- --scanRoutes && npx scully serve --",
+    "host": "npm run build && npx scully -- --scanRoutes && cd .. && npm run docker-build && npm run docker-run",
+    "nginx-update": "docker cp ./nhvu95.com.conf self-host-container:/etc/nginx/sites-available/nhvu95.com && npm run nginx-reload",
+    "nginx-reload": "docker exec 65649720eb88d0eea2610cac496d9a1ea7c0ba2b18eb21f275bab2d69b1c1497 nginx -s reload"
   },
   "private": true,
   "dependencies": {

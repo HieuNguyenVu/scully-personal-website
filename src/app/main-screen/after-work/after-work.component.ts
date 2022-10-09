@@ -71,6 +71,7 @@ export class AfterWorkComponent implements OnInit, OnDestroy {
             if (mode == Mode["non-tech"]) return link.type_index !== undefined && link.type_index === mode;
             return true;
         });
+        displayPost = displayPost.filter(post => post.exist);
 
         this.allKeywords = [...new Set(displayPost.map((item) => item.tags as String[]).flat())] as String[];
         if (this.selectedKeywords.length == 0) this.selectedKeywords.push(ALL_STR);

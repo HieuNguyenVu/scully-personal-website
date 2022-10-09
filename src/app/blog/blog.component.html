@@ -31,7 +31,7 @@
     </div>
     <div class="content-container">
         <div class="bounds" id="blog-post" #scrollOne>
-            <div class="inner-bounds">
+            <div class="inner-bounds" id="inner-bounds">
                 <div class="content" *ngIf="postContent$ | async as postContent">
                     <div class="header-image">
                         <img [src]="postContent.headerImage" loading="lazy" alt="Head blog image" />

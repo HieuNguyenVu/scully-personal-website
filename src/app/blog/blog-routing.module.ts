@@ -1,6 +1,5 @@
-import { Injectable, NgModule } from '@angular/core';
-import { Routes, RouterModule, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
 
 import { BlogComponent } from './blog.component';
 
