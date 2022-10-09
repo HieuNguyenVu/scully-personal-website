@@ -16,7 +16,7 @@ location: 'Hanoi, Vietnam'
 _**Hồi ở công ty cũ, mình cũng hay phải deploy các dự án cho Team dev và cả team Test. Nhưng chủ yếu việc deploy sẽ chỉ xoay quanh ở các local server trong cùng mạng LAN, hoặc nếu không thì sẽ sử dụng các dịch vụ cloud kiểu như Azure Storage, Azure Function, AWS EC2, AWS RDS, Github Page. Thế nên đây là lần đầu tiên mình tự public 1 server, và deploy ở đó.  
 Sau khi dùng thử mình cũng thấy rằng, không chỉ ở trên cloud, ở mặt đất cũng có nhiều cái hay đó chứ , và nếu bạn đang đọc bài viết này, thì nó đang được serve hoàn toàn từ máy tính của mình đó 😁**_
 
-Mình đã thử với 2 giải pháp. Cái đầu tiên không thực sự thành công nên sau đó mình đã đến với giải pháp thứ 2, và đây cũng là cách mà mình thấy ổn hơn và quyết định sử dụng nó. Thế nên, nếu các bạn không có thời gian rảnh để nghịch mấy cái tào lao và muốn tìm 1 giải pháp tốt và work ngay lập tức, mình recommend giải pháp thứ 2, bạn có thể scroll xuống thẳng [**giải pháp thứ 2**](#ii-tự-host-và-dùng-cloudflare-để-facing-với-internet-thông-qua-cloudflare-tunnel).
+Mình đã thử với 2 giải pháp. Cái đầu tiên không thực sự thành công nên sau đó mình đã đến với giải pháp thứ 2, và đây cũng là cách mà mình thấy ổn hơn và quyết định sử dụng nó. Thế nên, nếu các bạn không có thời gian rảnh để nghịch mấy cái tào lao và muốn tìm 1 giải pháp tốt và work ngay lập tức, mình recommend giải pháp thứ 2, bạn có thể scroll xuống thẳng [**giải pháp thứ 2**](#ii-tự-host-và-dùng-Cloudflare-để-facing-với-internet-thông-qua-Cloudflare-tunnel).
 
 ## **I. Giải pháp 1: Tự host và tự facing internet.**
 
@@ -35,7 +35,7 @@ Giải pháp này đến với mình sau khi mình đăng câu hỏi lên group 
 
 1. **Sẵn con Docker và Docker - nginx được cấu hình sẵn từ bước 3 của Giải pháp 1. Mình tiếp tục sử dụng nó**
 2. **Cấu hình con domain (Google Domain) của mình sang dùng DNS server của Cloudflare.**
-3. **Tạo Application trên cloudflare**
+3. **Tạo Application trên Cloudflare**
 4. **Tạo Tunnel và connect server đến Cloudflare tunnel.**
 
 Mình không ước biết giải pháp này sớm hơn, mình còn thấy may vì nhờ đã thử giải pháp 1 mà mình học được khá nhiều thứ hay ho.
@@ -389,7 +389,7 @@ Sau khi có được keyword về `Cloudflare tunnel` và tìm hiểu nó, mình
     <img loading="lazy" src="https://i.imgur.com/QEKfpK1.png"/>
 </figure>
 
-Trên hình thì sẽ có các services của cloudflare, nhưng thực ra thì nếu chỉ self-host không thôi thì không cần dùng đến các thứ đó.  
+Trên hình thì sẽ có các services của Cloudflare, nhưng thực ra thì nếu chỉ self-host không thôi thì không cần dùng đến các thứ đó.  
 Những thứ bạn cần chuẩn bị cho giải pháp này
 
 - Domain
@@ -424,11 +424,11 @@ Sẽ có 4 plan để cho chúng ta chọn, ở đây nhu cầu của mình ch�
 </figure>
 
 2. Một dialog hiện lên để confirm về việc Add records later, chọn > `Confirm`
-3. Copy 2 cloudflare name server ở màn hình tiếp theo và paste ra notepad hoặc chỗ nào đó để dùng sau này.
+3. Copy 2 Cloudflare name server ở màn hình tiếp theo và paste ra notepad hoặc chỗ nào đó để dùng sau này.
 
 ```
-xxxx.ns.cloudflare.com
-xxxx.ns.cloudflare.com
+xxxx.ns.Cloudflare.com
+xxxx.ns.Cloudflare.com
 ```
 4. Màn hình tiếp theo sẽ đưa các bạn đến 1 cái quicks-start guide. Ở đây sẽ có các tuỳ chọn cho phép bạn tối ưu security hay performance cho domain của mình. 
 Ví dụ như:
@@ -455,7 +455,7 @@ Sẽ mất 1 lúc để domain có thể hoạt động, các bạn quay về ta
 
 Vậy là đã xong bước cấu hình domain.
 
-## **3. Tạo Application trên cloudflare**
+## **3. Tạo Application trên Cloudflare**
 
 
 Từ thanh công cụ Của Clouldflare, chọn > `Zero Trust`. Cloudflare sẽ đưa bạn đến Dashboard của Cloudflare Zero Trust.
@@ -469,7 +469,7 @@ Tại đây, chúng ta chọn `Access` > `Application` > `Add an application` > 
 </figure>
 
 **\> Add policies** - Config policies để truy cập app  
-- Nếu muốn public để tất cả mọi người có thể truy cập, bạn nên chọn `Action` là `Bypass` và ở phần `Includes` để là `Everyone`. Còn nếu muốn giới hạn những người có thể truy cập, vd theo email, ip, location thì bạn có thể tuỳ chỉnh, khi đó muốn xem được trang của bạn bắt buộc user phải đăng nhập thông qua 1 page login của cloudflare gọi là Cloudflare Access trông như thế này.
+- Nếu muốn public để tất cả mọi người có thể truy cập, bạn nên chọn `Action` là `Bypass` và ở phần `Includes` để là `Everyone`. Còn nếu muốn giới hạn những người có thể truy cập, vd theo email, ip, location thì bạn có thể tuỳ chỉnh, khi đó muốn xem được trang của bạn bắt buộc user phải đăng nhập thông qua 1 page login của Cloudflare gọi là Cloudflare Access trông như thế này.
 
 <figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/nwDVja1.png" alt="JS components"/>
@@ -501,14 +501,14 @@ Mình dùng Docker - Nginx để serve website nên mình cũng dùng luôn dock
 sửa một chút cho command trông giống như sau và chạy
 
 ```
-docker run --detach --restart unless-stopped --network tunnel cloudflare/cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiZDxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+docker run --detach --restart unless-stopped --network tunnel Cloudflare/Cloudflared:latest tunnel --no-autoupdate run --token eyJhIjoiZDxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
 Nếu kết nối đến tunnel thành công, IP và connector ID sẽ xuất hiện ở phần `Connectors` phía dưới khung cửa sổ. Ấn > `Next`
 
 Tại bước cấu hình > **Route tunnel**, bạn chọn domain kết nối đến tunnel này
 Riêng về phần services: bạn điền http://localhost/. Nếu bạn serve trên docker thì hơi khác 1 chút, bạn phải để là static local IP của bạn thì nó mới ăn http://192.168.1.50:80.  
-Đây có lẽ là vấn đề của Cocker/cloudflare tunnel. Mình mất gần 1 buổi mới tìm ra cách xử lý 😞
+Đây có lẽ là vấn đề của Cocker/Cloudflare tunnel. Mình mất gần 1 buổi mới tìm ra cách xử lý 😞
 
 <figure align="center" width="100%">
     <img loading="lazy" src="https://i.imgur.com/ZQYJAdH.png" alt="JS components"/>
@@ -541,7 +541,7 @@ https://f2f.nhvu95.com/#/
 
 _____________
 
-**Note riêng cho Angular/Scully:** Sau khi sử dụng Scully - angular host trên nginx cùng với cloudflare, Thì thằng Optimization của Cloudflare nó sẽ làm hỏng kiến trúc của Scully. Issue về nó mình cũng đã tìm thấy ở đây: https://github.com/scullyio/scully/issues/131
+**Note riêng cho Angular/Scully:** Sau khi sử dụng Scully - angular host trên nginx cùng với Cloudflare, Thì thằng Optimization của Cloudflare nó sẽ làm hỏng kiến trúc của Scully. Issue về nó mình cũng đã tìm thấy ở đây: https://github.com/scullyio/scully/issues/131
 
 **Giải pháp 1:** `Website` > `<domain_name>` > `Caching`> `Configuration` > Và bật chế độ Dev mode của nó lên là được. Tuy nhiên CDN sẽ không cache nữa, sẽ làm tăng thời gian load static html.  
 **Giải pháp 2:** `Website` > `<domain_name>` > `Speed`> `Optimization` > `Auto Minify` và bỏ chọn minify của HTML đi là được

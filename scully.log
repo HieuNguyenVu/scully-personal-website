@@ -1466,3 +1466,20 @@ Using stored unhandled routes!.
       document.querySelector('scully-content')
       ----------------
       
+Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+Using deprecated plugin type:"render"  use "postProcessByHtml" instead
+
+----------------------------------
+Using stored unhandled routes!.
+   To discover new routes in the angular app use "npm run scully -- --scanRoutes"
+----------------------------------
+
+      ----------------
+      Error, missing "<scully-content>" in route "/blog/___UNPUBLISHED___l8ufpmmf_aiiUVRpG4LwszGByseUIU6N6X7L38MXO"
+      without <scully-content> we can not render this route.
+      Make sure it is in there, and not inside any conditionals (*ngIf)
+      You can check this by opening "http://localhost:4200/blog/___UNPUBLISHED___l8ufpmmf_aiiUVRpG4LwszGByseUIU6N6X7L38MXO"
+      when you serve your app with ng serve and then in the browsers console run:
+      document.querySelector('scully-content')
+      ----------------
+      
