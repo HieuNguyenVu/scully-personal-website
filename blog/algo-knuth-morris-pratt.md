@@ -77,7 +77,7 @@ So this is the way they do it.
     Because "A A B" match index 1 2 3 in order,  so `lps[7] = 1` `lps[8] = 2` `lps[9] = 3`
     >
     >A A B C A D A A B |**E**|  
-    "E" not match, `lps[10] = 1`
+    "E" not match, `lps[10] = 0`
     >
     >Final LPS is : `[0, 1, 0, 0, 1, 0, 1, 2, 3, 0]`  
 

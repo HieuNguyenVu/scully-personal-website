@@ -16,7 +16,7 @@ location: 'Hanoi, Vietnam'
 _**Hồi ở công ty cũ, mình cũng hay phải deploy các dự án cho Team dev và cả team Test. Nhưng chủ yếu việc deploy sẽ chỉ xoay quanh ở các local server trong cùng mạng LAN, hoặc nếu không thì sẽ sử dụng các dịch vụ cloud kiểu như Azure Storage, Azure Function, AWS EC2, AWS RDS, Github Page. Thế nên đây là lần đầu tiên mình tự public 1 server, và deploy ở đó.  
 Sau khi dùng thử mình cũng thấy rằng, không chỉ ở trên cloud, ở mặt đất cũng có nhiều cái hay đó chứ , và nếu bạn đang đọc bài viết này, thì nó đang được serve hoàn toàn từ máy tính của mình đó 😁**_
 
-Mình đã thử với 2 giải pháp. Cái đầu tiên không thực sự thành công nên sau đó mình đã đến với giải pháp thứ 2, và đây cũng là cách mà mình thấy ổn hơn và quyết định sử dụng nó. Thế nên, nếu các bạn không có thời gian rảnh để nghịch mấy cái tào lao và muốn tìm 1 giải pháp tốt và work ngay lập tức, mình recommend giải pháp thứ 2, bạn có thể scroll xuống thẳng [**giải pháp thứ 2**](#ii-tự-host-và-dùng-Cloudflare-để-facing-với-internet-thông-qua-Cloudflare-tunnel).
+Mình đã thử với 2 giải pháp. Cái đầu tiên không thực sự thành công nên sau đó mình đã đến với giải pháp thứ 2, và đây cũng là cách mà mình thấy ổn hơn và quyết định sử dụng nó. Thế nên, nếu các bạn không có thời gian rảnh để nghịch mấy cái tào lao và muốn tìm 1 giải pháp tốt và work ngay lập tức, mình recommend giải pháp thứ 2, bạn có thể scroll xuống thẳng [**giải pháp thứ 2**](#solution).
 
 ## **I. Giải pháp 1: Tự host và tự facing internet.**
 
@@ -379,7 +379,7 @@ Tuy nhiên khi dùng Wifi hoặc VPN thì IPv6 và IPv4 của điện thoại đ
 _______________
 
 # II. **Tự host và dùng Cloudflare để facing với internet thông qua Cloudflare tunnel.**
-
+### Solution
 Thay vì public port và rồi cấu hình DDNS một đống thứ từa lưa khác giống như cách 1, thì đại khái đây sẽ là cách mà chúng ta làm lại.
 Cloudflare sẽ giúp chúng ta xử lý vụ định tuyến, IP các thứ loằng ngoằng bên trên, chúng ta chỉ cần cấu hình `Cloudflare tunnel` trỏ đến server của chúng ta là được.
 
